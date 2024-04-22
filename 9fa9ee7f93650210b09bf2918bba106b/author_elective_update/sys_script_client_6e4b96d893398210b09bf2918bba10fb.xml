@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>On submitting the form, client script populates the creation date field.</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Creation date addition</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    var currentDate = new Date().toISOString().split('T')[0];
+    g_form.setValue('start_date', currentDate);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-22 10:49:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6e4b96d893398210b09bf2918bba10fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Creation date addition</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_client_6e4b96d893398210b09bf2918bba10fb</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-22 10:49:13</sys_updated_on>
+        <table>x_1383177_lms_app_module</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_client_6e4b96d893398210b09bf2918bba10fb</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;On submitting the form, client script populates the creation date field.&lt;/description&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Creation date addition&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    var currentDate = new Date().toISOString().split('T')[0];
+    g_form.setValue('start_date', currentDate);
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-22 10:49:13&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;6e4b96d893398210b09bf2918bba10fb&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Creation date addition&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_6e4b96d893398210b09bf2918bba10fb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-04-22 10:49:13&lt;/sys_updated_on&gt;&lt;table&gt;x_1383177_lms_app_module&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>446541682</payload_hash>
+        <record_name>Creation date addition</record_name>
+        <reverted_from/>
+        <source>787116dc93f58210b09bf2918bba10ef</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-22 10:49:13</sys_created_on>
+        <sys_id>f633e6d093798210b09bf2918bba10ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f056c96650000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-22 10:49:13</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>3e33e6d0a07982103e0dde6fed2318c9</update_guid>
+        <update_guid_history>3e33e6d0a07982103e0dde6fed2318c9:446541682</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-22 10:52:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>30652578811643a699de983d7cb67701</sys_id>
+        <sys_metadata>6e4b96d893398210b09bf2918bba10fb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Creation date addition</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="Module">1b6da95093758210b09bf2918bba101c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_client_6e4b96d893398210b09bf2918bba10fb</sys_update_name>
+        <sys_update_version display_value="sys_script_client_6e4b96d893398210b09bf2918bba10fb">f633e6d093798210b09bf2918bba10ca</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-22 10:52:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

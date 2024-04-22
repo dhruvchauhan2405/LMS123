@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="New Section" section_id="09832d1493358210b09bf2918bba10cc" sys_domain="global" table="x_1383177_lms_app_module" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>0</position>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-04-22 06:10:51</sys_created_on>
+            <sys_id>95836d1493358210b09bf2918bba10c4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_1383177_lms_app_module" sys_domain="global" view="Default view">09832d1493358210b09bf2918bba10cc</sys_ui_section>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:10:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>content</element>
+            <position>1</position>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-04-22 06:10:51</sys_created_on>
+            <sys_id>19836d1493358210b09bf2918bba10c4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_1383177_lms_app_module" sys_domain="global" view="Default view">09832d1493358210b09bf2918bba10cc</sys_ui_section>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:10:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>New Section</caption>
+            <header>false</header>
+            <name>x_1383177_lms_app_module</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-04-22 06:10:50</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>09832d1493358210b09bf2918bba10cc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383177_lms_app_module</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_section_09832d1493358210b09bf2918bba10cc</sys_update_name>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:10:50</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_ui_section_09832d1493358210b09bf2918bba10cc</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="New Section" section_id="09832d1493358210b09bf2918bba10cc" sys_domain="global" table="x_1383177_lms_app_module" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>short_description</element><position>0</position><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-04-22 06:10:51</sys_created_on><sys_id>95836d1493358210b09bf2918bba10c4</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="New Section" display_value="New Section" name="x_1383177_lms_app_module" sys_domain="global" view="Default view">09832d1493358210b09bf2918bba10cc</sys_ui_section><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-04-22 06:10:51</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>content</element><position>1</position><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-04-22 06:10:51</sys_created_on><sys_id>19836d1493358210b09bf2918bba10c4</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="New Section" display_value="New Section" name="x_1383177_lms_app_module" sys_domain="global" view="Default view">09832d1493358210b09bf2918bba10cc</sys_ui_section><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-04-22 06:10:51</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>New Section</caption><header>false</header><name>x_1383177_lms_app_module</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-04-22 06:10:50</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>09832d1493358210b09bf2918bba10cc</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383177_lms_app_module</sys_name><sys_overrides/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_ui_section_09832d1493358210b09bf2918bba10cc</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-04-22 06:10:50</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>80254404</payload_hash>
+        <record_name>Module</record_name>
+        <reverted_from/>
+        <source>57a9a2ff93650210b09bf2918bba100b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-22 06:10:51</sys_created_on>
+        <sys_id>95836d1493358210b09bf2918bba10c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f046dbb730000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-22 06:10:51</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>1d836d1447358210828003484cc295c5</update_guid>
+        <update_guid_history>1d836d1447358210828003484cc295c5:80254404</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-22 06:35:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>195acee04ae64301a697d8c5d5a94cf9</sys_id>
+        <sys_metadata>09832d1493358210b09bf2918bba10cc</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Section</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="">9eba8d5493b18210b09bf2918bba1008</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_ui_section_09832d1493358210b09bf2918bba10cc</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_09832d1493358210b09bf2918bba10cc">95836d1493358210b09bf2918bba10c6</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-22 06:35:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

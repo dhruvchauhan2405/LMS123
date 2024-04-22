@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description>This is a learning platform application.</description>
+        <device_type>browser</device_type>
+        <hint>This is a learning platform application.</hint>
+        <name/>
+        <order/>
+        <roles>x_1383177_lms_app.lms_manager,x_1383177_lms_app.course_manager,x_1383177_lms_app.content_manager,x_1383177_lms_app.learner</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-20 22:08:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d08b6e7f93650210b09bf2918bba1083</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Application</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_app_application_d08b6e7f93650210b09bf2918bba1083</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-20 22:08:24</sys_updated_on>
+        <title>LMS Application</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

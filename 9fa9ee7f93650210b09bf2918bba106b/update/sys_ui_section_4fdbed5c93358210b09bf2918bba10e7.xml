@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="4fdbed5c93358210b09bf2918bba10e7" sys_domain="global" table="x_1383177_lms_app_course" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>36e8bd5093b58210b09bf2918bba105d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>course_name</element>
+            <position>1</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>b6e8bd5093b58210b09bf2918bba105d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>domain_name</element>
+            <position>2</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>3ae8bd5093b58210b09bf2918bba105d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>bae8bd5093b58210b09bf2918bba105d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>course_type</element>
+            <position>4</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>3ee8bd5093b58210b09bf2918bba105d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>course_manager</element>
+            <position>5</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>bee8bd5093b58210b09bf2918bba105d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>content_manager</element>
+            <position>6</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>32e8bd5093b58210b09bf2918bba105e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>mode_of_learning</element>
+            <position>7</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>b2e8bd5093b58210b09bf2918bba105e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location</element>
+            <position>8</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>36e8bd5093b58210b09bf2918bba105e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>instructor</element>
+            <position>9</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>b6e8bd5093b58210b09bf2918bba105e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>10</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>3ae8bd5093b58210b09bf2918bba105e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>11</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 07:44:20</sys_created_on>
+            <sys_id>bae8bd5093b58210b09bf2918bba105e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_course" sys_domain="global" view="Default view">4fdbed5c93358210b09bf2918bba10e7</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 07:44:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_1383177_lms_app_course</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-22 06:47:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4fdbed5c93358210b09bf2918bba10e7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383177_lms_app_course</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_section_4fdbed5c93358210b09bf2918bba10e7</sys_update_name>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:47:17</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
