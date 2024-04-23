@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="d1c9211c93358210b09bf2918bba10d2" label="Course" max_length="40" name="x_1383177_lms_app_course" type="collection">
-        <element label="Content manager" max_length="40" name="content_manager" type="string"/>
-        <element label="Course manager" max_length="40" name="course_manager" type="string"/>
+        <element label="Content Manager List" max_length="40" name="content_manager_list" reference="sys_user" type="glide_list"/>
+        <element label="Course manager" max_length="40" name="course_manager" reference="sys_user" type="glide_list"/>
         <element label="Course name" mandatory="true" max_length="40" name="course_name" type="string"/>
         <element choice="1" label="Course type" max_length="40" name="course_type" type="string">
             <choice>
