@@ -10,6 +10,7 @@
                 <element inactive_on_update="false" label="Advance" sequence="2" value="advance"/>
             </choice>
         </element>
+        <element label="Domain" max_length="32" name="domain" reference="x_1383177_lms_app_course_domain" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Instructor" max_length="40" name="instructor" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Location" max_length="40" name="location" type="string"/>
         <element choice="1" label="Mode of learning" max_length="40" name="mode_of_learning" type="choice">
@@ -20,5 +21,8 @@
         </element>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element label="Short description" max_length="200" name="short_description" type="string"/>
+        <index name="index">
+            <element name="domain"/>
+        </index>
     </element>
 </database>
