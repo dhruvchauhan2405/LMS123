@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="test">49b0a318937d8210b09bf2918bba1018</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>tests</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_1383177_lms_app_test</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_1383177_lms_app.test_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-22 15:17:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>01b0af58937d8210b09bf2918bba1024</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>tests</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_app_module_01b0af58937d8210b09bf2918bba1024</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-22 15:17:48</sys_updated_on>
+        <timeline_page/>
+        <title>tests</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_app_module_01b0af58937d8210b09bf2918bba1024</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="test">49b0a318937d8210b09bf2918bba1018</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>tests</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_1383177_lms_app_test</name><order/><override_menu_roles>false</override_menu_roles><query/><report/><roles>x_1383177_lms_app.test_user</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-04-22 15:17:48</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>01b0af58937d8210b09bf2918bba1024</sys_id><sys_mod_count>0</sys_mod_count><sys_name>tests</sys_name><sys_overrides/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_app_module_01b0af58937d8210b09bf2918bba1024</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-04-22 15:17:48</sys_updated_on><timeline_page/><title>tests</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-850519095</payload_hash>
+        <record_name>tests</record_name>
+        <reverted_from/>
+        <source>d2921a5093398210b09bf2918bba102a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-22 15:17:48</sys_created_on>
+        <sys_id>85b0af58937d8210b09bf2918bba1026</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f06627a4a0000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-22 15:17:48</sys_updated_on>
+        <type>Module</type>
+        <update_guid>c9b0af585d7d8210698f00b516279025</update_guid>
+        <update_guid_history>c9b0af585d7d8210698f00b516279025:-850519095</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="tests">2ce6ab1093bd8210b09bf2918bba10a5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-22 15:44:47</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>9bfc7e457dc74f3b9ef42734561dd801</sys_id>
+        <sys_metadata>01b0af58937d8210b09bf2918bba1024</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>tests</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_app_module_01b0af58937d8210b09bf2918bba1024</sys_update_name>
+        <sys_update_version display_value="sys_app_module_01b0af58937d8210b09bf2918bba1024">85b0af58937d8210b09bf2918bba1026</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-22 15:44:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
