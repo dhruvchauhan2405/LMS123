@@ -4,7 +4,7 @@
         <element label="Email" max_length="40" name="email" type="string"/>
         <element label="Learner name" max_length="40" name="learner_name" reference="sys_user_grmember" reference_qual="group=baccee6893f9c210b09bf2918bba107b^EQ" reference_qual_condition="group=baccee6893f9c210b09bf2918bba107b^EQ" type="reference"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element choice="3" default="in progress" label="Status" max_length="40" name="status" type="choice">
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
                 <element inactive="true" inactive_on_update="true" label="-- New choice --" sequence="0" value="-- New choice --"/>
                 <element inactive_on_update="false" label="Approved" sequence="0" value="approved"/>

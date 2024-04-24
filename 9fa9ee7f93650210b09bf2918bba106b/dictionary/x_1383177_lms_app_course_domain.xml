@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element attributes="update_synch=true" db_object_id="b679691c93358210b09bf2918bba100a" extends="dl_matcher" label="Course Domain" max_length="40" name="x_1383177_lms_app_course_domain" type="collection">
+        <element label="Course manager" max_length="40" name="course_manager" reference="sys_user_grmember" reference_qual="group=0002e2ac93b9c210b09bf2918bba10c7^EQ" reference_qual_condition="group=0002e2ac93b9c210b09bf2918bba10c7^EQ" type="glide_list"/>
         <element label="Description" max_length="200" name="description" type="string"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
