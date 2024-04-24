@@ -7,8 +7,8 @@
                 <element inactive_on_update="false" label="Wiki" sequence="1" value="wiki"/>
             </choice>
         </element>
-        <element display="true" label="Course name" max_length="40" name="course_name" reference="x_1383177_lms_app_course" type="reference"/>
-        <element label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Course name" max_length="40" name="course_name" reference="x_1383177_lms_app_course" type="reference"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element label="Short description" mandatory="true" max_length="100" name="short_description" type="string"/>
     </element>
