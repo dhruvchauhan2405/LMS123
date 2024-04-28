@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_m2m">
+    <sys_m2m action="DELETE">
+        <from_table>x_1383177_lms_app_course_domain</from_table>
+        <m2m_from_field>x_1383177_lms_app_course_domain</m2m_from_field>
+        <m2m_from_label>Courses</m2m_from_label>
+        <m2m_table>x_1383177_lms_app_m2m_course_and_course_domain</m2m_table>
+        <m2m_to_field>x_1383177_lms_app_course</m2m_to_field>
+        <m2m_to_label>Course Domains</m2m_to_label>
+        <sys_class_name>sys_m2m</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-28 06:49:00</sys_created_on>
+        <sys_id>ab15a89693bd8a10b09bf2918bba1027</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_m2m_course_and_course_domain</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_m2m_ab15a89693bd8a10b09bf2918bba1027</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-28 06:49:00</sys_updated_on>
+        <to_table>x_1383177_lms_app_course</to_table>
+    </sys_m2m>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_m2m_ab15a89693bd8a10b09bf2918bba1027</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_m2m"><sys_m2m action="INSERT_OR_UPDATE"><from_table>x_1383177_lms_app_course_domain</from_table><m2m_from_field>x_1383177_lms_app_course_domain</m2m_from_field><m2m_from_label>Courses</m2m_from_label><m2m_table>x_1383177_lms_app_m2m_course_and_course_domain</m2m_table><m2m_to_field>x_1383177_lms_app_course</m2m_to_field><m2m_to_label>Course Domains</m2m_to_label><sys_class_name>sys_m2m</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-04-28 06:49:00</sys_created_on><sys_id>ab15a89693bd8a10b09bf2918bba1027</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383177_lms_app_m2m_course_and_course_domain</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_m2m_ab15a89693bd8a10b09bf2918bba1027</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-04-28 06:49:00</sys_updated_on><to_table>x_1383177_lms_app_course</to_table></sys_m2m></record_update>]]></payload>
+        <payload_hash>416684377</payload_hash>
+        <record_name>x_1383177_lms_app_m2m_course_and_course_domain</record_name>
+        <reverted_from/>
+        <source>62eb218993f94610b09bf2918bba1072</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-28 06:49:01</sys_created_on>
+        <sys_id>b6c5a4d693bd8a10b09bf2918bba105e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f2376d44e0000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-28 06:49:01</sys_updated_on>
+        <type>Many to Many Definition</type>
+        <update_guid>fac5a4d6f4bd8a10b95944d6f4536c5d</update_guid>
+        <update_guid_history>fac5a4d6f4bd8a10b95944d6f4536c5d:416684377</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-28 19:57:19</sys_created_on>
+        <sys_db_object display_value="" name="sys_m2m">sys_m2m</sys_db_object>
+        <sys_id>0f2cf3af0c0549888df5d58b1cebf2a4</sys_id>
+        <sys_metadata>ab15a89693bd8a10b09bf2918bba1027</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_m2m_course_and_course_domain</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_m2m_ab15a89693bd8a10b09bf2918bba1027</sys_update_name>
+        <sys_update_version display_value="sys_m2m_ab15a89693bd8a10b09bf2918bba1027">b6c5a4d693bd8a10b09bf2918bba105e</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-28 19:57:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
