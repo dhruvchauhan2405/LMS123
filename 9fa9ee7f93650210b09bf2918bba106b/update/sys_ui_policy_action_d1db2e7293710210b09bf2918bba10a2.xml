@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>course_manager</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-30 05:51:48</sys_created_on>
+        <sys_id>d1db2e7293710210b09bf2918bba10a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>course_manager</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_ui_policy_action_d1db2e7293710210b09bf2918bba10a2</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-30 05:51:48</sys_updated_on>
+        <table>x_1383177_lms_app_course_domain</table>
+        <ui_policy display_value="Hide the course manager in course domain.">489ba67293710210b09bf2918bba10a5</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+</record_update>

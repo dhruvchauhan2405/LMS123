@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="answered_by" label="Answered by" language="en" table="x_1383177_lms_app_discussion">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>answered_by</element>
+            <help/>
+            <hint/>
+            <label>Answered by</label>
+            <language>en</language>
+            <name>x_1383177_lms_app_discussion</name>
+            <plural>Answered by</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:22:09</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Answered by</sys_name>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_documentation_x_1383177_lms_app_discussion_answered_by_en</sys_update_name>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:22:09</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

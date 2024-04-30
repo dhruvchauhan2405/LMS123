@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="e5393e7293b10210b09bf2918bba10bd" label="Discussion" max_length="40" name="x_1383177_lms_app_discussion" type="collection">
+        <element label="Answer" max_length="5000" name="answer" type="translated_html"/>
+        <element label="Answered by" max_length="32" name="answered_by" read_only="true" reference="sys_user" type="reference"/>
+        <element label="Detailed Description" max_length="5000" name="detailed_description" type="translated_html"/>
+        <element label="Module name" max_length="32" name="module_name" reference="x_1383177_lms_app_module" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Question" max_length="100" name="question" type="string"/>
+        <element label="Question by" max_length="32" name="question_by" read_only="true" reference="sys_user" type="reference"/>
+        <element label="Tag" max_length="40" name="tag" type="string"/>
+        <index name="index">
+            <element name="answered_by"/>
+        </index>
+        <index name="index2">
+            <element name="module_name"/>
+        </index>
+        <index name="index3">
+            <element name="question_by"/>
+        </index>
+    </element>
+</database>
