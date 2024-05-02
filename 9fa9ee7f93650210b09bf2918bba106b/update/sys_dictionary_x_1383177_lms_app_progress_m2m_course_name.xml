@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="question_by" table="x_1383177_lms_app_discussion">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="course_name" table="x_1383177_lms_app_progress_m2m">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -13,10 +13,10 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Question by</column_label>
+        <column_label>Course name</column_label>
         <comments/>
         <create_roles/>
-        <default_value>javascript:gs.getUserID();</default_value>
+        <default_value/>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -24,9 +24,9 @@
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
-        <dynamic_default_value display_value="Me">bdcb83a85f220100a9ad2572f2b4773d</dynamic_default_value>
+        <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>question_by</element>
+        <element>course_name</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -35,12 +35,12 @@
         <internal_type display_value="Reference">reference</internal_type>
         <mandatory>false</mandatory>
         <max_length>32</max_length>
-        <name>x_1383177_lms_app_discussion</name>
+        <name>x_1383177_lms_app_progress_m2m</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>true</read_only>
+        <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="" name="sys_user">sys_user</reference>
+        <reference display_value="" name="x_1383177_lms_app_enrollment">x_1383177_lms_app_enrollment</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -51,19 +51,19 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-04-30 09:23:58</sys_created_on>
-        <sys_name>Question by</sys_name>
+        <sys_created_on>2024-05-01 05:47:26</sys_created_on>
+        <sys_name>Course name</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_dictionary_x_1383177_lms_app_discussion_question_by</sys_update_name>
+        <sys_update_name>sys_dictionary_x_1383177_lms_app_progress_m2m_course_name</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-01 05:31:00</sys_updated_on>
+        <sys_updated_on>2024-05-01 05:47:26</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>true</use_dynamic_default>
+        <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
         <virtual_type>script</virtual_type>

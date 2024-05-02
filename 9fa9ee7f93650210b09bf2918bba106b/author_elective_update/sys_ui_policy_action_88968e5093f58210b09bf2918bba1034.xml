@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>location</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-22 08:44:07</sys_created_on>
+        <sys_id>88968e5093f58210b09bf2918bba1034</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>location</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_ui_policy_action_88968e5093f58210b09bf2918bba1034</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-22 08:44:07</sys_updated_on>
+        <table>x_1383177_lms_app_course</table>
+        <ui_policy display_value="If mode of learning is offline, then display offline details fields.">99460a5093f58210b09bf2918bba10ad</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_ui_policy_action_88968e5093f58210b09bf2918bba1034</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>location</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-22 08:44:07</sys_created_on>
+        <sys_id>88968e5093f58210b09bf2918bba1034</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>location</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_ui_policy_action_88968e5093f58210b09bf2918bba1034</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-22 08:44:07</sys_updated_on>
+        <table>x_1383177_lms_app_course</table>
+        <ui_policy display_value="If mode of learning is offline, then display offline details fields.">99460a5093f58210b09bf2918bba10ad</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>]]></payload>
+        <payload_hash>1097015542</payload_hash>
+        <record_name>location</record_name>
+        <reverted_from/>
+        <source>76bd288193f54610b09bf2918bba10b9</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-04-24 10:11:38</sys_created_on>
+        <sys_id>7bcd20c193f54610b09bf2918bba1057</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0f96e5920000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-04-24 10:11:38</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>77cd20c177f5461014c21de732825f57</update_guid>
+        <update_guid_history>77cd20c177f5461014c21de732825f57:0,1a964e50ddf58210a40ff26f4cec40bb:562364312</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-02 07:30:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>303fc8099f454392ad997f1c68700899</sys_id>
+        <sys_metadata>88968e5093f58210b09bf2918bba1034</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>location</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="If mode of learning is offline, then display offline details fields.">99460a5093f58210b09bf2918bba10ad</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_88968e5093f58210b09bf2918bba1034</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_88968e5093f58210b09bf2918bba1034">7bcd20c193f54610b09bf2918bba1057</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-02 07:30:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

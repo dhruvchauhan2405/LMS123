@@ -4,13 +4,16 @@
         <element choice="1" label="Completion Status" max_length="40" name="completion_status" type="choice">
             <choice/>
         </element>
-        <element label="Time spent" max_length="40" name="time_spent" type="glide_date_time"/>
+        <element label="Course name" max_length="32" name="course_name" reference="x_1383177_lms_app_enrollment" type="reference"/>
         <element attributes="encode_utf8=false" label="Enrollments" max_length="32" name="x_1383177_lms_app_enrollment" reference="x_1383177_lms_app_enrollment" type="reference"/>
         <element attributes="encode_utf8=false" label="Modules" max_length="32" name="x_1383177_lms_app_module" reference="x_1383177_lms_app_module" type="reference"/>
         <index name="index">
-            <element name="x_1383177_lms_app_enrollment"/>
+            <element name="course_name"/>
         </index>
         <index name="index2">
+            <element name="x_1383177_lms_app_enrollment"/>
+        </index>
+        <index name="index3">
             <element name="x_1383177_lms_app_module"/>
         </index>
     </element>
