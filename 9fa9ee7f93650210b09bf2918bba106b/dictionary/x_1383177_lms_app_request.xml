@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="3e40263893860210b09bf2918bba10b4" label="Request" max_length="40" name="x_1383177_lms_app_request" type="collection">
+        <element label="Course name" max_length="32" name="course_name" reference="x_1383177_lms_app_course" type="reference"/>
+        <element label="Learner name" max_length="32" name="learner_name" reference="x_1383177_lms_app_enrollment" type="reference"/>
+        <element label="status" max_length="32" name="status" reference="x_1383177_lms_app_enrollment" type="reference"/>
+        <index name="index">
+            <element name="course_name"/>
+        </index>
+        <index name="index2">
+            <element name="learner_name"/>
+        </index>
+        <index name="index3">
+            <element name="status"/>
+        </index>
+    </element>
+</database>
