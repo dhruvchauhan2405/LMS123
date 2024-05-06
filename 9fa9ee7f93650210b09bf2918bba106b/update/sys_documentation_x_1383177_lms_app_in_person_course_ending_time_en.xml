@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="starting_date" label="Starting date" language="en" table="x_1383177_lms_app_in_person_course">
+    <sys_documentation element="ending_time" label="Ending time" language="en" table="x_1383177_lms_app_in_person_course">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element>starting_date</element>
+            <element>ending_time</element>
             <help/>
             <hint/>
-            <label>Starting date</label>
+            <label>Ending time</label>
             <language>en</language>
             <name>x_1383177_lms_app_in_person_course</name>
-            <plural>Starting dates</plural>
+            <plural>Ending times</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>abhishek.s</sys_created_by>
             <sys_created_on>2024-05-02 14:37:20</sys_created_on>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>Starting date</sys_name>
+            <sys_name>Ending time</sys_name>
             <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
             <sys_policy/>
             <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-            <sys_update_name>sys_documentation_x_1383177_lms_app_in_person_course_starting_date_en</sys_update_name>
+            <sys_update_name>sys_documentation_x_1383177_lms_app_in_person_course_ending_time_en</sys_update_name>
             <sys_updated_by>abhishek.s</sys_updated_by>
             <sys_updated_on>2024-05-02 14:37:20</sys_updated_on>
             <url/>

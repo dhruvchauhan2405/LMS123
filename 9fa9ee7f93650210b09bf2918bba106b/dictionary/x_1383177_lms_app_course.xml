@@ -2,6 +2,7 @@
     <element db_object_id="d1c9211c93358210b09bf2918bba10d2" label="Course" max_length="40" name="x_1383177_lms_app_course" type="collection">
         <element choice="1" label="Accessibility" mandatory="true" max_length="40" name="accessibility" type="choice">
             <choice>
+                <element inactive="true" inactive_on_update="true" label="Available for all" sequence="0" value="available for all"/>
                 <element inactive_on_update="false" label="Free to access" sequence="0" value="free"/>
                 <element inactive_on_update="false" label="Requestable" sequence="1" value="requestable"/>
             </choice>
@@ -17,7 +18,6 @@
             </choice>
         </element>
         <element label="Course domain" max_length="32" name="domain" reference="x_1383177_lms_app_course_domain" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" label="Instructor" max_length="40" name="instructor" type="string"/>
         <element choice="1" label="Learning medium" max_length="40" name="learning_medium" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Online" sequence="0" value="-- New choice --"/>
