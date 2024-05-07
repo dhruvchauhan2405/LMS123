@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_1383177_lms_app_enrollment" version="2" view="course_request">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>course_name</element>
+            <list_id display_value="x_1383177_lms_app_enrollment" element="NULL" name="x_1383177_lms_app_enrollment" parent="NULL" relationship="NULL" sys_domain="global" view="ac15e681930a4210b09bf2918bba10b1">8a2562c1930a4210b09bf2918bba1073</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-05-07 05:08:45</sys_created_on>
+            <sys_id>862562c1930a4210b09bf2918bba1074</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-05-07 05:08:45</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>learner_name</element>
+            <list_id display_value="x_1383177_lms_app_enrollment" element="NULL" name="x_1383177_lms_app_enrollment" parent="NULL" relationship="NULL" sys_domain="global" view="ac15e681930a4210b09bf2918bba10b1">8a2562c1930a4210b09bf2918bba1073</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-05-07 05:08:45</sys_created_on>
+            <sys_id>0a2562c1930a4210b09bf2918bba1074</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-05-07 05:08:45</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>status</element>
+            <list_id display_value="x_1383177_lms_app_enrollment" element="NULL" name="x_1383177_lms_app_enrollment" parent="NULL" relationship="NULL" sys_domain="global" view="ac15e681930a4210b09bf2918bba10b1">8a2562c1930a4210b09bf2918bba1073</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-05-07 05:08:45</sys_created_on>
+            <sys_id>8a2562c1930a4210b09bf2918bba1074</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-05-07 05:08:45</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_1383177_lms_app_enrollment</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-05-07 05:08:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8a2562c1930a4210b09bf2918bba1073</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383177_lms_app_enrollment</sys_name>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_list_x_1383177_lms_app_enrollment_course_request</sys_update_name>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-05-07 05:08:45</sys_updated_on>
+            <sys_user/>
+            <view display_value="Course request" name="course_request">ac15e681930a4210b09bf2918bba10b1</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

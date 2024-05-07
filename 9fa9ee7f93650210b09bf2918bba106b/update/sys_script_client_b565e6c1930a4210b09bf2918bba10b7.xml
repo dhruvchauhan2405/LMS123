@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>If the discussion form is in the Answer View, then question fields become read only.</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Discussion Form Field VIsibility Script</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    var view = getView(); //get viewname
+    if (view == 'Answer_View') {
+        g_form.setReadOnly('question', true);
+		g_form.setReadOnly('detailed_description', true);
+
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-07 05:13:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b565e6c1930a4210b09bf2918bba10b7</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Discussion Form Field VIsibility Script</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_client_b565e6c1930a4210b09bf2918bba10b7</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-07 06:57:15</sys_updated_on>
+        <table>x_1383177_lms_app_discussion</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
