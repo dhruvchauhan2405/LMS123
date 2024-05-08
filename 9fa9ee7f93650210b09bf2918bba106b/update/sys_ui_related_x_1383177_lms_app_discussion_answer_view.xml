@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="x_1383177_lms_app_discussion" version="2" view="Answer_View">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Discussion - Answer View" name="x_1383177_lms_app_discussion" related_list="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">98bbe8ad93c2c210b09bf2918bba10f6</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>REL:5a2ae06d93c2c210b09bf2918bba1028</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-08 09:35:02</sys_created_on>
+            <sys_id>1cbbe8ad93c2c210b09bf2918bba10f7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-08 09:35:02</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Discussion - Answer View</calculated_name>
+            <filter/>
+            <name>x_1383177_lms_app_discussion</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-08 09:35:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>98bbe8ad93c2c210b09bf2918bba10f6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Discussion - Answer View</sys_name>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_related_x_1383177_lms_app_discussion_Answer_View</sys_update_name>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-08 09:35:02</sys_updated_on>
+            <sys_user/>
+            <view display_value="Answer View" name="Answer_View">89ad13be93350210b09bf2918bba1057</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

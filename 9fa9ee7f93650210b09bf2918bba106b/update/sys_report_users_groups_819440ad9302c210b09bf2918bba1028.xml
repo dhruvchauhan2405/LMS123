@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="Course Progress Report">899440ad9302c210b09bf2918bba1027</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-08 06:44:08</sys_created_on>
+        <sys_id>819440ad9302c210b09bf2918bba1028</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>899440ad9302c210b09bf2918bba1027</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_report_users_groups_819440ad9302c210b09bf2918bba1028</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-08 06:44:08</sys_updated_on>
+        <user_id display_value="Pranav K">9de3aecc93e90210b09bf2918bba10c8</user_id>
+    </sys_report_users_groups>
+</record_update>
