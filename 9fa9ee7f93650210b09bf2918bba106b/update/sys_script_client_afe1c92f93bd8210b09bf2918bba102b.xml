@@ -24,7 +24,7 @@
         if (answer == 'free') {
             g_form.setValue('status', 'approved');
         } else {
-            g_form.setValue('status', 'in progress');
+            g_form.setValue('status', 'approval pending');
         }
     }
 }]]></script>
@@ -34,7 +34,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>afe1c92f93bd8210b09bf2918bba102b</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>Auto Approve Free Courses Script</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -42,7 +42,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_script_client_afe1c92f93bd8210b09bf2918bba102b</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-06 08:41:41</sys_updated_on>
+        <sys_updated_on>2024-05-07 09:22:26</sys_updated_on>
         <table>x_1383177_lms_app_enrollment</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

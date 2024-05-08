@@ -4,13 +4,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>13c82209930a4210b09bf2918bba1001</sys_id>
+            <sys_created_on>2024-05-07 13:06:17</sys_created_on>
+            <sys_id>4572d4d193028210b09bf2918bba1000</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
+            <sys_updated_on>2024-05-07 13:06:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,153 +18,83 @@
             <element>course_name</element>
             <position>1</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>93c82209930a4210b09bf2918bba1001</sys_id>
+            <sys_created_on>2024-05-07 13:06:17</sys_created_on>
+            <sys_id>c972d4d193028210b09bf2918bba1000</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>instructor</element>
-            <position>2</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>17c82209930a4210b09bf2918bba1001</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
+            <sys_updated_on>2024-05-07 13:06:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>3</position>
+            <position>2</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>97c82209930a4210b09bf2918bba1001</sys_id>
+            <sys_created_on>2024-05-07 13:06:17</sys_created_on>
+            <sys_id>4d72d4d193028210b09bf2918bba1000</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
+            <sys_updated_on>2024-05-07 13:06:17</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>location</element>
+            <position>3</position>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-05-07 13:06:17</sys_created_on>
+            <sys_id>cd72d4d193028210b09bf2918bba1000</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-05-07 13:06:17</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>instructor</element>
             <position>4</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>1bc82209930a4210b09bf2918bba1001</sys_id>
+            <sys_created_on>2024-05-07 13:06:17</sys_created_on>
+            <sys_id>4172d4d193028210b09bf2918bba1001</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>schedule</element>
-            <position>5</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>9bc82209930a4210b09bf2918bba1001</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>starting_date</element>
-            <position>6</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>1fc82209930a4210b09bf2918bba1001</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>ending_date</element>
-            <position>7</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>9fc82209930a4210b09bf2918bba1001</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>starting_time</element>
-            <position>8</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>13c82209930a4210b09bf2918bba1002</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>ending_time</element>
-            <position>9</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>93c82209930a4210b09bf2918bba1002</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
+            <sys_updated_on>2024-05-07 13:06:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>10</position>
+            <position>5</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>17c82209930a4210b09bf2918bba1002</sys_id>
+            <sys_created_on>2024-05-07 13:06:17</sys_created_on>
+            <sys_id>c172d4d193028210b09bf2918bba1001</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
+            <sys_updated_on>2024-05-07 13:06:17</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>description</element>
-            <position>11</position>
+            <position>6</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-07 05:24:41</sys_created_on>
-            <sys_id>97c82209930a4210b09bf2918bba1002</sys_id>
+            <sys_created_on>2024-05-07 13:06:17</sys_created_on>
+            <sys_id>4572d4d193028210b09bf2918bba1001</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">84d9d96b9331c210b09bf2918bba1086</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-07 05:24:41</sys_updated_on>
+            <sys_updated_on>2024-05-07 13:06:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

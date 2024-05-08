@@ -8,9 +8,8 @@
             <choice>
                 <element inactive="true" inactive_on_update="true" label="-- New choice --" sequence="0" value="-- New choice --"/>
                 <element inactive_on_update="false" label="Approved" sequence="0" value="approved"/>
-                <element inactive="true" inactive_on_update="true" label="Request" sequence="0" value="request"/>
                 <element inactive_on_update="false" label="Rejected" sequence="1" value="rejected"/>
-                <element inactive_on_update="false" label="In progress" sequence="2" value="in progress"/>
+                <element inactive_on_update="false" label="Approval Pending" sequence="2" value="approval pending"/>
             </choice>
         </element>
         <index name="index">

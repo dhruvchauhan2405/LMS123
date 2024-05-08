@@ -13,7 +13,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Detailed Description</column_label>
+        <column_label>Detailed description</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -52,13 +52,13 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-04-30 07:03:12</sys_created_on>
-        <sys_name>Detailed Description</sys_name>
+        <sys_name>Detailed description</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_dictionary_x_1383177_lms_app_discussion_detailed_description</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-04-30 09:48:33</sys_updated_on>
+        <sys_updated_on>2024-05-07 09:16:30</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

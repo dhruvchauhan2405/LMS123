@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition table="x_1383177_lms_app_course">course_managerDYNAMIC32a39a165f510100a9ad2572f2b477a0^EQ<item endquery="false" field="course_manager" goto="false" newquery="false" operator="DYNAMIC" or="false" value="32a39a165f510100a9ad2572f2b477a0"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description>Allow read for records in x_1383177_lms_app_course, for users with role x_1383177_lms_app.course_manager, and if the ACL condition (course_managerDYNAMIC32a39a165f510100a9ad2572f2b477a0^EQ) evaluates to true.</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1383177_lms_app_course</name>
+        <operation display_value="read">read</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-07 10:19:56</sys_created_on>
+        <sys_id>462c2349934e4210b09bf2918bba10a3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_1383177_lms_app_course</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_security_acl_462c2349934e4210b09bf2918bba10a3</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-07 10:52:39</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

@@ -6,7 +6,7 @@
         <caller_access/>
         <client_scripts_access>true</client_scripts_access>
         <configuration_access>false</configuration_access>
-        <create_access>true</create_access>
+        <create_access>false</create_access>
         <create_access_controls>false</create_access_controls>
         <delete_access>false</delete_access>
         <is_extendable>false</is_extendable>
@@ -22,15 +22,15 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-04-30 06:16:55</sys_created_on>
         <sys_id>c8a172b693710210b09bf2918bba10e2</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Course User (M2M)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_db_object_c8a172b693710210b09bf2918bba10e2</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-04-30 09:10:26</sys_updated_on>
-        <update_access>true</update_access>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-08 04:00:24</sys_updated_on>
+        <update_access>false</update_access>
         <user_role/>
         <ws_access>true</ws_access>
     </sys_db_object>

@@ -5,7 +5,7 @@
         <basic_apply_to>x_1383177_lms_app_in_person_course</basic_apply_to>
         <basic_query_from>x_1383177_lms_app_enrollment</basic_query_from>
         <insert_callback/>
-        <name>In Person Enrollment</name>
+        <name>In-Person Enrollments</name>
         <query_from/>
         <query_with><![CDATA[(function refineQuery(current, parent) {
 
@@ -20,14 +20,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-06 08:57:37</sys_created_on>
         <sys_id>c5bc06b093460210b09bf2918bba1033</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_name>In Person Enrollment</sys_name>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>In-Person Enrollments</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_relationship_c5bc06b093460210b09bf2918bba1033</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-06 09:37:03</sys_updated_on>
+        <sys_updated_on>2024-05-07 09:11:34</sys_updated_on>
     </sys_relationship>
     <sys_translated_text action="delete_multiple" query="documentkey=c5bc06b093460210b09bf2918bba1033"/>
 </record_update>
