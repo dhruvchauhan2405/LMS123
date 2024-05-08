@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="d1c9211c93358210b09bf2918bba10d2" label="Course" max_length="40" name="x_1383177_lms_app_course" type="collection">
+        <element label="abc" max_length="50" name="abc" type="string"/>
         <element choice="1" label="Accessibility" mandatory="true" max_length="40" name="accessibility" type="choice">
             <choice>
                 <element inactive="true" inactive_on_update="true" label="Available for all" sequence="0" value="available for all"/>
