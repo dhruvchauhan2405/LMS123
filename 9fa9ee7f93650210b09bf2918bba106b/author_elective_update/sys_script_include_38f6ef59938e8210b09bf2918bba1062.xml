@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1383177_lms_app.getCourseManagersForDomain</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>getCourseManagersForDomain</name>
+        <script><![CDATA[function getCourseManagersForDomain() {
+	var courseId = this.getParameter('course_id');
+	var gqUsers = new global.GlideQuery('x_1383177_lms_app_m2m_x_1383177_lm_sys_user')
+		.where('x_1383177_lms_app_course_domain', domain)
+		.select('sys_user')
+		.reduce(function (arr, e) { arr.push(e.sys_user); return arr; }, []);
+
+	return gqUsers.join(',');
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-08 04:41:24</sys_created_on>
+        <sys_id>38f6ef59938e8210b09bf2918bba1062</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>getCourseManagersForDomain</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_include_38f6ef59938e8210b09bf2918bba1062</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:15:51</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_include_38f6ef59938e8210b09bf2918bba1062</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1383177_lms_app.getCourseManagersForDomain&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;getCourseManagersForDomain&lt;/name&gt;&lt;script&gt;&lt;![CDATA[function getCourseManagersForDomain() {
+	var courseId = this.getParameter('course_id');
+	var gqUsers = new global.GlideQuery('x_1383177_lms_app_m2m_x_1383177_lm_sys_user')
+		.where('x_1383177_lms_app_course_domain', domain)
+		.select('sys_user')
+		.reduce(function (arr, e) { arr.push(e.sys_user); return arr; }, []);
+
+	return gqUsers.join(',');
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-08 04:41:24&lt;/sys_created_on&gt;&lt;sys_id&gt;38f6ef59938e8210b09bf2918bba1062&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;getCourseManagersForDomain&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_38f6ef59938e8210b09bf2918bba1062&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;abhishek.s&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-08 14:15:51&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>189805323</payload_hash>
+        <record_name>getCourseManagersForDomain</record_name>
+        <reverted_from/>
+        <source>d1bde0619306c210b09bf2918bba1016</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-08 14:15:51</sys_created_on>
+        <sys_id>7dfbe1e5930ac210b09bf2918bba10f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f588f82ee0000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:15:51</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>75fbe1e57b0ac21097cb0f6a41016bf0</update_guid>
+        <update_guid_history>75fbe1e57b0ac21097cb0f6a41016bf0:189805323,5b782fd9508e8210d4dc10398151e89d:795398220</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-08 14:16:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>43c211f23b494d6b90979a5ab97d5ed9</sys_id>
+        <sys_metadata>38f6ef59938e8210b09bf2918bba1062</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>getCourseManagersForDomain</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_include_38f6ef59938e8210b09bf2918bba1062</sys_update_name>
+        <sys_update_version display_value="sys_script_include_38f6ef59938e8210b09bf2918bba1062">7dfbe1e5930ac210b09bf2918bba10f0</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-08 14:16:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

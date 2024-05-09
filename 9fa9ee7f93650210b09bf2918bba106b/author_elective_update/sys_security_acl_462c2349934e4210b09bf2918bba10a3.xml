@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description>Allow read for records in x_1383177_lms_app_course, for users with role x_1383177_lms_app.course_manager, and if the ACL script returns true.</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1383177_lms_app_course</name>
+        <operation display_value="read">read</operation>
+        <script><![CDATA[// var courseManagerField = current.course_manager;
+// var currentUserID = gs.getUserID();
+// var courseManagers = [];
+
+// // Fetch the names of course managers from the Glide List field
+// if (courseManagerField) {
+//     courseManagerField.forEach(function(manager) {
+//         courseManagers.push(manager.user.toString());
+//     });
+// }
+
+// // Check if the current user's ID is present in the course managers list
+// if (courseManagers.indexOf(currentUserID) !== -1) {
+//     answer = true;
+// } else {
+//     answer = false;
+// }
+
+
+
+
+// var courseManagerField = current.course_manager; 
+// var currentUserID = gs.getUserID();
+// var courseManagers = [];
+
+// // Fetch the names of course managers from the Glide List field
+// if (courseManagerField) {
+//     for (var i = 0; i < courseManagerField.size(); i++) {
+//         var manager = courseManagerField.get(i);
+//         courseManagers.push(manager.user.toString());
+//     }
+// }
+
+// // Check if the current user's ID is present in the course managers list
+// if (courseManagers.indexOf(currentUserID) !== -1) {
+//     answer = true; // Allow access if the current user is a course manager for this course
+// } else {
+//     answer = false; // Deny access if the current user is not a course manager for this course
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+(function() {
+    var courseManagerField = current.course_manager;
+    var currentUserID = gs.getUserID();
+
+    // Fetch the names of course managers from the Glide List field and split the values
+    var courseManagers = [];
+    if (courseManagerField) {
+        var managersList = courseManagerField.split(","); // Assuming course managers are separated by commas
+        managersList.forEach(function(manager) {
+            courseManagers.push(manager.trim()); // Remove any leading or trailing whitespace
+        });
+    }
+
+    // Check if the current user's name is present in the course managers list
+    if (courseManagers.indexOf(gs.getUserName()) !== -1) {
+        answer = true; // Allow access if the current user is a course manager for this course
+    } else {
+        answer = false; // Deny access if the current user is not a course manager for this course
+    }
+})();
+]]></script>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-07 10:19:56</sys_created_on>
+        <sys_id>462c2349934e4210b09bf2918bba10a3</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>x_1383177_lms_app_course</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_security_acl_462c2349934e4210b09bf2918bba10a3</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-09 04:38:33</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_security_acl_462c2349934e4210b09bf2918bba10a3</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_security_acl"&gt;&lt;sys_security_acl action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;admin_overrides&gt;true&lt;/admin_overrides&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;condition/&gt;&lt;description&gt;Allow read for records in x_1383177_lms_app_course, for users with role x_1383177_lms_app.course_manager, and if the ACL script returns true.&lt;/description&gt;&lt;local_or_existing&gt;Local&lt;/local_or_existing&gt;&lt;name&gt;x_1383177_lms_app_course&lt;/name&gt;&lt;operation display_value="read"&gt;read&lt;/operation&gt;&lt;script&gt;&lt;![CDATA[// var courseManagerField = current.course_manager;
+// var currentUserID = gs.getUserID();
+// var courseManagers = [];
+
+// // Fetch the names of course managers from the Glide List field
+// if (courseManagerField) {
+//     courseManagerField.forEach(function(manager) {
+//         courseManagers.push(manager.user.toString());
+//     });
+// }
+
+// // Check if the current user's ID is present in the course managers list
+// if (courseManagers.indexOf(currentUserID) !== -1) {
+//     answer = true;
+// } else {
+//     answer = false;
+// }
+
+
+
+
+// var courseManagerField = current.course_manager; 
+// var currentUserID = gs.getUserID();
+// var courseManagers = [];
+
+// // Fetch the names of course managers from the Glide List field
+// if (courseManagerField) {
+//     for (var i = 0; i &lt; courseManagerField.size(); i++) {
+//         var manager = courseManagerField.get(i);
+//         courseManagers.push(manager.user.toString());
+//     }
+// }
+
+// // Check if the current user's ID is present in the course managers list
+// if (courseManagers.indexOf(currentUserID) !== -1) {
+//     answer = true; // Allow access if the current user is a course manager for this course
+// } else {
+//     answer = false; // Deny access if the current user is not a course manager for this course
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+(function() {
+    var courseManagerField = current.course_manager;
+    var currentUserID = gs.getUserID();
+
+    // Fetch the names of course managers from the Glide List field and split the values
+    var courseManagers = [];
+    if (courseManagerField) {
+        var managersList = courseManagerField.split(","); // Assuming course managers are separated by commas
+        managersList.forEach(function(manager) {
+            courseManagers.push(manager.trim()); // Remove any leading or trailing whitespace
+        });
+    }
+
+    // Check if the current user's name is present in the course managers list
+    if (courseManagers.indexOf(gs.getUserName()) !== -1) {
+        answer = true; // Allow access if the current user is a course manager for this course
+    } else {
+        answer = false; // Deny access if the current user is not a course manager for this course
+    }
+})();
+]]&gt;&lt;/script&gt;&lt;security_attribute/&gt;&lt;sys_class_name&gt;sys_security_acl&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-07 10:19:56&lt;/sys_created_on&gt;&lt;sys_id&gt;462c2349934e4210b09bf2918bba10a3&lt;/sys_id&gt;&lt;sys_mod_count&gt;13&lt;/sys_mod_count&gt;&lt;sys_name&gt;x_1383177_lms_app_course&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_security_acl_462c2349934e4210b09bf2918bba10a3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;abhishek.s&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-09 04:38:33&lt;/sys_updated_on&gt;&lt;type display_value="record"&gt;record&lt;/type&gt;&lt;/sys_security_acl&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1429286731</payload_hash>
+        <record_name>x_1383177_lms_app_course</record_name>
+        <reverted_from/>
+        <source>d1bde0619306c210b09bf2918bba1016</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-09 04:38:33</sys_created_on>
+        <sys_id>0b61f47d93460610b09bf2918bba108c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f5ba558180000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-09 04:38:33</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>cf61f47d94460610870d7fba3a4ab68b</update_guid>
+        <update_guid_history>cf61f47d94460610870d7fba3a4ab68b:1429286731,71a0f43df246061008cfe97f1ed6756a:-190637374,7c0940259342c210b22085e824ab4e47:1429286731,7af880258a42c210cdd3c80045e8267a:872268987,e658c4e1bf42c210574bae0c90981c66:654917023,b6c7c4a19442c210c3c4237c85cec144:-283669101,732708613e42c210a9db7fd1bfbc5490:27050019,236548ed5a02c2106f64ab3733e683e2:-1356464759,38c4882d3a02c21033fcf4f235332465:663617210,6403c02d9702c21003523faa9711df26:-1823102981,33d3bf41a68e4210aa19f8c3800a9203:1062798909,0050b38dac4e42104848bea5794e5519:-1421365101,330fe70d394e4210404111f64cc78442:86964675,2c6c2349264e42101cd5f758a55203ad:-736635864</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-09 04:38:59</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>1c1a62c05d7148a4894ce0dd2e994224</sys_id>
+        <sys_metadata>462c2349934e4210b09bf2918bba10a3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_course</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="x_1383177_lms_app_course">81cde88193f54610b09bf2918bba100a</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_security_acl_462c2349934e4210b09bf2918bba10a3</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_462c2349934e4210b09bf2918bba10a3">0b61f47d93460610b09bf2918bba108c</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-09 04:38:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
