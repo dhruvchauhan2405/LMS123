@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="x_1383177_lms_app_module" table="x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="x_232327_filter_de_course" table="x_1383177_lms_app_m2m_x_232327_fil_x_1383177_lm">
         <active>true</active>
         <array>false</array>
         <attributes>encode_utf8=false</attributes>
@@ -8,7 +8,7 @@
         <choice>0</choice>
         <choice_field/>
         <choice_table/>
-        <column_label>Modules</column_label>
+        <column_label>Courses</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -21,7 +21,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>x_1383177_lms_app_module</element>
+        <element>x_232327_filter_de_course</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
@@ -30,12 +30,12 @@
         <internal_type display_value="Reference">reference</internal_type>
         <mandatory>false</mandatory>
         <max_length>32</max_length>
-        <name>x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm</name>
+        <name>x_1383177_lms_app_m2m_x_232327_fil_x_1383177_lm</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="" name="x_1383177_lms_app_module">x_1383177_lms_app_module</reference>
+        <reference display_value="" name="x_232327_filter_de_course">x_232327_filter_de_course</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -45,15 +45,15 @@
         <spell_check>false</spell_check>
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
-        <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-04-22 07:24:51</sys_created_on>
-        <sys_name>Modules</sys_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-20 04:25:11</sys_created_on>
+        <sys_name>Courses</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_dictionary_x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_x_1383177_lms_app_module</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-04-22 07:24:51</sys_updated_on>
+        <sys_update_name>sys_dictionary_x_1383177_lms_app_m2m_x_232327_fil_x_1383177_lm_x_232327_filter_de_course</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-20 04:25:11</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
