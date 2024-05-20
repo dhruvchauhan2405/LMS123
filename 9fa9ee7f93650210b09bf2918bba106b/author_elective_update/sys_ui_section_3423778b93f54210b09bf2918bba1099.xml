@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="" section_id="3423778b93f54210b09bf2918bba1099" sys_domain="global" table="x_1383177_lms_app_progress_m2m" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_1383177_lms_app_enrollment</element>
+            <position>0</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>f9157f8f93f54210b09bf2918bba106e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>course_name</element>
+            <position>1</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>7d157f8f93f54210b09bf2918bba106e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>fd157f8f93f54210b09bf2918bba106e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>3</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>71157f8f93f54210b09bf2918bba106f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>4</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>f1157f8f93f54210b09bf2918bba106f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>completion_status</element>
+            <position>5</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>75157f8f93f54210b09bf2918bba106f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>6</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>f5157f8f93f54210b09bf2918bba106f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>completion_date</element>
+            <position>7</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:50:09</sys_created_on>
+            <sys_id>79157f8f93f54210b09bf2918bba106f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:50:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>course</element>
+            <position>8</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-20 09:02:07</sys_created_on>
+            <sys_id>9f37d6559316c610b09bf2918bba10e4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-20 09:02:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption/>
+            <header>false</header>
+            <name>x_1383177_lms_app_progress_m2m</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-01 05:41:38</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3423778b93f54210b09bf2918bba1099</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383177_lms_app_progress_m2m</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_section_3423778b93f54210b09bf2918bba1099</sys_update_name>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-01 05:41:38</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_ui_section_3423778b93f54210b09bf2918bba1099</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="3423778b93f54210b09bf2918bba1099" sys_domain="global" table="x_1383177_lms_app_progress_m2m" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>x_1383177_lms_app_enrollment</element><position>0</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>f9157f8f93f54210b09bf2918bba106e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>course_name</element><position>1</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>7d157f8f93f54210b09bf2918bba106e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>2</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>fd157f8f93f54210b09bf2918bba106e</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.end_split</element><position>3</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>71157f8f93f54210b09bf2918bba106f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type>.end_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.begin_split</element><position>4</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>f1157f8f93f54210b09bf2918bba106f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type>.begin_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>completion_status</element><position>5</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>75157f8f93f54210b09bf2918bba106f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>6</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>f5157f8f93f54210b09bf2918bba106f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>completion_date</element><position>7</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:50:09</sys_created_on><sys_id>79157f8f93f54210b09bf2918bba106f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:50:09</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>course</element><position>8</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-20 09:02:07</sys_created_on><sys_id>9f37d6559316c610b09bf2918bba10e4</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_m2m" sys_domain="global" view="Default view">3423778b93f54210b09bf2918bba1099</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-20 09:02:07</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>x_1383177_lms_app_progress_m2m</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-01 05:41:38</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>3423778b93f54210b09bf2918bba1099</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383177_lms_app_progress_m2m</sys_name><sys_overrides/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_ui_section_3423778b93f54210b09bf2918bba1099</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-01 05:41:38</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>1218689093</payload_hash>
+        <record_name>Progress (M2M)</record_name>
+        <reverted_from/>
+        <source>e790a25793464210b09bf2918bba10de</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-20 09:02:07</sys_created_on>
+        <sys_id>1f37d6559316c610b09bf2918bba10e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f953c99f10000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-20 09:02:07</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>9337d6554916c61079a7939107f9d8e7</update_guid>
+        <update_guid_history>9337d6554916c61079a7939107f9d8e7:1218689093,75157f8fb1f54210fa9b6ada7d287271:-1711735972,ca74738f22f542101fb4b9d47bf733dc:-353739379,fc233b0ffaf5421055f043ff88ae95bf:1422455674,3823778b0cf5421040854321c0949f9c:1474706658</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-20 09:06:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>47656f5b7e344a10a063318b14c39100</sys_id>
+        <sys_metadata>3423778b93f54210b09bf2918bba1099</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_progress_m2m</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="">29972ff293750210b09bf2918bba105e</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_ui_section_3423778b93f54210b09bf2918bba1099</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_3423778b93f54210b09bf2918bba1099">1f37d6559316c610b09bf2918bba10e7</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-20 09:06:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

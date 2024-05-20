@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_m2m">
+    <sys_m2m action="INSERT_OR_UPDATE">
+        <from_table>x_1383177_lms_app_discussion</from_table>
+        <m2m_from_field>x_1383177_lms_app_discussion</m2m_from_field>
+        <m2m_from_label>Forum Answers</m2m_from_label>
+        <m2m_table>x_1383177_lms_app_discussion_forum_answers_m2m</m2m_table>
+        <m2m_to_field>x_1383177_lms_app_forum_answers</m2m_to_field>
+        <m2m_to_label>Discussions</m2m_to_label>
+        <sys_class_name>sys_m2m</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-20 06:22:50</sys_created_on>
+        <sys_id>c28275959352c610b09bf2918bba10fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_discussion_forum_answers_m2m</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_m2m_c28275959352c610b09bf2918bba10fa</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-20 06:22:50</sys_updated_on>
+        <to_table>x_1383177_lms_app_forum_answers</to_table>
+    </sys_m2m>
+</record_update>

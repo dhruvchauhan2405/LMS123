@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="ef95e6599356c610b09bf2918bba1045" sys_domain="global" table="x_1383177_lms_app_progress_module_enrollment" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_1383177_lms_app_enrollment</element>
+            <position>0</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-20 10:06:05</sys_created_on>
+            <sys_id>4ce5ee599356c610b09bf2918bba1053</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_module_enrollment" sys_domain="global" view="Default view">ef95e6599356c610b09bf2918bba1045</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-20 10:06:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>1</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-20 10:06:05</sys_created_on>
+            <sys_id>cce5ee599356c610b09bf2918bba1053</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_module_enrollment" sys_domain="global" view="Default view">ef95e6599356c610b09bf2918bba1045</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-20 10:06:05</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_1383177_lms_app_module</element>
+            <position>2</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-20 10:06:05</sys_created_on>
+            <sys_id>40e5ee599356c610b09bf2918bba1054</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_module_enrollment" sys_domain="global" view="Default view">ef95e6599356c610b09bf2918bba1045</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-20 10:06:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>completion_status</element>
+            <position>3</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-20 10:06:05</sys_created_on>
+            <sys_id>c0e5ee599356c610b09bf2918bba1054</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_progress_module_enrollment" sys_domain="global" view="Default view">ef95e6599356c610b09bf2918bba1045</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-20 10:06:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_1383177_lms_app_progress_module_enrollment</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-20 10:04:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ef95e6599356c610b09bf2918bba1045</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383177_lms_app_progress_module_enrollment</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_section_ef95e6599356c610b09bf2918bba1045</sys_update_name>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-20 10:04:57</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

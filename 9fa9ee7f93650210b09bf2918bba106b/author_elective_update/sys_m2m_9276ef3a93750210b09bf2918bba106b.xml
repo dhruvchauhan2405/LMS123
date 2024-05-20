@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_m2m">
+    <sys_m2m action="DELETE">
+        <from_table>x_1383177_lms_app_module</from_table>
+        <m2m_from_field>x_1383177_lms_app_module</m2m_from_field>
+        <m2m_from_label>Enrollments</m2m_from_label>
+        <m2m_table>x_1383177_lms_app_progress_m2m</m2m_table>
+        <m2m_to_field>x_1383177_lms_app_enrollment</m2m_to_field>
+        <m2m_to_label>Modules</m2m_to_label>
+        <sys_class_name>sys_m2m</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-30 10:12:40</sys_created_on>
+        <sys_id>9276ef3a93750210b09bf2918bba106b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_progress_m2m</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_m2m_9276ef3a93750210b09bf2918bba106b</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-30 10:12:40</sys_updated_on>
+        <to_table>x_1383177_lms_app_enrollment</to_table>
+    </sys_m2m>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_m2m_9276ef3a93750210b09bf2918bba106b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_m2m"><sys_m2m action="INSERT_OR_UPDATE"><from_table>x_1383177_lms_app_module</from_table><m2m_from_field>x_1383177_lms_app_module</m2m_from_field><m2m_from_label>Enrollments</m2m_from_label><m2m_table>x_1383177_lms_app_progress_m2m</m2m_table><m2m_to_field>x_1383177_lms_app_enrollment</m2m_to_field><m2m_to_label>Modules</m2m_to_label><sys_class_name>sys_m2m</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 10:12:40</sys_created_on><sys_id>9276ef3a93750210b09bf2918bba106b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383177_lms_app_progress_m2m</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_m2m_9276ef3a93750210b09bf2918bba106b</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 10:12:40</sys_updated_on><to_table>x_1383177_lms_app_enrollment</to_table></sys_m2m></record_update>]]></payload>
+        <payload_hash>2048541275</payload_hash>
+        <record_name>x_1383177_lms_app_progress_m2m</record_name>
+        <reverted_from/>
+        <source>7feb9daa93f10e10b09bf2918bba10e8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-30 10:12:41</sys_created_on>
+        <sys_id>fd97e3ba93750210b09bf2918bba1030</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f2e7e051d0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-30 10:12:41</sys_updated_on>
+        <type>Many to Many Definition</type>
+        <update_guid>3597e3ba8d7502105ee6db394b4c2830</update_guid>
+        <update_guid_history>3597e3ba8d7502105ee6db394b4c2830:2048541275</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-20 09:06:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_m2m">sys_m2m</sys_db_object>
+        <sys_id>4f01a75637ac42d799e3db719f288d69</sys_id>
+        <sys_metadata>9276ef3a93750210b09bf2918bba106b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_progress_m2m</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_m2m_9276ef3a93750210b09bf2918bba106b</sys_update_name>
+        <sys_update_version display_value="sys_m2m_9276ef3a93750210b09bf2918bba106b">fd97e3ba93750210b09bf2918bba1030</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-20 09:06:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

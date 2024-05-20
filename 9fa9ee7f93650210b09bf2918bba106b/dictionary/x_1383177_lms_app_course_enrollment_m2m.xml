@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="cb9e195993de8610b09bf2918bba1035" label="Course Enrollment (M2M)" max_length="40" name="x_1383177_lms_app_course_enrollment_m2m" type="collection">
+        <element attributes="encode_utf8=false" label="Courses" max_length="32" name="x_1383177_lms_app_course" reference="x_1383177_lms_app_course" type="reference"/>
+        <element attributes="encode_utf8=false" label="Enrollments" max_length="32" name="x_1383177_lms_app_enrollment" reference="x_1383177_lms_app_enrollment" type="reference"/>
+        <index name="index">
+            <element name="x_1383177_lms_app_course"/>
+        </index>
+        <index name="index2">
+            <element name="x_1383177_lms_app_enrollment"/>
+        </index>
+    </element>
+</database>

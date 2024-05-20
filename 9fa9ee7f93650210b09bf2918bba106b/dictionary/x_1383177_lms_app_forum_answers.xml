@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="03f1259d93de8610b09bf2918bba103f" label="Forum Answers" max_length="40" name="x_1383177_lms_app_forum_answers" type="collection">
+        <element display="true" label="Answer" max_length="5000" name="answer" type="translated_html"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Answered_by" max_length="40" name="answered_by" read_only="true" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+    </element>
+</database>
