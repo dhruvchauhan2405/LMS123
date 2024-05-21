@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="02c2b9959352c610b09bf2918bba10aa" label="Discussions Forum Answers M2M" max_length="40" name="x_1383177_lms_app_discussion_forum_answers_m2m" type="collection">
-        <element attributes="encode_utf8=false" display="true" label="Question" max_length="32" name="x_1383177_lms_app_discussion" read_only="true" reference="x_1383177_lms_app_discussion" type="reference"/>
-        <element attributes="encode_utf8=false" label="Answer" max_length="32" name="x_1383177_lms_app_forum_answers" reference="x_1383177_lms_app_forum_answers" type="reference"/>
-        <index name="index">
-            <element name="x_1383177_lms_app_discussion"/>
-        </index>
-    </element>
-</database>

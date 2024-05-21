@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="DELETE">
+        <collection>incident</collection>
+        <email_layout/>
+        <message/>
+        <message_html><![CDATA[<p>Hello,&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Thank You,</p>
+<p>LMS System</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>LMS Notification Layout</name>
+        <sms_alternate/>
+        <subject/>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 04:09:20</sys_created_on>
+        <sys_id>3e7a5ae193160a10b09bf2918bba10fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Notification Layout</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sysevent_email_template_3e7a5ae193160a10b09bf2918bba10fa</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 04:09:20</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sysevent_email_template_3e7a5ae193160a10b09bf2918bba10fa</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sysevent_email_template"&gt;&lt;sysevent_email_template action="INSERT_OR_UPDATE"&gt;&lt;collection&gt;incident&lt;/collection&gt;&lt;email_layout/&gt;&lt;message/&gt;&lt;message_html&gt;&lt;![CDATA[&lt;p&gt;Hello,&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Thank You,&lt;/p&gt;
+&lt;p&gt;LMS System&lt;/p&gt;]]&gt;&lt;/message_html&gt;&lt;message_list/&gt;&lt;message_text/&gt;&lt;name&gt;LMS Notification Layout&lt;/name&gt;&lt;sms_alternate/&gt;&lt;subject/&gt;&lt;sys_class_name&gt;sysevent_email_template&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-21 04:09:20&lt;/sys_created_on&gt;&lt;sys_id&gt;3e7a5ae193160a10b09bf2918bba10fa&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;LMS Notification Layout&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sysevent_email_template_3e7a5ae193160a10b09bf2918bba10fa&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;abhishek.s&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-21 04:09:20&lt;/sys_updated_on&gt;&lt;sys_version&gt;2&lt;/sys_version&gt;&lt;/sysevent_email_template&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2126461782</payload_hash>
+        <record_name>LMS Notification Layout</record_name>
+        <reverted_from/>
+        <source>d1bde0619306c210b09bf2918bba1016</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 05:06:22</sys_created_on>
+        <sys_id>2fdaa6e593d60a10b09bf2918bba10e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f998b1f190000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 05:06:22</sys_updated_on>
+        <type>Email Template</type>
+        <update_guid>4cddd22da6d20a10669102597103db84</update_guid>
+        <update_guid_history>4cddd22da6d20a10669102597103db84:-840960531,4cddd22da6d20a10669102597103db84:-840960531</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 05:19:16</sys_created_on>
+        <sys_db_object display_value="" name="sysevent_email_template">sysevent_email_template</sys_db_object>
+        <sys_id>014d61106c634e6480400b5b40ecab90</sys_id>
+        <sys_metadata>3e7a5ae193160a10b09bf2918bba10fa</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Notification Layout</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="Incident">de3e0c68d9b13110cedf7dffddb48fd6</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sysevent_email_template_3e7a5ae193160a10b09bf2918bba10fa</sys_update_name>
+        <sys_update_version display_value="sysevent_email_template_3e7a5ae193160a10b09bf2918bba10fa">2fdaa6e593d60a10b09bf2918bba10e9</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 05:19:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
