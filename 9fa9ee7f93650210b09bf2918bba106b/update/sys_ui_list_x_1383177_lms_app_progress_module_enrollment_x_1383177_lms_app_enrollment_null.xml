@@ -3,47 +3,32 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>x_1383177_lms_app_module.name</element>
-            <list_id display_value="x_1383177_lms_app_progress_module_enrollment" element="NULL" name="x_1383177_lms_app_progress_module_enrollment" parent="x_1383177_lms_app_enrollment" relationship="NULL" sys_domain="global" view="Default view">c9176ad99356c610b09bf2918bba1005</list_id>
+            <list_id display_value="x_1383177_lms_app_progress_module_enrollment" element="NULL" name="x_1383177_lms_app_progress_module_enrollment" parent="x_1383177_lms_app_enrollment" relationship="NULL" sys_domain="global" view="Default view">eb4d4325939a0a10b09bf2918bba10bf</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>pranav.k</sys_created_by>
-            <sys_created_on>2024-05-20 10:11:20</sys_created_on>
-            <sys_id>c5176ad99356c610b09bf2918bba1006</sys_id>
+            <sys_created_on>2024-05-21 07:36:50</sys_created_on>
+            <sys_id>eb4d4325939a0a10b09bf2918bba10c0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>pranav.k</sys_updated_by>
-            <sys_updated_on>2024-05-20 10:11:20</sys_updated_on>
+            <sys_updated_on>2024-05-21 07:36:50</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>x_1383177_lms_app_enrollment.course_name</element>
-            <list_id display_value="x_1383177_lms_app_progress_module_enrollment" element="NULL" name="x_1383177_lms_app_progress_module_enrollment" parent="x_1383177_lms_app_enrollment" relationship="NULL" sys_domain="global" view="Default view">c9176ad99356c610b09bf2918bba1005</list_id>
+            <element>completion_status</element>
+            <list_id display_value="x_1383177_lms_app_progress_module_enrollment" element="NULL" name="x_1383177_lms_app_progress_module_enrollment" parent="x_1383177_lms_app_enrollment" relationship="NULL" sys_domain="global" view="Default view">eb4d4325939a0a10b09bf2918bba10bf</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>pranav.k</sys_created_by>
-            <sys_created_on>2024-05-20 10:11:20</sys_created_on>
-            <sys_id>49176ad99356c610b09bf2918bba1006</sys_id>
+            <sys_created_on>2024-05-21 07:36:50</sys_created_on>
+            <sys_id>634d4325939a0a10b09bf2918bba10c1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>pranav.k</sys_updated_by>
-            <sys_updated_on>2024-05-20 10:11:20</sys_updated_on>
-        </sys_ui_list_element>
-        <sys_ui_list_element action="INSERT_OR_UPDATE">
-            <average_value>false</average_value>
-            <element>completion_status</element>
-            <list_id display_value="x_1383177_lms_app_progress_module_enrollment" element="NULL" name="x_1383177_lms_app_progress_module_enrollment" parent="x_1383177_lms_app_enrollment" relationship="NULL" sys_domain="global" view="Default view">c9176ad99356c610b09bf2918bba1005</list_id>
-            <max_value>false</max_value>
-            <min_value>false</min_value>
-            <position>2</position>
-            <sum>false</sum>
-            <sys_created_by>pranav.k</sys_created_by>
-            <sys_created_on>2024-05-20 10:11:20</sys_created_on>
-            <sys_id>c9176ad99356c610b09bf2918bba1006</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>pranav.k</sys_updated_by>
-            <sys_updated_on>2024-05-20 10:11:20</sys_updated_on>
+            <sys_updated_on>2024-05-21 07:36:50</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -57,10 +42,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>pranav.k</sys_created_by>
-            <sys_created_on>2024-05-20 10:11:20</sys_created_on>
+            <sys_created_on>2024-05-21 07:36:50</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>c9176ad99356c610b09bf2918bba1005</sys_id>
+            <sys_id>eb4d4325939a0a10b09bf2918bba10bf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_1383177_lms_app_progress_module_enrollment</sys_name>
             <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -68,7 +53,7 @@
             <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
             <sys_update_name>sys_ui_list_x_1383177_lms_app_progress_module_enrollment_x_1383177_lms_app_enrollment_null</sys_update_name>
             <sys_updated_by>pranav.k</sys_updated_by>
-            <sys_updated_on>2024-05-20 10:11:20</sys_updated_on>
+            <sys_updated_on>2024-05-21 07:36:50</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

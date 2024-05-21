@@ -7,7 +7,8 @@
         <affected_field_on_event/>
         <category display_value="Approval" name="Approval">1a9d02137f232200ee2e108c3ffa9113</category>
         <collection>x_1383177_lms_app_enrollment</collection>
-        <condition/>
+        <condition table="x_1383177_lms_app_enrollment">null<item endquery="false" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
         <content_type>text/html</content_type>
         <default_interval/>
         <description/>
@@ -37,13 +38,24 @@
         <mandatory>false</mandatory>
         <message/>
         <message_html><![CDATA[<p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 14pt;">Dear<strong> ${learner_name}</strong>,</span></p>
-<p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Congratulations on enrolling in <strong>${course_name}</strong>! We're excited to have you join our community of learners.</span></p>
+<p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Congratulations on enrolling in <strong>${course_name}</strong>!. This is a free course. We're excited to have you join our community of learners.</span></p>
 <p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 12pt;">Here&rsquo;s How to Get Started:</span></p>
-<p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">1. Access Your Course.<br />3. Explore Course Materials.<br />4. Enjoy our discussion fourm.</span></p>
+<ol style="list-style-position: inside;">
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Access Your Course.</span></li>
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Explore Course Materials.</span></li>
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Enjoy our discussion forum.</span></li>
+</ol>
 <p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 12pt;">&nbsp;What to Expect:</span></p>
-<p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">- Interactive Lessons<br />- Flexible Learning.<br />- Supportive Community</span></p>
+<ul style="list-style-position: inside;">
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Interactive Lessons</span></li>
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Flexible Learning.</span></li>
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Supportive Community</span></li>
+</ul>
 <p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 12pt;">&nbsp;Tips for Success:</span></p>
-<p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">- Stay Consistent: Set aside dedicated time each week to focus on your learning.<br />- Participate Actively: Engage in discussions and activities to deepen your understanding.<br /></span></p>
+<ul style="list-style-position: inside;">
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Stay Consistent: Set aside dedicated time each week to focus on your learning.</span></li>
+<li style="font-size: 10pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Participate Actively: Engage in discussions and activities to deepen your understanding.<br /></span></li>
+</ul>
 <p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">We&rsquo;re thrilled to support you on your learning journey. Get ready to dive in and start expanding your knowledge!</span></p>
 <p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Happy learning!</span></p>
 <p style="margin-right: 0cm; margin-left: 0cm; font-size: 12pt; font-family: 'Times New Roman', serif;"><span style="font-size: 10.0pt;">Best regards,</span></p>
@@ -72,7 +84,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c2ad4b95931ac610b09bf2918bba1096</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Auto Approved Course </sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -80,7 +92,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sysevent_email_action_c2ad4b95931ac610b09bf2918bba1096</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-21 05:23:23</sys_updated_on>
+        <sys_updated_on>2024-05-21 15:46:43</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="LMS Email Template">5adcae6993d60a10b09bf2918bba106b</template>
         <type>email</type>

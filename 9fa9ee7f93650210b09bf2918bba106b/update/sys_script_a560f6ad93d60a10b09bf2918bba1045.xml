@@ -6,7 +6,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Auto-populate Tags</name>
+        <name>Auto-populate Tags(Inactive)</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -27,46 +27,33 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
-    // Function to extract tags from detailed_description
-    function extractTags(description) {
-        // Simple example: split by spaces and filter out common words
-        // You can use a more sophisticated approach depending on your needs
-        var commonWords = ['the', 'and', 'new', 'gt', 'ta', 'of', 'a', 'to', 'p', 'i', 'am', "a", "an", "this", "and", "but", "or", "nor", "so", "yet", "at", "by", "for", "from", "in", "of", "on", "to", "with", "he", "she", "it", "they", "them", "we", "us", "you", "I", "am", "is", "are", "was", "were", "be", "being", "been", "have", "has", "had", "do", "does", "did", "can", "could", "will", "would", "shall", "should", "may", "might", "must", "very", "too", "just", "only", "if", "then", "else", "when", "where", "how", "why", "what",'1','2','3','4','5','6','7','8','9','0','m'];
-        var words = description.split(/\W+/);
-        var tag = [];
-
-        words.forEach(function(word) {
-            if (word && !commonWords.includes(word.toLowerCase())) {
-                tag.push(word.toLowerCase());
-            }
-        });
-
-        return tag.join(','); // Join tags by comma or any other delimiter
-    }
-
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
     if (current.detailed_description) {
-        current.tag = extractTags(current.detailed_description);
+        var aylien = new AylienTextAnalysis();
+        var tag = aylien.getTags(current.detailed_description);
+        if (tag) {
+            current.tag = tag;
+        }
     }
-
-})(current, previous);]]></script>
+})(current, previous);
+]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-21 05:35:06</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a560f6ad93d60a10b09bf2918bba1045</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Auto-populate Tags</sys_name>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Auto-populate Tags(Inactive)</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_script_a560f6ad93d60a10b09bf2918bba1045</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-21 05:51:48</sys_updated_on>
+        <sys_updated_on>2024-05-21 06:29:17</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>async_always</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=a560f6ad93d60a10b09bf2918bba1045"/>
 </record_update>

@@ -1,0 +1,2462 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=7114000,viewActivatedIn=naturalLanguage</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>requestable_or_inperson_course</internal_name>
+        <label_cache>[{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.learning_medium","label":"1 - Look Up Record➛Enrollment Record➛Course name➛Learning medium","reference":"","reference_display":"Learning medium","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"learning_medium","choices":[{"image":"","reference":false,"label":"Online","used":false,"rawLabel":"Online","selected":false,"missing":false,"value":"-- New choice --","parameters":{"name":"x_1383177_lms_app_course"}},{"image":"","reference":false,"label":"In-person","used":false,"rawLabel":"In-person","selected":false,"missing":false,"value":"in-person","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.accessibility","label":"1 - Look Up Record➛Enrollment Record➛Course name➛Accessibility","reference":"","reference_display":"Accessibility","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","image":"","reference":false,"used":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","reference":false,"label":"Free to access","used":false,"rawLabel":"Free to access","selected":false,"missing":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"image":"","reference":false,"label":"Requestable","used":false,"rawLabel":"Requestable","selected":false,"missing":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"f208bcd0-15e4-420e-a427-816ae1fe2efc.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.status","label":"1 - Look Up Record➛Enrollment Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"status","choices":[{"label":"-- None --","image":"","reference":false,"used":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","reference":false,"label":"Approved","used":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"x_1383177_lms_app_enrollment"}},{"image":"","reference":false,"label":"Rejected","used":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"x_1383177_lms_app_enrollment"}},{"image":"","reference":false,"label":"Approval Pending","used":false,"rawLabel":"Approval Pending","selected":false,"missing":false,"value":"approval pending","parameters":{"name":"x_1383177_lms_app_enrollment"}}]},{"name":"{{static.144c2aa893f9c210b09bf2918bba10e2}}","label":"LMS Manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.0002e2ac93b9c210b09bf2918bba10c7}}","label":"LMS Course manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record","label":"1 - Look Up Record➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.request_enrollment","label":"Input➛request enrollment","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"d5c97086-c8dd-4102-9f57-63bb69a4db4d"}}]</label_cache>
+        <master_snapshot>a95ab0f193924a10b09bf2918bba1069</master_snapshot>
+        <name>Requestable or In-Person course</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 13:34:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d83fd83193124a10b09bf2918bba10a8</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Requestable or In-Person course</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_hub_flow_d83fd83193124a10b09bf2918bba10a8</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_variable_value action="delete_multiple" query="document_key=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=d83fd83193124a10b09bf2918bba10a8^sys_idNOT IN943fd83193124a10b09bf2918bba10a9"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>d83fd83193124a10b09bf2918bba10a8</id>
+        <name>Requestable or In-Person course</name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 13:34:35</sys_created_on>
+        <sys_id>943fd83193124a10b09bf2918bba10a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 13:34:35</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=943fd83193124a10b09bf2918bba10a9"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=d83fd83193124a10b09bf2918bba10a8^sys_idNOT IN788aa0fd93124a10b09bf2918bba10e3"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=d5c97086-c8dd-4102-9f57-63bb69a4db4d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_enrollment</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>request enrollment</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</model>
+        <model_id>d83fd83193124a10b09bf2918bba10a8</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_d83fd83193124a10b09bf2918bba10a8</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>788aa0fd93124a10b09bf2918bba10e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=788aa0fd93124a10b09bf2918bba10e3"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=d83fd83193124a10b09bf2918bba10a8^sys_idNOT IN418ae0fd93124a10b09bf2918bba1021,498aa0fd93124a10b09bf2918bba10f1,4d8aa0fd93124a10b09bf2918bba10f9,5d8ae0fd93124a10b09bf2918bba1036,858ae0fd93124a10b09bf2918bba1018,898ae0fd93124a10b09bf2918bba100f,cd8ae0fd93124a10b09bf2918bba1005,d18ae0fd93124a10b09bf2918bba103f"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>10</order>
+        <parent_ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>418ae0fd93124a10b09bf2918bba1021</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>057a61a9-5567-4179-b048-58b54c258706</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=418ae0fd93124a10b09bf2918bba1021"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>418ae0fd93124a10b09bf2918bba1021</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>058ae0fd93124a10b09bf2918bba102f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>418ae0fd93124a10b09bf2918bba1021</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>898ae0fd93124a10b09bf2918bba1022</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>status=rejected</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=418ae0fd93124a10b09bf2918bba1021"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>418ae0fd93124a10b09bf2918bba1021</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>098ae0fd93124a10b09bf2918bba1022</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>418ae0fd93124a10b09bf2918bba1021</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>818ae0fd93124a10b09bf2918bba1022</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>418ae0fd93124a10b09bf2918bba1021</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>458ae0fd93124a10b09bf2918bba1022</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=418ae0fd93124a10b09bf2918bba1021"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=418ae0fd93124a10b09bf2918bba1021"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>498aa0fd93124a10b09bf2918bba10f1</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>af7bbd59-09d3-47ea-a57f-5684f85af97e</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=498aa0fd93124a10b09bf2918bba10f1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>498aa0fd93124a10b09bf2918bba10f1</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>818aa0fd93124a10b09bf2918bba10f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">d909f99587003300663ca1bb36cb0ba4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=498aa0fd93124a10b09bf2918bba10f1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>conditions</field>
+        <id>498aa0fd93124a10b09bf2918bba10f1</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>498aa0fd93124a10b09bf2918bba10f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_9d09f99587003300663ca1bb36cb0ba3</table>
+        <value>sys_id={{subflow.request_enrollment}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>498aa0fd93124a10b09bf2918bba10f1</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>018aa0fd93124a10b09bf2918bba10f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_9d09f99587003300663ca1bb36cb0ba3</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=498aa0fd93124a10b09bf2918bba10f1"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=498aa0fd93124a10b09bf2918bba10f1"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>4d8aa0fd93124a10b09bf2918bba10f9</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>f208bcd0-15e4-420e-a427-816ae1fe2efc</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=4d8aa0fd93124a10b09bf2918bba10f9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4d8aa0fd93124a10b09bf2918bba10f9</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>0d8aa0fd93124a10b09bf2918bba10fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">bcf2e9920b10030085c083eb37673acc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4d8aa0fd93124a10b09bf2918bba10f9</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>498aa0fd93124a10b09bf2918bba10fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <value/>
+        <variable display_value="Due Date">c5f2e9920b10030085c083eb37673af9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4d8aa0fd93124a10b09bf2918bba10f9</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>858aa0fd93124a10b09bf2918bba10fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <value>status</value>
+        <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=4d8aa0fd93124a10b09bf2918bba10f9"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_conditions</field>
+        <id>4d8aa0fd93124a10b09bf2918bba10f9</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>418aa0fd93124a10b09bf2918bba10fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>ApprovesRejectsAnyG[{{static.0002e2ac93b9c210b09bf2918bba10c7}},{{static.144c2aa893f9c210b09bf2918bba10e2}}]</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_field</field>
+        <id>4d8aa0fd93124a10b09bf2918bba10f9</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>098aa0fd93124a10b09bf2918bba10fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>due_date</field>
+        <id>4d8aa0fd93124a10b09bf2918bba10f9</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>8d8aa0fd93124a10b09bf2918bba10fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{"action":"none","date_type":"actual","date":"{{}}","duration":1,"duration_type":"days","schedule":"","schedule_label":""}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>4d8aa0fd93124a10b09bf2918bba10f9</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>c98aa0fd93124a10b09bf2918bba10fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>4d8aa0fd93124a10b09bf2918bba10f9</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>058aa0fd93124a10b09bf2918bba10fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4d8aa0fd93124a10b09bf2918bba10f9"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4d8aa0fd93124a10b09bf2918bba10f9"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>12</order>
+        <parent_ui_id>9d608ad9-b9a7-4e75-81cb-cfb7fedb0e38</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>5d8ae0fd93124a10b09bf2918bba1036</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>7c4284f5-b074-47dc-918d-d8b25bb2dcdc</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5d8ae0fd93124a10b09bf2918bba1036"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5d8ae0fd93124a10b09bf2918bba1036</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>598ae0fd93124a10b09bf2918bba1038</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5d8ae0fd93124a10b09bf2918bba1036</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>958ae0fd93124a10b09bf2918bba1038</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>da086cf993124a10b09bf2918bba10e4</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5d8ae0fd93124a10b09bf2918bba1036"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>5d8ae0fd93124a10b09bf2918bba1036</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>9d8ae0fd93124a10b09bf2918bba1037</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>5d8ae0fd93124a10b09bf2918bba1036</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>158ae0fd93124a10b09bf2918bba1038</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>5d8ae0fd93124a10b09bf2918bba1036</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>518ae0fd93124a10b09bf2918bba1038</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5d8ae0fd93124a10b09bf2918bba1036"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5d8ae0fd93124a10b09bf2918bba1036"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>8</order>
+        <parent_ui_id>97b154a1-4b4e-4c07-a103-a5af413eed93</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>858ae0fd93124a10b09bf2918bba1018</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>676dfc10-b611-4f4b-9123-cb5b94e9ac40</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=858ae0fd93124a10b09bf2918bba1018"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>858ae0fd93124a10b09bf2918bba1018</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>818ae0fd93124a10b09bf2918bba101a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>858ae0fd93124a10b09bf2918bba1018</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>cd8ae0fd93124a10b09bf2918bba1019</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>a720fe6d93d60a10b09bf2918bba1046</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=858ae0fd93124a10b09bf2918bba1018"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>858ae0fd93124a10b09bf2918bba1018</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>c58ae0fd93124a10b09bf2918bba1019</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>858ae0fd93124a10b09bf2918bba1018</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>4d8ae0fd93124a10b09bf2918bba1019</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>858ae0fd93124a10b09bf2918bba1018</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>898ae0fd93124a10b09bf2918bba1019</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=858ae0fd93124a10b09bf2918bba1018"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=858ae0fd93124a10b09bf2918bba1018"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>6</order>
+        <parent_ui_id>0b13b053-a7c7-4379-9239-53555ca09a3b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>898ae0fd93124a10b09bf2918bba100f</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>65cf0c4b-1703-461f-8f55-498344fb07cd</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=898ae0fd93124a10b09bf2918bba100f"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>898ae0fd93124a10b09bf2918bba100f</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>898ae0fd93124a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>898ae0fd93124a10b09bf2918bba100f</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>c58ae0fd93124a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>3ea7a43993124a10b09bf2918bba1065</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=898ae0fd93124a10b09bf2918bba100f"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>898ae0fd93124a10b09bf2918bba100f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>cd8ae0fd93124a10b09bf2918bba1010</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>898ae0fd93124a10b09bf2918bba100f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>458ae0fd93124a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>898ae0fd93124a10b09bf2918bba100f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>818ae0fd93124a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=898ae0fd93124a10b09bf2918bba100f"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=898ae0fd93124a10b09bf2918bba100f"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>4</order>
+        <parent_ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>cd8ae0fd93124a10b09bf2918bba1005</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>1505cdb2-4a98-45dd-ad45-d050e19f335a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=cd8ae0fd93124a10b09bf2918bba1005"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>cd8ae0fd93124a10b09bf2918bba1005</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>0d8ae0fd93124a10b09bf2918bba1007</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>status=approved</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>cd8ae0fd93124a10b09bf2918bba1005</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>cd8ae0fd93124a10b09bf2918bba1007</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=cd8ae0fd93124a10b09bf2918bba1005"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>cd8ae0fd93124a10b09bf2918bba1005</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>898ae0fd93124a10b09bf2918bba1007</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>cd8ae0fd93124a10b09bf2918bba1005</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>058ae0fd93124a10b09bf2918bba1007</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>cd8ae0fd93124a10b09bf2918bba1005</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>c58ae0fd93124a10b09bf2918bba1007</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=cd8ae0fd93124a10b09bf2918bba1005"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cd8ae0fd93124a10b09bf2918bba1005"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <order>14</order>
+        <parent_ui_id>505de110-d19d-4754-b865-ce5ed3d4c634</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>d18ae0fd93124a10b09bf2918bba103f</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:40:54</sys_updated_on>
+        <ui_id>0130ea10-8bbe-48fe-b28a-2c63056fa517</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=d18ae0fd93124a10b09bf2918bba103f"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d18ae0fd93124a10b09bf2918bba103f</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>1d8ae0fd93124a10b09bf2918bba1040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>fee27a21931a0a10b09bf2918bba1028</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d18ae0fd93124a10b09bf2918bba103f</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>dd8ae0fd93124a10b09bf2918bba1040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=d18ae0fd93124a10b09bf2918bba103f"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>d18ae0fd93124a10b09bf2918bba103f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>158ae0fd93124a10b09bf2918bba1040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>d18ae0fd93124a10b09bf2918bba103f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>998ae0fd93124a10b09bf2918bba1040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>d18ae0fd93124a10b09bf2918bba103f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>d58ae0fd93124a10b09bf2918bba1040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d18ae0fd93124a10b09bf2918bba103f"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d18ae0fd93124a10b09bf2918bba103f"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=d83fd83193124a10b09bf2918bba10a8^sys_idNOT IN0d8aa0fd93124a10b09bf2918bba10fd,0d8ae0fd93124a10b09bf2918bba101a,858ae0fd93124a10b09bf2918bba1012,8d8ae0fd93124a10b09bf2918bba102f,c98ae0fd93124a10b09bf2918bba1008,d18ae0fd93124a10b09bf2918bba1039"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">818aa0fd93124a10b09bf2918bba10fd</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>0d8aa0fd93124a10b09bf2918bba10fd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+        <ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=0d8aa0fd93124a10b09bf2918bba10fd"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>0d8aa0fd93124a10b09bf2918bba10fd</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>458ae0fd93124a10b09bf2918bba1001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <value>If approved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=0d8aa0fd93124a10b09bf2918bba10fd"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>0d8aa0fd93124a10b09bf2918bba10fd</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>c18ae0fd93124a10b09bf2918bba1001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{f208bcd0-15e4-420e-a427-816ae1fe2efc.approval_state}}=approved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>0d8aa0fd93124a10b09bf2918bba10fd</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>018ae0fd93124a10b09bf2918bba1001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=0d8aa0fd93124a10b09bf2918bba10fd"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0d8aa0fd93124a10b09bf2918bba10fd"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">858ae0fd93124a10b09bf2918bba101a</block>
+        <comment/>
+        <connected_to>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>0d8ae0fd93124a10b09bf2918bba101a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+        <ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=0d8ae0fd93124a10b09bf2918bba101a"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=0d8ae0fd93124a10b09bf2918bba101a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0d8ae0fd93124a10b09bf2918bba101a"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">018ae0fd93124a10b09bf2918bba1012</block>
+        <comment/>
+        <connected_to>0b13b053-a7c7-4379-9239-53555ca09a3b</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>858ae0fd93124a10b09bf2918bba1012</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+        <ui_id>97b154a1-4b4e-4c07-a103-a5af413eed93</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=858ae0fd93124a10b09bf2918bba1012"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=858ae0fd93124a10b09bf2918bba1012"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=858ae0fd93124a10b09bf2918bba1012"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">098ae0fd93124a10b09bf2918bba102f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>8d8ae0fd93124a10b09bf2918bba102f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+        <ui_id>9d608ad9-b9a7-4e75-81cb-cfb7fedb0e38</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=8d8ae0fd93124a10b09bf2918bba102f"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>8d8ae0fd93124a10b09bf2918bba102f</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>0d8ae0fd93124a10b09bf2918bba1032</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>If In-Person course</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=8d8ae0fd93124a10b09bf2918bba102f"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>8d8ae0fd93124a10b09bf2918bba102f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>898ae0fd93124a10b09bf2918bba1032</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.learning_medium}}=in-person</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>8d8ae0fd93124a10b09bf2918bba102f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>c58ae0fd93124a10b09bf2918bba1032</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=8d8ae0fd93124a10b09bf2918bba102f"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8d8ae0fd93124a10b09bf2918bba102f"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">458ae0fd93124a10b09bf2918bba1008</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>c98ae0fd93124a10b09bf2918bba1008</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+        <ui_id>0b13b053-a7c7-4379-9239-53555ca09a3b</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=c98ae0fd93124a10b09bf2918bba1008"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>c98ae0fd93124a10b09bf2918bba1008</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>498ae0fd93124a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <value>If In-Person course</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=c98ae0fd93124a10b09bf2918bba1008"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>c98ae0fd93124a10b09bf2918bba1008</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>c58ae0fd93124a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.learning_medium}}=in-person</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>c98ae0fd93124a10b09bf2918bba1008</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>058ae0fd93124a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=c98ae0fd93124a10b09bf2918bba1008"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c98ae0fd93124a10b09bf2918bba1008"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">5d8ae0fd93124a10b09bf2918bba1038</block>
+        <comment/>
+        <connected_to>9d608ad9-b9a7-4e75-81cb-cfb7fedb0e38</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:05</sys_created_on>
+        <sys_id>d18ae0fd93124a10b09bf2918bba1039</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+        <ui_id>505de110-d19d-4754-b865-ce5ed3d4c634</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=d18ae0fd93124a10b09bf2918bba1039"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=d18ae0fd93124a10b09bf2918bba1039"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d18ae0fd93124a10b09bf2918bba1039"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_d83fd83193124a10b09bf2918bba10a8^sys_idNOT INc98aa0fd93124a10b09bf2918bba10e6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_enrollment</element>
+        <help/>
+        <hint/>
+        <label>request enrollment</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d83fd83193124a10b09bf2918bba10a8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 14:24:04</sys_created_on>
+        <sys_id>c98aa0fd93124a10b09bf2918bba10e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 14:24:04</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>requestable_or_inperson_course</internal_name>
+        <label_cache>[{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.learning_medium","label":"1 - Look Up Record➛Enrollment Record➛Course name➛Learning medium","reference":"","reference_display":"Learning medium","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"learning_medium","choices":[{"image":"","reference":false,"label":"Online","used":false,"rawLabel":"Online","selected":false,"missing":false,"value":"-- New choice --","parameters":{"name":"x_1383177_lms_app_course"}},{"image":"","reference":false,"label":"In-person","used":false,"rawLabel":"In-person","selected":false,"missing":false,"value":"in-person","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.accessibility","label":"1 - Look Up Record➛Enrollment Record➛Course name➛Accessibility","reference":"","reference_display":"Accessibility","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","image":"","reference":false,"used":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","reference":false,"label":"Free to access","used":false,"rawLabel":"Free to access","selected":false,"missing":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"image":"","reference":false,"label":"Requestable","used":false,"rawLabel":"Requestable","selected":false,"missing":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"f208bcd0-15e4-420e-a427-816ae1fe2efc.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.status","label":"1 - Look Up Record➛Enrollment Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"status","choices":[{"label":"-- None --","image":"","reference":false,"used":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"image":"","reference":false,"label":"Approved","used":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"x_1383177_lms_app_enrollment"}},{"image":"","reference":false,"label":"Rejected","used":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"x_1383177_lms_app_enrollment"}},{"image":"","reference":false,"label":"Approval Pending","used":false,"rawLabel":"Approval Pending","selected":false,"missing":false,"value":"approval pending","parameters":{"name":"x_1383177_lms_app_enrollment"}}]},{"name":"{{static.144c2aa893f9c210b09bf2918bba10e2}}","label":"LMS Manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.0002e2ac93b9c210b09bf2918bba10c7}}","label":"LMS Course manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"af7bbd59-09d3-47ea-a57f-5684f85af97e.Record","label":"1 - Look Up Record➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.request_enrollment","label":"Input➛request enrollment","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"d5c97086-c8dd-4102-9f57-63bb69a4db4d"}}]</label_cache>
+        <master>true</master>
+        <name>Requestable or In-Person course</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a95ab0f193924a10b09bf2918bba1069</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=a95ab0f193924a10b09bf2918bba1069^sys_idNOT IN695ab0f193924a10b09bf2918bba106a"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>a95ab0f193924a10b09bf2918bba1069</id>
+        <name>Requestable or In-Person course</name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>695ab0f193924a10b09bf2918bba106a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=695ab0f193924a10b09bf2918bba106a"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=a95ab0f193924a10b09bf2918bba1069^sys_idNOT IN2d5ab0f193924a10b09bf2918bba106b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=d5c97086-c8dd-4102-9f57-63bb69a4db4d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_enrollment</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>request enrollment</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</model>
+        <model_id>a95ab0f193924a10b09bf2918bba1069</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_a95ab0f193924a10b09bf2918bba1069</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>2d5ab0f193924a10b09bf2918bba106b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2d5ab0f193924a10b09bf2918bba106b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=a95ab0f193924a10b09bf2918bba1069^sys_idNOT IN4e5af0f193924a10b09bf2918bba1015,755ab0f193924a10b09bf2918bba10d3,8e5af0f193924a10b09bf2918bba100f,ce5af0f193924a10b09bf2918bba1009,f95ab0f193924a10b09bf2918bba10dc,f95af0f193924a10b09bf2918bba1003,fd5ab0f193924a10b09bf2918bba10bc,fd5ab0f193924a10b09bf2918bba10f0"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>14</order>
+        <parent_ui_id>505de110-d19d-4754-b865-ce5ed3d4c634</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>4e5af0f193924a10b09bf2918bba1015</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <ui_id>0130ea10-8bbe-48fe-b28a-2c63056fa517</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=4e5af0f193924a10b09bf2918bba1015"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4e5af0f193924a10b09bf2918bba1015</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>4a5af0f193924a10b09bf2918bba1017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4e5af0f193924a10b09bf2918bba1015</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>865af0f193924a10b09bf2918bba1017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>fee27a21931a0a10b09bf2918bba1028</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=4e5af0f193924a10b09bf2918bba1015"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>4e5af0f193924a10b09bf2918bba1015</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>8e5af0f193924a10b09bf2918bba1016</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>4e5af0f193924a10b09bf2918bba1015</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>065af0f193924a10b09bf2918bba1017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>4e5af0f193924a10b09bf2918bba1015</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>425af0f193924a10b09bf2918bba1017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4e5af0f193924a10b09bf2918bba1015"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4e5af0f193924a10b09bf2918bba1015"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>755ab0f193924a10b09bf2918bba10d3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <ui_id>f208bcd0-15e4-420e-a427-816ae1fe2efc</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=755ab0f193924a10b09bf2918bba10d3"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>755ab0f193924a10b09bf2918bba10d3</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>355ab0f193924a10b09bf2918bba10d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">bcf2e9920b10030085c083eb37673acc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>755ab0f193924a10b09bf2918bba10d3</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>715ab0f193924a10b09bf2918bba10d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value/>
+        <variable display_value="Due Date">c5f2e9920b10030085c083eb37673af9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>755ab0f193924a10b09bf2918bba10d3</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>bd5ab0f193924a10b09bf2918bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>status</value>
+        <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=755ab0f193924a10b09bf2918bba10d3"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_conditions</field>
+        <id>755ab0f193924a10b09bf2918bba10d3</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>795ab0f193924a10b09bf2918bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>ApprovesRejectsAnyG[{{static.0002e2ac93b9c210b09bf2918bba10c7}},{{static.144c2aa893f9c210b09bf2918bba10e2}}]</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_field</field>
+        <id>755ab0f193924a10b09bf2918bba10d3</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>315ab0f193924a10b09bf2918bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>due_date</field>
+        <id>755ab0f193924a10b09bf2918bba10d3</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>b55ab0f193924a10b09bf2918bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{"action":"none","date_type":"actual","date":"{{}}","duration":1,"duration_type":"days","schedule":"","schedule_label":""}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>755ab0f193924a10b09bf2918bba10d3</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>f15ab0f193924a10b09bf2918bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>755ab0f193924a10b09bf2918bba10d3</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>3d5ab0f193924a10b09bf2918bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=755ab0f193924a10b09bf2918bba10d3"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=755ab0f193924a10b09bf2918bba10d3"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>12</order>
+        <parent_ui_id>9d608ad9-b9a7-4e75-81cb-cfb7fedb0e38</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>8e5af0f193924a10b09bf2918bba100f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <ui_id>7c4284f5-b074-47dc-918d-d8b25bb2dcdc</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=8e5af0f193924a10b09bf2918bba100f"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>8e5af0f193924a10b09bf2918bba100f</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>8a5af0f193924a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>8e5af0f193924a10b09bf2918bba100f</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>c65af0f193924a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>da086cf993124a10b09bf2918bba10e4</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=8e5af0f193924a10b09bf2918bba100f"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>8e5af0f193924a10b09bf2918bba100f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>ce5af0f193924a10b09bf2918bba1010</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>8e5af0f193924a10b09bf2918bba100f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>465af0f193924a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>8e5af0f193924a10b09bf2918bba100f</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>825af0f193924a10b09bf2918bba1011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8e5af0f193924a10b09bf2918bba100f"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8e5af0f193924a10b09bf2918bba100f"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>10</order>
+        <parent_ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>ce5af0f193924a10b09bf2918bba1009</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <ui_id>057a61a9-5567-4179-b048-58b54c258706</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=ce5af0f193924a10b09bf2918bba1009"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>ce5af0f193924a10b09bf2918bba1009</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>0a5af0f193924a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>status=rejected</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>ce5af0f193924a10b09bf2918bba1009</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>ca5af0f193924a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=ce5af0f193924a10b09bf2918bba1009"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>ce5af0f193924a10b09bf2918bba1009</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>865af0f193924a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>ce5af0f193924a10b09bf2918bba1009</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>025af0f193924a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>ce5af0f193924a10b09bf2918bba1009</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>c25af0f193924a10b09bf2918bba100b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=ce5af0f193924a10b09bf2918bba1009"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ce5af0f193924a10b09bf2918bba1009"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>4</order>
+        <parent_ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>f95ab0f193924a10b09bf2918bba10dc</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <ui_id>1505cdb2-4a98-45dd-ad45-d050e19f335a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=f95ab0f193924a10b09bf2918bba10dc"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>f95ab0f193924a10b09bf2918bba10dc</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>b15ab0f193924a10b09bf2918bba10eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>f95ab0f193924a10b09bf2918bba10dc</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>fd5ab0f193924a10b09bf2918bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>status=approved</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=f95ab0f193924a10b09bf2918bba10dc"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>f95ab0f193924a10b09bf2918bba10dc</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>7d5ab0f193924a10b09bf2918bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>f95ab0f193924a10b09bf2918bba10dc</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>f55ab0f193924a10b09bf2918bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>f95ab0f193924a10b09bf2918bba10dc</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>b95ab0f193924a10b09bf2918bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=f95ab0f193924a10b09bf2918bba10dc"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f95ab0f193924a10b09bf2918bba10dc"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>8</order>
+        <parent_ui_id>97b154a1-4b4e-4c07-a103-a5af413eed93</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>f95af0f193924a10b09bf2918bba1003</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <ui_id>676dfc10-b611-4f4b-9123-cb5b94e9ac40</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=f95af0f193924a10b09bf2918bba1003"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>f95af0f193924a10b09bf2918bba1003</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>355af0f193924a10b09bf2918bba1005</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>a720fe6d93d60a10b09bf2918bba1046</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>f95af0f193924a10b09bf2918bba1003</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>f55af0f193924a10b09bf2918bba1005</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=f95af0f193924a10b09bf2918bba1003"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>f95af0f193924a10b09bf2918bba1003</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>3d5af0f193924a10b09bf2918bba1004</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>f95af0f193924a10b09bf2918bba1003</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>b15af0f193924a10b09bf2918bba1005</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>f95af0f193924a10b09bf2918bba1003</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>fd5af0f193924a10b09bf2918bba1004</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=f95af0f193924a10b09bf2918bba1003"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f95af0f193924a10b09bf2918bba1003"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>fd5ab0f193924a10b09bf2918bba10bc</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <ui_id>af7bbd59-09d3-47ea-a57f-5684f85af97e</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=fd5ab0f193924a10b09bf2918bba10bc"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>fd5ab0f193924a10b09bf2918bba10bc</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>f15ab0f193924a10b09bf2918bba10bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">d909f99587003300663ca1bb36cb0ba4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=fd5ab0f193924a10b09bf2918bba10bc"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>conditions</field>
+        <id>fd5ab0f193924a10b09bf2918bba10bc</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>bd5ab0f193924a10b09bf2918bba10be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table>var__m_sys_hub_action_input_9d09f99587003300663ca1bb36cb0ba3</table>
+        <value>sys_id={{subflow.request_enrollment}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>fd5ab0f193924a10b09bf2918bba10bc</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>715ab0f193924a10b09bf2918bba10bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_9d09f99587003300663ca1bb36cb0ba3</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=fd5ab0f193924a10b09bf2918bba10bc"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=fd5ab0f193924a10b09bf2918bba10bc"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <order>6</order>
+        <parent_ui_id>0b13b053-a7c7-4379-9239-53555ca09a3b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>fd5ab0f193924a10b09bf2918bba10f0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <ui_id>65cf0c4b-1703-461f-8f55-498344fb07cd</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=fd5ab0f193924a10b09bf2918bba10f0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>fd5ab0f193924a10b09bf2918bba10f0</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>3d5ab0f193924a10b09bf2918bba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>3ea7a43993124a10b09bf2918bba1065</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>fd5ab0f193924a10b09bf2918bba10f0</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>fd5ab0f193924a10b09bf2918bba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <value>x_1383177_lms_app_enrollment</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=fd5ab0f193924a10b09bf2918bba10f0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>fd5ab0f193924a10b09bf2918bba10f0</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>355ab0f193924a10b09bf2918bba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>fd5ab0f193924a10b09bf2918bba10f0</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>b95ab0f193924a10b09bf2918bba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>fd5ab0f193924a10b09bf2918bba10f0</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:13</sys_created_on>
+        <sys_id>f55ab0f193924a10b09bf2918bba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=fd5ab0f193924a10b09bf2918bba10f0"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=fd5ab0f193924a10b09bf2918bba10f0"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=a95ab0f193924a10b09bf2918bba1069^sys_idNOT IN395ab0f193924a10b09bf2918bba10a4,655ab0f193924a10b09bf2918bba109b,a95ab0f193924a10b09bf2918bba1086,bd5ab0f193924a10b09bf2918bba10a0,e95ab0f193924a10b09bf2918bba1097,f15ab0f193924a10b09bf2918bba109e"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">5d8ae0fd93124a10b09bf2918bba1038</block>
+        <comment/>
+        <connected_to>9d608ad9-b9a7-4e75-81cb-cfb7fedb0e38</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>395ab0f193924a10b09bf2918bba10a4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <ui_id>505de110-d19d-4754-b865-ce5ed3d4c634</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=395ab0f193924a10b09bf2918bba10a4"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=395ab0f193924a10b09bf2918bba10a4"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=395ab0f193924a10b09bf2918bba10a4"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">018ae0fd93124a10b09bf2918bba1012</block>
+        <comment/>
+        <connected_to>0b13b053-a7c7-4379-9239-53555ca09a3b</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>655ab0f193924a10b09bf2918bba109b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <ui_id>97b154a1-4b4e-4c07-a103-a5af413eed93</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=655ab0f193924a10b09bf2918bba109b"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=655ab0f193924a10b09bf2918bba109b"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=655ab0f193924a10b09bf2918bba109b"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">818aa0fd93124a10b09bf2918bba10fd</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>a95ab0f193924a10b09bf2918bba1086</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=a95ab0f193924a10b09bf2918bba1086"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>a95ab0f193924a10b09bf2918bba1086</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>6d5ab0f193924a10b09bf2918bba1096</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <value>If approved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=a95ab0f193924a10b09bf2918bba1086"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>a95ab0f193924a10b09bf2918bba1086</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>e95ab0f193924a10b09bf2918bba1096</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{f208bcd0-15e4-420e-a427-816ae1fe2efc.approval_state}}=approved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>a95ab0f193924a10b09bf2918bba1086</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>295ab0f193924a10b09bf2918bba1096</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=a95ab0f193924a10b09bf2918bba1086"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=a95ab0f193924a10b09bf2918bba1086"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">098ae0fd93124a10b09bf2918bba102f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>bd5ab0f193924a10b09bf2918bba10a0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <ui_id>9d608ad9-b9a7-4e75-81cb-cfb7fedb0e38</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=bd5ab0f193924a10b09bf2918bba10a0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>bd5ab0f193924a10b09bf2918bba10a0</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>3d5ab0f193924a10b09bf2918bba10a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <value>If In-Person course</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=bd5ab0f193924a10b09bf2918bba10a0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>bd5ab0f193924a10b09bf2918bba10a0</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>b95ab0f193924a10b09bf2918bba10a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.learning_medium}}=in-person</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>bd5ab0f193924a10b09bf2918bba10a0</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>f55ab0f193924a10b09bf2918bba10a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=bd5ab0f193924a10b09bf2918bba10a0"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=bd5ab0f193924a10b09bf2918bba10a0"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">458ae0fd93124a10b09bf2918bba1008</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>e95ab0f193924a10b09bf2918bba1097</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <ui_id>0b13b053-a7c7-4379-9239-53555ca09a3b</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=e95ab0f193924a10b09bf2918bba1097"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>e95ab0f193924a10b09bf2918bba1097</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>695ab0f193924a10b09bf2918bba109a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <value>If In-Person course</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e95ab0f193924a10b09bf2918bba1097"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>e95ab0f193924a10b09bf2918bba1097</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>e55ab0f193924a10b09bf2918bba109a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{af7bbd59-09d3-47ea-a57f-5684f85af97e.Record.course_name.learning_medium}}=in-person</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>e95ab0f193924a10b09bf2918bba1097</id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>255ab0f193924a10b09bf2918bba109a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=e95ab0f193924a10b09bf2918bba1097"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e95ab0f193924a10b09bf2918bba1097"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">858ae0fd93124a10b09bf2918bba101a</block>
+        <comment/>
+        <connected_to>bc6c8bab-1605-4ef6-bdb8-51f20d7f6e6a</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Requestable or In-Person course">a95ab0f193924a10b09bf2918bba1069</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>f15ab0f193924a10b09bf2918bba109e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <ui_id>8fcbcc9a-d0c9-4b1c-b0a7-d439bdc87975</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=f15ab0f193924a10b09bf2918bba109e"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=f15ab0f193924a10b09bf2918bba109e"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=f15ab0f193924a10b09bf2918bba109e"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_a95ab0f193924a10b09bf2918bba1069^sys_idNOT INe15ab0f193924a10b09bf2918bba1080"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_enrollment</element>
+        <help/>
+        <hint/>
+        <label>request enrollment</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a95ab0f193924a10b09bf2918bba1069</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:12</sys_created_on>
+        <sys_id>e15ab0f193924a10b09bf2918bba1080</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:12</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_a95ab0f193924a10b09bf2918bba1069"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>d83fd83193124a10b09bf2918bba10a8</sys_id>
+        <latest_snapshot>a95ab0f193924a10b09bf2918bba1069</latest_snapshot>
+        <compiler_build>glide-vancouver-07-06-2023__patch2-hotfix1-10-04-2023_10-06-2023_1235.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=d83fd83193124a10b09bf2918bba10a8"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=d83fd83193124a10b09bf2918bba10a8^sys_idNOT INde5af0f193924a10b09bf2918bba107d"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"de5af0f193924a10b09bf2918bba107d","name":"plan","plan_signature":null}}</plan>
+        <plan_id display_value="Requestable or In-Person course">d83fd83193124a10b09bf2918bba10a8</plan_id>
+        <snapshot>0e1cbc7593924a10b09bf2918bba1096</snapshot>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-21 15:33:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>de5af0f193924a10b09bf2918bba107d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:33:15</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

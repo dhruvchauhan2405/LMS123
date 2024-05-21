@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-20 04:58:05</sys_created_on>
+        <sys_id>fd1fd19993de8610b09bf2918bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_1383177_lms_app.course_manager</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_security_acl display_value="">ec1fd19993de8610b09bf2918bba102c</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_fd1fd19993de8610b09bf2918bba10ea</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-20 04:58:05</sys_updated_on>
+        <sys_user_role display_value="x_1383177_lms_app.course_manager" name="x_1383177_lms_app.course_manager">71d9aebf93650210b09bf2918bba101a</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_security_acl_role_fd1fd19993de8610b09bf2918bba10ea</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-05-20 04:58:05</sys_created_on><sys_id>fd1fd19993de8610b09bf2918bba10ea</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.x_1383177_lms_app.course_manager</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_security_acl display_value="">ec1fd19993de8610b09bf2918bba102c</sys_security_acl><sys_update_name>sys_security_acl_role_fd1fd19993de8610b09bf2918bba10ea</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-05-20 04:58:05</sys_updated_on><sys_user_role display_value="x_1383177_lms_app.course_manager" name="x_1383177_lms_app.course_manager">71d9aebf93650210b09bf2918bba101a</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>418589612</payload_hash>
+        <record_name>.x_1383177_lms_app.course_manager</record_name>
+        <reverted_from/>
+        <source>d1bde0619306c210b09bf2918bba1016</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-20 04:58:05</sys_created_on>
+        <sys_id>e86f959993de8610b09bf2918bba1045</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f945d2f070000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-20 04:58:05</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>206f95997dde86109bd12acfcc914c45</update_guid>
+        <update_guid_history>206f95997dde86109bd12acfcc914c45:418589612</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value=".x_1383177_lms_app.course_manager">ab84f4f993524a10b09bf2918bba1092</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-21 15:07:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>07fd02c961604fc982c497d6c50a6ca1</sys_id>
+        <sys_metadata>fd1fd19993de8610b09bf2918bba10ea</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_1383177_lms_app.course_manager</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="">ec1fd19993de8610b09bf2918bba102c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_fd1fd19993de8610b09bf2918bba10ea</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_fd1fd19993de8610b09bf2918bba10ea">e86f959993de8610b09bf2918bba1045</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:07:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
