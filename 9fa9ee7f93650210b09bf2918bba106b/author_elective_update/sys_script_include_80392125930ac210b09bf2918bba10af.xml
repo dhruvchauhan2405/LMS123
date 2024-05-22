@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>x_1383177_lms_app.CourseManagerUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>CourseManagerUtils</name>
+        <script><![CDATA[// var CourseManagerUtils = Class.create();
+// CourseManagerUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+//     type: 'CourseManagerUtils'
+// });
+
+var CourseManagerUtils = Class.create();
+CourseManagerUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getCourseManagerByDomain: function() {
+		var domainName = this.getParameter('domain');
+        var courseManager = '';
+        var courseDomainGR = new GlideRecord('x_1383177_lms_app_course_domain');
+        if (courseDomainGR.get('name', domainName)) {
+            courseManager = courseDomainGR.getValue('course_manager');
+        }
+        return courseManager;
+    }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-08 14:05:38</sys_created_on>
+        <sys_id>80392125930ac210b09bf2918bba10af</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CourseManagerUtils</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_include_80392125930ac210b09bf2918bba10af</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-09 09:39:17</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_include_80392125930ac210b09bf2918bba10af</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;false&lt;/active&gt;&lt;api_name&gt;x_1383177_lms_app.CourseManagerUtils&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;CourseManagerUtils&lt;/name&gt;&lt;script&gt;&lt;![CDATA[// var CourseManagerUtils = Class.create();
+// CourseManagerUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+//     type: 'CourseManagerUtils'
+// });
+
+var CourseManagerUtils = Class.create();
+CourseManagerUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getCourseManagerByDomain: function() {
+		var domainName = this.getParameter('domain');
+        var courseManager = '';
+        var courseDomainGR = new GlideRecord('x_1383177_lms_app_course_domain');
+        if (courseDomainGR.get('name', domainName)) {
+            courseManager = courseDomainGR.getValue('course_manager');
+        }
+        return courseManager;
+    }
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-08 14:05:38&lt;/sys_created_on&gt;&lt;sys_id&gt;80392125930ac210b09bf2918bba10af&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;CourseManagerUtils&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_80392125930ac210b09bf2918bba10af&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;abhishek.s&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-09 09:39:17&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>701413454</payload_hash>
+        <record_name>CourseManagerUtils</record_name>
+        <reverted_from/>
+        <source>d1bde0619306c210b09bf2918bba1016</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-09 09:39:17</sys_created_on>
+        <sys_id>5046b1fd938a0610b09bf2918bba1089</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f5cb8a9eb0000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-09 09:39:17</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>1846b1fdd78a0610bfae320c936d2588</update_guid>
+        <update_guid_history>1846b1fdd78a0610bfae320c936d2588:701413454,0119ec71c3460610c251b479cc5674af:-838191363,31eae165420ac2100868e394d54bae80:-2000883064,e4a929251c0ac21003293b0fe2732bc8:-1671180054</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 05:15:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>429cb6dc4c13405589a77d70fb98ce59</sys_id>
+        <sys_metadata>80392125930ac210b09bf2918bba10af</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CourseManagerUtils</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_include_80392125930ac210b09bf2918bba10af</sys_update_name>
+        <sys_update_version display_value="sys_script_include_80392125930ac210b09bf2918bba10af">5046b1fd938a0610b09bf2918bba1089</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 05:15:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list action="DELETE" parent="" relationship="" sys_domain="global" table="x_1383177_lms_app_discussion" version="2" view="answer_view">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>64b0220d93c64210b09bf2918bba102d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>module_name</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>e4b0220d93c64210b09bf2918bba102d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>question_by</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>68b0220d93c64210b09bf2918bba102d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>question</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>e8b0220d93c64210b09bf2918bba102d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>detailed_description</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>6cb0220d93c64210b09bf2918bba102d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>tag</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>ecb0220d93c64210b09bf2918bba102d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>answer</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>60b0220d93c64210b09bf2918bba102e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>answered_by</element>
+            <list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_id>e0b0220d93c64210b09bf2918bba102e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_1383177_lms_app_discussion</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>68b0220d93c64210b09bf2918bba102c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383177_lms_app_discussion</sys_name>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_list_x_1383177_lms_app_discussion_Answer_View</sys_update_name>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+            <sys_user/>
+            <view display_value="Answer View" name="Answer_View">89ad13be93350210b09bf2918bba1057</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_ui_list_x_1383177_lms_app_discussion_answer_view</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_list parent="" relationship="" sys_domain="global" table="x_1383177_lms_app_discussion" version="2" view="answer_view"><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>number</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>0</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>64b0220d93c64210b09bf2918bba102d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>module_name</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>1</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>e4b0220d93c64210b09bf2918bba102d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>question_by</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>2</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>68b0220d93c64210b09bf2918bba102d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>question</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>3</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>e8b0220d93c64210b09bf2918bba102d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>detailed_description</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>4</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>6cb0220d93c64210b09bf2918bba102d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>tag</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>5</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>ecb0220d93c64210b09bf2918bba102d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>answer</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>6</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>60b0220d93c64210b09bf2918bba102e</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>answered_by</element><list_id display_value="x_1383177_lms_app_discussion" element="NULL" name="x_1383177_lms_app_discussion" parent="NULL" relationship="NULL" sys_domain="global" view="89ad13be93350210b09bf2918bba1057">68b0220d93c64210b09bf2918bba102c</list_id><max_value>false</max_value><min_value>false</min_value><position>7</position><sum>false</sum><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_id>e0b0220d93c64210b09bf2918bba102e</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on></sys_ui_list_element><sys_ui_list action="INSERT_OR_UPDATE"><average_value>false</average_value><element/><max_value>false</max_value><min_value>false</min_value><name>x_1383177_lms_app_discussion</name><parent/><position/><relationship/><sum>false</sum><sys_class_name>sys_ui_list</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-07 04:49:16</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>68b0220d93c64210b09bf2918bba102c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383177_lms_app_discussion</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_ui_list_x_1383177_lms_app_discussion_Answer_View</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-07 04:49:16</sys_updated_on><sys_user/><view display_value="Answer View" name="Answer_View">89ad13be93350210b09bf2918bba1057</view><view_name/></sys_ui_list></sys_ui_list></record_update>]]></payload>
+        <payload_hash>306225931</payload_hash>
+        <record_name>Discussion</record_name>
+        <reverted_from/>
+        <source>5999120593c64210b09bf2918bba100c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-07 04:49:16</sys_created_on>
+        <sys_id>acb02a4d93c64210b09bf2918bba10f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f51626e550000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-07 04:49:16</sys_updated_on>
+        <type>List Layout</type>
+        <update_guid>a0b0220d65c6421079e536310fc1f130</update_guid>
+        <update_guid_history>a0b0220d65c6421079e536310fc1f130:306225931</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 05:28:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_list">sys_ui_list</sys_db_object>
+        <sys_id>50fc5329957e4926bb8909b7d060d7e4</sys_id>
+        <sys_metadata>68b0220d93c64210b09bf2918bba102c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_discussion</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="Discussion Forum">e5393e7293b10210b09bf2918bba10bd</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_ui_list_x_1383177_lms_app_discussion_Answer_View</sys_update_name>
+        <sys_update_version display_value="sys_ui_list_x_1383177_lms_app_discussion_answer_view">acb02a4d93c64210b09bf2918bba10f7</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 05:28:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

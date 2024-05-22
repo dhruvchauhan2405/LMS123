@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="75d57e64933dc210b09bf2918bba1072" label="Enrollment" max_length="40" name="x_1383177_lms_app_enrollment" type="collection">
-        <element display="true" label="Course name" mandatory="true" max_length="32" name="course_name" reference="x_1383177_lms_app_course" type="reference"/>
-        <element label="Email" max_length="40" name="email" type="string"/>
-        <element label="Learner name" mandatory="true" max_length="40" name="learner_name" reference="sys_user_grmember" reference_qual="group=baccee6893f9c210b09bf2918bba107b^EQ" reference_qual_condition="group=baccee6893f9c210b09bf2918bba107b^EQ" type="reference"/>
+        <element label="Course" mandatory="true" max_length="32" name="course_name" reference="x_1383177_lms_app_course" type="reference"/>
+        <element label="Learner" mandatory="true" max_length="40" name="learner_name" reference="sys_user" reference_qual="roles=x_1383177_lms_app.learner^EQ" reference_qual_condition="roles=x_1383177_lms_app.learner^EQ" type="reference"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element choice="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>

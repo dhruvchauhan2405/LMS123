@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>domain</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto fill Course Manager based on domain</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var courseDomainName = g_form.getValue('domain'); 
+	g_form.addInfoMessage('hello1',courseDomainName);
+    if (courseDomainName) {
+        // Load the CourseManagerUtils script include dynamically
+        var ga = new GlideAjax('CourseManagerUtils');
+        ga.addParam('sysparm_name', 'getCourseManagerByDomain');
+        ga.addParam('sysparm_domain_name', courseDomainName);
+        ga.getXMLAnswer(function(response) {
+            if (response) {
+				g_form.addInfoMessage('hello2',response);
+                g_form.setValue('abc', response);
+            }
+        });
+    }
+}
+
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-08 14:05:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8068a1e1930ac210b09bf2918bba1066</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Auto fill Course Manager based on domain</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_client_8068a1e1930ac210b09bf2918bba1066</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-09 09:39:10</sys_updated_on>
+        <table>x_1383177_lms_app_course</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_client_8068a1e1930ac210b09bf2918bba1066</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;domain&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Auto fill Course Manager based on domain&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var courseDomainName = g_form.getValue('domain'); 
+	g_form.addInfoMessage('hello1',courseDomainName);
+    if (courseDomainName) {
+        // Load the CourseManagerUtils script include dynamically
+        var ga = new GlideAjax('CourseManagerUtils');
+        ga.addParam('sysparm_name', 'getCourseManagerByDomain');
+        ga.addParam('sysparm_domain_name', courseDomainName);
+        ga.getXMLAnswer(function(response) {
+            if (response) {
+				g_form.addInfoMessage('hello2',response);
+                g_form.setValue('abc', response);
+            }
+        });
+    }
+}
+
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-08 14:05:48&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;8068a1e1930ac210b09bf2918bba1066&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name&gt;Auto fill Course Manager based on domain&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_8068a1e1930ac210b09bf2918bba1066&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;abhishek.s&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-09 09:39:10&lt;/sys_updated_on&gt;&lt;table&gt;x_1383177_lms_app_course&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-648740285</payload_hash>
+        <record_name>Auto fill Course Manager based on domain</record_name>
+        <reverted_from/>
+        <source>d1bde0619306c210b09bf2918bba1016</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-09 09:39:10</sys_created_on>
+        <sys_id>f636f1bd938a0610b09bf2918bba10c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f5cb891690000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-09 09:39:10</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>be36f1bd348a0610eef47a10859204c2</update_guid>
+        <update_guid_history>be36f1bd348a0610eef47a10859204c2:-648740285,8028b1e11f4ac2108442df762a2b817a:-2117281360,a50879e1fa4ac210fc0260004f6d6b42:428269825,a0e77925bd4ac210aa91bad2e75afe30:937316216,6e9779e10a4ac21059b39c3f84d0be35:-1262652729,fe5aa565100ac210b9cf4f391a43ee0f:-799128746,2aa96925440ac2107ddd1728c3da0eb9:108500609</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 05:16:02</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>198c6b4567e4449497dee7476b364210</sys_id>
+        <sys_metadata>8068a1e1930ac210b09bf2918bba1066</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Auto fill Course Manager based on domain</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="Course">d1c9211c93358210b09bf2918bba10d2</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_client_8068a1e1930ac210b09bf2918bba1066</sys_update_name>
+        <sys_update_version display_value="sys_script_client_8068a1e1930ac210b09bf2918bba1066">f636f1bd938a0610b09bf2918bba10c3</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 05:16:02</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

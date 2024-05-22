@@ -2,7 +2,7 @@
     <sys_ui_related sys_domain="global" table="x_1383177_lms_app_discussion" version="2" view="">
         <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
             <filter/>
-            <list_id display_value="Discussion - Default view" name="x_1383177_lms_app_discussion" related_list="NULL" sys_domain="global" view="Default view">86f322ed93960a10b09bf2918bba10b6</list_id>
+            <list_id display_value="Discussion Forum - Default view" name="x_1383177_lms_app_discussion" related_list="NULL" sys_domain="global" view="Default view">86f322ed93960a10b09bf2918bba10b6</list_id>
             <order_by/>
             <position>0</position>
             <related_list>x_1383177_lms_app_forum_answers.question_ref</related_list>
@@ -15,7 +15,7 @@
             <sys_updated_on>2024-05-21 04:36:14</sys_updated_on>
         </sys_ui_related_list_entry>
         <sys_ui_related_list action="INSERT_OR_UPDATE">
-            <calculated_name>Discussion - Default view</calculated_name>
+            <calculated_name>Discussion Forum - Default view</calculated_name>
             <filter/>
             <name>x_1383177_lms_app_discussion</name>
             <order_by/>

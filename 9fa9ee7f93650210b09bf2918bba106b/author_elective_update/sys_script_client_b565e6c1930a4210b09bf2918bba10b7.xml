@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>If the discussion form is in the Answer View, then question fields become read only.</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Discussion Form Field VIsibility Script</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    var view = getView(); //get viewname
+    if (view == 'Answer_View') {
+        g_form.setReadOnly('question', true);
+		g_form.setReadOnly('detailed_description', true);
+
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-07 05:13:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b565e6c1930a4210b09bf2918bba10b7</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Discussion Form Field VIsibility Script</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_client_b565e6c1930a4210b09bf2918bba10b7</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-07 06:57:15</sys_updated_on>
+        <table>x_1383177_lms_app_discussion</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_client_b565e6c1930a4210b09bf2918bba10b7</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;If the discussion form is in the Answer View, then question fields become read only.&lt;/description&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Discussion Form Field VIsibility Script&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    var view = getView(); //get viewname
+    if (view == 'Answer_View') {
+        g_form.setReadOnly('question', true);
+		g_form.setReadOnly('detailed_description', true);
+
+    }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-07 05:13:14&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;b565e6c1930a4210b09bf2918bba10b7&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name&gt;Discussion Form Field VIsibility Script&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_b565e6c1930a4210b09bf2918bba10b7&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-07 06:57:15&lt;/sys_updated_on&gt;&lt;table&gt;x_1383177_lms_app_discussion&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1350613899</payload_hash>
+        <record_name>Discussion Form Field VIsibility Script</record_name>
+        <reverted_from/>
+        <source>5999120593c64210b09bf2918bba100c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-07 06:57:15</sys_created_on>
+        <sys_id>9bfd7e01938a4210b09bf2918bba1051</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f51d79c530000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-07 06:57:15</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>dffdf201b48a421061f59104479c944e</update_guid>
+        <update_guid_history>dffdf201b48a421061f59104479c944e:-1350613899,064d7e4d664a421032fe46d2f66ed83f:-38362808,4aa9bac95a4a421057a6717cfd02f540:1528305285,4bd7fa49bd4a42101b90c66242977165:984814308,2ac736496f4a42103407a0d061b68a51:-1232004525,02a866858b0a42107403779abc72e1db:984814308,6326eec1650a421026f6b54cea87d336:1391094042</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 05:26:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>02c5754bf5be40808095b37fe693a784</sys_id>
+        <sys_metadata>b565e6c1930a4210b09bf2918bba10b7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Discussion Form Field VIsibility Script</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="Discussion Forum">e5393e7293b10210b09bf2918bba10bd</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_client_b565e6c1930a4210b09bf2918bba10b7</sys_update_name>
+        <sys_update_version display_value="sys_script_client_b565e6c1930a4210b09bf2918bba10b7">9bfd7e01938a4210b09bf2918bba1051</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 05:26:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

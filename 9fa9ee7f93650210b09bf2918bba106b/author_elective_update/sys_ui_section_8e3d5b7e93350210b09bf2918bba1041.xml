@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="" section_id="8e3d5b7e93350210b09bf2918bba1041" sys_domain="global" table="x_1383177_lms_app_discussion" version="3" view="Question_Form">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>423d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>question_by</element>
+            <position>1</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>c23d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>463d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>module_name</element>
+            <position>3</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>c63d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>4</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>4a3d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>question</element>
+            <position>5</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>ca3d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>detailed_description</element>
+            <position>6</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>4e3d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>tag</element>
+            <position>7</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_id>ce3d5b7e93350210b09bf2918bba1084</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption/>
+            <header>false</header>
+            <name>x_1383177_lms_app_discussion</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8e3d5b7e93350210b09bf2918bba1041</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383177_lms_app_discussion</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+            <sys_update_name>sys_ui_section_8e3d5b7e93350210b09bf2918bba1041</sys_update_name>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Question Form" name="Question_Form">463d5b7e93350210b09bf2918bba103d</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_ui_section_8e3d5b7e93350210b09bf2918bba1041</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="8e3d5b7e93350210b09bf2918bba1041" sys_domain="global" table="x_1383177_lms_app_discussion" version="3" view="Question_Form"><sys_ui_element action="INSERT_OR_UPDATE"><element>number</element><position>0</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>423d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>question_by</element><position>1</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>c23d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>2</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>463d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>module_name</element><position>3</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>c63d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.end_split</element><position>4</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>4a3d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type>.end_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>question</element><position>5</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>ca3d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>detailed_description</element><position>6</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>4e3d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>tag</element><position>7</position><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_id>ce3d5b7e93350210b09bf2918bba1084</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_discussion" sys_domain="global" view="463d5b7e93350210b09bf2918bba103d">8e3d5b7e93350210b09bf2918bba1041</sys_ui_section><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>x_1383177_lms_app_discussion</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-04-30 09:27:23</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>8e3d5b7e93350210b09bf2918bba1041</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383177_lms_app_discussion</sys_name><sys_overrides/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_ui_section_8e3d5b7e93350210b09bf2918bba1041</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-04-30 09:27:23</sys_updated_on><sys_user/><title>false</title><view display_value="Question Form" name="Question_Form">463d5b7e93350210b09bf2918bba103d</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>533151546</payload_hash>
+        <record_name>Discussion</record_name>
+        <reverted_from/>
+        <source>7feb9daa93f10e10b09bf2918bba10e8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-04-30 09:27:23</sys_created_on>
+        <sys_id>c23d5b7e93350210b09bf2918bba1087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f2e548b380000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-04-30 09:27:23</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>4a3d5b7e343502105c69ca7d8f414386</update_guid>
+        <update_guid_history>4a3d5b7e343502105c69ca7d8f414386:533151546</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 05:28:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>17f9bbb3d3984c9090f3558fbece3e10</sys_id>
+        <sys_metadata>8e3d5b7e93350210b09bf2918bba1041</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383177_lms_app_discussion</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="Discussion Forum">e5393e7293b10210b09bf2918bba10bd</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_ui_section_8e3d5b7e93350210b09bf2918bba1041</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_8e3d5b7e93350210b09bf2918bba1041">c23d5b7e93350210b09bf2918bba1087</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 05:28:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

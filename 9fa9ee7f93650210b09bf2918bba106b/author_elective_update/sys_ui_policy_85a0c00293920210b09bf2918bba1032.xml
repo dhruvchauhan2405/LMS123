@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="DELETE">
+        <active>true</active>
+        <conditions table="x_1383177_lms_app_in_person_course">ending_dateLESSTHANstarting_date@hour@before@0^EQ<item endquery="false" field="ending_date" goto="false" newquery="false" operator="LESSTHAN" or="false" value="starting_date@hour@before@0"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+	g_form.addErrorMessage("Enter valid date, You cannot select date less than start date");
+    g_form.clearValue('ending_date');
+}]]></script_true>
+        <set_values/>
+        <short_description>end date </short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 06:01:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>85a0c00293920210b09bf2918bba1032</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>end date </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_ui_policy_85a0c00293920210b09bf2918bba1032</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 06:01:49</sys_updated_on>
+        <table>x_1383177_lms_app_in_person_course</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_ui_policy_85a0c00293920210b09bf2918bba1032</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_policy"&gt;&lt;sys_ui_policy action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;conditions table="x_1383177_lms_app_in_person_course"&gt;ending_dateLESSTHANstarting_date@hour@before@0^EQ&lt;item endquery="false" field="ending_date" goto="false" newquery="false" operator="LESSTHAN" or="false" value="starting_date@hour@before@0"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/conditions&gt;&lt;description/&gt;&lt;global&gt;true&lt;/global&gt;&lt;inherit&gt;false&lt;/inherit&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;model_id/&gt;&lt;model_table/&gt;&lt;on_load&gt;true&lt;/on_load&gt;&lt;order&gt;100&lt;/order&gt;&lt;reverse_if_false&gt;true&lt;/reverse_if_false&gt;&lt;run_scripts&gt;true&lt;/run_scripts&gt;&lt;script_false&gt;&lt;![CDATA[function onCondition() {
+
+}]]&gt;&lt;/script_false&gt;&lt;script_true&gt;&lt;![CDATA[function onCondition() {
+	g_form.addErrorMessage("Enter valid date, You cannot select date less than start date");
+    g_form.clearValue('ending_date');
+}]]&gt;&lt;/script_true&gt;&lt;set_values/&gt;&lt;short_description&gt;end date &lt;/short_description&gt;&lt;sys_class_name&gt;sys_ui_policy&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-22 06:01:49&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;85a0c00293920210b09bf2918bba1032&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;end date &lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_policy_85a0c00293920210b09bf2918bba1032&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-22 06:01:49&lt;/sys_updated_on&gt;&lt;table&gt;x_1383177_lms_app_in_person_course&lt;/table&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_ui_policy&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>405356702</payload_hash>
+        <record_name>end date </record_name>
+        <reverted_from/>
+        <source>08cca3b593120210b09bf2918bba1086</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 06:01:49</sys_created_on>
+        <sys_id>d1218cce93520210b09bf2918bba1078</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f9ee43e2c0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 06:01:49</sys_updated_on>
+        <type>UI Policy</type>
+        <update_guid>19218cce90520210fb9a91614337c977</update_guid>
+        <update_guid_history>19218cce90520210fb9a91614337c977:405356702</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 06:03:37</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy">sys_ui_policy</sys_db_object>
+        <sys_id>56e4b3da2e4e4a28ad52f3a0cb8fd290</sys_id>
+        <sys_metadata>85a0c00293920210b09bf2918bba1032</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>end date </sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="In-Person Course">222751e39331c210b09bf2918bba1027</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_85a0c00293920210b09bf2918bba1032</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_85a0c00293920210b09bf2918bba1032">d1218cce93520210b09bf2918bba1078</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-22 06:03:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

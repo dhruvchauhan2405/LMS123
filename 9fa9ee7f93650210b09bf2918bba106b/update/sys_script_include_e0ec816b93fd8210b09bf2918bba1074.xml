@@ -10,12 +10,14 @@
         <script><![CDATA[var CourseAccessibilityUtil = Class.create();
 CourseAccessibilityUtil.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     getCourseAccessibility: function() {
-        var courseId = this.getParameter('course_id');
+        var courseId = this.getParameter('sysparm_course_id');
         var courseGr = new GlideRecord('x_1383177_lms_app_course');
         if (courseGr.get(courseId)) {
-
             return courseGr.getValue('accessibility');
         }
+		else{
+			return ('Not Found');
+		}
     },
     type: 'CourseAccessibilityUtil'
 });]]></script>
@@ -23,13 +25,13 @@ CourseAccessibilityUtil.prototype = Object.extendsObject(global.AbstractAjaxProc
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-02 06:56:16</sys_created_on>
         <sys_id>e0ec816b93fd8210b09bf2918bba1074</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>CourseAccessibilityUtil</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_script_include_e0ec816b93fd8210b09bf2918bba1074</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-21 16:47:56</sys_updated_on>
+        <sys_updated_on>2024-05-22 06:00:24</sys_updated_on>
     </sys_script_include>
 </record_update>
