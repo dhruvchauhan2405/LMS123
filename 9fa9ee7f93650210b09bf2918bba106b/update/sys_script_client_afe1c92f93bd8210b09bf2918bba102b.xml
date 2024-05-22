@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <applies_extended>false</applies_extended>
         <condition/>
         <description>This client script is used to automatically change the value in status as "Approved" when the couse name selected is "Free to access".</description>
@@ -34,7 +34,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>afe1c92f93bd8210b09bf2918bba102b</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>Auto Approve Free Courses Script</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -42,7 +42,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_script_client_afe1c92f93bd8210b09bf2918bba102b</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-07 09:22:26</sys_updated_on>
+        <sys_updated_on>2024-05-21 16:47:18</sys_updated_on>
         <table>x_1383177_lms_app_enrollment</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="d1c9211c93358210b09bf2918bba10d2" label="Course" max_length="40" name="x_1383177_lms_app_course" type="collection">
-        <element choice="1" label="Accessibility" mandatory="true" max_length="40" name="accessibility" type="choice">
+        <element choice="1" label="Access Type" mandatory="true" max_length="40" name="accessibility" type="choice">
             <choice>
                 <element inactive="true" inactive_on_update="true" label="Available for all" sequence="0" value="available for all"/>
                 <element inactive_on_update="false" label="Free to access" sequence="0" value="free"/>
@@ -10,7 +10,7 @@
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Content manager" mandatory="true" max_length="4000" name="content_manager_list" reference="sys_user" reference_qual="roles=x_1383177_lms_app.content_manager^EQ" reference_qual_condition="roles=x_1383177_lms_app.content_manager^EQ" type="glide_list"/>
         <element label="Course manager" max_length="4000" name="course_manager" reference="sys_user" reference_qual="roles=x_1383177_lms_app.course_manager^EQ" reference_qual_condition="roles=x_1383177_lms_app.course_manager^EQ" type="glide_list"/>
-        <element display="true" label="Name" mandatory="true" max_length="40" name="course_name" type="string"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="course_name" type="translated_text"/>
         <element choice="1" label="Level" max_length="40" name="course_type" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Beginner" sequence="0" value="beginner"/>
@@ -20,14 +20,14 @@
         </element>
         <element label="Description" max_length="5000" name="description" type="translated_html"/>
         <element label="Course domain" mandatory="true" max_length="32" name="domain" reference="x_1383177_lms_app_course_domain" type="reference"/>
-        <element choice="3" default="-- New choice --" label="Learning medium" max_length="40" name="learning_medium" type="choice">
+        <element choice="3" default="online" label="Learning medium" max_length="40" name="learning_medium" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Online" sequence="0" value="-- New choice --"/>
                 <element inactive_on_update="false" label="In-person" sequence="1" value="in-person"/>
             </choice>
         </element>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
-        <element label="Short description" max_length="200" name="short_description" type="string"/>
+        <element label="Short description" max_length="200" name="short_description" type="translated_text"/>
         <element label="Thumbnail" max_length="40" name="thumbnail" type="user_image"/>
         <index name="index">
             <element name="domain"/>
