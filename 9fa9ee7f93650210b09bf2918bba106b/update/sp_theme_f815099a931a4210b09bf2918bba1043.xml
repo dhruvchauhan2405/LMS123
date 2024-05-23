@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_theme">
+    <sp_theme action="INSERT_OR_UPDATE">
+        <css_variables>h1,h2,h3,a,p {&#13;
+	font-family: 'Poppins';&#13;
+}</css_variables>
+        <footer display_value="LMS Footer">16b7c95e931a4210b09bf2918bba10c6</footer>
+        <footer_fixed>false</footer_fixed>
+        <header display_value="LMS Header">1707cd1e931a4210b09bf2918bba1033</header>
+        <name>LMS</name>
+        <navbar_fixed>false</navbar_fixed>
+        <sys_class_name>sp_theme</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-23 05:40:13</sys_created_on>
+        <sys_id>f815099a931a4210b09bf2918bba1043</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>LMS</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_theme_f815099a931a4210b09bf2918bba1043</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-23 07:26:32</sys_updated_on>
+        <turn_off_scss_compilation>false</turn_off_scss_compilation>
+    </sp_theme>
+</record_update>

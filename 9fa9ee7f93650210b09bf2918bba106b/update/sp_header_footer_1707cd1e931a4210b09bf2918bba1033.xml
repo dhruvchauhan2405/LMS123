@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.container {
+    background-color: black; /* Set background color to black */
+    color: white; /* Set text color to white */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  	width: 100%;
+    height: 100%;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: white; /* Ensure the logo text is white */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white; /* Ensure the nav link text is white */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Add a hover effect */
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>LMS Header</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <static>false</static>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-23 05:47:49</sys_created_on>
+        <sys_id>1707cd1e931a4210b09bf2918bba1033</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>LMS Header</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_header_footer_1707cd1e931a4210b09bf2918bba1033</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-23 06:24:17</sys_updated_on>
+        <template><![CDATA[        <div class="container">
+            <div class="logo">
+                <h1>LMS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Domains</a></li>
+                    <li><a href="#about">Courses</a></li>
+                    <li><a href="#services">Forum</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+]]></template>
+    </sp_header_footer>
+</record_update>

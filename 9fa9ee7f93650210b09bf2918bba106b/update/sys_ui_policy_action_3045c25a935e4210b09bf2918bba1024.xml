@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field>learner_name.email</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-23 10:18:16</sys_created_on>
+        <sys_id>3045c25a935e4210b09bf2918bba1024</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>learner_name.email</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_ui_policy_action_3045c25a935e4210b09bf2918bba1024</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-23 10:18:16</sys_updated_on>
+        <table>x_1383177_lms_app_enrollment</table>
+        <ui_policy display_value="Make enrollment email read only.">a5054e1a935e4210b09bf2918bba1008</ui_policy>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+</record_update>

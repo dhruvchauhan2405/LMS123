@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element attributes="update_synch=true" db_object_id="b679691c93358210b09bf2918bba100a" extends="dl_matcher" label="Course Domain" max_length="40" name="x_1383177_lms_app_course_domain" type="collection">
         <element label="Description" max_length="200" name="description" type="translated_text"/>
-        <element label="Labels/Keywords" max_length="100" name="labels_keywords" type="string"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="translated_text"/>
+        <element label="Search Tags" max_length="200" name="search_tags" type="translated_text"/>
     </element>
 </database>

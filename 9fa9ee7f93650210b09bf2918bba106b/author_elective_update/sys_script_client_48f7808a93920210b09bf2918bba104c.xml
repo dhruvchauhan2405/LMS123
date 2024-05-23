@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>ending_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>End date can't be before the start date</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var startDate = new Date(g_form.getValue('starting_date'));
+    var endDate = new Date(g_form.getValue('ending_date'));
+
+    if (endDate < startDate) {
+        g_form.setValue('ending_date', '');
+		g_form.showFieldMsg('ending_date', 'Ending date cannot be before the starting date', 'error');
+    } 
+// 	else {
+//         g_form.hideFieldMsg('ending_date');
+//     }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-22 06:32:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>48f7808a93920210b09bf2918bba104c</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>End date can't be before the start date</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_client_48f7808a93920210b09bf2918bba104c</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-23 09:28:41</sys_updated_on>
+        <table>x_1383177_lms_app_in_person_course</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_client_48f7808a93920210b09bf2918bba104c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;ending_date&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;End date can't be before the start date&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var startDate = new Date(g_form.getValue('starting_date'));
+    var endDate = new Date(g_form.getValue('ending_date'));
+
+    if (endDate &lt; startDate) {
+        g_form.setValue('ending_date', '');
+		g_form.showFieldMsg('ending_date', 'Ending date cannot be before the starting date', 'error');
+    } 
+// 	else {
+//         g_form.hideFieldMsg('ending_date');
+//     }
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-22 06:32:55&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;48f7808a93920210b09bf2918bba104c&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name&gt;End date can't be before the start date&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_48f7808a93920210b09bf2918bba104c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-23 09:28:41&lt;/sys_updated_on&gt;&lt;table&gt;x_1383177_lms_app_in_person_course&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-86230964</payload_hash>
+        <record_name>End date can't be before the start date</record_name>
+        <reverted_from/>
+        <source>9689785a93d64210b09bf2918bba10c7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-23 09:28:41</sys_created_on>
+        <sys_id>651a3dda931e4210b09bf2918bba1003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fa4c7ff340000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-23 09:28:41</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>2d1a3ddae51e4210929b3bc02500e502</update_guid>
+        <update_guid_history>2d1a3ddae51e4210929b3bc02500e502:-86230964,6ead7452d61a4210e9292964492cec6f:-1519313543,d2ec30de44d642107fdf0f0c246009e9:-86230964,748c34de54d6421056740e4f0e168306:-1519313543,a94c88022bd202100f43729dbd857239:-41439437,d86b008efe92021051b37f15f21831f2:2093627446,9b3b4c8eca9202105cb51fd5325f5a9a:1062890372,e6b80cca4c920210c2d5c623e1366e58:2093627446,f0488c4ac492021099c706828aec66b8:1192700630</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-23 09:30:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>4aad54756c394e72a8dd6febafed5ab9</sys_id>
+        <sys_metadata>48f7808a93920210b09bf2918bba104c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>End date can't be before the start date</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="In-Person Course">222751e39331c210b09bf2918bba1027</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_client_48f7808a93920210b09bf2918bba104c</sys_update_name>
+        <sys_update_version display_value="sys_script_client_48f7808a93920210b09bf2918bba104c">651a3dda931e4210b09bf2918bba1003</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-23 09:30:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

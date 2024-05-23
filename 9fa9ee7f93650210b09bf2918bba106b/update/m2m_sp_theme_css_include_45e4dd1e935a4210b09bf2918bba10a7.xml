@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include">
+    <m2m_sp_theme_css_include action="INSERT_OR_UPDATE">
+        <order/>
+        <sp_css_include display_value="Google Font - Poppins">a354dd1e935a4210b09bf2918bba10a0</sp_css_include>
+        <sp_theme display_value="LMS">f815099a931a4210b09bf2918bba1043</sp_theme>
+        <sys_class_name>m2m_sp_theme_css_include</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-23 06:46:11</sys_created_on>
+        <sys_id>45e4dd1e935a4210b09bf2918bba10a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Google Font - Poppins.LMS</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>m2m_sp_theme_css_include_45e4dd1e935a4210b09bf2918bba10a7</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-23 06:46:11</sys_updated_on>
+    </m2m_sp_theme_css_include>
+</record_update>
