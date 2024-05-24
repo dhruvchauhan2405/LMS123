@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="DELETE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Extract Keywords</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Aylien Keyword Extraction [ Extract Keywords ]</qualified_name>
+        <rest_endpoint>https://api.aylien.com/api/v1/entities</rest_endpoint>
+        <rest_message display_value="Aylien Keyword Extraction">648bce2a93120210b09bf2918bba10e1</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-24 05:25:30</sys_created_on>
+        <sys_id>44cb8eea93120210b09bf2918bba10f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Extract Keywords</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_44cb8eea93120210b09bf2918bba10f9</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-24 05:25:30</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_rest_message_fn_44cb8eea93120210b09bf2918bba10f9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn"><sys_rest_message_fn action="INSERT_OR_UPDATE"><authentication_type>inherit_from_parent</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><content/><function_name>Extract Keywords</function_name><http_method>post</http_method><lock>false</lock><oauth2_profile/><protocol_name/><qualified_name>Aylien Keyword Extraction [ Extract Keywords ]</qualified_name><rest_endpoint>https://api.aylien.com/api/v1/entities</rest_endpoint><rest_message display_value="Aylien Keyword Extraction">648bce2a93120210b09bf2918bba10e1</rest_message><sys_class_name>sys_rest_message_fn</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-24 05:25:30</sys_created_on><sys_id>44cb8eea93120210b09bf2918bba10f9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Extract Keywords</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_rest_message_fn_44cb8eea93120210b09bf2918bba10f9</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-24 05:25:30</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mid_server/><use_mutual_auth>false</use_mutual_auth></sys_rest_message_fn></record_update>]]></payload>
+        <payload_hash>19291816</payload_hash>
+        <record_name>Extract Keywords</record_name>
+        <reverted_from/>
+        <source>3ff2ce2293120210b09bf2918bba1086</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-24 05:25:30</sys_created_on>
+        <sys_id>780cceea93120210b09bf2918bba1058</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fa90fb63e0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-24 05:25:30</sys_updated_on>
+        <type>HTTP Method</type>
+        <update_guid>bc0cceeae712021079ca056be16fda57</update_guid>
+        <update_guid_history>bc0cceeae712021079ca056be16fda57:19291816</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-24 05:42:01</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn">sys_rest_message_fn</sys_db_object>
+        <sys_id>3cddc0c62f8a454690a52a79815b2124</sys_id>
+        <sys_metadata>44cb8eea93120210b09bf2918bba10f9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Extract Keywords</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_44cb8eea93120210b09bf2918bba10f9</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_44cb8eea93120210b09bf2918bba10f9">780cceea93120210b09bf2918bba1058</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-24 05:42:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -5,20 +5,20 @@
         <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
-        <active>false</active>
+        <action_update>false</action_update>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_1383177_lms_app_discussion</collection>
+        <collection>x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Auto-populate Tags(Inactive)</name>
+        <name>Set Order Automatically</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -28,32 +28,40 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-    if (current.detailed_description) {
-        var aylien = new AylienTextAnalysis();
-        var tag = aylien.getTags(current.detailed_description);
-        if (tag) {
-            current.tag = tag;
+    if (current.isNewRecord()) {
+        
+        var gr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm');
+        gr.addQuery('x_1383177_lms_app_course', current.x_1383177_lms_app_course);
+        gr.orderByDesc('order'); 
+        gr.setLimit(1);
+        gr.query();
+
+        var nextOrder = 1;
+        if (gr.next()) {
+            nextOrder = gr.order + 1;
         }
+
+        current.order = nextOrder;
     }
 })(current, previous);
 ]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-05-21 05:35:06</sys_created_on>
+        <sys_created_on>2024-05-24 06:50:46</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>a560f6ad93d60a10b09bf2918bba1045</sys_id>
-        <sys_mod_count>8</sys_mod_count>
-        <sys_name>Auto-populate Tags(Inactive)</sys_name>
+        <sys_id>40ed162293920210b09bf2918bba10fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Set Order Automatically</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_script_a560f6ad93d60a10b09bf2918bba1045</sys_update_name>
+        <sys_update_name>sys_script_40ed162293920210b09bf2918bba10fb</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-21 06:29:17</sys_updated_on>
+        <sys_updated_on>2024-05-24 06:50:46</sys_updated_on>
         <template/>
-        <when>async_always</when>
+        <when>before</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=a560f6ad93d60a10b09bf2918bba1045"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=40ed162293920210b09bf2918bba10fb"/>
 </record_update>

@@ -84,6 +84,20 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>order</element>
+            <position>6</position>
+            <sys_created_by>pranav.k</sys_created_by>
+            <sys_created_on>2024-05-24 05:45:49</sys_created_on>
+            <sys_id>daa0526293520210b09bf2918bba1054</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm" sys_domain="global" view="Default view">d8fb961d9316c610b09bf2918bba1020</sys_ui_section>
+            <sys_updated_by>pranav.k</sys_updated_by>
+            <sys_updated_on>2024-05-24 05:45:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>

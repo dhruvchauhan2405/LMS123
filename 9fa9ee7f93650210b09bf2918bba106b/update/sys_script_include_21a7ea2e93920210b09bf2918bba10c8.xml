@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1383177_lms_app.KeywordExtractor</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Script for extracting keywords using Alien Text Analysis.</description>
+        <name>KeywordExtractor</name>
+        <script><![CDATA[var KeywordExtractor = Class.create();
+KeywordExtractor.prototype = {
+    initialize: function() {},
+
+    extractKeywords: function(text) {
+        // Create a new RESTMessageV2 object
+        var restMessage = new sn_ws.RESTMessageV2('Aylien Keyword Extraction', 'Extract Keywords');
+        
+        // Set the text parameter
+        restMessage.setStringParameter('text', text);
+
+        // Execute the REST message and get the response
+        var response;
+        try {
+            response = restMessage.execute();
+        } catch (ex) {
+            gs.error('Error executing REST message: ' + ex.getMessage());
+            return [];
+        }
+
+        // Parse the response body to JSON
+        var responseBody = response.getBody();
+        var responseJson = JSON.parse(responseBody);
+
+        // Extract keywords from the response
+        var keywords = [];
+        if (responseJson.entities && responseJson.entities.keyword) {
+            keywords = responseJson.entities.keyword;
+        }
+
+        return keywords;
+    },
+
+    type: 'KeywordExtractor'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-24 07:30:46</sys_created_on>
+        <sys_id>21a7ea2e93920210b09bf2918bba10c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KeywordExtractor</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_include_21a7ea2e93920210b09bf2918bba10c8</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-24 07:30:46</sys_updated_on>
+    </sys_script_include>
+</record_update>
