@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="LMS Application">d08b6e7f93650210b09bf2918bba1083</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>SEPARATOR</link_type>
+        <map_page/>
+        <mobile_title>Discussion Forum</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name/>
+        <order>120</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_1383177_lms_app.content_manager,x_1383177_lms_app.course_manager,x_1383177_lms_app.instructor,x_1383177_lms_app.lms_manager</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-09 09:20:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b9c1b9b5938a0610b09bf2918bba1036</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Discussion Forum</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_app_module_b9c1b9b5938a0610b09bf2918bba1036</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-10 04:08:26</sys_updated_on>
+        <timeline_page/>
+        <title>Discussion Forum</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_app_module_b9c1b9b5938a0610b09bf2918bba1036</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="LMS Application">d08b6e7f93650210b09bf2918bba1083</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>SEPARATOR</link_type><map_page/><mobile_title>Discussion Forum</mobile_title><mobile_view_name>Mobile</mobile_view_name><name/><order>120</order><override_menu_roles>false</override_menu_roles><query/><report/><roles>x_1383177_lms_app.content_manager,x_1383177_lms_app.course_manager,x_1383177_lms_app.instructor,x_1383177_lms_app.lms_manager</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-05-09 09:20:44</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>b9c1b9b5938a0610b09bf2918bba1036</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Discussion Forum</sys_name><sys_overrides/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_app_module_b9c1b9b5938a0610b09bf2918bba1036</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-05-10 04:08:26</sys_updated_on><timeline_page/><title>Discussion Forum</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>334079864</payload_hash>
+        <record_name>Discussion Forum</record_name>
+        <reverted_from/>
+        <source>d1bde0619306c210b09bf2918bba1016</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-10 04:08:26</sys_created_on>
+        <sys_id>f714bd82930e4610b09bf2918bba1096</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f60b021190000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-10 04:08:26</sys_updated_on>
+        <type>Module</type>
+        <update_guid>ff14bd82300e46107953926ada3fc895</update_guid>
+        <update_guid_history>ff14bd82300e46107953926ada3fc895:334079864,72ba02f5080e0610ae42f0cc65104b7d:-1359120769,a80235b9fb8a0610c084fe29c8654679:-859527626</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Discussion Forum">795c2efb93120210b09bf2918bba10b5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-28 04:59:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>0ba0f163b38349368730af95f8e25f84</sys_id>
+        <sys_metadata>b9c1b9b5938a0610b09bf2918bba1036</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Discussion Forum</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_app_module_b9c1b9b5938a0610b09bf2918bba1036</sys_update_name>
+        <sys_update_version display_value="sys_app_module_b9c1b9b5938a0610b09bf2918bba1036">f714bd82930e4610b09bf2918bba1096</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-28 04:59:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

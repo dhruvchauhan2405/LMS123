@@ -17,13 +17,12 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
-  	background-color: #222;
-  	padding:0.5rem
+    background-color: #222;
 }
 
 .footer-section {
     flex: 1;
-    padding: 10px;
+    padding: 20px;
     min-width: 250px;
 }
 
@@ -31,12 +30,9 @@
     margin-top: 0;
 }
 
-.footer-section p{
-		text-align: justify;
-}
-
-.footer-section p, .footer-section ul, .footer-section form, .footer-section a {
-    margin: 10px 0;
+.footer-section p {
+    text-align: justify;
+    line-height: 1.6;
 }
 
 .footer-section ul {
@@ -58,35 +54,12 @@
     color: #f39c12;
 }
 
-.footer-section input[type="email"] {
-    width: 80%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.footer-section button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f39c12;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.footer-section button:hover {
-    background-color: #e67e22;
-}
-
 .footer-bottom {
     text-align: center;
     padding: 20px;
-    background-color: #222;
-  	padding:0.5rem
+    background-color: #111;
+    color: #ccc;
 }
-
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -114,45 +87,32 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 05:49:34</sys_created_on>
         <sys_id>16b7c95e931a4210b09bf2918bba10c6</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>LMS Footer</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_header_footer_16b7c95e931a4210b09bf2918bba10c6</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-23 07:29:56</sys_updated_on>
+        <sys_updated_on>2024-05-28 06:26:32</sys_updated_on>
         <template><![CDATA[<div class="footer-container">
-            <div class="footer-section about">
-                <h2>About LMS</h2>
-                <p>With Learning Management System, we are dedicated to revolutionizing education by providing a user-friendly platform for the learners. Our LMS offers a comprehensive suite of tools to facilitate interactive and engaging online learning experiences. We strive to support learning by enabling access to a diverse range of courses and resources anytime, anywhere.</p>
-            </div>
-            <div class="footer-section links">
-                <h2>Quick Links</h2>
-                <ul>
-                    <li><a href="#home">Domains</a></li>
-                    <li><a href="#about">Courses</a></li>
-                    <li><a href="#services">Forum</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section subscribe">
-                <h2>Subscribe</h2>
-                <form action="#">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-            <div class="footer-section social">
-                <h2>Follow Us</h2>
-                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Learning Management System. All rights reserved.</p>
-        </div>]]></template>
+    <div class="footer-section about">
+        <h2>About LMS</h2>
+        <p>With Learning Management System, we are dedicated to revolutionizing education by providing a user-friendly platform for the learners. Our LMS offers a comprehensive suite of tools to facilitate interactive and engaging online learning experiences. We strive to support learning by enabling access to a diverse range of courses and resources anytime, anywhere.</p>
+    </div>
+    <div class="footer-section social">
+        <h2>Follow Us</h2>
+        <ul class="list-unstyled">
+            <li><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+            <li><a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+    </div>
+</div>
+<div class="footer-bottom">
+    <p>&copy; 2024 Learning Management System. All rights reserved.</p>
+</div>
+]]></template>
     </sp_header_footer>
 </record_update>

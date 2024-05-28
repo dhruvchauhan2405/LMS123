@@ -6,7 +6,6 @@
         <element display="true" label="Question" mandatory="true" max_length="500" name="question" type="translated_text"/>
         <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Question by" max_length="32" name="question_by" read_only="true" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Search Tags" max_length="200" name="search_tags" type="translated_text"/>
-        <element hint="Enter tags related to your question. This helps filter similar questions together." label="Search Tags" max_length="40" name="tag" type="string"/>
         <index name="index">
             <element name="module_name"/>
         </index>
