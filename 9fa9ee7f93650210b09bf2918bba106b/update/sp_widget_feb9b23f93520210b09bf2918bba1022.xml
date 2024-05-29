@@ -4,10 +4,10 @@
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
         <css>h1 {
-    font-size: 5rem; /* Adjust the font size as needed */
+    font-size: 3.5rem; /* Adjust the font size as needed */
     color: #333; /* Set the text color */
     text-align: left; /* Center-align the text */
-    margin-top: 50px; /* Add margin to the top for spacing */
+    margin-top: 30px; /* Add margin to the top for spacing */
     font-weight: bold; /* Make the text bold */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
 }
@@ -31,14 +31,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-28 05:57:39</sys_created_on>
         <sys_id>feb9b23f93520210b09bf2918bba1022</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>LMS main title</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_feb9b23f93520210b09bf2918bba1022</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:15:19</sys_updated_on>
+        <sys_updated_on>2024-05-28 10:06:39</sys_updated_on>
         <template><![CDATA[<div>
 	<h1>
     Empower Your Mind,<br>Unlock Limitless Learning<br>with Our LMS!

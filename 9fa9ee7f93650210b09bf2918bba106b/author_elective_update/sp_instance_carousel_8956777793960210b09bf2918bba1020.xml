@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_carousel">
+    <sp_instance_carousel action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <interval>5000</interval>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">9c4e6bfb93560210b09bf2918bba10e5</sp_column>
+        <sp_widget display_value="Carousel">cf1a5153cb21020000f8d856634c9c3c</sp_widget>
+        <sys_class_name>sp_instance_carousel</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-28 10:22:24</sys_created_on>
+        <sys_id>8956777793960210b09bf2918bba1020</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_instance_carousel_8956777793960210b09bf2918bba1020</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-28 10:22:24</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_carousel>
+    <sys_translated_text action="DELETE" query="documentkey=8956777793960210b09bf2918bba1020"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_instance_carousel_8956777793960210b09bf2918bba1020</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_carousel"><sp_instance_carousel action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><interval>5000</interval><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="2">9c4e6bfb93560210b09bf2918bba10e5</sp_column><sp_widget display_value="Carousel">cf1a5153cb21020000f8d856634c9c3c</sp_widget><sys_class_name>sp_instance_carousel</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-28 10:22:24</sys_created_on><sys_id>8956777793960210b09bf2918bba1020</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sp_instance_carousel_8956777793960210b09bf2918bba1020</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-05-28 10:22:24</sys_updated_on><title/><url/><widget_parameters/></sp_instance_carousel><sys_translated_text action="delete_multiple" query="documentkey=8956777793960210b09bf2918bba1020"/></record_update>]]></payload>
+        <payload_hash>1921418361</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>c6488b3f93920210b09bf2918bba10bc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-28 10:22:25</sys_created_on>
+        <sys_id>9156777793960210b09bf2918bba1023</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fbeb8fb030000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-28 10:22:25</sys_updated_on>
+        <type>Instance of Carousel</type>
+        <update_guid>d5567777c9960210a78267b4e5614b22</update_guid>
+        <update_guid_history>d5567777c9960210a78267b4e5614b22:1921418361</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">1077bf7793960210b09bf2918bba10d0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-28 10:27:16</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_carousel">sp_instance_carousel</sys_db_object>
+        <sys_id>00fb534577fb46b89bf6e37c5ca1a040</sys_id>
+        <sys_metadata>8956777793960210b09bf2918bba1020</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_instance_carousel_8956777793960210b09bf2918bba1020</sys_update_name>
+        <sys_update_version display_value="sp_instance_carousel_8956777793960210b09bf2918bba1020">9156777793960210b09bf2918bba1023</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-28 10:27:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

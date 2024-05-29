@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  $(document).ready(function() {
+            fetchCourseDomains();
+        });
+
+        function fetchCourseDomains() {
+            // Assuming you have GlideAjax available to fetch data from the server-side script
+            var ga = new GlideAjax('x_1383177_lms_app.FetchCourseDomains');
+            ga.addParam('sysparm_name', 'getDomains');
+            ga.getXMLAnswer(function(response) {
+                var domains = JSON.parse(response);
+                displayDomains(domains);
+            });
+        }
+
+        function displayDomains(domains) {
+            var container = $('#cards-container');
+            container.empty(); // Clear any existing content
+            for (var i = 0; i < domains.length; i++) {
+                var domain = domains[i];
+                var card = '<div class="card">' +
+                    '<div class="card-title">' + domain.name + '</div>' +
+                    '<div class="card-description">' + domain.description + '</div>' +
+                    '<div class="card-footer">' +
+                    '<a href="#">Learn More</a>' +
+                    '</div>' +
+                    '</div>';
+                container.append(card);
+            }
+        }
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            max-width: 300px;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card-description {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .card-footer {
+            text-align: right;
+        }
+        .card-footer a {
+            font-size: 1rem;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .card-footer a:hover {
+            color: #0056b3;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_domains</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Domains</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	var FetchCourseDomains = Class.create();
+FetchCourseDomains.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getDomains: function() {
+        var result = [];
+        var gr = new GlideRecord('x_1383177_lms_app_course_domain');
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                name: gr.getValue('name'),
+                description: gr.getValue('description')
+            });
+        }
+        return JSON.stringify(result);
+    }
+});
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-29 05:24:37</sys_created_on>
+        <sys_id>30cbb70493620210b09bf2918bba10bf</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>LMS Domains</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_30cbb70493620210b09bf2918bba10bf</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-29 05:47:18</sys_updated_on>
+        <template><![CDATA[<div class="container">
+        <h1 class="text-center">Course Domains</h1>
+        <div id="cards-container" class="cards-container">
+            <!-- Dynamic content will be injected here -->
+        </div>
+    </div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_widget_30cbb70493620210b09bf2918bba10bf</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+  $(document).ready(function() {
+            fetchCourseDomains();
+        });
+
+        function fetchCourseDomains() {
+            // Assuming you have GlideAjax available to fetch data from the server-side script
+            var ga = new GlideAjax('x_1383177_lms_app.FetchCourseDomains');
+            ga.addParam('sysparm_name', 'getDomains');
+            ga.getXMLAnswer(function(response) {
+                var domains = JSON.parse(response);
+                displayDomains(domains);
+            });
+        }
+
+        function displayDomains(domains) {
+            var container = $('#cards-container');
+            container.empty(); // Clear any existing content
+            for (var i = 0; i &lt; domains.length; i++) {
+                var domain = domains[i];
+                var card = '&lt;div class="card"&gt;' +
+                    '&lt;div class="card-title"&gt;' + domain.name + '&lt;/div&gt;' +
+                    '&lt;div class="card-description"&gt;' + domain.description + '&lt;/div&gt;' +
+                    '&lt;div class="card-footer"&gt;' +
+                    '&lt;a href="#"&gt;Learn More&lt;/a&gt;' +
+                    '&lt;/div&gt;' +
+                    '&lt;/div&gt;';
+                container.append(card);
+            }
+        }
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            max-width: 300px;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card-description {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .card-footer {
+            text-align: right;
+        }
+        .card-footer a {
+            font-size: 1rem;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .card-footer a:hover {
+            color: #0056b3;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;lms_domains&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;LMS Domains&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	var FetchCourseDomains = Class.create();
+FetchCourseDomains.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getDomains: function() {
+        var result = [];
+        var gr = new GlideRecord('x_1383177_lms_app_course_domain');
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                name: gr.getValue('name'),
+                description: gr.getValue('description')
+            });
+        }
+        return JSON.stringify(result);
+    }
+});
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-29 05:24:37&lt;/sys_created_on&gt;&lt;sys_id&gt;30cbb70493620210b09bf2918bba10bf&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;LMS Domains&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_30cbb70493620210b09bf2918bba10bf&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-29 05:47:18&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="container"&gt;
+        &lt;h1 class="text-center"&gt;Course Domains&lt;/h1&gt;
+        &lt;div id="cards-container" class="cards-container"&gt;
+            &lt;!-- Dynamic content will be injected here --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-2023841979</payload_hash>
+        <record_name>LMS Domains</record_name>
+        <reverted_from/>
+        <source>c6488b3f93920210b09bf2918bba10bc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-29 05:47:19</sys_created_on>
+        <sys_id>ddf0481c93620210b09bf2918bba1041</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fc2e37a510000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-29 05:47:19</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>95f0481c7e620210bfc3c854f6166b41</update_guid>
+        <update_guid_history>95f0481c7e620210bfc3c854f6166b41:-2023841979,d63f3fc83e620210cad85bc972ed1ca5:-1469671463,a5de77c85262021034bf2417993d099b:900290786,34cbb704d96202103a801b8b1c8f29c0:-2112419924</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LMS Domains">10dbc49893a20210b09bf2918bba105c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-29 06:34:45</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>609eeb44c71945a994dd9004ba1bee11</sys_id>
+        <sys_metadata>30cbb70493620210b09bf2918bba10bf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Domains</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_widget_30cbb70493620210b09bf2918bba10bf</sys_update_name>
+        <sys_update_version display_value="sp_widget_30cbb70493620210b09bf2918bba10bf">ddf0481c93620210b09bf2918bba1041</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-29 06:34:45</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

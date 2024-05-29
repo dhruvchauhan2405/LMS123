@@ -3,7 +3,17 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>h1{
+  color: #343434;
+    font-size: 4rem;
+  	
+}
+h3{
+  color: #5E5E5E;
+    font-size: 2rem;
+		text-align: left;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -23,17 +33,17 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 07:14:29</sys_created_on>
         <sys_id>275b55d6939a4210b09bf2918bba1056</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>LMS Main Container 1</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_275b55d6939a4210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-23 07:20:41</sys_updated_on>
+        <sys_updated_on>2024-05-28 09:26:28</sys_updated_on>
         <template><![CDATA[<div>
 	<h1>
-    Learn.
+    <b>Learn.</b>
   </h1>
 	<h3>
     Embark on a journey of knowledge, where curiosity leads to understanding and growth
