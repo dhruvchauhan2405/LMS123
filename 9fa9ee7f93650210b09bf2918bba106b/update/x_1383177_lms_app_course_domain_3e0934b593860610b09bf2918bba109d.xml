@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="x_1383177_lms_app_course_domain">
     <x_1383177_lms_app_course_domain action="INSERT_OR_UPDATE">
         <active>true</active>
-        <course_manager>d3383a875b0132003d1c484c11f91a5b,12826bf03710200044e0bfc8bcbe5db1,9a826bf03710200044e0bfc8bcbe5dc8</course_manager>
         <description>This is a data science course domain with ML introduction.</description>
         <name>Data Science with ML</name>
         <order>100</order>
+        <search_tags/>
         <sys_class_name>x_1383177_lms_app_course_domain</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-09 05:12:45</sys_created_on>
         <sys_id>3e0934b593860610b09bf2918bba109d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Data Science with ML</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>x_1383177_lms_app_course_domain_3e0934b593860610b09bf2918bba109d</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-09 05:12:45</sys_updated_on>
+        <sys_updated_on>2024-05-30 06:24:48</sys_updated_on>
+        <thumbnail>94235924936a4210b09bf2918bba1083</thumbnail>
     </x_1383177_lms_app_course_domain>
 </record_update>

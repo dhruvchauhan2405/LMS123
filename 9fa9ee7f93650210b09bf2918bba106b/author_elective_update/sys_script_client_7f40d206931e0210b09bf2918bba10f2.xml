@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>maximum_enrollment</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages>Please enter number only between 15 to 30.</messages>
+        <name>Max enrollment: 15-30</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    if (newValue < 15 || newValue > 30) {
+        g_form.clearValue('maximum_enrollment'); // Revert to the old value
+		g_form.showFieldMsg('maximum_enrollment', getMessage('Please enter number only between 15 to 30.'), 'error');
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-22 17:07:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7f40d206931e0210b09bf2918bba10f2</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Max enrollment: 15-30</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_client_7f40d206931e0210b09bf2918bba10f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-24 05:21:53</sys_updated_on>
+        <table>x_1383177_lms_app_course</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_client_7f40d206931e0210b09bf2918bba10f2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;maximum_enrollment&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages&gt;Please enter number only between 15 to 30.&lt;/messages&gt;&lt;name&gt;Max enrollment: 15-30&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    if (newValue &lt; 15 || newValue &gt; 30) {
+        g_form.clearValue('maximum_enrollment'); // Revert to the old value
+		g_form.showFieldMsg('maximum_enrollment', getMessage('Please enter number only between 15 to 30.'), 'error');
+    }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-22 17:07:23&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;7f40d206931e0210b09bf2918bba10f2&lt;/sys_id&gt;&lt;sys_mod_count&gt;16&lt;/sys_mod_count&gt;&lt;sys_name&gt;Max enrollment: 15-30&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_7f40d206931e0210b09bf2918bba10f2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-24 05:21:53&lt;/sys_updated_on&gt;&lt;table&gt;x_1383177_lms_app_course&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-185138892</payload_hash>
+        <record_name>Max enrollment: 15-30</record_name>
+        <reverted_from/>
+        <source>15b38a6293120210b09bf2918bba104d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-24 05:21:53</sys_created_on>
+        <sys_id>c83bce2a93120210b09bf2918bba10d7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fa90c68670000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-24 05:21:53</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>403bce2ad0120210437af977c2046fd7</update_guid>
+        <update_guid_history>403bce2ad0120210437af977c2046fd7:-185138892,feebb89ebcd642101883f045fc8aa617:1450070931,34ebf89e05d64210e049b607a50807a5:-2044890567,8ec4f49604d64210cc0b7cf76206bd27:1106997837,39a47896bad642109ffb641699b291ae:-1096169484,eb7434961bd64210a2d96459655ec719:45644298,dc64bc16eed64210d369f671bb7d5dee:715937587,5034b856a5d64210d6df500132ef2b01:-1699554733,2aa378569ed64210a71293afd1146e00:715937587,90a3b05655d6421072a7034f80a2f8e5:-65388515,4743705686d64210a3675b70e8b66af6:-993044211,3fa270521ad64210ed4710b3aa32faea:-30277614,d332bc1282d642105c62d3a476760951:403501698,454dd6829d5e0210a636cad0a217b1b3:1374086466,1ffc92823e5e0210fcb67378a0e26aa6:1798280755,cf4b9e8e0e1e0210f2588ae63b14c59a:-1279230855,7679d64ec0da0210ae34b244b1685418:-1525375928</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-29 04:30:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>003b50d183664da182ccd80352fb7b59</sys_id>
+        <sys_metadata>7f40d206931e0210b09bf2918bba10f2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Max enrollment: 15-30</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent display_value="Course">d1c9211c93358210b09bf2918bba10d2</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_client_7f40d206931e0210b09bf2918bba10f2</sys_update_name>
+        <sys_update_version display_value="sys_script_client_7f40d206931e0210b09bf2918bba10f2">c83bce2a93120210b09bf2918bba10d7</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-29 04:30:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

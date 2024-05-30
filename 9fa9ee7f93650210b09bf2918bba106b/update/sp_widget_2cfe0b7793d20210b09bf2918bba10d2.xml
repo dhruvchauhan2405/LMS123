@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($timeout, $location, spUtil) {
+	/* widget controller */
+	var c = this;
+	c.submitForm = function(isValid) {
+		c.submitted = true;
+		spUtil.addInfoMessage('saved');
+		if (!isValid)
+			return;
+
+		c.data.name = c.name;
+		c.data.description = c.description;
+
+		c.server.update().then(function(response) {
+			if (response.status == 'success') {
+				c.message = null;
+				c.success = response.message;
+			}
+			else if (response.status == 'error') {
+				c.message = response.message;
+			}
+		})
+	}
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.custom-form {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group label {
+  font-weight: bold;
+}
+.btn-save {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+.btn-save:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+}
+.form-group label {
+  flex: 1;
+}
+.form-group .form-control,
+.form-group .form-control-plaintext {
+  flex: 2;
+}
+.form-group textarea {
+  height: 150px;
+}
+.word-limit {
+  font-size: 0.9em;
+  color: #6c757d;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>domain_form</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Domain Form</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+	/* Step 1. Load initial data from the server */
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	if(!input) {
+
+	}
+
+
+
+	/* Step 4. Process user input */
+
+	if(input) {
+		//Insert the new registration record
+		if(validateAddition(input.name)){
+			var grNewAddition = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+			grNewAddition.initialize();
+			grNewAddition.setValue('name', input.name);
+			grNewAddition.setValue('description', input.description);
+
+			if(!input.comments) {
+				grNewAddition.setValue('comments', "");
+			} else {
+				grNewAddition.setValue('comments', input.comments);
+			}
+
+			var userSysId = grNewAddition.insert();
+
+			//if the record is created successfully, send the success
+			// message to the client, else send the error message
+			if (!gs.nil(userSysId)) {
+				data.status = "success";
+				data.message = "Your have successfully added a domain.";
+			} else {
+				data.status = "error";
+			}
+		}
+
+	}
+	function validateAddition(name) {
+		var isNoDuplicate = true;
+
+		//abort if registration already exists
+		if (additionExists(name)) {
+			data.message = "There is already a domain exists for this name.";
+			data.status = "error";
+			isNoDuplicate = false;
+		}
+
+		return isNoDuplicate;
+	}	
+	function additionExists(name) {
+		var reg = new GlideRecordSecure("x_1383177_lms_app_course_domain");
+		reg.addQuery("name", name);
+		reg.query();
+
+		return reg.hasNext();
+	}
+
+
+
+})();	]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-28 07:30:20</sys_created_on>
+        <sys_id>2cfe0b7793d20210b09bf2918bba10d2</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>Domain Form</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_2cfe0b7793d20210b09bf2918bba10d2</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-29 13:53:37</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <form name="addition" class="custom-form" novalidate ng-submit="c.submitForm(addition.$valid)">
+    <legend>
+      Add a new Domain
+    </legend>
+    <div class="form-group" ng-class="{'has-error' : addition.name.$invalid && c.submitted }">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter your name"
+             ng-model="c.name"
+             ng-required="true">
+      <p class="help-block" ng-show="addition.name.$invalid && c.submitted">Field is required.</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error' : addition.description.$invalid && c.submitted }">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="5" placeholder="Enter a description (max 500 words)"
+                ng-model="c.description"
+                ng-required="true"></textarea>
+      <p class="help-block" ng-show="addition.description.$invalid && c.submitted">Field is required.</p>
+    </div>
+    <div class="word-limit text-right">
+      Maximum 500 words
+    </div>
+    <button type="submit" class="btn btn-save">Save</button>
+  </form>
+</div>
+<div ng-if="c.message" id="errorMessage" class="alert alert-danger" role="alert">{{c.message}}</div>
+<div ng-if="c.success" id="successMessage" class="alert alert-success" role="alert">{{c.success}}</div>	
+  ]]></template>
+    </sp_widget>
+</record_update>

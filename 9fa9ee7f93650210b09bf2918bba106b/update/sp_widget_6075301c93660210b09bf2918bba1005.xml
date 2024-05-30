@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, spUtil) {
+  /* widget controller */
+  var c = this;
+	c.data.sys_id = $scope.page.urlParams.sys_id || '';
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* General form styles */
+.sp-form {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Form header styles */
+.sp-form .form-header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.sp-form .form-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Form field styles */
+.sp-form .form-group {
+  margin-bottom: 15px;
+}
+
+.sp-form .form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sp-form .form-group input,
+.sp-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sp-form .form-group input:focus,
+.sp-form .form-group textarea:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+/* Button styles */
+.sp-form .form-actions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.sp-form .form-actions button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.sp-form .form-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Disabled field styles */
+.sp-form .form-group .a-disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sp-form {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .sp-form .form-header h2 {
+    font-size: 20px;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>domains_form</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Domains Form</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-29 09:36:39</sys_created_on>
+        <sys_id>6075301c93660210b09bf2918bba1005</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Domains Form</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_6075301c93660210b09bf2918bba1005</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-29 09:41:03</sys_updated_on>
+        <template><![CDATA[<div>
+  <sp-model table="'x_1383177_lms_app_course_domain'" query="'sys_id={{c.data.sys_id}}'" template="form" form-options="{show_header: true}"></sp-model>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

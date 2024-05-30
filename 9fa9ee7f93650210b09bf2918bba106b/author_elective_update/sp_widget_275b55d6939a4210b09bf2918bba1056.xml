@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+        .hero-section {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .hero-section h1 {
+            color: #343434;
+            font-size: 4rem;
+            margin: 0;
+            font-weight: bold;
+            background: -webkit-linear-gradient(#ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+        .hero-section h3 {
+            color: #5E5E5E;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 126, 95, 0.8), 0 0 20px rgba(255, 126, 95, 0.8), 0 0 30px rgba(255, 126, 95, 0.8), 0 0 40px rgba(255, 126, 95, 0.8);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(254, 180, 123, 0.8), 0 0 30px rgba(254, 180, 123, 0.8), 0 0 40px rgba(254, 180, 123, 0.8), 0 0 50px rgba(254, 180, 123, 0.8);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_main_container_1</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Main Container 1</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-23 07:14:29</sys_created_on>
+        <sys_id>275b55d6939a4210b09bf2918bba1056</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>LMS Main Container 1</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_275b55d6939a4210b09bf2918bba1056</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-30 05:42:58</sys_updated_on>
+        <template><![CDATA[<div class="hero-section">
+        <h1><b>Learn.</b></h1>
+        <h3>Embark on a journey of knowledge, where curiosity leads to understanding and growth</h3>
+    </div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_widget_275b55d6939a4210b09bf2918bba1056</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+        .hero-section {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .hero-section h1 {
+            color: #343434;
+            font-size: 4rem;
+            margin: 0;
+            font-weight: bold;
+            background: -webkit-linear-gradient(#ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+        .hero-section h3 {
+            color: #5E5E5E;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 126, 95, 0.8), 0 0 20px rgba(255, 126, 95, 0.8), 0 0 30px rgba(255, 126, 95, 0.8), 0 0 40px rgba(255, 126, 95, 0.8);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(254, 180, 123, 0.8), 0 0 30px rgba(254, 180, 123, 0.8), 0 0 40px rgba(254, 180, 123, 0.8), 0 0 50px rgba(254, 180, 123, 0.8);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;lms_main_container_1&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;LMS Main Container 1&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-23 07:14:29&lt;/sys_created_on&gt;&lt;sys_id&gt;275b55d6939a4210b09bf2918bba1056&lt;/sys_id&gt;&lt;sys_mod_count&gt;23&lt;/sys_mod_count&gt;&lt;sys_name&gt;LMS Main Container 1&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_275b55d6939a4210b09bf2918bba1056&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-30 05:42:58&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="hero-section"&gt;
+        &lt;h1&gt;&lt;b&gt;Learn.&lt;/b&gt;&lt;/h1&gt;
+        &lt;h3&gt;Embark on a journey of knowledge, where curiosity leads to understanding and growth&lt;/h3&gt;
+    &lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1040733152</payload_hash>
+        <record_name>LMS Main Container 1</record_name>
+        <reverted_from/>
+        <source>c6488b3f93920210b09bf2918bba10bc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-30 05:42:58</sys_created_on>
+        <sys_id>1f89c5e4932a4210b09bf2918bba106d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fc805db380000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-30 05:42:58</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>d389c5e43c2a421061b85cb791d5aa6d</update_guid>
+        <update_guid_history>d389c5e43c2a421061b85cb791d5aa6d:1040733152,fd8967b73d560210e095a96e79e60713:-147677418,cff8ab777856021086e5fdac2be5676e:-716808313,b0e8eff3cc560210e7b4bbfab977a994:264135769,cdb8a377f45602108efdfe07fa378856:-1633811082,0ba8af3765560210e22b0a6e8979ecb8:-1437218476,c098a377a2560210d8976e7744a28ec1:-2102584138,be782f374b5602107fc31db122e26fcc:804360820,5e48ab37c0560210446fc417cbdef4ed:1776779476,d118ab37b8560210cface8af83470ec4:-359237549,d0a7a3372d560210a59763e8cc016485:370335398,8367aff3225602100272f984494cfbf7:-549099007,28676ff3e65602100f353c805305e0ff:-277782641,754723b30e5602105c822076ebff58fb:1049349825,a8272bb30a5602105faadb5060df6e98:-875158736,a1f6abb31b5602108128f76f139e527e:-71107138,1dc6a3f3a15602107caea9c733d8a0ad:-334579734,78b6af7381560210bbbd4043ac07a392:75094691,7246abb30556021085a53ae23960f45e:-1338951349,1d362bb34856021080bca2387378696b:1282134205,aacc155a6f9a42103758c2002bb7184a:-1155041763,3f4c551adc9a421063e79efdcb97c163:-1358420756,2cab99d6b09a4210838549a52c1612bf:-1936828534,6b5b55d6069a42102939caf1f9aa0e57:47879202</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LMS Main Container 1">cd319d60936a4210b09bf2918bba1060</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-30 06:16:24</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>46d6a96217624d809566d08359cefc84</sys_id>
+        <sys_metadata>275b55d6939a4210b09bf2918bba1056</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Main Container 1</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_widget_275b55d6939a4210b09bf2918bba1056</sys_update_name>
+        <sys_update_version display_value="sp_widget_275b55d6939a4210b09bf2918bba1056">1f89c5e4932a4210b09bf2918bba106d</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-30 06:16:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

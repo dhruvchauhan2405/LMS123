@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	/*step 3 accepting user input*/
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.course-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 30%; /* Adjust width to fit three columns */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.course-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.course-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+.course-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #777;
+}
+@media (max-width: 768px) {
+  .course-card {
+    width: 45%; /* Adjust width for smaller screens */
+  }
+}
+@media (max-width: 480px) {
+  .course-card {
+    width: 100%; /* Full width for mobile screens */
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_course_list_3c</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Course List 3 Cards</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	/*step 1 Load initial data from server*/
+	
+	if (!input) {
+		data.courses = [];
+		var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
+		grCourse.addActiveQuery();
+		grCourse.query();
+		
+		while (grCourse.next()) {
+			data.courses.push({
+				Name : grCourse.getDisplayValue('course_name'),
+				Short_description : grCourse.getDisplayValue('short_description'),
+				Thumbnail : grCourse.getDisplayValue('thumbnail'),
+				'sys_id' : grCourse.getUniqueValue()
+			})			
+		}
+	}
+	/*step4 process user input*/
+	if (input) {
+		
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-29 07:27:01</sys_created_on>
+        <sys_id>31c7189893e20210b09bf2918bba102f</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>LMS Course List 3 Cards</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_31c7189893e20210b09bf2918bba102f</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-30 05:58:25</sys_updated_on>
+        <template><![CDATA[<!--step 2 display data from server-->
+<div class="container">
+  
+  <div class="course-container">
+    <div class="course-card" ng-repeat="s in c.data.courses">
+      <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+      <div class="course-details">
+        <h3 class="course-title" ng-bind="s.Name"></h3>
+        <p class="course-description" ng-bind="s.Short_description"></p>
+      </div>
+    </div>
+  </div>
+<!--  <pre>{{ c.data.courses | json }}</pre>-->
+</div>
+<!--step 5 display customized content based on user input-->
+
+
+]]></template>
+    </sp_widget>
+</record_update>

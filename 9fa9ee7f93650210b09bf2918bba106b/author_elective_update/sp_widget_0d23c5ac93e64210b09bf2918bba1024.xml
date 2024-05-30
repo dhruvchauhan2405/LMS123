@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	/*step 3 accepting user input*/
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.course-card {&#13;
+  display: flex;&#13;
+  border: 1px solid #ddd;&#13;
+  border-radius: 5px;&#13;
+  margin: 10px;&#13;
+  padding: 10px;&#13;
+}&#13;
+.course-image {&#13;
+  width: 100%;&#13;
+  height: 150px;&#13;
+  object-fit: cover;&#13;
+}&#13;
+.course-title {&#13;
+  font-size: 18px;&#13;
+  font-weight: bold;&#13;
+  margin-bottom: 5px;&#13;
+}&#13;
+.course-description {&#13;
+  font-size: 14px;&#13;
+  line-height: 1.5;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_domains_2c</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Domains 2 Card</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	/*step 1 Load initial data from server*/
+	
+	if (!input) {
+		data.courses = [];
+		var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
+		grCourse.addActiveQuery();
+		grCourse.query();
+		
+		while (grCourse.next()) {
+			data.courses.push({
+				Name : grCourse.getDisplayValue('course_name'),
+				Short_description : grCourse.getDisplayValue('short_description'),
+				Thumbnail : grCourse.getDisplayValue('thumbnail'),
+				'sys_id' : grCourse.getUniqueValue()
+			})			
+		}
+	}
+	/*step4 process user input*/
+	if (input) {
+		
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-30 05:14:57</sys_created_on>
+        <sys_id>0d23c5ac93e64210b09bf2918bba1024</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>LMS Domains 2 Card</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_0d23c5ac93e64210b09bf2918bba1024</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-30 05:16:09</sys_updated_on>
+        <template><![CDATA[<!--step 2 display data from server-->
+<div class="course-container">
+  <div class="course-card" ng-repeat="s in c.data.courses">
+    <img class="course-image"
+         ng-src="c.thumbnail">{{ s.Thumbnail }}
+    <div class="course-details">
+      <h3 class="course-title" 
+          ng-modal="c.course_name">{{ s.Name }}</h3>
+      <p class="course-description" 
+         ng-modal="c.short_description">{{ s.Short_description }}</p>
+    </div>
+  </div>
+</div>
+<pre>{{ c.data.courses | json }}</pre>
+<!--step 5 display customized content based on user input-->
+
+
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_widget_0d23c5ac93e64210b09bf2918bba1024</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	/*step 3 accepting user input*/
+	
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.course-card {&amp;#13;
+  display: flex;&amp;#13;
+  border: 1px solid #ddd;&amp;#13;
+  border-radius: 5px;&amp;#13;
+  margin: 10px;&amp;#13;
+  padding: 10px;&amp;#13;
+}&amp;#13;
+.course-image {&amp;#13;
+  width: 100%;&amp;#13;
+  height: 150px;&amp;#13;
+  object-fit: cover;&amp;#13;
+}&amp;#13;
+.course-title {&amp;#13;
+  font-size: 18px;&amp;#13;
+  font-weight: bold;&amp;#13;
+  margin-bottom: 5px;&amp;#13;
+}&amp;#13;
+.course-description {&amp;#13;
+  font-size: 14px;&amp;#13;
+  line-height: 1.5;&amp;#13;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;lms_domains_2c&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;LMS Domains 2 Card&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	/*step 1 Load initial data from server*/
+	
+	if (!input) {
+		data.courses = [];
+		var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
+		grCourse.addActiveQuery();
+		grCourse.query();
+		
+		while (grCourse.next()) {
+			data.courses.push({
+				Name : grCourse.getDisplayValue('course_name'),
+				Short_description : grCourse.getDisplayValue('short_description'),
+				Thumbnail : grCourse.getDisplayValue('thumbnail'),
+				'sys_id' : grCourse.getUniqueValue()
+			})			
+		}
+	}
+	/*step4 process user input*/
+	if (input) {
+		
+	}
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-30 05:14:57&lt;/sys_created_on&gt;&lt;sys_id&gt;0d23c5ac93e64210b09bf2918bba1024&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;LMS Domains 2 Card&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_0d23c5ac93e64210b09bf2918bba1024&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-30 05:16:09&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;!--step 2 display data from server--&gt;
+&lt;div class="course-container"&gt;
+  &lt;div class="course-card" ng-repeat="s in c.data.courses"&gt;
+    &lt;img class="course-image"
+         ng-src="c.thumbnail"&gt;{{ s.Thumbnail }}
+    &lt;div class="course-details"&gt;
+      &lt;h3 class="course-title" 
+          ng-modal="c.course_name"&gt;{{ s.Name }}&lt;/h3&gt;
+      &lt;p class="course-description" 
+         ng-modal="c.short_description"&gt;{{ s.Short_description }}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;{{ c.data.courses | json }}&lt;/pre&gt;
+&lt;!--step 5 display customized content based on user input--&gt;
+
+
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1294795116</payload_hash>
+        <record_name>LMS Domains 2 Card</record_name>
+        <reverted_from/>
+        <source>c6488b3f93920210b09bf2918bba10bc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-30 05:16:09</sys_created_on>
+        <sys_id>2e638160932a4210b09bf2918bba1062</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fc7ed4dff0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-30 05:16:09</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>e2638160842a42107b667f8debfc4662</update_guid>
+        <update_guid_history>e2638160842a42107b667f8debfc4662:1294795116,6643416cdfe64210122ab0c473e138f8:1201904941,4123c5ac15e64210c8623d3c231f3e26:-304690419</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LMS Domains 2 Card">bc8a4968932a4210b09bf2918bba1045</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-30 05:47:09</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>7a873f9582424bdf8576dfd7885f1fd1</sys_id>
+        <sys_metadata>0d23c5ac93e64210b09bf2918bba1024</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Domains 2 Card</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_widget_0d23c5ac93e64210b09bf2918bba1024</sys_update_name>
+        <sys_update_version display_value="sp_widget_0d23c5ac93e64210b09bf2918bba1024">2e638160932a4210b09bf2918bba1062</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-05-30 05:47:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

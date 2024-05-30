@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_1383177_lms_app_course_domain">
+    <x_1383177_lms_app_course_domain action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>xfcgcfgc gcfcg</description>
+        <name>gdfxdvcbfg</name>
+        <order>100</order>
+        <search_tags/>
+        <sys_class_name>x_1383177_lms_app_course_domain</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-30 04:45:39</sys_created_on>
+        <sys_id>3f6c386893e64210b09bf2918bba100e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>gdfxdvcbfg</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>x_1383177_lms_app_course_domain_3f6c386893e64210b09bf2918bba100e</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-30 06:26:03</sys_updated_on>
+        <thumbnail>96631164936a4210b09bf2918bba1012</thumbnail>
+    </x_1383177_lms_app_course_domain>
+</record_update>

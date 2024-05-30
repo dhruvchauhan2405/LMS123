@@ -3,5 +3,6 @@
         <element label="Description" max_length="200" name="description" type="translated_text"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="translated_text"/>
         <element label="Search Tags" max_length="200" name="search_tags" type="translated_text"/>
+        <element label="Thumbnail" max_length="40" name="thumbnail" type="user_image"/>
     </element>
 </database>

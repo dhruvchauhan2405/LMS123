@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.domain-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.domain-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 25px; /* Reduced margin */
+  margin-bottom: 25px;
+  margin-left: 7px;
+  margin-right: 7px;
+  padding: 10px; /* Reduced padding */
+  width: 25%; /* Reduced width by 30% */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.domain-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.domain-image {
+  width: 100%;
+  aspect-ratio: 1; /* Ensures the image maintains a square aspect ratio */
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.domain-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+}
+.domain-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #777;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .domain-card {
+    width: 100%; /* Full width for smaller screens */
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_domains_2_card</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Domains 2 card</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	/*step 1 Load initial data from server*/
+	
+	if (!input) {
+		data.domains = [];
+		var grdomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+		grdomain.addActiveQuery();
+		grdomain.query();
+		
+		while (grdomain.next()) {
+			data.domains.push({
+				Name : grdomain.getDisplayValue('name'),
+				Description : grdomain.getDisplayValue('description'),
+				Thumbnail : grdomain.getDisplayValue('thumbnail'),
+				'sys_id' : grdomain.getUniqueValue()
+			})			
+		}
+	}
+	/*step4 process user input*/
+	if (input) {
+		
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-05-30 05:47:49</sys_created_on>
+        <sys_id>66aa8968932a4210b09bf2918bba10d2</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>LMS Domains 2 card</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_66aa8968932a4210b09bf2918bba10d2</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-05-30 07:10:16</sys_updated_on>
+        <template><![CDATA[<!--step 2 display data from server-->
+<div class="container">
+  <div class="domain-container">
+    <div class="domain-card" ng-repeat="s in c.data.domains">
+      <img class="domain-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+      <div class="domain-details">
+        <h3 class="domain-title" ng-bind="s.Name"></h3>
+        <p class="domain-description" ng-bind="s.Description"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--step 5 display customized content based on user input-->
+
+
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="x_1383177_lms_app_course_domain">
     <x_1383177_lms_app_course_domain action="INSERT_OR_UPDATE">
         <active>true</active>
-        <course_manager>46d44a23a9fe19810012d100cca80666,02826bf03710200044e0bfc8bcbe5d88,3a826bf03710200044e0bfc8bcbe5df9</course_manager>
         <description>Manage projects effectively with project management courses</description>
         <name>Project Management</name>
         <order>100</order>
+        <search_tags/>
         <sys_class_name>x_1383177_lms_app_course_domain</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-04-23 10:22:40</sys_created_on>
         <sys_id>bcb66fec93fdc210b09bf2918bba1024</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Project Management</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>x_1383177_lms_app_course_domain_bcb66fec93fdc210b09bf2918bba1024</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-09 05:14:12</sys_updated_on>
+        <sys_updated_on>2024-05-30 06:23:45</sys_updated_on>
+        <thumbnail>c0e2d524936a4210b09bf2918bba105a</thumbnail>
     </x_1383177_lms_app_course_domain>
 </record_update>

@@ -1,127 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
     <sp_header_footer action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $window) {
+        <client_script><![CDATA[api.controller = function() {
    
 };
 ]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
-        font-family: 'Poppins', sans-serif;
-    }
-    
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Styling */
+.header {
+    background-color: #343a40; /* Dark background */
+    padding: 15px 50px; /* Increased padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555; /* Darker border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transition: background-color 0.3s, border-bottom 0.3s;
+}
+
+.logo img {
+    height: 60px; /* Adjust the height as needed */
+    transition: height 0.3s;
+}
+
+/* Navigation Styling */
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    animation: fadeIn 0.5s ease-in-out; /* Add animation */
+}
+
+.navigation a {
+    margin: 0 30px; /* Increased margin */
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s; /* Add transition */
+}
+
+.navigation a:hover {
+    color: #f39c12; /* Hover color */
+    transform: translateY(-3px); /* Hover effect */
+}
+
+/* Search and Account Styling */
+.search-account {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    margin-right: 30px; /* Increased margin */
+    position: relative;
+    transition: margin-right 0.3s;
+}
+
+.search-bar input {
+    padding: 10px 15px; /* Increased padding */
+    border: 1px solid #555; /* Darker border */
+    border-radius: 4px;
+    font-size: 1.25rem; /* Increased font size */
+    width: 300px; /* Longer width */
+    transition: width 0.3s, border-color 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #f39c12; /* Focus border color */
+}
+
+.search-bar button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background: none;
+    padding: 10px 15px; /* Increased padding */
+    cursor: pointer;
+    color: #555; /* Dark icon color */
+    transition: color 0.3s;
+}
+
+.search-bar button:hover {
+    color: #f39c12; /* Hover color */
+}
+
+.account {
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: 600;
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s; /* Add transition */
+}
+
+.account:hover {
+    color: #f39c12; /* Hover color */
+    transform: translateY(-3px); /* Hover effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
     .header {
-        background-color: #343a40; /* Dark background */
-        padding: 15px 50px; /* Increased padding */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #555; /* Darker border */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        transition: padding 0.3s;
     }
 
     .logo img {
-        height: 60px; /* Adjust the height as needed */
+        height: 40px;
     }
 
     .navigation {
-        display: flex;
-        justify-content: center;
-        flex-grow: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
     }
 
     .navigation a {
-        margin: 0 30px; /* Increased margin */
-        text-decoration: none;
-        color: #ffffff; /* White text color */
-        font-size: 1.5rem; /* Increased font size */
-        font-weight: 600;
-        transition: color 0.3s;
-    }
-
-    .navigation a:hover {
-        color: #f39c12; /* Hover color */
+        margin: 5px 0;
+        font-size: 1.25rem;
     }
 
     .search-account {
-        display: flex;
-        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
     }
 
     .search-bar {
-        margin-right: 30px; /* Increased margin */
-        position: relative;
+        width: calc(100% - 150px);
+        margin-right: 0;
     }
 
     .search-bar input {
-        padding: 10px 15px; /* Increased padding */
-        border: 1px solid #555; /* Darker border */
-        border-radius: 4px;
-        font-size: 1.25rem; /* Increased font size */
-        width: 300px; /* Longer width */
-    }
-
-    .search-bar button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        border: none;
-        background: none;
-        padding: 10px 15px; /* Increased padding */
-        cursor: pointer;
-        color: #555; /* Dark icon color */
+        width: 100%;
     }
 
     .account {
-        font-size: 1.5rem; /* Increased font size */
-        font-weight: 600;
-        color: #ffffff; /* White text color */
-        text-decoration: none;
+        margin-left: 10px;
     }
+}
 
-    .account:hover {
-        color: #f39c12; /* Hover color */
+/* Keyframes for Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-		 @media (max-width: 768px) {
-        .header {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 15px 20px;
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .navigation {
-            flex-direction: column;
-            align-items: flex-start;
-            width: 100%;
-        }
-
-        .navigation a {
-            margin: 5px 0;
-            font-size: 1.25rem;
-        }
-
-        .search-account {
-            width: 100%;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
-        .search-bar {
-            width: calc(100% - 150px);
-            margin-right: 0;
-        }
-
-        .search-bar input {
-            width: 100%;
-        }
-
-        .account {
-            margin-left: 10px;
-        }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -149,14 +185,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 05:47:49</sys_created_on>
         <sys_id>1707cd1e931a4210b09bf2918bba1033</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>65</sys_mod_count>
         <sys_name>LMS Header</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_header_footer_1707cd1e931a4210b09bf2918bba1033</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-29 06:50:17</sys_updated_on>
+        <sys_updated_on>2024-05-30 16:42:58</sys_updated_on>
         <template><![CDATA[<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <header class="header" id="header">
@@ -176,6 +212,7 @@
         </div>
         <a href="lms?id=lms_my_account" class="account">My Account</a>
     </div>
+  	
 </header>
 ]]></template>
     </sp_header_footer>
