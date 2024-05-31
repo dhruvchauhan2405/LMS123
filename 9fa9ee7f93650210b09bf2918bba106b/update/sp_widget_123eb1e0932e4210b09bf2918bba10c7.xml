@@ -3,13 +3,73 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+.btn {
+  width: 40px;  /* Increased width */
+  height: 40px; /* Increased height */
+  background-color: lightgrey;
+  border-radius: 50%; /* Ensures the button is a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 24px; /* Increased font size for arrow */
+  color: black; /* Default text color for the button */
+}
+.btn:hover {
+  background-color: darkgrey;
+  color: white; /* Text color on hover */
+}
+.domains {
+  display: flex;
+  overflow: hidden;
+  padding: 10px 30px;
+}
+.domain {
+  min-width: 250px; /* Adjust width as needed */
+  height: 80px; /* Set a fixed height */
+  padding: 10px 50px; /* Increased left and right padding */
+  background-color: lightgrey;
+  margin: auto 0;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  margin: 0 7px;
+  color: black; /* Default text color */
+}
+.domain-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  
+}
+ 
+.domain:hover {
+  background-color: darkgrey;
+  color: white; /* Text color on hover */
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>lms_domains_one_line</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -17,20 +77,66 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	/*step 1 Load initial data from server*/
+	
+	if (!input) {
+		data.domains = [];
+		var grdomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+		grdomain.addActiveQuery();
+		grdomain.query();
+		
+		while (grdomain.next()) {
+			data.domains.push({
+				Name : grdomain.getDisplayValue('name'),
+				'sys_id' : grdomain.getUniqueValue()
+			})			
+		}
+	}
+	/*step4 process user input*/
+	if (input) {
+		
+	}
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 09:33:06</sys_created_on>
         <sys_id>123eb1e0932e4210b09bf2918bba10c7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>74</sys_mod_count>
         <sys_name>LMS Domains one line</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_123eb1e0932e4210b09bf2918bba10c7</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-30 09:33:06</sys_updated_on>
-        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+        <sys_updated_on>2024-05-31 10:04:39</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <div class="btn" id="prevBtn"><</div>
+    <div class="domains" id="domainList">
+      <div class="domain" ng-repeat="s in c.data.domains">
+        <h3 class="domain-title" ng-bind="s.Name"></h3>
+      </div>
+    </div>
+    <div class="btn" id="nextBtn">></div>
+  </div>
+</div>  
+<script>
+  const domainList = document.getElementById('domainList');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  prevBtn.addEventListener('click', () => {
+    domainList.scrollBy({ left: -200, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    domainList.scrollBy({ left: 200, behavior: 'smooth' });
+  });
+</script>
+
+]]></template>
     </sp_widget>
 </record_update>

@@ -3,17 +3,38 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+.content {
+	padding: 7px;
+}
+.headline {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}
+.subheadline {
+  font-size: 1.2em;
+  color: grey;
+  margin: 0;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
-        <id>lms_main_title_image</id>
+        <has_preview>true</has_preview>
+        <id>lms_home_page_text2</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>LMS main title image</name>
+        <name>LMS home page text2</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -21,16 +42,19 @@
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
-        <sys_created_on>2024-05-30 09:01:40</sys_created_on>
-        <sys_id>46077d6c93ea4210b09bf2918bba1072</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>LMS main title image</sys_name>
+        <sys_created_on>2024-05-31 09:28:37</sys_created_on>
+        <sys_id>6ec6cf3493e24210b09bf2918bba10c2</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>LMS home page text2</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sp_widget_46077d6c93ea4210b09bf2918bba1072</sys_update_name>
+        <sys_update_name>sp_widget_6ec6cf3493e24210b09bf2918bba10c2</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-30 09:01:40</sys_updated_on>
-        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+        <sys_updated_on>2024-05-31 09:38:11</sys_updated_on>
+        <template><![CDATA[<div class="content">
+  <p class="headline">All the skills you need in one place</p>
+  <p class="subheadline">From critical skills to technical topics, Udemy supports your professional development.</p>
+</div>]]></template>
     </sp_widget>
 </record_update>
