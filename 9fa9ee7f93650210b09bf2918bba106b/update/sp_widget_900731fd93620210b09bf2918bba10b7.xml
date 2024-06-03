@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller = function($sce) {
+  /* widget controller */
+  var c = this;
+
+  // Make sure HTML content is safe to bind
+  if (c.data.course && c.data.course.description && c.data.course.description.value) {
+    c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
+  }
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
             font-family: Arial, sans-serif;
@@ -92,26 +101,45 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  if (!input) {
+    data.course = null;
+    var courseTable = 'x_1383177_lms_app_course';
+    var fields = 'course_name,description,thumbnail';
+    var courseSysId = $sp.getParameter('sys_id'); // Get sys_id from the query parameter
+
+    if (courseSysId) {
+      var gr = new GlideRecordSecure(courseTable);
+      if (gr.get(courseSysId)) { // Get the specific course record
+        data.course = $sp.getFieldsObject(gr, fields);
+      }
+    }
+  }
+
+  if (input) {
+    // Handle user input if needed
+  }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>LMS course detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-03 06:35:13</sys_updated_on>
-        <template><![CDATA[<div class="main-container">
+        <sys_updated_on>2024-06-03 10:50:28</sys_updated_on>
+        <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">
       <div class="details">
-        <h1>The Complete 2024 Web Development Bootcamp</h1>
-        <p>Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps</p>
+        <h1>{{ c.data.course.course_name.display_value }}</h1>
+        <div ng-bind-html="c.data.course.description.value"></div>
         <p>Created by Dr. Angela Yu</p>
         <p>Last updated: 03/2024 | 1,268,370 students enrolled</p>
       </div>
@@ -134,10 +162,11 @@
     </div>
   </div>
   <div class="sidebar">
-    <img src="image.png" alt="Course Image">
-    <h2>Web Development Bootcamp</h2>
+    <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="Course Image">
+    <h2>{{ c.data.course.course_name.display_value }}</h2>
     <button>Start Subscription</button>
   </div>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>

@@ -7,124 +7,129 @@
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
   background-color: #f5f5f5;
 }
 
-.main-container {
-  display: flex;
-  width: 100%;
+.module-content-page {
+  padding: 20px;
   max-width: 1200px;
-  margin: 20px;
-  animation: fadeIn 1.5s ease-in-out;
+  margin: 20px auto;
 }
 
-.content {
+.module-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #4a90e2;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.module-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.module-header p {
+  font-size: 1.2em;
+}
+
+.module-contents {
+  display: flex;
+  gap: 20px;
+}
+
+.lessons {
+  flex: 3;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.lesson {
+  margin-bottom: 20px;
+}
+
+.lesson h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #4a90e2;
+}
+
+.lesson p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.module-list {
   flex: 1;
   padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInRight 1s ease-in-out;
 }
 
-.header {
-  background: linear-gradient(135deg, #6c63ff, #834d9b);
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.module-list h2 {
+  font-size: 1.5em;
   margin-bottom: 20px;
-  border-radius: 8px;
-  animation: slideInFromLeft 1s ease-in-out;
+  color: #4a90e2;
 }
 
-.header .details {
-  max-width: 70%;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5em;
-}
-
-.header p {
-  margin: 5px 0;
-}
-
-.course-description {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.course-description h2 {
-  font-size: 1.8em;
-  margin-bottom: 15px;
-}
-
-.course-description ul {
+.module-list ul {
   list-style: none;
   padding: 0;
 }
 
-.course-description li {
-  font-size: 1.1em;
+.module-list ul li {
   margin-bottom: 10px;
-  position: relative;
-  padding-left: 20px;
-  animation: fadeInUp 0.5s ease-in-out forwards;
 }
 
-.course-description li::before {
-  content: '✔';
-  position: absolute;
-  left: 0;
-  color: #6c63ff;
-  font-size: 1.5em;
+.module-list ul li a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #333;
+  transition: color 0.3s;
 }
 
-.sidebar {
-  width: 300px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20px;
-  height: fit-content;
-  animation: slideInFromRight 1s ease-in-out;
+.module-list ul li a:hover, .module-list ul li a.active {
+  color: #4a90e2;
+  font-weight: bold;
 }
 
-.sidebar img {
-  width: 100%;
-  border-radius: 8px;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.sidebar h2 {
-  margin-top: 20px;
-  font-size: 1.8em;
-}
-
-.sidebar button {
-  background-color: #6c63ff;
+.prev-lesson, .next-lesson {
+  
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 15px;
-  border-radius: 8px;
   cursor: pointer;
-  width: 100%;
-  font-size: 1.2em;
+  border-radius: 5px;
   transition: background-color 0.3s;
 }
 
-.sidebar button:hover {
-  background-color: #5952c6;
+.prev-lesson {
+  left: 10px;
 }
 
+.next-lesson {
+  right: 10px;
+}
+
+.prev-lesson:hover, .next-lesson:hover {
+  background-color: #0056b3;
+}
+
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -134,32 +139,25 @@
   }
 }
 
-@keyframes slideInFromLeft {
+@keyframes fadeInLeft {
   from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(20px);
     opacity: 0;
+    transform: translateX(-20px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 </css>
@@ -206,46 +204,41 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 04:57:17</sys_created_on>
         <sys_id>0a1f78a893e64210b09bf2918bba1022</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>64</sys_mod_count>
         <sys_name>Test Widgets</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_0a1f78a893e64210b09bf2918bba1022</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-03 07:16:46</sys_updated_on>
-        <template><![CDATA[<div class="main-container">
-  <div class="content">
-    <div class="header">
-      <div class="details">
-        <h1>The Complete 2024 Web Development Bootcamp</h1>
-        <p>Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps</p>
-        <p>Created by Dr. Angela Yu</p>
-        <p>Last updated: 03/2024 | 1,268,370 students enrolled</p>
+        <sys_updated_on>2024-06-03 10:54:02</sys_updated_on>
+        <template><![CDATA[<div class="module-content-page">
+  <div class="module-header">
+    <h1>Module Title</h1>
+    <p>Description of the module goes here.</p>
+  </div>
+  <div class="module-contents">
+    <div class="lessons">
+      <div class="lesson">
+        <h2>Lesson 1: Introduction to Web Development</h2>
+        <p>This lesson covers the basics of web development, including HTML, CSS, and JavaScript.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non feugiat ex. Duis tincidunt lacinia mi nec finibus. Donec varius viverra lorem, id cursus elit rhoncus sed.</p>
       </div>
-      <div class="badge">
-        <!--<p><strong>Bestseller</strong> | 4.7 <span>★★★★☆</span> (380,206 ratings)</p>-->
-      </div>
+      <!-- Add more lessons here -->
     </div>
-    <div class="course-description">
-      <h2>What you'll learn</h2>
+     
+    <div class="module-list">
+      <h2>Module List</h2>
       <ul>
-        <li>Build 16 web development projects for your portfolio, ready to apply for junior developer jobs.</li>
-        <li>After the course, you will be able to build ANY website you want.</li>
-        <li>Work as a freelance web developer.</li>
-        <li>Master backend development with Node.</li>
-        <li>Learn the latest technologies, including Javascript, React, Node, and even Web3 development.</li>
-        <li>Build fully-fledged websites and web apps for your startup or business.</li>
-        <li>Master frontend development with React.</li>
-        <li>Learn professional developer best practices.</li>
+        <li><a href="#" class="active">Module 1</a></li>
+        <li><a href="#">Module 2</a></li>
+        <li><a href="#">Module 3</a></li>
+        <!-- Add more modules here -->
       </ul>
     </div>
   </div>
-  <div class="sidebar">
-    <img src="image.png" alt="Course Image">
-    <h2>Web Development Bootcamp</h2>
-    <button>Start Subscription</button>
-  </div>
+ <button class="prev-lesson">Previous Lesson</button>
+  <button class="next-lesson">Next Lesson</button>
 </div>
 ]]></template>
     </sp_widget>

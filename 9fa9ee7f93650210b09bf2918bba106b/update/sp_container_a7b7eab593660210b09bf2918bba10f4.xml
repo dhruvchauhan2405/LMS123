@@ -6,23 +6,23 @@
         <bootstrap_alt>false</bootstrap_alt>
         <class_name/>
         <container_class_name/>
-        <name>Courses - Container 2</name>
-        <order>2</order>
+        <name>LMS Modules Content - Container 1</name>
+        <order>1</order>
         <semantic_tag/>
-        <sp_page display_value="lms_courses">b4dc40d893a20210b09bf2918bba10e8</sp_page>
+        <sp_page display_value="lms_modules_content">b96762b593660210b09bf2918bba109e</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-05-29 06:39:10</sys_created_on>
-        <sys_id>b0dc4cd893a20210b09bf2918bba1017</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>Courses - Container 2</sys_name>
+        <sys_created_on>2024-06-03 09:46:54</sys_created_on>
+        <sys_id>a7b7eab593660210b09bf2918bba10f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Modules Content - Container 1</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sp_container_b0dc4cd893a20210b09bf2918bba1017</sys_update_name>
+        <sys_update_name>sp_container_a7b7eab593660210b09bf2918bba10f4</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-03 09:38:45</sys_updated_on>
+        <sys_updated_on>2024-06-03 09:46:54</sys_updated_on>
         <title/>
         <width>container</width>
     </sp_container>
