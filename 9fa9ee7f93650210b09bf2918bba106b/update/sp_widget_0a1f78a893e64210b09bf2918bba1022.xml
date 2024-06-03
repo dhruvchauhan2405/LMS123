@@ -3,56 +3,166 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css>.domain-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .domain-card {
-          	background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 25px; /* Reduced margin */
-            margin-bottom: 25px;
-              margin-left: 7px;
-              margin-right: 7px;
-          	padding: 10px; /* Reduced padding */
-            width: 25%; /* Reduced width by 30% */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .domain-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
-        .domain-image {
-            width: 100%;
-            aspect-ratio: 1; /* Ensures the image maintains a square aspect ratio */
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .domain-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-            text-align: center;
-        }
-        .domain-description {
-            font-size: 14px;
-            line-height: 1.5;
-            color: #777;
-            text-align: center;
-        }
-        @media (max-width: 768px) {
-            .domain-card {
-                width: 100%; /* Full width for smaller screens */
-            }
-        }</css>
+        <css>body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #6c63ff, #834d9b);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  animation: slideInFromLeft 1s ease-in-out;
+}
+
+.header .details {
+  max-width: 70%;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.header p {
+  margin: 5px 0;
+}
+
+.course-description {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.course-description h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.course-description ul {
+  list-style: none;
+  padding: 0;
+}
+
+.course-description li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.course-description li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #6c63ff;
+  font-size: 1.5em;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  animation: slideInFromRight 1s ease-in-out;
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 8px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.sidebar h2 {
+  margin-top: 20px;
+  font-size: 1.8em;
+}
+
+.sidebar button {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #5952c6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -96,24 +206,47 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 04:57:17</sys_created_on>
         <sys_id>0a1f78a893e64210b09bf2918bba1022</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>Test Widgets</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_0a1f78a893e64210b09bf2918bba1022</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-30 07:09:23</sys_updated_on>
-        <template><![CDATA[<div class="container">
-        <div class="domain-container">
-            <div class="domain-card" ng-repeat="s in c.data.domains">
-                <img class="domain-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-                <div class="domain-details">
-                    <h3 class="domain-title" ng-bind="s.Name"></h3>
-                    <p class="domain-description" ng-bind="s.Description"></p>
-                </div>
-            </div>
-        </div>
-    </div>]]></template>
+        <sys_updated_on>2024-06-03 07:16:46</sys_updated_on>
+        <template><![CDATA[<div class="main-container">
+  <div class="content">
+    <div class="header">
+      <div class="details">
+        <h1>The Complete 2024 Web Development Bootcamp</h1>
+        <p>Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps</p>
+        <p>Created by Dr. Angela Yu</p>
+        <p>Last updated: 03/2024 | 1,268,370 students enrolled</p>
+      </div>
+      <div class="badge">
+        <!--<p><strong>Bestseller</strong> | 4.7 <span>★★★★☆</span> (380,206 ratings)</p>-->
+      </div>
+    </div>
+    <div class="course-description">
+      <h2>What you'll learn</h2>
+      <ul>
+        <li>Build 16 web development projects for your portfolio, ready to apply for junior developer jobs.</li>
+        <li>After the course, you will be able to build ANY website you want.</li>
+        <li>Work as a freelance web developer.</li>
+        <li>Master backend development with Node.</li>
+        <li>Learn the latest technologies, including Javascript, React, Node, and even Web3 development.</li>
+        <li>Build fully-fledged websites and web apps for your startup or business.</li>
+        <li>Master frontend development with React.</li>
+        <li>Learn professional developer best practices.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="sidebar">
+    <img src="image.png" alt="Course Image">
+    <h2>Web Development Bootcamp</h2>
+    <button>Start Subscription</button>
+  </div>
+</div>
+]]></template>
     </sp_widget>
 </record_update>

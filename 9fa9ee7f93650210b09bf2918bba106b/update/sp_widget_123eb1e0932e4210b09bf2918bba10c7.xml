@@ -4,65 +4,73 @@
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  background-color: #f4f4f4;
 }
+
 .container {
   display: flex;
   align-items: center;
+  max-width: 90%;
+  margin: auto;
 }
+
 .btn {
-  width: 30px;  /* Increased width */
-  height: 30px; /* Increased height */
-  background-color: lightgrey;
-  border-radius: 50%; /* Ensures the button is a circle */
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   margin: 0 10px;
-  font-size: 24px; /* Increased font size for arrow */
-  color: black; /* Default text color for the button */
+  font-size: 24px;
+  color: white;
+  transition: background-color 0.3s;
 }
+
 .btn:hover {
-  background-color: darkgrey;
-  color: white; /* Text color on hover */
+  background-color: #0056b3;
 }
+
 .domains {
   display: flex;
   overflow: hidden;
-  padding: 10px 30px;
+  padding: 10px 0;
+  max-width: 100%;
 }
+
 .domain {
-  min-width: 250px; /* Adjust width as needed */
-  height: 60px; /* Set a fixed height */
-  padding: 10px 50px; /* Increased left and right padding */
-  background-color: lightgrey;
-  margin: auto 0;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 50px;
+  min-width: 250px;
+  height: 100px;
+  padding: 17px 27px;
+  background-color: #e0dede;
+  margin: 0 10px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center text vertically */
-  margin: 0 7px;
-  color: black; /* Default text color */
-}
-.domain-title {
-  font-size: 18px;
-  font-weight: bold;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-weight: bold;
   color: #333;
-  
 }
- 
+
 .domain:hover {
-  background-color: darkgrey;
-  color: white; /* Text color on hover */
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.domain-title {
+  font-size: 17px;
+  font-weight: bold;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -70,10 +78,10 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>lms_domains_one_line</id>
+        <id>lms_domains_slider</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>LMS Domains one line</name>
+        <name>LMS Domains Slider</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -105,14 +113,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 09:33:06</sys_created_on>
         <sys_id>123eb1e0932e4210b09bf2918bba10c7</sys_id>
-        <sys_mod_count>77</sys_mod_count>
-        <sys_name>LMS Domains one line</sys_name>
+        <sys_mod_count>99</sys_mod_count>
+        <sys_name>LMS Domains Slider</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_123eb1e0932e4210b09bf2918bba10c7</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-01 10:41:59</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-03 06:15:15</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="btn" id="prevBtn"><</div>
     <div class="domains" id="domainList">
@@ -129,14 +137,12 @@
   const nextBtn = document.getElementById('nextBtn');
 
   prevBtn.addEventListener('click', () => {
-    domainList.scrollBy({ left: -200, behavior: 'smooth' });
+    domainList.scrollBy({ left: -800, behavior: 'smooth' });
   });
 
   nextBtn.addEventListener('click', () => {
-    domainList.scrollBy({ left: 200, behavior: 'smooth' });
+    domainList.scrollBy({ left: 800, behavior: 'smooth' });
   });
-</script>
-
-]]></template>
+</script>]]></template>
     </sp_widget>
 </record_update>

@@ -9,14 +9,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-04-23 10:22:20</sys_created_on>
         <sys_id>cf96e72093310610b09bf2918bba1064</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Graphic Design</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>x_1383177_lms_app_course_domain_cf96e72093310610b09bf2918bba1064</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-30 07:12:35</sys_updated_on>
-        <thumbnail>8c1ed9a093aa4210b09bf2918bba102d</thumbnail>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-03 06:00:54</sys_updated_on>
+        <thumbnail>0904f9f993620210b09bf2918bba1067</thumbnail>
     </x_1383177_lms_app_course_domain>
 </record_update>
