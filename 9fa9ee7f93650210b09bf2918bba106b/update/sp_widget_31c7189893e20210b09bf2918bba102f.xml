@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
+        <client_script><![CDATA[api.controller = function($location, $scope, $timeout) {
   var c = this;
-	/*step 3 accepting user input*/
-	
-};]]></client_script>
+
+  c.filteredCourses = angular.copy(c.data.courses);
+
+  c.redirectToCourseDetail = function(sys_id) {
+    var portalURL = $location.absUrl().split('?')[0];
+    var pageID = 'lms_course_details';
+    var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+    window.location.href = url;
+  };
+
+  c.showAllCourses = function() {
+    console.log('Showing all courses');
+    c.filteredCourses = angular.copy(c.data.courses);
+    $timeout(function() {
+      $scope.$apply();
+    });
+  };
+
+  $scope.$on('filterCoursesByDomain', function(event, domainName) {
+    console.log('Received filter event for domain:', domainName);
+    if (domainName === 'ALL') {
+      c.showAllCourses();
+    } else {
+      c.filteredCourses = c.data.courses.filter(function(course) {
+        console.log('Course domain:', course.Domain, 'Target domain:', domainName);
+        return course.Domain === domainName;
+      });
+      $timeout(function() {
+        $scope.$apply();
+      });
+    }
+  });
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>.course-container {
   display: flex;
@@ -87,48 +117,41 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	/*step 1 Load initial data from server*/
-	
-	if (!input) {
-		data.courses = [];
-		var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
-		grCourse.addActiveQuery();
-		grCourse.query();
-		
-		while (grCourse.next()) {
-			data.courses.push({
-				Name : grCourse.getDisplayValue('course_name'),
-				Short_description : grCourse.getDisplayValue('short_description'),
-				Thumbnail : grCourse.getDisplayValue('thumbnail'),
-				'sys_id' : grCourse.getUniqueValue()
-			})			
-		}
-	}
-	/*step4 process user input*/
-	if (input) {
-		
-	}
-})();]]></script>
+  if (!input) {
+    data.courses = [];
+    var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
+    grCourse.addActiveQuery();
+    grCourse.query();
+
+    while (grCourse.next()) {
+      data.courses.push({
+        Name: grCourse.getDisplayValue('course_name'),
+        Short_description: grCourse.getDisplayValue('short_description'),
+        Thumbnail: grCourse.getDisplayValue('thumbnail'),
+        Domain: grCourse.getDisplayValue('domain'), // Ensure this matches the field name used in domains
+        sys_id: grCourse.getUniqueValue()
+      });
+    }
+  }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-29 07:27:01</sys_created_on>
         <sys_id>31c7189893e20210b09bf2918bba102f</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>LMS Course List 3 Cards</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_31c7189893e20210b09bf2918bba102f</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-30 17:40:58</sys_updated_on>
-        <template><![CDATA[<!--step 2 display data from server-->
-<div class="container">
-  
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-04 05:54:22</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <button ng-click="c.showAllCourses()">ALL</button>
   <div class="course-container">
-    <div class="course-card" ng-repeat="s in c.data.courses">
+    <div class="course-card" ng-repeat="s in c.filteredCourses" ng-click="c.redirectToCourseDetail(s.sys_id)">
       <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
       <div class="course-details">
         <h3 class="course-title" ng-bind="s.Name"></h3>
@@ -136,11 +159,7 @@
       </div>
     </div>
   </div>
-<!--  <pre>{{ c.data.courses | json }}</pre>-->
 </div>
-<!--step 5 display customized content based on user input-->
-
-
 ]]></template>
     </sp_widget>
 </record_update>

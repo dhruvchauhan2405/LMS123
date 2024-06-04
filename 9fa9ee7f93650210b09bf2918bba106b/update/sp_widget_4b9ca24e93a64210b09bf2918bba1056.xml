@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
-  var c = this;
-};]]></client_script>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
   margin: 0;
   padding: 0;
   background-color: #e8f0fe;
-  font-family: 'Open Sans', sans-serif;
+  
 }
 
 .discussion-detail-page {
@@ -25,7 +22,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeInDown 1s ease-in-out;
+  animation: fadeInDown 0.6s ease-in-out;
   margin-bottom: 20px;
 }
 
@@ -54,7 +51,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeInLeft 1s ease-in-out;
+  animation: fadeInLeft 0.6s ease-in-out;
 }
 
 .reply-form h2 {
@@ -137,7 +134,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeInRight 1s ease-in-out;
+  animation: fadeInRight 0.3s ease-in-out;
 }
 
 .replies-list h2 {
@@ -218,39 +215,27 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>test_widgets</id>
+        <id>lms_forum_answers</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>Test Widgets</name>
+        <name>LMS Forum Answers</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	/*step 1 Load initial data from server*/
-	
-	if (!input) {
-		
-	}
-	/*step4 process user input*/
-	if (input) {
-		
-	}
-})();]]></script>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-05-30 04:57:17</sys_created_on>
-        <sys_id>0a1f78a893e64210b09bf2918bba1022</sys_id>
-        <sys_mod_count>89</sys_mod_count>
-        <sys_name>Test Widgets</sys_name>
+        <sys_created_on>2024-06-04 04:46:39</sys_created_on>
+        <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sp_widget_0a1f78a893e64210b09bf2918bba1022</sys_update_name>
+        <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-04 05:43:40</sys_updated_on>
+        <sys_updated_on>2024-06-04 05:54:52</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
   <div class="discussion-header">
     <h1>How to get started with Web Development?</h1>

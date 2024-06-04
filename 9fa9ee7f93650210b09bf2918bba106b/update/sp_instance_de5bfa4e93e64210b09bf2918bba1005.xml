@@ -10,23 +10,23 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="1">84c7eab593660210b09bf2918bba10fd</sp_column>
-        <sp_widget display_value="Test Widgets">0a1f78a893e64210b09bf2918bba1022</sp_widget>
+        <sp_column display_value="1">84fcaa4e93a64210b09bf2918bba10d2</sp_column>
+        <sp_widget display_value="LMS Forum Answers">4b9ca24e93a64210b09bf2918bba1056</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-06-03 09:47:02</sys_created_on>
-        <sys_id>edc7eeb593660210b09bf2918bba10f0</sys_id>
+        <sys_created_on>2024-06-04 05:51:02</sys_created_on>
+        <sys_id>de5bfa4e93e64210b09bf2918bba1005</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sp_instance_edc7eeb593660210b09bf2918bba10f0</sys_update_name>
+        <sys_update_name>sp_instance_de5bfa4e93e64210b09bf2918bba1005</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-03 09:47:02</sys_updated_on>
+        <sys_updated_on>2024-06-04 05:51:02</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=edc7eeb593660210b09bf2918bba10f0"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=de5bfa4e93e64210b09bf2918bba1005"/>
 </record_update>

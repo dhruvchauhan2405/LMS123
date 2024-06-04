@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller = function($location) {
+    /* widget controller */
+    var c = this;
+
+    c.redirectToCoursePage = function(domain) {
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_courses'; // Replace this with the actual page ID of the course list
+        var url = portalURL + '?id=' + pageID + '&domain=' + encodeURIComponent(domain);
+        window.location.href = url;
+    };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>.domain-container {
   display: flex;
@@ -80,47 +91,43 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	/*step 1 Load initial data from server*/
-	
-	if (!input) {
-		data.domains = [];
-		var grdomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
-		grdomain.addActiveQuery();
-		grdomain.query();
-		
-		while (grdomain.next()) {
-			data.domains.push({
-				Name : grdomain.getDisplayValue('name'),
-				Description : grdomain.getDisplayValue('description'),
-				Thumbnail : grdomain.getDisplayValue('thumbnail'),
-				'sys_id' : grdomain.getUniqueValue()
-			})			
-		}
-	}
-	/*step4 process user input*/
-	if (input) {
-		
-	}
-})();]]></script>
+    if (!input) {
+        data.domains = [];
+        var grDomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+        grDomain.addActiveQuery();
+        grDomain.query();
+        
+        while (grDomain.next()) {
+            data.domains.push({
+                Name: grDomain.getDisplayValue('name'),
+                Description: grDomain.getDisplayValue('description'),
+                Thumbnail: grDomain.getDisplayValue('thumbnail'),
+                sys_id: grDomain.getUniqueValue()
+            });
+        }
+    }
+
+    if (input) {
+        // Handle user input if needed
+    }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 05:47:49</sys_created_on>
         <sys_id>66aa8968932a4210b09bf2918bba10d2</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>LMS Domains 2 card</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_66aa8968932a4210b09bf2918bba10d2</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-30 17:39:16</sys_updated_on>
-        <template><![CDATA[<!--step 2 display data from server-->
-<div class="container">
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-04 06:09:02</sys_updated_on>
+        <template><![CDATA[<div class="container">
   <div class="domain-container">
-    <div class="domain-card" ng-repeat="s in c.data.domains">
+    <div class="domain-card" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.Name)">
       <img class="domain-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
       <div class="domain-details">
         <h3 class="domain-title" ng-bind="s.Name"></h3>
@@ -129,9 +136,6 @@
     </div>
   </div>
 </div>
-<!--step 5 display customized content based on user input-->
-
-
 ]]></template>
     </sp_widget>
 </record_update>

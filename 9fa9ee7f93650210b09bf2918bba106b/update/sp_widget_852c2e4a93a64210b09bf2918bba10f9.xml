@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+  margin: 0;
+  padding: 0;
+  background-color: #e8f0fe;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.forum-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.forum-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: linear-gradient(45deg, #6fb1fc, #4364f7);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.forum-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.forum-header p {
+  font-size: 1.2em;
+}
+
+.forum-content {
+  display: flex;
+  gap: 20px;
+}
+
+.discussion-list {
+  flex: 3;
+}
+
+.discussion-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.discussion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.discussion-title {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #4364f7;
+}
+
+.discussion-excerpt {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.discussion-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.sidebar {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  animation: fadeInRight 0.5s ease-in-out;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #4364f7;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #304bb5;
+}
+
+.categories h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #4364f7;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.categories ul li {
+  margin-bottom: 10px;
+}
+
+.categories ul li a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #333;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.categories ul li a:hover {
+  color: #4364f7;
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_discussion_forum</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Discussion Forum</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-04 04:44:36</sys_created_on>
+        <sys_id>852c2e4a93a64210b09bf2918bba10f9</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>LMS Discussion Forum</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_852c2e4a93a64210b09bf2918bba10f9</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-04 05:58:29</sys_updated_on>
+        <template><![CDATA[<div class="forum-page">
+  <div class="forum-header">
+    <h1>Discussion Forum</h1>
+    <p>Engage in conversations, ask questions, and share knowledge with your peers.</p>
+  </div>
+  <div class="forum-content">
+    <div class="discussion-list">
+      <div class="discussion-card">
+        <h2 class="discussion-title">How to get started with Web Development?</h2>
+        <p class="discussion-excerpt">Can someone guide me on the best resources to start learning web development?...</p>
+        <div class="discussion-footer">
+          <span class="discussion-author">Posted by John Doe</span>
+          <span class="discussion-time">2 hours ago</span>
+          <span class="discussion-comments">12 Comments</span>
+        </div>
+      </div>
+      <!-- More discussion cards -->
+    </div>
+    <div class="sidebar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search discussions..." />
+        <button>Search</button>
+      </div>
+      <div class="categories">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#">General</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">React</a></li>
+          <li><a href="#">Node.js</a></li>
+          <li><a href="#">CSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

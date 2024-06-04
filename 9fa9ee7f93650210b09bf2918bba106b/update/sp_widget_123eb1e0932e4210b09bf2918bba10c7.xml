@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller = function($scope) {
+  var c = this;
+
+  c.filterCoursesByDomain = function(domainName) {
+    console.log('Filtering courses by domain:', domainName);
+    $scope.$emit('filterCoursesByDomain', domainName);
+  };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
   font-family: 'Poppins', sans-serif;
@@ -86,63 +94,56 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	/*step 1 Load initial data from server*/
-	
-	if (!input) {
-		data.domains = [];
-		var grdomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
-		grdomain.addActiveQuery();
-		grdomain.query();
-		
-		while (grdomain.next()) {
-			data.domains.push({
-				Name : grdomain.getDisplayValue('name'),
-				'sys_id' : grdomain.getUniqueValue()
-			})			
-		}
-	}
-	/*step4 process user input*/
-	if (input) {
-		
-	}
-})();]]></script>
+  if (!input) {
+    data.domains = [];
+    var grDomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+    grDomain.addActiveQuery();
+    grDomain.query();
+
+    while (grDomain.next()) {
+      data.domains.push({
+        Name: grDomain.getDisplayValue('name'),
+        sys_id: grDomain.getUniqueValue()
+      });
+    }
+  }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 09:33:06</sys_created_on>
         <sys_id>123eb1e0932e4210b09bf2918bba10c7</sys_id>
-        <sys_mod_count>102</sys_mod_count>
+        <sys_mod_count>107</sys_mod_count>
         <sys_name>LMS Domains Slider</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_123eb1e0932e4210b09bf2918bba10c7</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-03 08:58:20</sys_updated_on>
+        <sys_updated_on>2024-06-04 05:55:52</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="btn" id="prevBtn"><</div>
     <div class="domains" id="domainList">
-      <div class="domain" ng-repeat="s in c.data.domains">
+      <div class="domain" ng-repeat="s in c.data.domains" ng-click="c.filterCoursesByDomain(s.Name)">
         <h3 class="domain-title" ng-bind="s.Name"></h3>
       </div>
     </div>
     <div class="btn" id="nextBtn">></div>
-  </div>
-</div>  
+</div>
 <script>
-  const domainList = document.getElementById('domainList');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+  var domainList = document.getElementById('domainList');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
 
-  prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener('click', function() {
     domainList.scrollBy({ left: -800, behavior: 'smooth' });
   });
 
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener('click', function() {
     domainList.scrollBy({ left: 800, behavior: 'smooth' });
   });
-</script>]]></template>
+</script>
+]]></template>
     </sp_widget>
 </record_update>
