@@ -13,77 +13,75 @@
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f4f4f4;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+        <css>.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #83a4d4, #b6fbff);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
-  width: 50px;
-  height: 50px;
-  background-color: #007bff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin: 0 15px;
-  font-size: 24px;
-  color: white;
-  transition: background-color 0.3s;
+    cursor: pointer;
+    user-select: none;
+    font-size: 2em;
+    color: white;
+    padding: 10px 20px;
+    background: #ff6f61;
+    border: none;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+    background: #ff3d2e;
+    transform: scale(1.1);
 }
 
 .domains {
-  display: flex;
-  overflow: hidden;
-  padding: 10px 0;
-  width: 100%;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .domain {
-  min-width: 300px;
-  height: 100px;
-  padding: 20px 30px;
-  background-color: #e0dede;
-  margin: 0 15px;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #333;
+    flex: 0 0 auto;
+    min-width: 200px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .domain:hover {
-  background-color: #007bff;
-  color: white;
-  transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .domain-title {
-  font-size: 18px;
-  font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+
+/* Hide scrollbar for better aesthetics */
+.domains::-webkit-scrollbar {
+    display: none;
+}
+
+.domains {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -120,14 +118,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 04:57:17</sys_created_on>
         <sys_id>0a1f78a893e64210b09bf2918bba1022</sys_id>
-        <sys_mod_count>115</sys_mod_count>
+        <sys_mod_count>118</sys_mod_count>
         <sys_name>Test Widgets</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_0a1f78a893e64210b09bf2918bba1022</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-05 02:16:22</sys_updated_on>
+        <sys_updated_on>2024-06-05 19:27:38</sys_updated_on>
         <template><![CDATA[<div class="container">
         <div class="btn" id="prevBtn">&lt;</div>
         <div class="domains" id="domainList">

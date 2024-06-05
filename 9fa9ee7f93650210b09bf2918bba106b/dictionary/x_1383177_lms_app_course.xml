@@ -10,7 +10,7 @@
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Content manager" mandatory="true" max_length="4000" name="content_manager_list" reference="sys_user" reference_qual="roles=x_1383177_lms_app.content_manager^EQ" reference_qual_condition="roles=x_1383177_lms_app.content_manager^EQ" type="glide_list"/>
         <element label="Course manager" mandatory="true" max_length="4000" name="course_manager" reference="sys_user" reference_qual="roles=x_1383177_lms_app.course_manager^EQ" reference_qual_condition="roles=x_1383177_lms_app.course_manager^EQ" type="glide_list"/>
-        <element display="true" label="Name" mandatory="true" max_length="40" name="course_name" type="translated_text"/>
+        <element display="true" label="Name" mandatory="true" max_length="80" name="course_name" type="translated_text"/>
         <element choice="1" label="Level" max_length="40" name="course_type" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Beginner" sequence="0" value="beginner"/>

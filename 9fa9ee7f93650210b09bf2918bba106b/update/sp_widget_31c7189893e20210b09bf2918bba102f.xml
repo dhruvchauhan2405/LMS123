@@ -13,14 +13,6 @@
     window.location.href = url;
   };
 
-  c.showAllCourses = function() {
-    console.log('Showing all courses');
-    c.filteredCourses = angular.copy(c.data.courses);
-    $timeout(function() {
-      $scope.$apply();
-    });
-  };
-
   
 };
 ]]></client_script>
@@ -108,6 +100,8 @@
     data.courses = [];
     var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
     grCourse.addActiveQuery();
+    grCourse.orderByDesc('sys_updated_on'); // Sort by sys_updated_on in descending order
+    grCourse.setLimit(6); // Limit to 6 records
     grCourse.query();
 
     while (grCourse.next()) {
@@ -115,7 +109,8 @@
         Name: grCourse.getDisplayValue('course_name'),
         Short_description: grCourse.getDisplayValue('short_description'),
         Thumbnail: grCourse.getDisplayValue('thumbnail'),
-        Domain: grCourse.getDisplayValue('domain'), // Ensure this matches the field name used in domains
+        Domain: grCourse.getDisplayValue('domain'),
+        Updated: grCourse.getDisplayValue('sys_updated_on'),
         sys_id: grCourse.getUniqueValue()
       });
     }
@@ -127,14 +122,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-29 07:27:01</sys_created_on>
         <sys_id>31c7189893e20210b09bf2918bba102f</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>LMS Course List 3 Cards</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_31c7189893e20210b09bf2918bba102f</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-04 09:56:20</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-05 09:34:45</sys_updated_on>
         <template><![CDATA[<div class="container">
   
   <div class="course-container">
