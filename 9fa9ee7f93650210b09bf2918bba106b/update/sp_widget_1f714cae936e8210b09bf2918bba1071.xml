@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($sce) {
+  /* widget controller */
+  var c = this;
+
+  // Make sure HTML content is safe to bind
+  if (c.data.course && c.data.course.description && c.data.course.description.value) {
+    c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
+  }
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header .details {
+  max-width: 70%;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.header p {
+  margin: 5px 0;
+}
+
+.course-description {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
+.sidebar button {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+}
+
+.sidebar button:hover {
+  background-color: #5952c6;
+}
+
+.module-item {
+  margin-bottom: 10px;
+}
+
+.module-header {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.module-header strong {
+  font-size: 1.1em;
+}
+
+.module-description {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-left: 2px solid #6c63ff;
+  margin-top: 5px;
+}
+
+.dropdown-icon {
+  font-size: 1em;
+  transition: transform 0.3s;
+}
+
+.dropdown-icon.expanded {
+  transform: rotate(180deg);
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_course_detail_test</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Course Detail test</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.course = null;
+  data.modules = [];
+
+  try {
+    var courseTable = 'x_1383177_lms_app_course';
+    var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
+    var courseSysId = $sp.getParameter('sys_id'); // Get sys_id from the query parameter
+
+    if (courseSysId) {
+      var gr = new GlideRecordSecure(courseTable);
+      if (gr.get(courseSysId)) {
+        data.course = $sp.getFieldsObject(gr, courseFields);
+
+        // Log the retrieved course details
+        gs.info("Course details retrieved: " + JSON.stringify(data.course));
+
+        // Get related modules
+        var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+        var moduleTable = 'x_1383177_lms_app_module';
+
+        var moduleGr = new GlideRecordSecure(courseModuleTable);
+        moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
+        moduleGr.query();
+
+        // Log to ensure the query is executed
+        gs.info("Querying course modules for courseSysId: " + courseSysId);
+
+        while (moduleGr.next()) {
+          var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
+          var moduleGrDetails = new GlideRecordSecure(moduleTable);
+          if (moduleGrDetails.get(moduleSysId)) {
+            var moduleObj = {
+              name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
+              description: moduleGrDetails.getValue('short_description'), // Adjust field names as per your module table
+            };
+            data.modules.push(moduleObj);
+
+            // Log each module details
+            gs.info("Module details retrieved: " + JSON.stringify(moduleObj));
+          } else {
+            gs.error("Module with sys_id " + moduleSysId + " not found.");
+          }
+        }
+
+        // Log the final data.modules array
+        gs.info("Total modules found: " + data.modules.length);
+      } else {
+        gs.error("Course with sys_id " + courseSysId + " not found.");
+      }
+    } else {
+      gs.error("No sys_id parameter provided.");
+    }
+  } catch (e) {
+    gs.error("Error retrieving course details: " + e.message);
+  }
+
+  if (input) {
+    // Handle user input if needed
+  }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-05 05:35:59</sys_created_on>
+        <sys_id>1f714cae936e8210b09bf2918bba1071</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>LMS Course Detail test</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_1f714cae936e8210b09bf2918bba1071</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-05 06:34:00</sys_updated_on>
+        <template><![CDATA[<div class="main-container" ng-if="c.data.course">
+  <div class="content">
+    <div class="header">
+      <div class="details">
+        <h1>{{ c.data.course.course_name.display_value }}</h1>
+        <p>Created by {{ c.data.course.sys_created_by.display_value }}</p>
+        <p>Last updated: {{ c.data.course.sys_updated_on.display_value }} | 1,268,370 students enrolled</p>
+      </div>
+    </div>
+    <div class="course-description">
+      <div ng-bind-html="c.data.course.description.value"></div>
+      <h2>What you'll learn</h2>
+      <ul>
+        <li>Build 16 web development projects for your portfolio, ready to apply for junior developer jobs.</li>
+        <li>After the course, you will be able to build ANY website you want.</li>
+        <li>Work as a freelance web developer.</li>
+        <li>Master backend development with Node.</li>
+        <li>Learn the latest technologies, including Javascript, React, Node, and even Web3 development.</li>
+        <li>Build fully-fledged websites and web apps for your startup or business.</li>
+        <li>Master frontend development with React.</li>
+        <li>Learn professional developer best practices.</li>
+      </ul>
+
+      <h2>Course content</h2>
+      <p>{{ c.data.modules.length }} sections • {{ c.getLecturesCount(c.data.modules) }} lectures</p>
+      <ul>
+        <li ng-repeat="module in c.data.modules" class="module-item">
+          <div class="module-header" ng-click="module.expanded = !module.expanded">
+            <strong>{{ module.name }}</strong>
+            <span class="dropdown-icon" ng-class="{'expanded': module.expanded}">▼</span>
+          </div>
+          <div class="module-description" ng-if="module.expanded">
+            <p>{{ module.description }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sidebar">
+    <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="Course Image">
+    <h2>{{ c.data.course.course_name.display_value }}</h2>
+    <button>Start Subscription</button>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

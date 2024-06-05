@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>    body {
+      background: #eee;
+      font-family: 'Lily Script One';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      place-content: center;
+    }
+
+    .card {
+      
+      width: 200px;
+      height: 120px;
+      perspective: 1000px;
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .content {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      border-radius: 5px;
+    }
+
+    .front {
+      background: white;
+      color: #03446A;
+    }
+
+    .back {
+      background: #03446A;
+      color: white;
+      transform: rotateY(180deg);
+    }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_filler_cards_3</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Filler Cards 3</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-04 18:31:12</sys_created_on>
+        <sys_id>a959a11e93e28210b09bf2918bba1074</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>LMS Filler Cards 3</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_a959a11e93e28210b09bf2918bba1074</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-05 07:45:11</sys_updated_on>
+        <template><![CDATA[<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"a>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="card-container">
+    <div class="card">
+      <div class="content">
+        <div class="front">
+          <p class="special-font">Learn</p>
+        </div>
+        <div class="back">
+          <p class="special-font">Enjoy!</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="front">
+          <p class="special-font">Code</p>
+        </div>
+        <div class="back">
+          <p class="special-font">Create!</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="front">
+          <p class="special-font">Build</p>
+        </div>
+        <div class="back">
+          <p class="special-font">Innovate!</p>
+        </div>
+      </div>
+    </div>
+  </div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* Centers the entire content vertically and horizontally */
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center; /* Already centers text within the body element */
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 7px;
+  padding: 7px;
+  text-align: center;
+}
+
+.headline {
+  font-size: 3em; /* Adjust font size as needed */
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.separator {
+  border: 0; /* Remove default border styles */
+  border-top: 5px solid #ccc; /* Reduced thickness for a smaller line */
+  margin-top: 10px; /* Adjust margin for spacing */
+  /* Added border-radius for rounded corners */
+  border-radius: 50px;  /* Adjust radius for desired curvature */
+  margin-bottom: 8px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>lms_about_page_title</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS About Page Title</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-05 05:01:50</sys_created_on>
+        <sys_id>57a9bb96936e8210b09bf2918bba10d2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>LMS About Page Title</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_57a9bb96936e8210b09bf2918bba10d2</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-05 05:04:53</sys_updated_on>
+        <template><![CDATA[<div class="content">
+  <p class="headline">About our LMS</p>
+    <hr class="separator">
+</div>]]></template>
+    </sp_widget>
+</record_update>

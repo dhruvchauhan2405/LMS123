@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller = function () {
+    /* widget controller */
+    var c = this;
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
   margin: 0;
@@ -58,7 +62,7 @@
   font-size: 1.8em;
   margin-bottom: 20px;
   color: #4a90e2;
-  text-align: center;
+  text-align: left;
 }
 
 .editor-container {
@@ -222,61 +226,77 @@
         <option_schema/>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function () {
+    var question_ref = input && input.parameters && input.parameters.question_ref;
+    
+    if (question_ref) {
+        data.question_ref = question_ref;
+        
+
+        // Fetch and populate answers from the "forum answers" table based on the selected question
+        // Modify this part according to your data model
+        data.answers = []; // Array to hold answers
+        var grAnswers = new GlideRecord('x_1383177_lms_app_forum_answers');
+        grAnswers.addQuery('question_ref', question_ref);
+        grAnswers.query();
+
+        while (grAnswers.next()) {
+            data.answers.push({
+                author: grAnswers.getValue('answered_by'),
+                content: grAnswers.getValue('answer')
+            });
+        }
+    }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-04 05:54:52</sys_updated_on>
+        <sys_updated_on>2024-06-05 07:23:23</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
-  <div class="discussion-header">
-    <h1>How to get started with Web Development?</h1>
-    <p>Can someone guide me on the best resources to start learning web development?...</p>
-    <div class="discussion-meta">
-      <span>Posted by John Doe</span> |
-      <span>2 hours ago</span>
+    <div class="discussion-header">
+        <h1>{{data.question_ref}}</h1>
+        
+        <!-- Display other details if needed -->
     </div>
-  </div>
-  
-  <div class="discussion-replies">
-  <div class="reply-form">
-    <h2>Post Your Answer</h2>
-    <div class="editor-container">
-      <textarea id="editor" placeholder="Write your answer here..."></textarea>
-      <div class="reply-form-controls">
-        <label for="attachment">
-          <i class="fa fa-paperclip"></i>
-          <span>Attach files: </span>
-          <input type="file" id="attachment" multiple hidden>
-        </label>
-        <button>Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-  
-    <div class="replies-list">
-      <h2>Replies</h2>
-      <div class="reply-card">
-        <div class="reply-author">Jane Smith</div>
-        <div class="reply-time">1 hour ago</div>
-        <div class="reply-content">
-          <p>I recommend starting with freeCodeCamp. They have an excellent curriculum for beginners.</p>
+    <div class="discussion-replies">
+        <div class="reply-form">
+            <h2>Post Your Answer</h2>
+            <div class="editor-container">
+                <textarea id="editor" placeholder="Write your answer here..."></textarea>
+                <div class="reply-form-controls">
+                    <label for="attachment">
+                        <i class="fa fa-paperclip"></i>
+                        <span>Attach files: </span>
+                        <input type="file" id="attachment" multiple hidden>
+                    </label>
+                    <button>Submit</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- More reply cards -->
     </div>
-  </div>
+
+    <div class="replies-list">
+        <h2>Replies</h2>
+        <!-- Display answers -->
+        <div class="reply-card" ng-repeat="answer in data.answers">
+            <div class="reply-author">{{answer.author}}</div>
+            
+            <div class="reply-content">
+                <p>{{answer.content}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 ]]></template>
     </sp_widget>

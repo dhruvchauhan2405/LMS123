@@ -185,14 +185,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 05:47:49</sys_created_on>
         <sys_id>1707cd1e931a4210b09bf2918bba1033</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_name>LMS Header</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_header_footer_1707cd1e931a4210b09bf2918bba1033</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-30 16:42:58</sys_updated_on>
+        <sys_updated_on>2024-06-05 02:44:59</sys_updated_on>
         <template><![CDATA[<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <header class="header" id="header">
@@ -206,10 +206,10 @@
         <a href="lms?id=lms_about">About</a>
     </nav>
     <div class="search-account">
-        <div class="search-bar">
+        <!--<div class="search-bar">
             <input type="text" placeholder="Search...">
             <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
+        </div>-->
         <a href="lms?id=lms_my_account" class="account">My Account</a>
     </div>
   	

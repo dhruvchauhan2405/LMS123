@@ -2,31 +2,17 @@
     <sys_ui_related sys_domain="global" table="x_1383177_lms_app_course" version="2" view="">
         <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
             <filter/>
-            <list_id display_value="Course - Default view" name="x_1383177_lms_app_course" related_list="NULL" sys_domain="global" view="Default view">c58f5d9993de8610b09bf2918bba1060</list_id>
+            <list_id display_value="Course - Default view" name="x_1383177_lms_app_course" related_list="NULL" sys_domain="global" view="Default view">2b977356936e8210b09bf2918bba106f</list_id>
             <order_by/>
             <position>0</position>
             <related_list>x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm.x_1383177_lms_app_course</related_list>
             <sys_class_name>sys_ui_related_list_entry</sys_class_name>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-20 04:58:41</sys_created_on>
-            <sys_id>098f5d9993de8610b09bf2918bba1061</sys_id>
+            <sys_created_on>2024-06-05 04:52:50</sys_created_on>
+            <sys_id>27977356936e8210b09bf2918bba1070</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-20 04:58:41</sys_updated_on>
-        </sys_ui_related_list_entry>
-        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
-            <filter/>
-            <list_id display_value="Course - Default view" name="x_1383177_lms_app_course" related_list="NULL" sys_domain="global" view="Default view">c58f5d9993de8610b09bf2918bba1060</list_id>
-            <order_by/>
-            <position>1</position>
-            <related_list>x_1383177_lms_app_course_enrollment_m2m.x_1383177_lms_app_course</related_list>
-            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-20 04:58:41</sys_created_on>
-            <sys_id>018f5d9993de8610b09bf2918bba1062</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-20 04:58:41</sys_updated_on>
+            <sys_updated_on>2024-06-05 04:52:50</sys_updated_on>
         </sys_ui_related_list_entry>
         <sys_ui_related_list action="INSERT_OR_UPDATE">
             <calculated_name>Course - Default view</calculated_name>
@@ -37,10 +23,10 @@
             <related_list/>
             <sys_class_name>sys_ui_related_list</sys_class_name>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-20 04:58:41</sys_created_on>
+            <sys_created_on>2024-06-05 04:52:50</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>c58f5d9993de8610b09bf2918bba1060</sys_id>
+            <sys_id>2b977356936e8210b09bf2918bba106f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>Course - Default view</sys_name>
             <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -48,7 +34,7 @@
             <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
             <sys_update_name>sys_ui_related_x_1383177_lms_app_course_null</sys_update_name>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-20 04:58:41</sys_updated_on>
+            <sys_updated_on>2024-06-05 04:52:50</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

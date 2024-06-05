@@ -1,215 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
+        <client_script><![CDATA[api.controller = function($scope, $location) {
   var c = this;
-};]]></client_script>
+
+    c.redirectToCoursePage = function(domain) {
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_courses'; // Replace this with the actual page ID of the course list
+        var url = portalURL + '?id=' + pageID + '&domain=' + encodeURIComponent(domain);
+        window.location.href = url;
+    };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  background-color: #e8f0fe;
-  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
 }
 
-.discussion-detail-page {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 20px auto;
-}
-
-.discussion-header {
-  background: #4a90e2;
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeInDown 1s ease-in-out;
-  margin-bottom: 20px;
-}
-
-.discussion-header h1 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.discussion-header p {
-  font-size: 1.2em;
-}
-
-.discussion-meta {
-  font-size: 0.9em;
-  color: #ddd;
-}
-
-.discussion-replies {
+.container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.reply-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeInLeft 1s ease-in-out;
-}
-
-.reply-form h2 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: #4a90e2;
-  text-align: center;
-}
-
-.editor-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#editor {
+  align-items: center;
   width: 100%;
-  height: 150px;
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  resize: vertical;
-  margin-bottom: 10px;
-  transition: border 0.3s;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-#editor:focus {
-  border-color: #4a90e2;
-}
-
-.reply-form-controls {
+.btn {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 50%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; 
+  justify-content: center;
   align-items: center;
-}
-
-.reply-form label {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 10px 20px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
   cursor: pointer;
+  margin: 0 15px;
+  font-size: 24px;
+  color: white;
   transition: background-color 0.3s;
-  font-size: 1em;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.domains {
+  display: flex;
+  overflow: hidden;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.domain {
+  min-width: 300px;
+  height: 100px;
+  padding: 20px 30px;
+  background-color: #e0dede;
+  margin: 0 15px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   color: #333;
-  border: 1px solid #ddd;
 }
 
-.reply-form label:hover {
-  background-color: #e0e0e0;
-}
-
-.reply-form i {
-  font-size: 1.2em;
-  color: #4a90e2;
-}
-
-.reply-form button {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #4a90e2;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.reply-form button:hover {
-  background-color: #357ABD;
-}
-
-.replies-list {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeInRight 1s ease-in-out;
-}
-
-.replies-list h2 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: #4a90e2;
-}
-
-.reply-card {
-  margin-bottom: 20px;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.reply-card:hover {
+.domain:hover {
+  background-color: #007bff;
+  color: white;
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.reply-author {
+.domain-title {
+  font-size: 18px;
   font-weight: bold;
-  color: #4a90e2;
-  margin-bottom: 5px;
-}
-
-.reply-time {
-  font-size: 0.9em;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.reply-content p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -223,76 +97,72 @@
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
         <name>Test Widgets</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	/*step 1 Load initial data from server*/
-	
-	if (!input) {
-		
-	}
-	/*step4 process user input*/
-	if (input) {
-		
-	}
-})();]]></script>
+  if (!input) {
+    data.domains = [];
+    var grDomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+    grDomain.addActiveQuery();
+    grDomain.query();
+
+    while (grDomain.next()) {
+      data.domains.push({
+        Name: grDomain.getDisplayValue('name'),
+        sys_id: grDomain.getUniqueValue()
+      });
+    }
+  }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 04:57:17</sys_created_on>
         <sys_id>0a1f78a893e64210b09bf2918bba1022</sys_id>
-        <sys_mod_count>89</sys_mod_count>
+        <sys_mod_count>115</sys_mod_count>
         <sys_name>Test Widgets</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_0a1f78a893e64210b09bf2918bba1022</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-04 05:43:40</sys_updated_on>
-        <template><![CDATA[<div class="discussion-detail-page">
-  <div class="discussion-header">
-    <h1>How to get started with Web Development?</h1>
-    <p>Can someone guide me on the best resources to start learning web development?...</p>
-    <div class="discussion-meta">
-      <span>Posted by John Doe</span> |
-      <span>2 hours ago</span>
-    </div>
-  </div>
-  
-  <div class="discussion-replies">
-  <div class="reply-form">
-    <h2>Post Your Answer</h2>
-    <div class="editor-container">
-      <textarea id="editor" placeholder="Write your answer here..."></textarea>
-      <div class="reply-form-controls">
-        <label for="attachment">
-          <i class="fa fa-paperclip"></i>
-          <span>Attach files: </span>
-          <input type="file" id="attachment" multiple hidden>
-        </label>
-        <button>Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  
-    <div class="replies-list">
-      <h2>Replies</h2>
-      <div class="reply-card">
-        <div class="reply-author">Jane Smith</div>
-        <div class="reply-time">1 hour ago</div>
-        <div class="reply-content">
-          <p>I recommend starting with freeCodeCamp. They have an excellent curriculum for beginners.</p>
+        <sys_updated_on>2024-06-05 02:16:22</sys_updated_on>
+        <template><![CDATA[<div class="container">
+        <div class="btn" id="prevBtn">&lt;</div>
+        <div class="domains" id="domainList">
+            <div class="domain" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.Name)">
+                <h3 class="domain-title" ng-bind="s.Name"></h3>
+            </div>
         </div>
-      </div>
-      <!-- More reply cards -->
+        <div class="btn" id="nextBtn">&gt;</div>
     </div>
-  </div>
-</div>
-]]></template>
+    <script>
+        var domainList = document.getElementById('domainList');
+        var prevBtn = document.getElementById('prevBtn');
+        var nextBtn = document.getElementById('nextBtn');
+
+        function scrollDomains(direction) {
+            const scrollAmount = 800;
+            const scrollBehavior = { left: direction * scrollAmount, behavior: 'smooth' };
+            domainList.scrollBy(scrollBehavior);
+
+            setTimeout(() => {
+                if (direction === 1 && domainList.scrollLeft + domainList.clientWidth >= domainList.scrollWidth) {
+                    domainList.scrollTo({ left: 0, behavior: 'smooth' });
+                } else if (direction === -1 && domainList.scrollLeft === 0) {
+                    domainList.scrollTo({ left: domainList.scrollWidth, behavior: 'smooth' });
+                }
+            }, 800); // Match with the smooth scroll duration
+        }
+
+        prevBtn.addEventListener('click', function() {
+            scrollDomains(-1);
+        });
+
+        nextBtn.addEventListener('click', function() {
+            scrollDomains(1);
+        });
+    </script>]]></template>
     </sp_widget>
 </record_update>

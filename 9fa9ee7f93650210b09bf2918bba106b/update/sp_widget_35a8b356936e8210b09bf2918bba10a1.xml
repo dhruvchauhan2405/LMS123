@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+  background: #f5f5f5;
+  
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+  padding: 10px; /* Add padding to the body */
+}
+
+.question-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  
+  animation: slideIn 0.5s ease-in-out;
+  margin: 20px; /* Add margin to the container */
+}
+
+.question-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.question-form .form-group {
+  margin-bottom: 20px;
+}
+
+.question-form label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #4a90e2;
+}
+
+.question-form input[type="text"], 
+.question-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border 0.3s;
+}
+
+.question-form input[type="text"]:focus, 
+.question-form textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.question-form .file-upload {
+  position: relative;
+}
+
+.question-form .file-upload input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.question-form .file-upload input[type="file"]::file-selector-button {
+  background: #4a90e2;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.question-form .file-upload input[type="file"]::file-selector-button:hover {
+  background: #357ABD;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #357ABD;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_questions</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Questions</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-05 04:57:22</sys_created_on>
+        <sys_id>35a8b356936e8210b09bf2918bba10a1</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>LMS Questions</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_35a8b356936e8210b09bf2918bba10a1</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-05 05:11:46</sys_updated_on>
+        <template><![CDATA[<div class="question-container">
+    <h1>Post Your Question</h1>
+    <form class="question-form">
+      <div class="form-group">
+        <label for="question-title">Question Title</label>
+        <input type="text" id="question-title" name="question-title" placeholder="Enter the title of your question">
+      </div>
+      <div class="form-group">
+        <label for="question-details">Details</label>
+        <textarea id="question-details" name="question-details" rows="5" placeholder="Provide detailed information about your question"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="question-tags">Tags</label>
+        <input type="text" id="question-tags" name="question-tags" placeholder="Add tags to categorize your question">
+      </div>
+      <div class="form-group file-upload">
+        <label for="file-attachment">Attach File</label>
+        <input type="file" id="file-attachment" name="file-attachment" multiple>
+      </div>
+      <button type="submit" class="submit-btn">Submit Question</button>
+    </form>
+  </div>
+  ]]></template>
+    </sp_widget>
+</record_update>

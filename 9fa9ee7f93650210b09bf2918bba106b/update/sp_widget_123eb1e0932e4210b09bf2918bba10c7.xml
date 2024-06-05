@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope) {
+        <client_script><![CDATA[api.controller = function($scope, $location) {
   var c = this;
 
-  c.filterCoursesByDomain = function(domainName) {
-    console.log('Filtering courses by domain:', domainName);
-    $scope.$emit('filterCoursesByDomain', domainName);
-  };
+    c.redirectToCoursePage = function(domain) {
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_courses'; // Replace this with the actual page ID of the course list
+        var url = portalURL + '?id=' + pageID + '&domain=' + encodeURIComponent(domain);
+        window.location.href = url;
+    };
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -114,18 +116,18 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 09:33:06</sys_created_on>
         <sys_id>123eb1e0932e4210b09bf2918bba10c7</sys_id>
-        <sys_mod_count>107</sys_mod_count>
+        <sys_mod_count>109</sys_mod_count>
         <sys_name>LMS Domains Slider</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_123eb1e0932e4210b09bf2918bba10c7</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-04 05:55:52</sys_updated_on>
+        <sys_updated_on>2024-06-04 09:23:59</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="btn" id="prevBtn"><</div>
     <div class="domains" id="domainList">
-      <div class="domain" ng-repeat="s in c.data.domains" ng-click="c.filterCoursesByDomain(s.Name)">
+      <div class="domain" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.Name)">
         <h3 class="domain-title" ng-bind="s.Name"></h3>
       </div>
     </div>
@@ -143,7 +145,7 @@
   nextBtn.addEventListener('click', function() {
     domainList.scrollBy({ left: 800, behavior: 'smooth' });
   });
-</script>
+  </script>
 ]]></template>
     </sp_widget>
 </record_update>

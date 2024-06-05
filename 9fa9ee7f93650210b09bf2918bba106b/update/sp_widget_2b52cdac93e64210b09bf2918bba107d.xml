@@ -2,92 +2,142 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($location, $scope) {
-    /* widget controller */
-    var c = this;
+  /* widget controller */
+  var c = this;
 
-    // Function to redirect to course detail page
-    c.redirectToCourseDetail = function(sys_id) {
-        var portalURL = $location.absUrl().split('?')[0];
-        var pageID = 'lms_course_details'; // Replace this with the actual page ID
-        var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
-        window.location.href = url;
-    };
+  // Function to redirect to course detail page
+  c.redirectToCourseDetail = function(sys_id) {
+    var portalURL = $location.absUrl().split('?')[0];
+    var pageID = 'lms_course_details'; // Replace this with the actual page ID
+    var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+    window.location.href = url;
+  };
 
-    // Function to show all courses
-    c.showAllCourses = function() {
-        c.filteredCourses = c.data.courses;
-    };
-
-    // Function to filter courses by domain
-    c.filterCoursesByDomain = function(domain) {
-        c.filteredCourses = c.data.courses.filter(function(course) {
-            return course.Domain === domain;
-        });
-    };
-
-    // Watch for changes in the URL parameters
-    $scope.$watch(function() {
-        return $location.search();
-    }, function(params) {
-        if (params.domain) {
-            c.filterCoursesByDomain(params.domain);
-        } else {
-            c.showAllCourses();
-        }
-    });
-
-    // Initialize with all courses
+  // Function to show all courses (for initialization or clearing filters)
+  c.showAllCourses = function() {
     c.filteredCourses = c.data.courses;
-};
-]]></client_script>
+  };
+
+  // Function to filter courses by domain based on domain selection from LMS Domain Slider
+  c.filterCoursesByDomain = function(selectedDomain) {
+    if (selectedDomain) {
+      c.filteredCourses = c.data.courses.filter(function(course) {
+        return course.Domain === selectedDomain;
+      });
+    } else {
+      // No domain selected, show all courses
+      c.showAllCourses();
+    }
+  };
+
+  // Watch for changes in the URL parameters, especially the `domain` parameter
+  $scope.$watch(function() {
+    return $location.search();
+  }, function(params) {
+    var selectedDomain = params.domain;
+    c.filterCoursesByDomain(selectedDomain);
+  });
+
+  // Initialize with all courses
+  c.filteredCourses = c.data.courses;
+};]]></client_script>
         <controller_as>c</controller_as>
-        <css>.course-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+        <css>.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px; /* Adjust for responsiveness */
+  margin: 0 auto; /* Center the container horizontally */
 }
+
+.search-bar {
+  border: 1px solid #ccc; /* Change #ccc for your desired color */
+  border-radius: 5px; /* Adjust the radius for roundness */
+}
+
+.search-bar:hover {
+  background-color: #f5f5f5; /* Change #f5f5f5 for your desired color */
+}
+
+.search-icon {
+  color: #999; /* Change #999 for your desired color */
+  font-size: 18px; /* Adjust the size */
+}
+
+.search-bar {
+  padding: 10px 15px; /* Adjust padding as desired */
+  font-size: 16px; /* Adjust font size */
+}
+
+.course-controls {
+  display: flex;
+  justify-content: space-between; /* Distribute buttons evenly */
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.course-controls button {
+  background: #f0f0f0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.course-controls button:hover {
+  background: #e0e0e0;
+}
+
+.course-container {
+  padding: 20px;
+}
+
 .course-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 20px;
-    width: 90%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: row; /* Changed to row */
-    align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
 .course-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
+
 .course-image {
-    width: 40%; /* Adjust width as needed */
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px; /* Spacing between image and text */
+  width: 40%; /* Adjust width as needed */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px; /* Spacing between image and text */
 }
+
 .course-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .course-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-    text-align: left; /* Changed to left */
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
 }
+
 .course-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    text-align: left; /* Changed to left */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -131,25 +181,30 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 05:11:35</sys_created_on>
         <sys_id>2b52cdac93e64210b09bf2918bba107d</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>LMS Course List 1 Card</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2b52cdac93e64210b09bf2918bba107d</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-04 06:07:01</sys_updated_on>
+        <sys_updated_on>2024-06-04 10:09:35</sys_updated_on>
         <template><![CDATA[<div class="container">
-    <div class="course-container">
-        <button ng-click="c.showAllCourses()">Show All</button>
-        <div class="course-card" ng-repeat="s in c.filteredCourses" ng-click="c.redirectToCourseDetail(s.sys_id)">
-            <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-            <div class="course-details">
-                <h3 class="course-title" ng-bind="s.Name"></h3>
-                <p class="course-description" ng-bind="s.Short_description"></p>
-            </div>
-        </div>
+  <div class="course-controls">
+    <button ng-click="c.showAllCourses()">Show All</button>
+    <input type="text" ng-model="test" placeholder="Search for courses...">
+  </div>
+  <div class="course-container">
+    <div class="course-card"
+         ng-click="c.redirectToCourseDetail(s.sys_id)"
+         ng-repeat="s in c.filteredCourses | filter:{Name:text}">
+      <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+      <div class="course-details">
+        <h3 class="course-title" ng-bind="s.Name"></h3>
+        <p class="course-description" ng-bind="s.Short_description"></p>
+      </div>
     </div>
+  </div>
 </div>
 ]]></template>
     </sp_widget>
