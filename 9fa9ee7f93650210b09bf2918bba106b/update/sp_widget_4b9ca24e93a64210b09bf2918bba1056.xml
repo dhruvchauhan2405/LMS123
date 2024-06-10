@@ -227,14 +227,18 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function () {
-    var question_ref = input && input.parameters && input.parameters.question_ref;
-    
+    var question_ref = input && input.parameters && input.parameters.sys_id;
+    var question = input && input.parameters && input.parameters.question;
+    var description = input && input.parameters && input.parameters.description;
+    var question_by = input && input.parameters && input.parameters.question_by;
+
     if (question_ref) {
         data.question_ref = question_ref;
-        
+        data.question = question;
+        data.description = description;
+        data.question_by = question_by;
 
         // Fetch and populate answers from the "forum answers" table based on the selected question
-        // Modify this part according to your data model
         data.answers = []; // Array to hold answers
         var grAnswers = new GlideRecord('x_1383177_lms_app_forum_answers');
         grAnswers.addQuery('question_ref', question_ref);
@@ -254,19 +258,19 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-05 07:23:23</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-07 05:27:52</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
     <div class="discussion-header">
-        <h1>{{data.question_ref}}</h1>
-        
-        <!-- Display other details if needed -->
+        <h1>{{data.question}}</h1>
+        <p>{{data.description}}</p>
+        <!--<p>Posted by: {{data.question_by}}</p>-->
     </div>
 
     <div class="discussion-replies">
@@ -291,7 +295,6 @@
         <!-- Display answers -->
         <div class="reply-card" ng-repeat="answer in data.answers">
             <div class="reply-author">{{answer.author}}</div>
-            
             <div class="reply-content">
                 <p>{{answer.content}}</p>
             </div>
