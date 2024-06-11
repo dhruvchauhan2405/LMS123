@@ -7,7 +7,7 @@
     // Function to initialize all courses
     c.initializeCourses = function() {
         c.allCourses = angular.copy(c.data.courses);
-        c.showAllCourses();
+        c.filteredCourses = c.allCourses;
     };
 
     c.showAllCourses = function() {
@@ -41,6 +41,8 @@
 
     // Initialize with all courses
     c.initializeCourses();
+	
+		
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -48,32 +50,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 900px; /* Adjust for responsiveness */
-  margin: 0 auto; /* Center the container horizontally */
-}
-
-.search-bar {
-  border: 1px solid #ccc; /* Change #ccc for your desired color */
-  border-radius: 5px; /* Adjust the radius for roundness */
-}
-
-.search-bar:hover {
-  background-color: #f5f5f5; /* Change #f5f5f5 for your desired color */
-}
-
-.search-icon {
-  color: #999; /* Change #999 for your desired color */
-  font-size: 18px; /* Adjust the size */
-}
-
-.search-bar {
-  padding: 10px 15px; /* Adjust padding as desired */
-  font-size: 16px; /* Adjust font size */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .course-controls {
   display: flex;
-  justify-content: space-between; /* Distribute buttons evenly */
+  justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   border-bottom: 1px solid #ddd;
@@ -93,53 +76,85 @@
 }
 
 .course-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   padding: 20px;
+}
+
+@media (min-width: 600px) {
+  .course-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .course-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .course-card {
+  position: relative;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  margin: 10px 0;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 7px;
+  margin-right: 7px;
 }
 
-.course-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
+.course-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
 }
 
 .course-image {
-  width: 40%; /* Adjust width as needed */
-  height: 200px;
-  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  aspect-ratio: 1;
+}
+
+.course-card:hover .course-hover-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.course-hover-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-right: 20px; /* Spacing between image and text */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
-.course-details {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.course-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
+.course-hover-details h3 {
+  font-size: 1.5em;
+  text-align: center;
   margin-bottom: 10px;
 }
 
-.course-description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555;
+.course-hover-details p {
+  font-size: 0.9em;
+  color: #333;
+  text-align: center;
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -179,7 +194,8 @@
             Short_description: grCourse.getDisplayValue('short_description'),
             Thumbnail: grCourse.getDisplayValue('thumbnail'),
             sys_id: grCourse.getUniqueValue(),
-            DomainSysIds: domainIds // Assuming one course can belong to multiple domains
+            DomainSysIds: domainIds, // Assuming one course can belong to multiple domains
+            Description: grCourse.getDisplayValue('short_description') // Add full description
         });
     }
 
@@ -193,14 +209,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 05:11:35</sys_created_on>
         <sys_id>2b52cdac93e64210b09bf2918bba107d</sys_id>
-        <sys_mod_count>59</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_name>LMS Course List 1 Card</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2b52cdac93e64210b09bf2918bba107d</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-11 05:20:50</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-11 09:18:10</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="course-controls">
     <button ng-click="c.showAllCourses()">Show All</button>
@@ -209,10 +225,11 @@
     <div class="course-card"
          ng-click="c.redirectToCourseDetail(s.sys_id)"
          ng-repeat="s in c.filteredCourses">
-      <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-      <div class="course-details">
-        <h3 class="course-title" ng-bind="s.Name"></h3>
-        <p class="course-description" ng-bind="s.Short_description"></p>
+       <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+      <div class="course-name" ng-bind="s.Name"></div>
+      <div class="course-hover-details">
+        <h3 ng-bind="s.Name"></h3>
+        <p ng-bind="s.Description"></p>
       </div>
     </div>
   </div>

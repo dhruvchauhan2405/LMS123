@@ -89,10 +89,10 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>lms_course_list_homepage</id>
+        <id>lms_courses_homepage</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>LMS Course List Homepage</name>
+        <name>LMS Courses (Homepage)</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -123,14 +123,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-29 07:27:01</sys_created_on>
         <sys_id>31c7189893e20210b09bf2918bba102f</sys_id>
-        <sys_mod_count>36</sys_mod_count>
-        <sys_name>LMS Course List Homepage</sys_name>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>LMS Courses (Homepage)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_31c7189893e20210b09bf2918bba102f</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-11 06:09:18</sys_updated_on>
+        <sys_updated_on>2024-06-11 07:06:20</sys_updated_on>
         <template><![CDATA[<div class="container">
   
   <div class="course-container">

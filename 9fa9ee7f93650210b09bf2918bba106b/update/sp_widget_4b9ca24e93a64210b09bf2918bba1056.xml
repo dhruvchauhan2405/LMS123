@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function () {
-    /* widget controller */
+        <client_script><![CDATA[api.controller = function($location) {
     var c = this;
+
+    // Function to get query parameter from URL
+    c.getQueryParameter = function(name) {
+        var url = $location.absUrl();
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(url);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+    // Get sys_id from URL
+    var sys_id = c.getQueryParameter('sys_id');
+
+    // Pass sys_id to server script
+    if (sys_id) {
+        c.server.update({
+            sys_id: sys_id
+        }).then(function(response) {
+            console.log('Server response:', response);
+        });
+    } else {
+        console.error('No sys_id parameter found in URL');
+    }
+
+  if (c.data.answers && c.data.answers.content) {
+    c.data.answers.content.value = $sce.trustAsHtml(c.data.answers.content.value);
+  }
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -227,30 +252,61 @@
         <option_schema/>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function () {
-    var question_ref = input && input.parameters && input.parameters.sys_id;
-    var question = input && input.parameters && input.parameters.question;
-    var description = input && input.parameters && input.parameters.description;
-    var question_by = input && input.parameters && input.parameters.question_by;
+        <script><![CDATA[(function() {
+    // Ensure data object is initialized
+    data.question = {};
+    data.answers = [];
 
-    if (question_ref) {
-        data.question_ref = question_ref;
-        data.question = question;
-        data.description = description;
-        data.question_by = question_by;
+    // Get sys_id from URL query parameter using $sp.getParameter
+    var sys_id = $sp.getParameter('sys_id');
+  
 
-        // Fetch and populate answers from the "forum answers" table based on the selected question
-        data.answers = []; // Array to hold answers
-        var grAnswers = new GlideRecord('x_1383177_lms_app_forum_answers');
-        grAnswers.addQuery('question_ref', question_ref);
-        grAnswers.query();
+    if (sys_id) {
+        // Fetch and populate question details based on the selected sys_id
+        var grQuestion = new GlideRecordSecure('x_1383177_lms_app_discussion');
+        if (grQuestion.get(sys_id)) {
+            var questionBySysId = grQuestion.getValue('question_by');
+            var questionByName = '';
 
-        while (grAnswers.next()) {
-            data.answers.push({
-                author: grAnswers.getValue('answered_by'),
-                content: grAnswers.getValue('answer')
-            });
-        }
+            // Fetch the user's name from sys_user table using the sys_id
+            if (questionBySysId) {
+                var grUser = new GlideRecord('sys_user');
+                if (grUser.get(questionBySysId)) {
+                    questionByName = grUser.getValue('name');
+                }
+            }
+
+            data.question = {
+                question: grQuestion.getValue('question'),
+                detailed_description: grQuestion.getValue('detailed_description'),
+                question_by: questionByName
+            };
+
+            // Fetch and populate answers from the "forum answers" table based on the selected sys_id
+            var grAnswers = new GlideRecordSecure('x_1383177_lms_app_forum_answers');
+            grAnswers.addQuery('question_ref', sys_id);
+            grAnswers.query();
+
+            while (grAnswers.next()) {
+                var answeredBySysId = grAnswers.getValue('answered_by');
+                var answeredByName = '';
+
+                // Fetch the user's name from sys_user table using the sys_id
+                if (answeredBySysId) {
+                    var grUserAnswer = new GlideRecord('sys_user');
+                    if (grUserAnswer.get(answeredBySysId)) {
+                        answeredByName = grUserAnswer.getValue('name');
+                    }
+                }
+
+                data.answers.push({
+                    author: answeredByName,
+                    content: grAnswers.getValue('answer')
+                });
+            }
+        } 
+    } else {
+        gs.info('No sys_id parameter received.');
     }
 })();
 ]]></script>
@@ -259,21 +315,32 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-11 05:47:19</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-11 10:28:26</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
     <div class="discussion-header">
-        <h1>{{data.question}}</h1>
-        <p>{{data.description}}</p>
-        <!--<p>Posted by: {{data.question_by}}</p>-->
+        <h1 ng-bind="data.question.question"></h1>
+      <p class="reply-content" ng-bind-html="data.question.detailed_description"></p>
+        
+        <!-- Display other details if needed -->
     </div>
-
+<div class="replies-list">
+        <h2>Replies</h2>
+        <!-- Display answers -->
+        <div class="reply-card" ng-repeat="answer in data.answers">
+            <div class="reply-author" ng-bind="answer.author"></div>
+            
+            <div class="reply-content">
+                <p ng-bind-html="answer.content"></p>
+            </div>
+        </div>
+    </div>
     <div class="discussion-replies">
         <div class="reply-form">
             <h2>Post Your Answer</h2>
@@ -291,17 +358,9 @@
         </div>
     </div>
 
-    <div class="replies-list">
-        <h2>Replies</h2>
-        <!-- Display answers -->
-        <div class="reply-card" ng-repeat="answer in data.answers">
-            <div class="reply-author">{{answer.author}}</div>
-            <div class="reply-content">
-                <p>{{answer.content}}</p>
-            </div>
-        </div>
-    </div>
+    
 </div>
+<pre ng-bind="c.question_ref | json"></pre>
 ]]></template>
     </sp_widget>
 </record_update>

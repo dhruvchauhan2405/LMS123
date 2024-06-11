@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Learning Management System - Container 3</name>
+        <order>3</order>
+        <semantic_tag/>
+        <sp_page display_value="lms_index">80e08dd2931a4210b09bf2918bba104b</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-30 17:15:38</sys_created_on>
+        <sys_id>8618aba893e28210b09bf2918bba1000</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Learning Management System - Container 3</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_container_8618aba893e28210b09bf2918bba1000</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-04 17:58:55</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_container_8618aba893e28210b09bf2918bba1000</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Learning Management System - Container 3</name><order>3</order><semantic_tag/><sp_page display_value="lms_index">80e08dd2931a4210b09bf2918bba104b</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-30 17:15:38</sys_created_on><sys_id>8618aba893e28210b09bf2918bba1000</sys_id><sys_mod_count>5</sys_mod_count><sys_name>Learning Management System - Container 3</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sp_container_8618aba893e28210b09bf2918bba1000</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-06-04 17:58:55</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-413629572</payload_hash>
+        <record_name>Learning Management System - Container 3</record_name>
+        <reverted_from/>
+        <source>9bacd006936e0210b09bf2918bba1057</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-04 17:58:55</sys_created_on>
+        <sys_id>78f1255693e28210b09bf2918bba100e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fe46772ba0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-04 17:58:55</sys_updated_on>
+        <type>Container</type>
+        <update_guid>30f125569ee28210e7b325effcef8f0e</update_guid>
+        <update_guid_history>30f125569ee28210e7b325effcef8f0e:-413629572,a5a1ad166fe28210f0b3d2ca302f9c58:-1609218083,3e3743746ee2421044dfb51bafc93899:-413629572,ce28eba800e282105b7fb77d2abbef16:781958939,3718aba89fe2821037ad2ec0c9fa0082:-413629572,0a18aba8b8e28210e1d9656821c4a001:781958939</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Learning Management System - Container 3">4e1dc39893b20210b09bf2918bba1093</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-11 06:54:54</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>2b316dd50a064e1494739779f290b790</sys_id>
+        <sys_metadata>8618aba893e28210b09bf2918bba1000</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Learning Management System - Container 3</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_container_8618aba893e28210b09bf2918bba1000</sys_update_name>
+        <sys_update_version display_value="sp_container_8618aba893e28210b09bf2918bba1000">78f1255693e28210b09bf2918bba100e</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-11 06:54:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
