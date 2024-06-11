@@ -18,7 +18,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  
+  font-family: 'Poppins', sans-serif;
   
 }
  
@@ -83,10 +83,10 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>lms_domains_2_card</id>
+        <id>lms_domains_domain_page</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>LMS Domains 2 card</name>
+        <name>LMS Domains (Domain Page)</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -117,14 +117,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 05:47:49</sys_created_on>
         <sys_id>66aa8968932a4210b09bf2918bba10d2</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_name>LMS Domains 2 card</sys_name>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>LMS Domains (Domain Page)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_66aa8968932a4210b09bf2918bba10d2</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-10 08:56:15</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-11 06:23:11</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="domain-container">
     <div class="domain-card" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.sys_id)">

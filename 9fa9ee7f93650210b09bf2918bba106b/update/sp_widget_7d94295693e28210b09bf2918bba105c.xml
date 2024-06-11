@@ -4,7 +4,8 @@
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
         <css>.header-text {
-      font-size: 24px;
+  		font-family: 'Poppins', sans-serif;
+      font-size: 20px;
       font-weight: bold;
       color: #333;
       text-align: center;
@@ -61,14 +62,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 18:10:28</sys_created_on>
         <sys_id>7d94295693e28210b09bf2918bba105c</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>LMS Filler Card 2</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_7d94295693e28210b09bf2918bba105c</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-05 02:28:38</sys_updated_on>
+        <sys_updated_on>2024-06-11 05:49:27</sys_updated_on>
         <template><![CDATA[<div class="header-text">Check our recently added courses:</div>]]></template>
     </sp_widget>
 </record_update>

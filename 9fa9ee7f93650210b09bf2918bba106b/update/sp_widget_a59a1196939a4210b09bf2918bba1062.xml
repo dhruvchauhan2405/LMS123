@@ -75,10 +75,10 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>learn_more_widget</id>
+        <id>lms_learn_more</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>Learn more widget</name>
+        <name>LMS Learn More</name>
         <option_schema/>
         <public>true</public>
         <roles/>
@@ -88,14 +88,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 07:11:04</sys_created_on>
         <sys_id>a59a1196939a4210b09bf2918bba1062</sys_id>
-        <sys_mod_count>17</sys_mod_count>
-        <sys_name>Learn more widget</sys_name>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>LMS Learn More</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_a59a1196939a4210b09bf2918bba1062</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-30 16:51:02</sys_updated_on>
+        <sys_updated_on>2024-06-11 06:19:15</sys_updated_on>
         <template><![CDATA[<div class="jumbotron text-center">
         <h1>Here's the all new segment, Quantum Computing</h1>
         <p>How does Science play a vital role in Quantum Mechanics?</p>

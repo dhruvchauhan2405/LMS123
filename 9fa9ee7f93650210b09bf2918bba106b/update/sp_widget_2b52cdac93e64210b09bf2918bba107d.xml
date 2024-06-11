@@ -2,44 +2,45 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($location, $scope) {
-	/* widget controller */
-	var c = this;
+    var c = this;
 
-	// Function to redirect to course detail page
-	c.redirectToCourseDetail = function(sys_id) {
-		var portalURL = $location.absUrl().split('?')[0];
-		var pageID = 'lms_course_details'; // Replace this with the actual page ID
-		var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
-		window.location.href = url;
-	};
+    // Function to initialize all courses
+    c.initializeCourses = function() {
+        c.allCourses = angular.copy(c.data.courses);
+        c.showAllCourses();
+    };
 
-	// Function to show all courses (for initialization or clearing filters)
-	c.showAllCourses = function() {
-		c.filteredCourses = c.data.courses;
-	};
+    c.showAllCourses = function() {
+        c.filteredCourses = c.allCourses;
+    };
 
-	// Function to filter courses by domain based on domain selection from LMS Domain Slider
-	c.filterCoursesByDomain = function(selectedDomainSysId) {
-		if (selectedDomainSysId) {
-			c.filteredCourses = c.data.courses.filter(function(course) {
-				return course.DomainSysId === selectedDomainSysId;
-			});
-		} else {
-			// No domain selected, show all courses
-			c.showAllCourses();
-		}
-	};
+    c.filterCoursesByDomain = function(domainSysId) {
+        if (domainSysId) {
+            c.filteredCourses = c.allCourses.filter(function(course) {
+                return course.DomainSysIds.includes(domainSysId);
+            });
+        } else {
+            c.showAllCourses();
+        }
+    };
 
-	// Watch for changes in the URL parameters, especially the `domain` parameter
-	$scope.$watch(function() {
-		return $location.search();
-	}, function(params) {
-		var selectedDomainSysId = params.domain_sys_id;
-		c.filterCoursesByDomain(selectedDomainSysId);
-	});
+    c.redirectToCourseDetail = function(sys_id) {
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_course_details'; // Update with actual page ID
+        var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+        window.location.href = url;
+    };
 
-	// Initialize with all courses
-	c.unfilteredCourses = c.data.courses;
+    // Watch for changes in URL parameters
+    $scope.$watch(function() {
+        return $location.search();
+    }, function(params) {
+        var domainSysId = params.domain_sys_id;
+        c.filterCoursesByDomain(domainSysId);
+    });
+
+    // Initialize with all courses
+    c.initializeCourses();
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -158,45 +159,27 @@
     data.courses = [];
     var domainSysId = $sp.getParameter('domain_sys_id'); // Get domain_sys_id from the query parameter
 
-    gs.info("Domain sys_id: " + domainSysId); // Log the domain sys_id
-
     var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
-
-    if (domainSysId) {
-        // Fetch course sys_ids from the many-to-many table based on the domain
-        var grM2M = new GlideRecordSecure('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course'); // Update this with the actual many-to-many table name
-        grM2M.addQuery('x_1383177_lms_app_course_domain', domainSysId); // Update this with the actual domain field name in the many-to-many table
-        grM2M.query();
-
-        var courseSysIds = [];
-        while (grM2M.next()) {
-            courseSysIds.push(grM2M.getValue('x_1383177_lms_app_course')); // Update this with the actual course field name in the many-to-many table
-        }
-
-        gs.info("Course sys_ids: " + courseSysIds); // Log the course sys_ids
-
-        // Query the course table using the fetched sys_ids
-        if (courseSysIds.length > 0) {
-            grCourse.addQuery('sys_id', 'IN', courseSysIds);
-        } else {
-            // No courses found for the selected domain
-            gs.info("No courses found for the selected domain: " + domainSysId);
-            return;
-        }
-    } else {
-        // No domain selected, show all courses
-        grCourse.addActiveQuery();
-    }
-    
+    grCourse.addActiveQuery();
     grCourse.query();
-    
+
     while (grCourse.next()) {
+        // Fetch all domain associations for each course
+        var domainCourse = new GlideRecordSecure('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course');
+        domainCourse.addQuery('x_1383177_lms_app_course', grCourse.getUniqueValue());
+        domainCourse.query();
+
+        var domainIds = [];
+        while (domainCourse.next()) {
+            domainIds.push(domainCourse.getValue('x_1383177_lms_app_course_domain'));
+        }
+
         data.courses.push({
             Name: grCourse.getDisplayValue('course_name'),
             Short_description: grCourse.getDisplayValue('short_description'),
             Thumbnail: grCourse.getDisplayValue('thumbnail'),
-            Domain: grCourse.getDisplayValue('domain'),
-            sys_id: grCourse.getUniqueValue()
+            sys_id: grCourse.getUniqueValue(),
+            DomainSysIds: domainIds // Assuming one course can belong to multiple domains
         });
     }
 
@@ -210,18 +193,17 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 05:11:35</sys_created_on>
         <sys_id>2b52cdac93e64210b09bf2918bba107d</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>LMS Course List 1 Card</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2b52cdac93e64210b09bf2918bba107d</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-10 10:25:19</sys_updated_on>
+        <sys_updated_on>2024-06-11 05:20:50</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="course-controls">
     <button ng-click="c.showAllCourses()">Show All</button>
-    <!--<input type="text" ng-model="test" placeholder="Search for courses...">-->
   </div>
   <div class="course-container">
     <div class="course-card"
@@ -235,7 +217,6 @@
     </div>
   </div>
 </div>
-
-<pre>{{c.data.courses | json}}</pre>]]></template>
+]]></template>
     </sp_widget>
 </record_update>
