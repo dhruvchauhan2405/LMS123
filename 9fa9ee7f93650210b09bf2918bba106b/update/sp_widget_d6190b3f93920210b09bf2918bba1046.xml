@@ -118,10 +118,10 @@ li:before {
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>about_lms</id>
+        <id>lms_about</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>About LMS</name>
+        <name>LMS About</name>
         <option_schema/>
         <public>true</public>
         <roles/>
@@ -131,14 +131,14 @@ li:before {
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-28 07:04:48</sys_created_on>
         <sys_id>d6190b3f93920210b09bf2918bba1046</sys_id>
-        <sys_mod_count>11</sys_mod_count>
-        <sys_name>About LMS</sys_name>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>LMS About</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_d6190b3f93920210b09bf2918bba1046</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-05 10:44:27</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-10 06:28:17</sys_updated_on>
         <template><![CDATA[<div class="container">
     <div class="about-section section">
         <h2>Learning Management System</h2>

@@ -217,14 +217,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>LMS course detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-07 05:25:21</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-10 05:31:57</sys_updated_on>
         <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">
@@ -249,7 +249,7 @@
       </ul>
 
       <h2>Course content</h2>
-      <p>{{ c.data.modules.length }} sections • {{ c.getLecturesCount(c.data.modules) }} lectures</p>
+      <p>{{ c.data.modules.length }} sections </p>
       <ul>
         <li ng-repeat="module in c.data.modules" class="module-item">
           <div class="module-header" ng-click="module.expanded = !module.expanded">
@@ -266,7 +266,7 @@
   <div class="sidebar">
     <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="Course Image">
     <h2>{{ c.data.course.course_name.display_value }}</h2>
-    <button>Start Subscription</button>
+    <button>Start Enrollment</button>
   </div>
 </div>
 ]]></template>

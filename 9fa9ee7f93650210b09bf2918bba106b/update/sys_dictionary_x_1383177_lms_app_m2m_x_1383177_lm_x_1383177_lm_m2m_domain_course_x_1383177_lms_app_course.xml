@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="domain" table="x_1383177_lms_app_course">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="x_1383177_lms_app_course" table="x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course">
         <active>true</active>
         <array>false</array>
-        <attributes/>
+        <attributes>encode_utf8=false</attributes>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
+        <calculation/>
+        <choice>0</choice>
         <choice_field/>
         <choice_table/>
-        <column_label>Course domain</column_label>
+        <column_label>Courses</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -26,21 +21,21 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>domain</element>
+        <element>x_1383177_lms_app_course</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <internal_type display_value="Reference">reference</internal_type>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <max_length>32</max_length>
-        <name>x_1383177_lms_app_course</name>
+        <name>x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="" name="x_1383177_lms_app_course_domain">x_1383177_lms_app_course_domain</reference>
+        <reference display_value="" name="x_1383177_lms_app_course">x_1383177_lms_app_course</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -51,14 +46,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
-        <sys_created_on>2024-04-23 04:21:03</sys_created_on>
-        <sys_name>Course domain</sys_name>
+        <sys_created_on>2024-06-10 05:24:26</sys_created_on>
+        <sys_name>Courses</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_dictionary_x_1383177_lms_app_course_domain</sys_update_name>
+        <sys_update_name>sys_dictionary_x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course_x_1383177_lms_app_course</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-07 05:11:34</sys_updated_on>
+        <sys_updated_on>2024-06-10 05:24:26</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -66,7 +61,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
-        <virtual_type>script</virtual_type>
+        <virtual_type/>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>

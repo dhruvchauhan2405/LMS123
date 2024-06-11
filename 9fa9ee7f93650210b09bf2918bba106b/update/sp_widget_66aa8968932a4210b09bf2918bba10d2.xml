@@ -5,10 +5,10 @@
     /* widget controller */
     var c = this;
 
-    c.redirectToCoursePage = function(domain) {
+    c.redirectToCoursePage = function(domainSysId) {
         var portalURL = $location.absUrl().split('?')[0];
         var pageID = 'lms_courses'; // Replace this with the actual page ID of the course list
-        var url = portalURL + '?id=' + pageID + '&domain=' + encodeURIComponent(domain);
+        var url = portalURL + '?id=' + pageID + '&domain_sys_id=' + domainSysId;
         window.location.href = url;
     };
 };
@@ -117,17 +117,17 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 05:47:49</sys_created_on>
         <sys_id>66aa8968932a4210b09bf2918bba10d2</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>LMS Domains 2 card</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_66aa8968932a4210b09bf2918bba10d2</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-04 06:09:02</sys_updated_on>
+        <sys_updated_on>2024-06-10 08:56:15</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="domain-container">
-    <div class="domain-card" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.Name)">
+    <div class="domain-card" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.sys_id)">
       <img class="domain-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
       <div class="domain-details">
         <h3 class="domain-title" ng-bind="s.Name"></h3>

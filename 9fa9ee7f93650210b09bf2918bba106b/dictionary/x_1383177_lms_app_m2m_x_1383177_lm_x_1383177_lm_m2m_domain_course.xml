@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="b6ce6d4093720210b09bf2918bba109d" label="Domain Course (M2M)" max_length="40" name="x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course" type="collection">
+        <element attributes="encode_utf8=false" label="Courses" max_length="32" name="x_1383177_lms_app_course" reference="x_1383177_lms_app_course" type="reference"/>
+        <element attributes="encode_utf8=false" label="Course Domains" max_length="32" name="x_1383177_lms_app_course_domain" reference="x_1383177_lms_app_course_domain" type="reference"/>
+        <index name="index">
+            <element name="x_1383177_lms_app_course"/>
+        </index>
+    </element>
+</database>

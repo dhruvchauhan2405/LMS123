@@ -10,23 +10,23 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="1">68e7fb82932e4210b09bf2918bba1081</sp_column>
-        <sp_widget display_value="LMS Elements Line">017497de93aa8210b09bf2918bba100f</sp_widget>
+        <sp_column display_value="1">be7f8520936a4210b09bf2918bba104b</sp_column>
+        <sp_widget display_value="LMS Filler Cards 3">a959a11e93e28210b09bf2918bba1074</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
-        <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-06-05 02:22:05</sys_created_on>
-        <sys_id>cf15931293ea8210b09bf2918bba1016</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-10 05:55:03</sys_created_on>
+        <sys_id>ebc5b9c893720210b09bf2918bba10fc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sp_instance_cf15931293ea8210b09bf2918bba1016</sys_update_name>
+        <sys_update_name>sp_instance_ebc5b9c893720210b09bf2918bba10fc</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-10 05:55:20</sys_updated_on>
+        <sys_updated_on>2024-06-10 05:55:21</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=cf15931293ea8210b09bf2918bba1016"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=ebc5b9c893720210b09bf2918bba10fc"/>
 </record_update>
