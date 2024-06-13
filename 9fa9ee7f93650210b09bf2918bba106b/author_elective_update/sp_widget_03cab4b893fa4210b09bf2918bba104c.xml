@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[(function() {
+  c.data.agreeToTerms = false;
+
+  c.enroll = function() {
+    // Close the modal and pass the enrollment result
+    c.close({ enrolled: true });
+  };
+})();
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.modal {
+  display: block; /* Change this from none to block for testing, revert to none in production */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>lms_enrollment_t_c</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Enrollment T&amp;C</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-12 09:32:41</sys_created_on>
+        <sys_id>03cab4b893fa4210b09bf2918bba104c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>LMS Enrollment T&amp;C</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_03cab4b893fa4210b09bf2918bba104c</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-12 09:37:22</sys_updated_on>
+        <template><![CDATA[<div>
+  <p><strong>Terms & Conditions</strong></p>
+  <p>Training and Certification Terms and Conditions</p>
+  <a href="#">Training and Certification Terms and Conditions</a>
+  <div>
+    <input type="checkbox" ng-model="c.data.agreeToTerms"> With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.
+  </div>
+  <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">Enroll</button>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_widget_03cab4b893fa4210b09bf2918bba104c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[(function() {
+  c.data.agreeToTerms = false;
+
+  c.enroll = function() {
+    // Close the modal and pass the enrollment result
+    c.close({ enrolled: true });
+  };
+})();
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.modal {
+  display: block; /* Change this from none to block for testing, revert to none in production */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;lms_enrollment_t_c&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;LMS Enrollment T&amp;amp;C&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-12 09:32:41&lt;/sys_created_on&gt;&lt;sys_id&gt;03cab4b893fa4210b09bf2918bba104c&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;LMS Enrollment T&amp;amp;C&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_03cab4b893fa4210b09bf2918bba104c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;abhishek.s&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-12 09:37:22&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+  &lt;p&gt;&lt;strong&gt;Terms &amp; Conditions&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;Training and Certification Terms and Conditions&lt;/p&gt;
+  &lt;a href="#"&gt;Training and Certification Terms and Conditions&lt;/a&gt;
+  &lt;div&gt;
+    &lt;input type="checkbox" ng-model="c.data.agreeToTerms"&gt; With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.
+  &lt;/div&gt;
+  &lt;button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms"&gt;Enroll&lt;/button&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>109346056</payload_hash>
+        <record_name>LMS Enrollment T&amp;C</record_name>
+        <reverted_from/>
+        <source>8fe6875093b20210b09bf2918bba108c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-12 09:37:22</sys_created_on>
+        <sys_id>23db74bc93fa4210b09bf2918bba1050</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1900bcf220d0000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-12 09:37:22</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>a7dbf8f80afa4210949b2d47138544c5</update_guid>
+        <update_guid_history>a7dbf8f80afa4210949b2d47138544c5:109346056,ffcb78f8a3fa4210f53468d6c5354050:-925236295,87cab07c98fa42100778a2bc47a10683:-1126248206</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LMS Enrollment T&amp;C">18bf38b0933e4210b09bf2918bba10ae</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-12 09:54:04</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>5fdb4bec13024088bad7125fd3813169</sys_id>
+        <sys_metadata>03cab4b893fa4210b09bf2918bba104c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Enrollment T&amp;C</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_widget_03cab4b893fa4210b09bf2918bba104c</sys_update_name>
+        <sys_update_version display_value="sp_widget_03cab4b893fa4210b09bf2918bba104c">23db74bc93fa4210b09bf2918bba1050</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-12 09:54:04</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

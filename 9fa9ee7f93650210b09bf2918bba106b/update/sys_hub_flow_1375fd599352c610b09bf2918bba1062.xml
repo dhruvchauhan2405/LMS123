@@ -4,21 +4,21 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=173497000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=edge,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2083317000,viewActivatedIn=naturalLanguage</attributes>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from/>
         <copied_from_name/>
         <description/>
         <internal_name>approving_the_approved_pending_courses</internal_name>
-        <label_cache>[{"name":"Created or Updated_1.current.course_name.accessibility","label":"Trigger - Record Created or Updated➛Enrollment Record➛Course➛Access Type","reference":"","reference_display":"Access Type","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","image":"","used":false,"rawLabel":"-- None --","selected":false,"missing":false,"reference":false,"value":""},{"label":"Free to access","image":"","used":false,"rawLabel":"Free to access","selected":false,"missing":false,"reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","image":"","used":false,"rawLabel":"Requestable","selected":false,"missing":false,"reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name"},{"name":"Created_1.current.learner_name.user.first_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name➛User➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Created_1.current","label":"Trigger - Record Created➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.course_name.accessibility","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Accessibility","reference":"","reference_display":"Accessibility","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","image":"","used":false,"rawLabel":"-- None --","selected":false,"missing":false,"reference":false,"value":""},{"label":"Free to access","image":"","used":false,"rawLabel":"Free to access","selected":false,"missing":false,"reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","image":"","used":false,"rawLabel":"Requestable","selected":false,"missing":false,"reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.email","label":"Trigger - Record Created➛Enrollment Record➛Email","reference":"","reference_display":"Email","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"email"},{"name":"Created_1.current.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name","reference":"x_1383177_lms_app_course","reference_display":"Course","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"course_name"},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name","reference":"sys_user_grmember","reference_display":"Group Member","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name"},{"name":"{{static.0002e2ac93b9c210b09bf2918bba10c7}}","label":"LMS Course manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.144c2aa893f9c210b09bf2918bba10e2}}","label":"LMS Manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"66c612ed-dbcc-411c-a18e-80a9681ca24f.approval_state","label":"13 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.course_name.learning_medium","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Learning medium","reference":"","reference_display":"Learning medium","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"learning_medium","choices":[{"label":"-- None --","image":"","used":false,"rawLabel":"-- None --","selected":false,"missing":false,"reference":false,"value":""},{"label":"Online","image":"","used":false,"rawLabel":"Online","selected":false,"missing":false,"reference":false,"value":"online","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"In-person","image":"","used":false,"rawLabel":"In-person","selected":false,"missing":false,"reference":false,"value":"in-person","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <label_cache>[{"name":"Created or Updated_1.current.course_name.accessibility","label":"Trigger - Record Created or Updated➛Enrollment Record➛Course➛Access Type","reference":"","reference_display":"Access Type","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":""},{"label":"Free to access","rawLabel":"Free to access","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","rawLabel":"Requestable","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name"},{"name":"Created_1.current.learner_name.user.first_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name➛User➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Created_1.current","label":"Trigger - Record Created➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.course_name.accessibility","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Accessibility","reference":"","reference_display":"Accessibility","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":""},{"label":"Free to access","rawLabel":"Free to access","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","rawLabel":"Requestable","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.email","label":"Trigger - Record Created➛Enrollment Record➛Email","reference":"","reference_display":"Email","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"email"},{"name":"Created_1.current.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name","reference":"x_1383177_lms_app_course","reference_display":"Course","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"course_name"},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name","reference":"sys_user_grmember","reference_display":"Group Member","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name"},{"name":"{{static.0002e2ac93b9c210b09bf2918bba10c7}}","label":"LMS Course manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.144c2aa893f9c210b09bf2918bba10e2}}","label":"LMS Manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"66c612ed-dbcc-411c-a18e-80a9681ca24f.approval_state","label":"13 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.course_name.learning_medium","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Learning medium","reference":"","reference_display":"Learning medium","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"learning_medium","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":""},{"label":"Online","rawLabel":"Online","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"online","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"In-person","rawLabel":"In-person","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"in-person","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
         <master_snapshot>b86afaa9931a0a10b09bf2918bba1080</master_snapshot>
         <name>Approving the "Approved Pending" courses</name>
         <natlang/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
         <remote_trigger_id>b9a888ca93920210b09bf2918bba1003</remote_trigger_id>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
@@ -30,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1375fd599352c610b09bf2918bba1062</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>Approving the "Approved Pending" courses</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_hub_flow_1375fd599352c610b09bf2918bba1062</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:23</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:24:27</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=1375fd599352c610b09bf2918bba1062"/>
@@ -75,14 +75,14 @@
         <identifier>1375fd599352c610b09bf2918bba1062</identifier>
         <runner>FDTriggerRunner</runner>
         <sys_created_by>abhishek.s</sys_created_by>
-        <sys_created_on>2024-05-22 06:46:22</sys_created_on>
-        <sys_id>ca5b04ce93920210b09bf2918bba1060</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_created_on>2024-06-13 09:16:42</sys_created_on>
+        <sys_id>f6b0c2c593360210b09bf2918bba1078</sys_id>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:24:27</sys_updated_on>
         <trigger display_value="">b9a888ca93920210b09bf2918bba1003</trigger>
     </sys_trigger_runner_mapping>
-    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=1375fd599352c610b09bf2918bba1062^sys_idNOT INca5b04ce93920210b09bf2918bba1060"/>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=1375fd599352c610b09bf2918bba1062^sys_idNOT INf6b0c2c593360210b09bf2918bba1078"/>
     <sys_hub_trigger_instance action="delete_multiple" query="flow=1375fd599352c610b09bf2918bba1062^sys_idNOT INe157c04a93920210b09bf2918bba1062"/>
     <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
         <comment/>
@@ -93,10 +93,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-22 06:28:51</sys_created_on>
         <sys_id>e157c04a93920210b09bf2918bba1062</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:43</sys_updated_on>
         <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -224,14 +224,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-20 06:50:41</sys_created_on>
         <sys_id>3129f99d9352c610b09bf2918bba1056</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:42</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -245,6 +245,29 @@
         <xml_view>false</xml_view>
     </sys_hub_flow_input>
     <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3129f99d9352c610b09bf2918bba1056"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDCollection</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>global</scope_name>
+        <serialized_content>{"FlowDesigner:FDCollection":{"$COCollectionField":[{"FDChangeDetails":{"previous_display_value":"String","previous_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Display Value\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\"}"},"previous_value":"String","previous_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Value\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"current_display_value":"String","current_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Display Value\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"current_value":"String","current_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Value\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\"}"},"field_name":"String","field_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Field Name\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FDCollection.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-13 23:19:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>f4f014150f023300ecf0cc52ff767eed</sys_id>
+        <sys_mod_count>101</sys_mod_count>
+        <sys_name>FDCollection</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Flow Designer Designer Model" source="com.glide.hub.designer_backend.model">e661186cd9f13110cedf7dffddb48f71</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global">global</sys_scope>
+        <sys_update_name>sys_complex_object_f4f014150f023300ecf0cc52ff767eed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-28 05:06:11</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -392,14 +415,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-20 06:50:41</sys_created_on>
         <sys_id>f929f99d9352c610b09bf2918bba105a</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:42</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -432,10 +455,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 15:37:20</sys_created_on>
         <sys_id>124b783593924a10b09bf2918bba10e7</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:23</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:43</sys_updated_on>
         <ui_id>22df5c9d-ab2d-4342-b749-bb97b28326b3</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=124b783593924a10b09bf2918bba10e7"/>
@@ -579,10 +602,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 15:32:44</sys_created_on>
         <sys_id>363abcb193924a10b09bf2918bba1023</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:43</sys_updated_on>
         <ui_id>bfd6b443-fecc-4c28-94d4-bcc3cfe4744c</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=363abcb193924a10b09bf2918bba1023"/>
@@ -747,10 +770,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 05:56:10</sys_created_on>
         <sys_id>3c46b265931a0a10b09bf2918bba10e9</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:23</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:43</sys_updated_on>
         <ui_id>2c9a8db4-a4ad-4766-a35e-a5cc0006c86f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -834,10 +857,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-20 06:50:41</sys_created_on>
         <sys_id>b129f99d9352c610b09bf2918bba106f</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:43</sys_updated_on>
         <ui_id>993beecb-80c2-4dda-8126-fa4ddbb404e6</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1107,14 +1130,14 @@
         <copied_from_name/>
         <description/>
         <internal_name>approving_the_approved_pending_courses</internal_name>
-        <label_cache>[{"name":"Created or Updated_1.current.course_name.accessibility","label":"Trigger - Record Created or Updated➛Enrollment Record➛Course➛Access Type","reference":"","reference_display":"Access Type","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","image":"","used":false,"rawLabel":"-- None --","selected":false,"missing":false,"reference":false,"value":""},{"label":"Free to access","image":"","used":false,"rawLabel":"Free to access","selected":false,"missing":false,"reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","image":"","used":false,"rawLabel":"Requestable","selected":false,"missing":false,"reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name"},{"name":"Created_1.current.learner_name.user.first_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name➛User➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Created_1.current","label":"Trigger - Record Created➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.course_name.accessibility","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Accessibility","reference":"","reference_display":"Accessibility","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","image":"","used":false,"rawLabel":"-- None --","selected":false,"missing":false,"reference":false,"value":""},{"label":"Free to access","image":"","used":false,"rawLabel":"Free to access","selected":false,"missing":false,"reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","image":"","used":false,"rawLabel":"Requestable","selected":false,"missing":false,"reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.email","label":"Trigger - Record Created➛Enrollment Record➛Email","reference":"","reference_display":"Email","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"email"},{"name":"Created_1.current.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name","reference":"x_1383177_lms_app_course","reference_display":"Course","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"course_name"},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name","reference":"sys_user_grmember","reference_display":"Group Member","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name"},{"name":"{{static.0002e2ac93b9c210b09bf2918bba10c7}}","label":"LMS Course manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.144c2aa893f9c210b09bf2918bba10e2}}","label":"LMS Manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"66c612ed-dbcc-411c-a18e-80a9681ca24f.approval_state","label":"13 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.course_name.learning_medium","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Learning medium","reference":"","reference_display":"Learning medium","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"learning_medium","choices":[{"label":"-- None --","image":"","used":false,"rawLabel":"-- None --","selected":false,"missing":false,"reference":false,"value":""},{"label":"Online","image":"","used":false,"rawLabel":"Online","selected":false,"missing":false,"reference":false,"value":"online","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"In-person","image":"","used":false,"rawLabel":"In-person","selected":false,"missing":false,"reference":false,"value":"in-person","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <label_cache>[{"name":"Created or Updated_1.current.course_name.accessibility","label":"Trigger - Record Created or Updated➛Enrollment Record➛Course➛Access Type","reference":"","reference_display":"Access Type","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":""},{"label":"Free to access","rawLabel":"Free to access","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","rawLabel":"Requestable","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name"},{"name":"Created_1.current.learner_name.user.first_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name➛User➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Created_1.current","label":"Trigger - Record Created➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.course_name.accessibility","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Accessibility","reference":"","reference_display":"Accessibility","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"accessibility","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":""},{"label":"Free to access","rawLabel":"Free to access","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"free","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"Requestable","rawLabel":"Requestable","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"requestable","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created_1.current.email","label":"Trigger - Record Created➛Enrollment Record➛Email","reference":"","reference_display":"Email","type":"string","base_type":"string","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"email"},{"name":"Created_1.current.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course name","reference":"x_1383177_lms_app_course","reference_display":"Course","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"course_name"},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner name","reference":"sys_user_grmember","reference_display":"Group Member","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name"},{"name":"{{static.0002e2ac93b9c210b09bf2918bba10c7}}","label":"LMS Course manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.144c2aa893f9c210b09bf2918bba10e2}}","label":"LMS Manager","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"66c612ed-dbcc-411c-a18e-80a9681ca24f.approval_state","label":"13 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.course_name.learning_medium","label":"Trigger - Record Created➛Enrollment Record➛Course name➛Learning medium","reference":"","reference_display":"Learning medium","type":"choice","base_type":"choice","parent_table_name":"x_1383177_lms_app_course","column_name":"learning_medium","choices":[{"label":"-- None --","rawLabel":"-- None --","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":""},{"label":"Online","rawLabel":"Online","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"online","parameters":{"name":"x_1383177_lms_app_course"}},{"label":"In-person","rawLabel":"In-person","selected":false,"missing":false,"used":false,"image":"","reference":false,"value":"in-person","parameters":{"name":"x_1383177_lms_app_course"}}]},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Enrollment Record","reference":"x_1383177_lms_app_enrollment","reference_display":"Enrollment","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
         <master>true</master>
         <name>Approving the "Approved Pending" courses</name>
         <natlang/>
         <outputs/>
         <parent_flow display_value="Approving the &quot;Approved Pending&quot; courses">1375fd599352c610b09bf2918bba1062</parent_flow>
         <remote_trigger_id/>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <status>published</status>
@@ -1124,7 +1147,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b86afaa9931a0a10b09bf2918bba1080</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1132,7 +1155,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:42</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=b86afaa9931a0a10b09bf2918bba1080"/>
@@ -1147,10 +1170,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 06:14:12</sys_created_on>
         <sys_id>0d6a3ea9931a0a10b09bf2918bba101b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:42</sys_updated_on>
         <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -1243,6 +1266,29 @@
     </sys_flow_cat_variable_model>
     <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=b86afaa9931a0a10b09bf2918bba1081"/>
     <sys_hub_flow_input action="delete_multiple" query="model=b86afaa9931a0a10b09bf2918bba1080^sys_idNOT IN2077084a93920210b09bf2918bba100c,306afaa9931a0a10b09bf2918bba10ae,7c6afaa9931a0a10b09bf2918bba1082"/>
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDCollection</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>global</scope_name>
+        <serialized_content>{"FlowDesigner:FDCollection":{"$COCollectionField":[{"FDChangeDetails":{"previous_display_value":"String","previous_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Display Value\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\"}"},"previous_value":"String","previous_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Previous Value\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"current_display_value":"String","current_display_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Display Value\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"current_value":"String","current_value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Current Value\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\"}"},"field_name":"String","field_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Field Name\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FDCollection.$type_facets":{"SimpleMapFacet":"{\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"Changed Fields\",\"mandatory\":\"false\",\"child_name\":\"FDChangeDetails\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"100\",\"max_length\":\"4000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-13 23:19:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path/>
+        <sys_id>f4f014150f023300ecf0cc52ff767eed</sys_id>
+        <sys_mod_count>101</sys_mod_count>
+        <sys_name>FDCollection</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Flow Designer Designer Model" source="com.glide.hub.designer_backend.model">e661186cd9f13110cedf7dffddb48f71</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global">global</sys_scope>
+        <sys_update_name>sys_complex_object_f4f014150f023300ecf0cc52ff767eed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-28 05:06:11</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
         <array>false</array>
@@ -1390,14 +1436,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 06:14:11</sys_created_on>
         <sys_id>306afaa9931a0a10b09bf2918bba10ae</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1474,14 +1520,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 06:14:11</sys_created_on>
         <sys_id>7c6afaa9931a0a10b09bf2918bba1082</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1514,10 +1560,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 15:37:34</sys_created_on>
         <sys_id>ed5b7c3593924a10b09bf2918bba100b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:41</sys_updated_on>
         <ui_id>bfd6b443-fecc-4c28-94d4-bcc3cfe4744c</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=ed5b7c3593924a10b09bf2918bba100b"/>
@@ -1673,10 +1719,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 15:37:34</sys_created_on>
         <sys_id>ed5b7c3593924a10b09bf2918bba101a</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:42</sys_updated_on>
         <ui_id>22df5c9d-ab2d-4342-b749-bb97b28326b3</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=ed5b7c3593924a10b09bf2918bba101a"/>
@@ -1829,10 +1875,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 06:14:11</sys_created_on>
         <sys_id>386afaa9931a0a10b09bf2918bba10c5</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:41</sys_updated_on>
         <ui_id>993beecb-80c2-4dda-8126-fa4ddbb404e6</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1902,10 +1948,10 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 06:14:11</sys_created_on>
         <sys_id>b86afaa9931a0a10b09bf2918bba10ca</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:41</sys_updated_on>
         <ui_id>2c9a8db4-a4ad-4766-a35e-a5cc0006c86f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2180,24 +2226,24 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>1375fd599352c610b09bf2918bba1062</sys_id>
         <latest_snapshot>b86afaa9931a0a10b09bf2918bba1080</latest_snapshot>
-        <compiler_build>glide-vancouver-07-06-2023__patch2-hotfix1-10-04-2023_10-06-2023_1235.zip</compiler_build>
+        <compiler_build>glide-vancouver-07-06-2023__patch9-05-02-2024_05-14-2024_2249.zip</compiler_build>
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=1375fd599352c610b09bf2918bba1062^sys_idNOT INd16a3ea9931a0a10b09bf2918bba106c"/>
     <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
         <binding_strategy>com.snc.process_flow.engine.binding.Every</binding_strategy>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"d16a3ea9931a0a10b09bf2918bba106c","name":"plan","plan_signature":null}}</plan>
         <plan_id>1375fd599352c610b09bf2918bba1062</plan_id>
-        <snapshot>359b4cce93920210b09bf2918bba102f</snapshot>
+        <snapshot>67d0c6c593360210b09bf2918bba10ae</snapshot>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-21 06:14:13</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d16a3ea9931a0a10b09bf2918bba106c</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-22 06:46:22</sys_updated_on>
+        <sys_updated_on>2024-06-13 09:16:42</sys_updated_on>
         <trigger display_value="">b9a888ca93920210b09bf2918bba1003</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=1375fd599352c610b09bf2918bba1062"/>

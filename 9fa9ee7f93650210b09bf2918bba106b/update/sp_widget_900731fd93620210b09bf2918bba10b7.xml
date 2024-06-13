@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($sce) {
+        <client_script><![CDATA[api.controller = function($sce, $location) {
   /* widget controller */
   var c = this;
+  c.data.selectedTab = 'description'; 
+  c.data.showModal = false;
+  c.data.agreeToTerms = false;
 
   // Make sure HTML content is safe to bind
   if (c.data.course && c.data.course.description && c.data.course.description.value) {
     c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
   }
+
+  c.enroll = function() {
+		c.server.update().then(function(){
+			var portalURL = $location.absUrl().split('?')[0];
+    var pageID = 'lms_enrollment_status'; // Update with actual page ID
+    var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+    window.location.href = url
+		});
+    
+  };
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -136,6 +149,99 @@
 .dropdown-icon.expanded {
   transform: rotate(180deg);
 }
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tab-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-list li {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  margin-right: 5px;
+  background-color: #f5f5f5;
+}
+
+.tab-list li.active {
+  background-color: #ffffff;
+  border-top: 2px solid #007bff;
+  border-right: 2px solid #ddd;
+  border-left: 2px solid #ddd;
+}
+
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tab-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.tab-list li {
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-list li.active {
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -151,65 +257,72 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  data.course = null;
-  data.modules = [];
+	
+	if(!input){
+	data.course = null;
+	data.modules = [];
+	data.enrollmentCount = 0;
+	data.enrollmentCreated = false; // Initialize the enrollment creation flag
 
-  try {
-    var courseTable = 'x_1383177_lms_app_course';
-    var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
-    var courseSysId = $sp.getParameter('sys_id'); // Get sys_id from the query parameter
+	var courseSysId = $sp.getParameter('sys_id'); // Get sys_id from the query parameter
+	data.course_sys_id = courseSysId;
 
-    if (courseSysId) {
-      var gr = new GlideRecordSecure(courseTable);
-      if (gr.get(courseSysId)) {
-        data.course = $sp.getFieldsObject(gr, courseFields);
+	try {
+		var courseTable = 'x_1383177_lms_app_course';
+		var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
 
-        // Log the retrieved course details
-        gs.info("Course details retrieved: " + JSON.stringify(data.course));
+		if (courseSysId) {
+			var gr = new GlideRecordSecure(courseTable);
+			if (gr.get(courseSysId)) {
+				data.course = $sp.getFieldsObject(gr, courseFields);
 
-        // Get related modules
-        var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
-        var moduleTable = 'x_1383177_lms_app_module';
+				// Get related modules
+				var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+				var moduleTable = 'x_1383177_lms_app_module';
 
-        var moduleGr = new GlideRecordSecure(courseModuleTable);
-        moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
-        moduleGr.query();
+				var moduleGr = new GlideRecordSecure(courseModuleTable);
+				moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
+				moduleGr.orderBy('order');
+				moduleGr.query();
 
-        // Log to ensure the query is executed
-        gs.info("Querying course modules for courseSysId: " + courseSysId);
+				while (moduleGr.next()) {
+					var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
+					var moduleGrDetails = new GlideRecordSecure(moduleTable);
+					if (moduleGrDetails.get(moduleSysId)) {
+						var moduleObj = {
+							name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
+							description: moduleGrDetails.getValue('short_description'), // Adjust field names as per your module table
+						};
+						data.modules.push(moduleObj);
+					}
+				}
 
-        while (moduleGr.next()) {
-          var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
-          var moduleGrDetails = new GlideRecordSecure(moduleTable);
-          if (moduleGrDetails.get(moduleSysId)) {
-            var moduleObj = {
-              name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
-              description: moduleGrDetails.getValue('short_description'), // Adjust field names as per your module table
-            };
-            data.modules.push(moduleObj);
+				// Get the count of enrollments for the course using GlideAggregate
+				var enrollmentTable = 'x_1383177_lms_app_enrollment'; // Replace with your enrollment table name
+				var enrollmentGa = new GlideAggregate(enrollmentTable);
+				enrollmentGa.addQuery('course_name', courseSysId); // Adjust the field name if needed
+				enrollmentGa.addAggregate('COUNT');
+				enrollmentGa.query();
+				if (enrollmentGa.next()) {
+					data.enrollmentCount = enrollmentGa.getAggregate('COUNT');
+				}
+			}
+		}
+	} catch (e) {
+		gs.error("Error retrieving course details: " + e.message);
+	}
+	}
 
-            // Log each module details
-            gs.info("Module details retrieved: " + JSON.stringify(moduleObj));
-          } else {
-            gs.error("Module with sys_id " + moduleSysId + " not found.");
-          }
-        }
+	if (input) {
+		var courseSysId1 = $sp.getParameter('sys_id');
+		var enrollmentGr = new GlideRecordSecure('x_1383177_lms_app_enrollment'); // Added quotes around table name
+		enrollmentGr.initialize();
+		enrollmentGr.setValue('learner_name', gs.getUserID()); // Set learner to current user
+		enrollmentGr.setValue('course_name', courseSysId1); // Set course name to current course
+		enrollmentGr.insert();
+		data.enrollmentCreated = true;
+	}
 
-        // Log the final data.modules array
-        gs.info("Total modules found: " + data.modules.length);
-      } else {
-        gs.error("Course with sys_id " + courseSysId + " not found.");
-      }
-    } else {
-      gs.error("No sys_id parameter provided.");
-    }
-  } catch (e) {
-    gs.error("Error retrieving course details: " + e.message);
-  }
-
-  if (input) {
-    // Handle user input if needed
-  }
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -217,56 +330,74 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>81</sys_mod_count>
         <sys_name>LMS Course Detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-11 06:10:46</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-13 07:10:55</sys_updated_on>
         <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">
       <div class="details">
         <h1>{{ c.data.course.course_name.display_value }}</h1>
-        <p>Created by {{ c.data.course.sys_created_by.display_value }}              |            {{ c.data.course.learning_medium.display_value }}</p>
-        <p>Last updated: {{ c.data.course.sys_updated_on.display_value }} | 12 students enrolled</p>
+        <p>Created by {{ c.data.course.sys_created_by.display_value }} | {{ c.data.course.learning_medium.display_value }}</p>
+        <p>Last updated: {{ c.data.course.sys_updated_on.display_value | date:'yyyy-MM-dd' }} | Enrollments: {{ c.data.enrollmentCount }}</p>
       </div>
     </div>
-    <div class="course-description">
-      <div ng-bind-html="c.data.course.description.value"></div>
-      <h2>What you'll learn</h2>
-      <ul>
-        <li>Build 16 web development projects for your portfolio, ready to apply for junior developer jobs.</li>
-        <li>After the course, you will be able to build ANY website you want.</li>
-        <li>Work as a freelance web developer.</li>
-        <li>Master backend development with Node.</li>
-        <li>Learn the latest technologies, including Javascript, React, Node, and even Web3 development.</li>
-        <li>Build fully-fledged websites and web apps for your startup or business.</li>
-        <li>Master frontend development with React.</li>
-        <li>Learn professional developer best practices.</li>
-      </ul>
 
-      <h2>Course content</h2>
-      <p>{{ c.data.modules.length }} sections </p>
-      <ul>
-        <li ng-repeat="module in c.data.modules" class="module-item">
-          <div class="module-header" ng-click="module.expanded = !module.expanded">
-            <strong>{{ module.name }}</strong>
-            <span class="dropdown-icon" ng-class="{'expanded': module.expanded}">▼</span>
-          </div>
-          <div class="module-description" ng-if="module.expanded">
-            <p>{{ module.description }}</p>
-          </div>
-        </li>
+    <!-- Tabs -->
+    <div class="tabs">
+      <ul class="tab-list">
+        <li ng-class="{active: c.data.selectedTab === 'description'}" ng-click="c.data.selectedTab = 'description'">Description</li>
+        <li ng-class="{active: c.data.selectedTab === 'content'}" ng-click="c.data.selectedTab = 'content'">Course Content</li>
       </ul>
     </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <div ng-show="c.data.selectedTab === 'description'">
+        <div ng-bind-html="c.data.course.description.value"></div>
+      </div>
+      <div ng-show="c.data.selectedTab === 'content'">
+        <h2>Course content</h2>
+        <p>{{ c.data.modules.length }} sections</p>
+        <ul>
+          <li ng-repeat="module in c.data.modules" class="module-item">
+            <div class="module-header" ng-click="module.expanded = !module.expanded">
+              <strong>{{ module.name }}</strong>
+              <span class="dropdown-icon" ng-class="{'expanded': module.expanded}">▼</span>
+            </div>
+            <div class="module-description" ng-if="module.expanded">
+              <p>{{ module.description }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
+
   <div class="sidebar">
     <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="Course Image">
     <h2>{{ c.data.course.course_name.display_value }}</h2>
-    <button>Start Enrollment</button>
+    <button ng-click="c.data.showModal = true">Start Enrollment</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" ng-show="c.data.showModal">
+    <div class="modal-content">
+      <span class="close" ng-click="c.data.showModal = false">&times;</span>
+      <h2>Enroll in Course</h2>
+      <p><strong>Terms & Conditions</strong></p>
+      <p>Training and Certification Terms and Conditions</p>
+      <a href="#">Training and Certification Terms and Conditions</a>
+      <div>
+        <input type="checkbox" ng-model="c.data.agreeToTerms"> With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.
+      </div>
+      <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">Enroll</button>
+    </div>
   </div>
 </div>
 ]]></template>

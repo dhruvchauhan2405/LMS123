@@ -315,14 +315,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>43</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-11 10:28:26</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-12 07:30:51</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
     <div class="discussion-header">
         <h1 ng-bind="data.question.question"></h1>
@@ -330,17 +330,7 @@
         
         <!-- Display other details if needed -->
     </div>
-<div class="replies-list">
-        <h2>Replies</h2>
-        <!-- Display answers -->
-        <div class="reply-card" ng-repeat="answer in data.answers">
-            <div class="reply-author" ng-bind="answer.author"></div>
-            
-            <div class="reply-content">
-                <p ng-bind-html="answer.content"></p>
-            </div>
-        </div>
-    </div>
+
     <div class="discussion-replies">
         <div class="reply-form">
             <h2>Post Your Answer</h2>
@@ -358,9 +348,20 @@
         </div>
     </div>
 
+  <div class="replies-list">
+        <h2>Replies</h2>
+        <!-- Display answers -->
+        <div class="reply-card" ng-repeat="answer in data.answers">
+            <div class="reply-author" ng-bind="answer.author"></div>
+            
+            <div class="reply-content">
+                <p ng-bind-html="answer.content"></p>
+            </div>
+        </div>
+    </div>
     
 </div>
-<pre ng-bind="c.question_ref | json"></pre>
+
 ]]></template>
     </sp_widget>
 </record_update>

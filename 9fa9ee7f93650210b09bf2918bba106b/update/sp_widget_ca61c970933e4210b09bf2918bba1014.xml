@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($location) {
+  /* widget controller */
+  var c = this;
+  var courseSysId = $location.search().sys_id;
+  c.free =c.data.isCourseFree;
+  c.data.isCourseFree = false;
+	console.log(c.data.course);
+	//spUtil.addInfoMessage(c.h);
+  
+  c.startCourse = function() {
+    var portalURL = $location.absUrl().split('?')[0];
+    var pageID = 'lms_modules_content'; // Update with the actual start course page ID
+    var url = portalURL + '?id=' + pageID + '&sys_id=' + courseSysId;
+    window.location.href = url;
+  };
+
+  c.goHome = function() {
+    var homeURL = 'https://dev211199.service-now.com/lms?id=lms_index';
+    window.location.href = homeURL;
+  };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  flex: 3;
+  padding: 20px;
+}
+
+.header .details {
+  margin-bottom: 20px;
+}
+
+.tabs {
+  margin-bottom: 20px;
+}
+
+.tab-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  cursor: pointer;
+}
+
+.tab-list li {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+}
+
+.tab-list li.active {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.module-item {
+  margin-bottom: 10px;
+}
+
+.module-header {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.module-description {
+  margin-left: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+}
+
+.sidebar img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0072c6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #005bb5;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.course-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.course-info {
+  padding: 20px;
+}
+
+.course-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-description {
+  margin-bottom: 20px;
+}
+
+.course-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-buttons button {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #0072c6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.course-buttons button:hover {
+  background-color: #005bb5;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>lms_enrollment_status</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Enrollment Status</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	if(!input){
+  //data.isCourseFree = false;
+		var courseTable = 'x_1383177_lms_app_course';
+    var courseFields = 'course_name,short_description,thumbnail,accessibility';
+    var courseSysId = $sp.getParameter('sys_id'); // Get sys_id from the query parameter
+    if (courseSysId) {
+      var grCourse = new GlideRecordSecure(courseTable);
+      if (grCourse.get(courseSysId)) {
+				data.course = {
+					course_name: grCourse.getValue("course_name"),
+					short_description: grCourse.getValue("short_description"),
+					thumbnail: grCourse.getValue("thumbnail"),
+					accessibility: grCourse.getValue("accessibility"),
+				};
+				// Check if the course is free or requestable
+        var accessibility = grCourse.getValue('accessibility');
+				// Adjust field name if needed
+        data.isCourseFree = (accessibility == 'free');
+      }
+    }
+	}
+  
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-12 10:01:34</sys_created_on>
+        <sys_id>ca61c970933e4210b09bf2918bba1014</sys_id>
+        <sys_mod_count>77</sys_mod_count>
+        <sys_name>LMS Enrollment Status</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_ca61c970933e4210b09bf2918bba1014</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-13 10:11:54</sys_updated_on>
+        <template><![CDATA[<div class="course-widget">
+  <div class="course-image" style="background-image: url('{{ c.data.course.thumbnail.display_value }}');"></div>
+  <div class="course-info">
+    <div class="course-title">{{c.data.course.course_name}}</div>
+    <div class="course-description">{{ c.data.course.short_description }}</div>
+    <div class="course-buttons">
+      <div ng-if="c.free">
+        <button class="start-course-button" ng-click="c.startCourse()">Start Course</button>
+      </div>
+      <div ng-if="!c.free">
+        <p>We have received your request and we will get back to you soon.</p>
+        <button class="home-button" ng-click="c.goHome()">Home</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

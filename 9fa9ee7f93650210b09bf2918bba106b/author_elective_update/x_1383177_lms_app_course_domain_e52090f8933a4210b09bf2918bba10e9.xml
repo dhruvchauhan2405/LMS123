@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_1383177_lms_app_course_domain">
+    <x_1383177_lms_app_course_domain action="DELETE">
+        <active>true</active>
+        <description>dsfdsfd</description>
+        <name>dsfsdf</name>
+        <order>100</order>
+        <search_tags/>
+        <sys_class_name>x_1383177_lms_app_course_domain</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-12 06:26:21</sys_created_on>
+        <sys_id>e52090f8933a4210b09bf2918bba10e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dsfsdf</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>x_1383177_lms_app_course_domain_e52090f8933a4210b09bf2918bba10e9</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-12 06:26:21</sys_updated_on>
+        <thumbnail/>
+    </x_1383177_lms_app_course_domain>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>x_1383177_lms_app_course_domain_e52090f8933a4210b09bf2918bba10e9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_1383177_lms_app_course_domain"><x_1383177_lms_app_course_domain action="INSERT_OR_UPDATE"><active>true</active><description>dsfdsfd</description><name>dsfsdf</name><order>100</order><search_tags/><sys_class_name>x_1383177_lms_app_course_domain</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-06-12 06:26:21</sys_created_on><sys_id>e52090f8933a4210b09bf2918bba10e9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>dsfsdf</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>x_1383177_lms_app_course_domain_e52090f8933a4210b09bf2918bba10e9</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-06-12 06:26:21</sys_updated_on><thumbnail/></x_1383177_lms_app_course_domain></record_update>]]></payload>
+        <payload_hash>1577367351</payload_hash>
+        <record_name>dsfsdf</record_name>
+        <reverted_from/>
+        <source>8fe6875093b20210b09bf2918bba108c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-12 06:26:21</sys_created_on>
+        <sys_id>a120d0f8933a4210b09bf2918bba1043</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1900b203f280000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-12 06:26:21</sys_updated_on>
+        <type>Course Domain</type>
+        <update_guid>e520d0f8583a4210bf72158e5ca7ff42</update_guid>
+        <update_guid_history>e520d0f8583a4210bf72158e5ca7ff42:1577367351</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="dsfsdf">5a3010f8933a4210b09bf2918bba1017</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-12 06:26:41</sys_created_on>
+        <sys_db_object display_value="" name="x_1383177_lms_app_course_domain">x_1383177_lms_app_course_domain</sys_db_object>
+        <sys_id>069ef9634bd8419881c06c7030398440</sys_id>
+        <sys_metadata>e52090f8933a4210b09bf2918bba10e9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dsfsdf</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>x_1383177_lms_app_course_domain_e52090f8933a4210b09bf2918bba10e9</sys_update_name>
+        <sys_update_version display_value="x_1383177_lms_app_course_domain_e52090f8933a4210b09bf2918bba10e9">a120d0f8933a4210b09bf2918bba1043</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-12 06:26:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
