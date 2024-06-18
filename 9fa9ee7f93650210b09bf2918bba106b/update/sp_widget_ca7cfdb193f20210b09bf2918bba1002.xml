@@ -2,39 +2,39 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($location) {
-	var c = this;
+  var c = this;
 
-	// Function to get query parameter from URL
-	c.getQueryParameter = function(name) {
-		var url = $location.absUrl();
-		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-		var results = regex.exec(url);
-		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-	};
+  // Function to get query parameter from URL
+  c.getQueryParameter = function(name) {
+    var url = $location.absUrl();
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(url);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
 
-	// Get search parameter from URL
-	var searchQuery = c.getQueryParameter('search');
+  // Get search parameter from URL
+  c.search = c.getQueryParameter('search');  // Store search query in controller's scope
 
-	// Fetch courses based on the search query
-	if (searchQuery) {
-		c.server.get({
-			search: searchQuery
-		}).then(function(response) {
-			c.courses = response.data.courses;
-		});
-	} else {
-		c.server.get().then(function(response) {
-			c.courses = response.data.courses;
-		});
-	}
+  // Fetch courses based on the search query
+  if (c.search) {
+    c.server.get({
+      search: c.search
+    }).then(function(response) {
+      c.courses = response.data.courses;
+    });
+  } else {
+    c.server.get().then(function(response) {
+      c.courses = response.data.courses;
+    });
+  }
 
-	// Redirect to course details
-	c.redirectToCourseDetail = function(sys_id) {
-		var portalURL = $location.absUrl().split('?')[0];
-		var pageID = 'lms_course_details'; // Update with actual page ID
-		var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
-		window.location.href = url;
-	};
+  // Redirect to course details
+  c.redirectToCourseDetail = function(sys_id) {
+    var portalURL = $location.absUrl().split('?')[0];
+    var pageID = 'lms_course_details'; // Update with actual page ID
+    var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+    window.location.href = url;
+  };
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -166,7 +166,8 @@
 
 .altcourse:hover {
   color: #3241c9;
-}</css>
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -181,26 +182,26 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-	var search = input ? input.search : '';  // Safely access 'input.search'
-	var gr = new GlideRecord('x_1383177_lms_app_course');
+  var search = input ? input.search : '';  // Safely access 'input.search'
+  var gr = new GlideRecord('x_1383177_lms_app_course');
 
-	if (search) {
-		gr.addQuery('course_name', 'CONTAINS', search);
-	}
+  if (search) {
+    gr.addQuery('course_name', 'CONTAINS', search);
+  }
 
-	gr.query();
+  gr.query();
 
-	var courses = [];
-	while (gr.next()) {
-		courses.push({
-			sys_id: gr.getUniqueValue(), // Ensure sys_id is included
-			course_name: gr.getValue('course_name'),
-			thumbnail: gr.getDisplayValue('thumbnail'),
-			short_description: gr.getValue('short_description')
-		});
-	}
+  var courses = [];
+  while (gr.next()) {
+    courses.push({
+      sys_id: gr.getUniqueValue(), // Ensure sys_id is included
+      course_name: gr.getValue('course_name'),
+      thumbnail: gr.getDisplayValue('thumbnail'),
+      short_description: gr.getValue('short_description')
+    });
+  }
 
-	data.courses = courses;
+  data.courses = courses;
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -208,22 +209,21 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-15 16:53:32</sys_created_on>
         <sys_id>ca7cfdb193f20210b09bf2918bba1002</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>LMS Search Results</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_ca7cfdb193f20210b09bf2918bba1002</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-15 18:44:28</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-18 05:44:01</sys_updated_on>
         <template><![CDATA[<div class="courses-list">
-  <h1>Search Results:</h1>
+  <h1>Search Results for "{{c.search}}":</h1>
   <div class="course-container">
     <div class="course-card" ng-click="c.redirectToCourseDetail(course.sys_id)" ng-repeat="course in c.courses">
       <img class="course-image" ng-src="{{ course.thumbnail }}">
       <h2 class="course-name">{{course.course_name}}</h2>
       <p class="course-short-description">{{course.short_description}}</p>
-
     </div>
   </div>
   <div class="no-courses" ng-if="c.courses.length === 0">

@@ -2,35 +2,42 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($scope, $http, $timeout, $location) {
-    var c = this;
+	var c = this;
+	c.translations={
+		text1:i18n.getMessage('Post Your Question'),
+		text2:i18n.getMessage('Question Title'),
+		text3:i18n.getMessage('Details'),
+		text4:i18n.getMessage('Tags'),
+		text5:i18n.getMessage('Attach File'),
+		text6:i18n.getMessage('Submit Question')
+	}
+	c.submitForm = function(isValid) {
+		// Trigger the validation
+		c.submitted = true;
 
-    c.submitForm = function(isValid) {
-        // Trigger the validation
-        c.submitted = true;
+		// Don't do anything if the form is not valid
+		//if (!isValid) return;
 
-        // Don't do anything if the form is not valid
-        //if (!isValid) return;
+		// Write variables into the data object
+		c.data.questionTitle = c.questionTitle;
+		c.data.questionDetails = c.questionDetails;
 
-        // Write variables into the data object
-        c.data.questionTitle = c.questionTitle;
-        c.data.questionDetails = c.questionDetails;
+		// Pass the data object to the server, add a promise (callback) to process the server's response
+		c.server.update().then(function(response) {
+			console.log(JSON.stringify(response));
+			if (response.status === 'success') {
+				c.message = null; // Hide the error message
+				c.success = response.message;
 
-        // Pass the data object to the server, add a promise (callback) to process the server's response
-        c.server.update().then(function(response) {
-					console.log(JSON.stringify(response));
-            if (response.status === 'success') {
-                c.message = null; // Hide the error message
-                c.success = response.message;
-
-                // Return to the homepage after .5 seconds
-                $timeout(function() {
-                    $location.search({ id: 'lms_discussion_forum' });
-                }, 500);
-            } else if (response.status === 'error') {
-                c.message = response.message;
-            }
-        });
-    };
+				// Return to the homepage after .5 seconds
+				$timeout(function() {
+					$location.search({ id: 'lms_discussion_forum' });
+				}, 500);
+			} else if (response.status === 'error') {
+				c.message = response.message;
+			}
+		});
+	};
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -43,7 +50,7 @@
   align-items: center;
   height: 100vh;
   animation: fadeIn 1s ease-in-out;
-  padding: 10px; /* Add padding to the body */
+  padding: 10px; 
 }
 
 .question-container {
@@ -52,9 +59,9 @@
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  
+	padding-bottom: 65px;
   animation: slideIn 0.5s ease-in-out;
-  margin: 20px; /* Add margin to the container */
+  margin: 20px; 
 }
 
 .question-container h1 {
@@ -117,14 +124,15 @@
 }
 
 .submit-btn {
-  display: block;
-  width: 100%;
-  padding: 15px;
+  display: flex;
   background: #4a90e2;
   color: white;
   border: none;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  float:right;
+  
   font-size: 1.2em;
   transition: background 0.3s;
 }
@@ -169,29 +177,29 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-    // Ensure the input object has the required properties
-    if (input && input.questionTitle && input.questionDetails) {
-        var grNewQuestion = new GlideRecordSecure('x_1383177_lms_app_discussion');
-        grNewQuestion.initialize();
-        grNewQuestion.setValue('question', input.questionTitle);
-        grNewQuestion.setValue('detailed_description', input.questionDetails);
+	// Ensure the input object has the required properties
+	if (input && input.questionTitle && input.questionDetails) {
+		var grNewQuestion = new GlideRecordSecure('x_1383177_lms_app_discussion');
+		grNewQuestion.initialize();
+		grNewQuestion.setValue('question', input.questionTitle);
+		grNewQuestion.setValue('detailed_description', input.questionDetails);
 
-        // Insert the new record
-        var questionSysId = grNewQuestion.insert();
+		// Insert the new record
+		var questionSysId = grNewQuestion.insert();
 
-        // If the record is created successfully, send the success message to the client, else send the error message
-        if (!gs.nil(questionSysId)) {
-            data.status = 'success';
-            data.message = 'Your question has been successfully submitted.';
-        } else {
-            data.status = 'error';
-            data.message = 'Failed to submit your question.';
-        }
-    } else {
-        // Respond with error if input data is missing
-        data.status = 'error';
-        data.message = 'Invalid input data.';
-    }
+		// If the record is created successfully, send the success message to the client, else send the error message
+		if (!gs.nil(questionSysId)) {
+			data.status = 'success';
+			data.message = 'Your question has been successfully submitted.';
+		} else {
+			data.status = 'error';
+			data.message = 'Failed to submit your question.';
+		}
+	} else {
+		// Respond with error if input data is missing
+		data.status = 'error';
+		data.message = 'Invalid input data.';
+	}
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -199,34 +207,34 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-05 04:57:22</sys_created_on>
         <sys_id>35a8b356936e8210b09bf2918bba10a1</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>LMS Questions</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_35a8b356936e8210b09bf2918bba10a1</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-17 08:37:14</sys_updated_on>
+        <sys_updated_on>2024-06-18 04:41:48</sys_updated_on>
         <template><![CDATA[<div class="question-container">
-  <h1>Post Your Question</h1>
+  <h1>${Post Your Question}</h1>
   <form class="question-form" ng-submit="c.submitForm(c.questionForm.$valid)" name="c.questionForm" novalidate>
     <div class="form-group">
-      <label for="question-title">Question Title</label>
+      <label for="question-title">${Question Title}</label>
       <input type="text" id="question-title" ng-model="c.questionTitle" placeholder="Enter the title of your question" required>
     </div>
     <div class="form-group">
-      <label for="question-details">Details</label>
+      <label for="question-details">${Details}</label>
       <textarea id="question-details" ng-model="c.questionDetails" rows="5" placeholder="Provide detailed information about your question" required></textarea>
     </div>
     <div class="form-group">
-      <label for="question-tags">Tags</label>
+      <label for="question-tags">${Tags}</label>
       <input type="text" id="question-tags" placeholder="Add tags to categorize your question">
     </div>
     <div class="form-group file-upload">
-      <label for="file-attachment">Attach File</label>
+      <label for="file-attachment">${Attach File}</label>
       <input type="file" id="file-attachment" multiple>
     </div>
-    <button type="submit" class="submit-btn">Submit Question</button>
+    <button type="submit" class="submit-btn">${Submit Question}</button>
   </form>
 </div>
 ]]></template>

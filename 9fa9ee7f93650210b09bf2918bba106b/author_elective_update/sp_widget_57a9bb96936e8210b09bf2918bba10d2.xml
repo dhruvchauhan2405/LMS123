@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center; /* Centers the entire content vertically and horizontally */
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center; /* Already centers text within the body element */
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 7px;
+  padding: 7px;
+  text-align: center;
+}
+
+.headline {
+  font-size: 3em; /* Adjust font size as needed */
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.separator {
+  border: 0; /* Remove default border styles */
+  border-top: 5px solid #ccc; /* Reduced thickness for a smaller line */
+  margin-top: 10px; /* Adjust margin for spacing */
+  /* Added border-radius for rounded corners */
+  border-radius: 50px;  /* Adjust radius for desired curvature */
+  margin-bottom: 8px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_about_page_title</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS About Page Title</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-05 05:01:50</sys_created_on>
+        <sys_id>57a9bb96936e8210b09bf2918bba10d2</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>LMS About Page Title</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_57a9bb96936e8210b09bf2918bba10d2</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-11 05:17:50</sys_updated_on>
+        <template><![CDATA[<div class="content">
+  <p class="headline">About our LMS</p>
+    <hr class="separator">
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_widget_57a9bb96936e8210b09bf2918bba10d2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center; /* Centers the entire content vertically and horizontally */
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center; /* Already centers text within the body element */
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 7px;
+  padding: 7px;
+  text-align: center;
+}
+
+.headline {
+  font-size: 3em; /* Adjust font size as needed */
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.separator {
+  border: 0; /* Remove default border styles */
+  border-top: 5px solid #ccc; /* Reduced thickness for a smaller line */
+  margin-top: 10px; /* Adjust margin for spacing */
+  /* Added border-radius for rounded corners */
+  border-radius: 50px;  /* Adjust radius for desired curvature */
+  margin-bottom: 8px;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;lms_about_page_title&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;LMS About Page Title&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;abhishek.s&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-05 05:01:50&lt;/sys_created_on&gt;&lt;sys_id&gt;57a9bb96936e8210b09bf2918bba10d2&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name&gt;LMS About Page Title&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_57a9bb96936e8210b09bf2918bba10d2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-11 05:17:50&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="content"&gt;
+  &lt;p class="headline"&gt;About our LMS&lt;/p&gt;
+    &lt;hr class="separator"&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2003997660</payload_hash>
+        <record_name>LMS About Page Title</record_name>
+        <reverted_from/>
+        <source>c08bee1093320210b09bf2918bba1014</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-11 05:17:50</sys_created_on>
+        <sys_id>18e6769c93320210b09bf2918bba10a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19005bb2b6d0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-11 05:17:50</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>dce6769ced320210423f88a1c895dfa3</update_guid>
+        <update_guid_history>dce6769ced320210423f88a1c895dfa3:2003997660,2ad6769c09320210321671005c3d90f2:872547719,2cc6be5c1632021029ef17394b815912:2003997660,f5a6769cb1320210813ee46cc7ecd39c:1559048128,7f5affd6da6e8210a84e1370a6d1ff8f:1878466948,a13ab71a206e8210b6482db33aaac609:-1207381723,5bc9b7d6d36e8210ef932832a13de21e:-523870940,9ba9bb96216e82106d19d4f478bc7ed3:-600589905</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LMS About Page Title">41bbbeea93720210b09bf2918bba10d0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-18 05:25:15</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>031111f3a7374aa180aae5e5c0b072c9</sys_id>
+        <sys_metadata>57a9bb96936e8210b09bf2918bba10d2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS About Page Title</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_widget_57a9bb96936e8210b09bf2918bba10d2</sys_update_name>
+        <sys_update_version display_value="sp_widget_57a9bb96936e8210b09bf2918bba10d2">18e6769c93320210b09bf2918bba10a4</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-18 05:25:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+p, ul {
+    color: #666;
+    font-size: 1.1em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+li {
+    text-align: left;
+    margin-left: 20px;
+    list-style-type: none;
+    position: relative;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.section {
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+}
+
+.about-section {
+    background-color: #e3f2fd;
+}
+
+.mission-section {
+    background-color: #e8f5e9;
+}
+
+.sets-us-apart-section {
+    background-color: #f3e5f5;
+}
+
+.commitment-section {
+    background-color: #fff3e0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.section h2 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.section p, .section ul {
+    animation: fadeInUp 1.2s ease-out;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_about</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS About</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-28 07:04:48</sys_created_on>
+        <sys_id>d6190b3f93920210b09bf2918bba1046</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>LMS About</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_d6190b3f93920210b09bf2918bba1046</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-11 05:16:09</sys_updated_on>
+        <template><![CDATA[<div class="container">
+    <div class="about-section section">
+        <h2>Learning Management System</h2>
+        <p>Welcome to our Learning Management System (LMS) developed for ServiceNow. Our platform is designed to transform your learning experience by providing an all-in-one solution for managing courses, accessing content, and interacting with others.</p>
+    </div>
+
+    <div class="mission-section section">
+        <h2>Our Mission</h2>
+        <p>We believe in making knowledge accessible and engaging for everyone. Our goal is to empower you to reach your full potential by leveraging the latest technology and innovation.</p>
+    </div>
+
+    <div class="sets-us-apart-section section">
+        <h2>What Sets Us Apart</h2>
+        <ul>
+            <li>Comprehensive Domain Coverage: Our LMS offers a wide range of domains to explore, from technology and business to arts and humanities.</li>
+            <li>Engaging Courses: Our courses are meticulously crafted by industry experts and educators to deliver engaging and interactive learning experiences.</li>
+            <li>Modular Learning: Our modular approach to learning allows you to break down complex topics into manageable chunks.</li>
+            <li>Discussion Forums: Our platform features discussion forums where learners can collaborate, ask questions, and share insights with fellow students and instructors.</li>
+        </ul>
+    </div>
+
+    <div class="commitment-section section">
+        <h2>Our Commitment to Excellence</h2>
+        <p>We continuously strive to enhance our platform with new features, courses, and resources to meet the evolving needs of learners worldwide.</p>
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_widget_d6190b3f93920210b09bf2918bba1046</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+p, ul {
+    color: #666;
+    font-size: 1.1em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+li {
+    text-align: left;
+    margin-left: 20px;
+    list-style-type: none;
+    position: relative;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.section {
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+}
+
+.about-section {
+    background-color: #e3f2fd;
+}
+
+.mission-section {
+    background-color: #e8f5e9;
+}
+
+.sets-us-apart-section {
+    background-color: #f3e5f5;
+}
+
+.commitment-section {
+    background-color: #fff3e0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.section h2 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.section p, .section ul {
+    animation: fadeInUp 1.2s ease-out;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;lms_about&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;LMS About&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-28 07:04:48&lt;/sys_created_on&gt;&lt;sys_id&gt;d6190b3f93920210b09bf2918bba1046&lt;/sys_id&gt;&lt;sys_mod_count&gt;13&lt;/sys_mod_count&gt;&lt;sys_name&gt;LMS About&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_d6190b3f93920210b09bf2918bba1046&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-11 05:16:09&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="container"&gt;
+    &lt;div class="about-section section"&gt;
+        &lt;h2&gt;Learning Management System&lt;/h2&gt;
+        &lt;p&gt;Welcome to our Learning Management System (LMS) developed for ServiceNow. Our platform is designed to transform your learning experience by providing an all-in-one solution for managing courses, accessing content, and interacting with others.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="mission-section section"&gt;
+        &lt;h2&gt;Our Mission&lt;/h2&gt;
+        &lt;p&gt;We believe in making knowledge accessible and engaging for everyone. Our goal is to empower you to reach your full potential by leveraging the latest technology and innovation.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="sets-us-apart-section section"&gt;
+        &lt;h2&gt;What Sets Us Apart&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Comprehensive Domain Coverage: Our LMS offers a wide range of domains to explore, from technology and business to arts and humanities.&lt;/li&gt;
+            &lt;li&gt;Engaging Courses: Our courses are meticulously crafted by industry experts and educators to deliver engaging and interactive learning experiences.&lt;/li&gt;
+            &lt;li&gt;Modular Learning: Our modular approach to learning allows you to break down complex topics into manageable chunks.&lt;/li&gt;
+            &lt;li&gt;Discussion Forums: Our platform features discussion forums where learners can collaborate, ask questions, and share insights with fellow students and instructors.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class="commitment-section section"&gt;
+        &lt;h2&gt;Our Commitment to Excellence&lt;/h2&gt;
+        &lt;p&gt;We continuously strive to enhance our platform with new features, courses, and resources to meet the evolving needs of learners worldwide.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1274290770</payload_hash>
+        <record_name>LMS About</record_name>
+        <reverted_from/>
+        <source>c08bee1093320210b09bf2918bba1014</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-11 05:16:09</sys_created_on>
+        <sys_id>1776729c93320210b09bf2918bba10c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19005b99e090000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-11 05:16:09</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>db76729ca2320210308c2ec6f7540ec2</update_guid>
+        <update_guid_history>db76729ca2320210308c2ec6f7540ec2:1274290770,6a6d790484b20210806057786efb361c:572797096,021805a21fe2c2104462d4f554da73e8:-468139032,9ea781aeb5a2c2108dc3073a2b8e173c:925409870,d76073c81c220210a47d66a2642b1075:-1650677059,dbdeffbffa960210f082b24d95444b4e:-757711171,f28e3ffbbd9602101e92e6cfa0b1553e:-749364918,67ca8b736fd2021023626523900b5a6d:1685555822,55ba8f7390d20210542864b001f29119:1206532974,277a4b73b4d202108385a88b58dc6ed4:-1191651747,e51a4b3370d202103da1e419d5f18746:1494768453,3679c7bfa29202105921356cc8cf4cc3:1038916534,b369cfff19920210c513e6239bf485b3:-647014006,de190b3f7d920210b9cfc8364adf2147:-607053690</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LMS About">41bbbeea93720210b09bf2918bba10dd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-18 05:25:15</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>3a08d3fbf43742ec875c6ad84bb08219</sys_id>
+        <sys_metadata>d6190b3f93920210b09bf2918bba1046</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS About</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_widget_d6190b3f93920210b09bf2918bba1046</sys_update_name>
+        <sys_update_version display_value="sp_widget_d6190b3f93920210b09bf2918bba1046">1776729c93320210b09bf2918bba10c3</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-18 05:25:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

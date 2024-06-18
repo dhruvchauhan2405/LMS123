@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function ($location, $scope) {
+        <client_script><![CDATA[api.controller = function ($location, $scope, $sce) {
 	var c = this;
-
-	// Function to handle post question button click
-	c.handlePostQuestion = function () {
-	};
-
-	// Attach the handlePostQuestion function to the button click event
-	document.getElementById('post-question-btn').addEventListener('click', c.handlePostQuestion);
 
 	// Function to redirect to discussion detail page
 	c.redirectToDiscussionDetail = function (sys_id) {
 		var portalURL = $location.absUrl().split('?')[0];
 		var pageID = 'lms_forum_answers';
-		var url = portalURL + '?id=' + pageID +
-				'&sys_id=' + sys_id;
+		var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
 		window.location.href = url;
 	};
 
@@ -25,8 +17,28 @@
 		c.filteredDiscussions = c.data.discussions;
 	};
 
+	// Initialize search parameters
+	c.searchQuery = '';
+	c.searchPerformed = false;
+	c.searchResultsCount = 0;
+
+	// Function to handle the search
+	c.searchDiscussions = function () {
+		if (c.searchQuery.trim() !== '') {
+			c.filteredDiscussions = c.data.discussions.filter(function(disc) {
+				return disc.question.toLowerCase().includes(c.searchQuery.toLowerCase());
+			});
+			c.searchResultsCount = c.filteredDiscussions.length;
+			c.searchPerformed = true;
+		} else {
+			c.showAllDiscussions();
+			c.searchPerformed = false;
+		}
+	};
+
 	// Call the function to show all discussions
 	c.showAllDiscussions();
+
 	if (c.data.discussions && c.data.discussions.detailed_description) {
 		c.data.discussions.detailed_description.value = $sce.trustAsHtml(c.data.discussions.detailed_description.value);
 	}
@@ -166,6 +178,41 @@
     transform: translateX(0);
   }
 }
+
+.forum-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.forum-search input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.forum-search button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-radius: 0 5px 5px 0;
+  background-color: #4364f7;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.forum-search button:hover {
+  background-color: #6fb1fc;
+}
+
+.search-results {
+  text-align: center;
+  margin-bottom: 20px;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -217,14 +264,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:44:36</sys_created_on>
         <sys_id>852c2e4a93a64210b09bf2918bba10f9</sys_id>
-        <sys_mod_count>62</sys_mod_count>
+        <sys_mod_count>65</sys_mod_count>
         <sys_name>LMS Discussion Forum</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_852c2e4a93a64210b09bf2918bba10f9</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-17 10:28:35</sys_updated_on>
+        <sys_updated_on>2024-06-18 05:47:09</sys_updated_on>
         <template><![CDATA[<div class="forum-page">
   <div class="forum-header">
     <h1>${Discussion Forum}</h1>
@@ -232,9 +279,18 @@
     <button onclick="location.href = '?id=lms_question';"id="post-question-btn">${Post your Question}</button>
   </div>
 
-  <div class="forum-content">
+  <div class="forum-search">
+    <input type="text" ng-model="c.searchQuery" placeholder="Search for discussions..." />
+    <button ng-click="c.searchDiscussions()">Search</button>
+  </div>
 
-    <div class="discussion-card" ng-click="c.redirectToDiscussionDetail(disc.sys_id, disc.question, disc.detailed_description, disc.question_by)" ng-repeat="disc in c.filteredDiscussions | filter:{question:c.searchQuery}">
+  <div class="forum-content">
+    <div class="search-results" ng-if="c.searchPerformed">
+      <h2>Search Results for "{{c.searchQuery}}"</h2>
+      <p>{{c.searchResultsCount}} result(s) found.</p>
+    </div>
+
+    <div class="discussion-card" ng-click="c.redirectToDiscussionDetail(disc.sys_id)" ng-repeat="disc in c.filteredDiscussions | filter:{question:c.searchQuery}">
       <h2 class="discussion-title" ng-bind="disc.question"></h2>
       <p class="discussion-excerpt" ng-bind-html="disc.detailed_description"></p>
       <div class="discussion-footer">
