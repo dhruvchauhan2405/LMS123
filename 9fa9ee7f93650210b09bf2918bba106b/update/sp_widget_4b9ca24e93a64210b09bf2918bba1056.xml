@@ -2,66 +2,40 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($location, $timeout, $sce) {
-    var c = this;
+	var c = this;
+	// Function to get query parameter from URL
+	c.getQueryParameter = function(name) {
+		var url = $location.absUrl();
+		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		var results = regex.exec(url);
+		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	};
 
-    // Function to get query parameter from URL
-    c.getQueryParameter = function(name) {
-        var url = $location.absUrl();
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(url);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    };
+	// Get sys_id from URL
+	var sys_id = c.getQueryParameter('sys_id');
 
-    // Get sys_id from URL
-    var sys_id = c.getQueryParameter('sys_id');
+	// Pass sys_id to server script
+	if (sys_id) {
+		c.server.update({
+			sys_id: sys_id
+		}).then(function(response) {
+			console.log('Server response:', response);
+		});
+	} else {
+		console.error('No sys_id parameter found in URL');
+	}
+	if (c.data.answers && c.data.answers.content) {
+		c.data.answers.content.value = $sce.trustAsHtml(c.data.answers.content.value);
+	}
+	c.redirectToDiscussionDetail = function(sys_id) {
+		var portalURL = $location.absUrl().split('?')[0];
+		var pageID = 'lms_forum_answers';
+		var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+		window.location.href = url;
+	};
 
-    // Pass sys_id to server script to fetch discussion details
-    if (sys_id) {
-        c.server.update({
-            sys_id: sys_id
-        }).then(function(response) {
-            // Handle server response as needed
-            console.log('Server response:', response);
-            c.data.question = response.data.question; // Assuming server response includes question details
-            c.data.answers = response.data.answers;   // Assuming server response includes answers
-        }).catch(function(error) {
-            console.error('Error fetching discussion details:', error);
-        });
-    } else {
-        console.error('No sys_id parameter found in URL');
-    }
 
-    // Function to submit answer
-    c.submitAnswer = function(isValid) {
-        // Trigger the validation
-        c.submitted = true;
 
-        // Don't proceed if the form is not valid
-        if (!isValid) return;
-
-        // Gather answer data
-        var answerData = {
-            sys_id: sys_id,   // Assuming sys_id is needed to associate the answer with the question
-            answer: c.answer  // Assuming c.answer holds the answer text from the form
-        };
-
-        // Pass the answer data object to the server
-        c.server.update(answerData).then(function(response) {
-            // Handle server response
-            console.log('Answer submitted successfully:', response);
-            // Optionally redirect to the discussion page after a delay
-            $timeout(function() {
-                $location.search({ id: 'lms_forum_answers', sys_id: sys_id });
-            }, 500);
-        }).catch(function(error) {
-            console.error('Error submitting answer:', error);
-        });
-    };
-
-    // Trust content as HTML if necessary (assuming you have this requirement)
-    if (c.data.answers && c.data.answers.content) {
-        c.data.answers.content.value = $sce.trustAsHtml(c.data.answers.content.value);
-    }
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -238,6 +212,15 @@
   color: #555;
 }
 
+.reply-content a {
+  color: #4a90e2;
+  cursor: pointer;
+  text-decoration: underline;
+  display: block;
+  margin-top: 5px;
+}
+
+
 /* Animations */
 @keyframes fadeInDown {
   from {
@@ -271,6 +254,17 @@
     transform: translateX(0);
   }
 }
+
+.no-replies {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #555;
+  font-size: 1.6em;
+  text-align: center;
+  margin-bottom: 20px;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -286,84 +280,61 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-    // Ensure data object is initialized
-    data.question = {};
-    data.answers = [];
+	// Ensure data object is initialized
+	data.question = {};
+	data.answers = [];
+	// Get sys_id from URL query parameter using $sp.getParameter
+	var sys_id = $sp.getParameter('sys_id');
 
-    // Get sys_id from URL query parameter using $sp.getParameter
-    var sys_id = $sp.getParameter('sys_id');
 
-    if (sys_id) {
-        // Fetch and populate question details based on the selected sys_id
-        var grQuestion = new GlideRecordSecure('x_1383177_lms_app_discussion');
-        if (grQuestion.get(sys_id)) {
-            var questionBySysId = grQuestion.getValue('question_by');
-            var questionByName = '';
+	if (sys_id) {
+		// Fetch and populate question details based on the selected sys_id
+		var grQuestion = new GlideRecordSecure('x_1383177_lms_app_discussion');
+		if (grQuestion.get(sys_id)) {
+			var questionBySysId = grQuestion.getValue('question_by');
+			var questionByName = '';
 
-            // Fetch the user's name from sys_user table using the sys_id
-            if (questionBySysId) {
-                var grUser = new GlideRecord('sys_user');
-                if (grUser.get(questionBySysId)) {
-                    questionByName = grUser.getValue('name');
-                }
-            }
+			// Fetch the user's name from sys_user table using the sys_id
+			if (questionBySysId) {
+				var grUser = new GlideRecord('sys_user');
+				if (grUser.get(questionBySysId)) {
+					questionByName = grUser.getValue('name');
+				}
+			}
 
-            data.question = {
-                question: grQuestion.getValue('question'),
-                detailed_description: grQuestion.getValue('detailed_description'),
-                question_by: questionByName
-            };
+			data.question = {
+				question: grQuestion.getValue('question'),
+				detailed_description: grQuestion.getValue('detailed_description'),
+				question_by: questionByName
+			};
 
-            // Fetch and populate answers from the "forum answers" table based on the selected sys_id
-            var grAnswers = new GlideRecordSecure('x_1383177_lms_app_forum_answers');
-            grAnswers.addQuery('question_ref', sys_id);
-            grAnswers.query();
+			// Fetch and populate answers from the "forum answers" table based on the selected sys_id
+			var grAnswers = new GlideRecordSecure('x_1383177_lms_app_forum_answers');
+			grAnswers.addQuery('question_ref', sys_id);
+			grAnswers.query();
 
-            while (grAnswers.next()) {
-                var answeredBySysId = grAnswers.getValue('answered_by');
-                var answeredByName = '';
+			while (grAnswers.next()) {
+				var answeredBySysId = grAnswers.getValue('answered_by');
+				var answeredByName = '';
 
-                // Fetch the user's name from sys_user table using the sys_id
-                if (answeredBySysId) {
-                    var grUserAnswer = new GlideRecord('sys_user');
-                    if (grUserAnswer.get(answeredBySysId)) {
-                        answeredByName = grUserAnswer.getValue('name');
-                    }
-                }
+				// Fetch the user's name from sys_user table using the sys_id
+				if (answeredBySysId) {
+					var grUserAnswer = new GlideRecord('sys_user');
+					if (grUserAnswer.get(answeredBySysId)) {
+						answeredByName = grUserAnswer.getValue('name');
+					}
+				}
 
-                data.answers.push({
-                    author: answeredByName,
-                    content: grAnswers.getValue('answer')
-                });
-            }
-        }
-    } else {
-        gs.info('No sys_id parameter received.');
-    }
+				data.answers.push({
+					author: answeredByName,
+					content: grAnswers.getValue('answer')
+				});
+			}
+		} 
+	} else {
+		gs.info('No sys_id parameter received.');
+	}
 
-    // Handle input to insert a new answer
-    if (input && input.answer && sys_id) {
-        var grNewAnswer = new GlideRecordSecure('x_1383177_lms_app_forum_answers');
-        grNewAnswer.initialize();
-        grNewAnswer.setValue('question_ref', sys_id); // Link answer to the question
-        grNewAnswer.setValue('answer', input.answer);
-
-        // Insert the new answer record
-        var answerSysId = grNewAnswer.insert();
-
-        // If the record is created successfully, send the success message to the client, else send the error message
-        if (!gs.nil(answerSysId)) {
-            data.status = 'success';
-            data.message = 'Your answer has been successfully submitted.';
-        } else {
-            data.status = 'error';
-            data.message = 'Failed to submit your answer.';
-        }
-    } else {
-        // Respond with error if input data is missing
-        data.status = 'error';
-        data.message = 'Invalid input data.';
-    }
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -371,52 +342,62 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-17 08:20:38</sys_updated_on>
+        <sys_updated_on>2024-06-18 07:12:46</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
-    <div class="discussion-header">
-        <h1 ng-bind="data.question.question"></h1>
-      <p class="reply-content" ng-bind-html="data.question.detailed_description"></p>
-        
-        <!-- Display other details if needed -->
-    </div>
+  <div class="discussion-header">
+    <h1 ng-bind="data.question.question"></h1>
+    <p class="reply-content" ng-bind-html="data.question.detailed_description"></p>
 
-    <div class="discussion-replies">
-  <div class="reply-form" ng-submit="c.submitAnswer(c.answerForm.$valid)" name="c.answerForm" novalidate>
-    <h2>Post Your Answer</h2>
-    <div class="editor-container">
-      <textarea id="editor" ng-model="c.answer" rows="5" placeholder="Write your answer here..." required></textarea>
-      <div class="reply-form-controls">
-        <label for="attachment">
-          <i class="fa fa-paperclip"></i>
-          <span>Attach files: </span>
-          <input type="file" id="attachment" multiple>
-        </label>
-        <button type="submit" class="submit-btn">Submit</button>
+    <!-- Display other details if needed -->
+  </div>
+
+  <div class="replies-list">
+  <h2>Replies</h2>
+  <div ng-if="data.answers.length === 0" class="no-replies">
+      No replies yet. You can be the first to share your answer!
+    </div>
+  <div class="reply-card" ng-repeat="answer in data.answers">
+    <div class="reply-author" ng-bind="answer.author"></div>
+    <div class="reply-content">
+      <p ng-if="answer.content.length <= 200" ng-bind-html="answer.content"></p>
+      <div ng-if="answer.content.length > 200">
+        <p ng-bind-html="answer.content.substring(0, 200) + '...'"></p>
+        <p ng-if="answer.expanded" ng-bind-html="answer.content"></p>
+        <a href="javascript:void(0);" ng-click="answer.expanded = !answer.expanded">{{ answer.expanded ? 'Show less' : 'Expand this answer' }}</a>
       </div>
     </div>
   </div>
 </div>
 
 
-  <div class="replies-list">
-        <h2>Replies</h2>
-        <!-- Display answers -->
-        <div class="reply-card" ng-repeat="answer in data.answers">
-            <div class="reply-author" ng-bind="answer.author"></div>
-            
-            <div class="reply-content">
-                <p ng-bind-html="answer.content"></p>
-            </div>
+  
+  
+  
+  <div class="discussion-replies">
+    <div class="reply-form" ng-submit="c.submitAnswer(c.answerForm.$valid)" name="c.answerForm" novalidate>
+      <h2>Post Your Answer</h2>
+      <div class="editor-container">
+        <textarea id="editor" ng-model="c.answer" rows="5" placeholder="Write your answer here..." required></textarea>
+        <div class="reply-form-controls">
+          <label for="attachment">
+            <i class="fa fa-paperclip"></i>
+            <span>Attach files: </span>
+            <input type="file" id="attachment" multiple>
+          </label>
+          <button type="submit" class="submit-btn">Submit</button>
         </div>
+      </div>
     </div>
-    
+  </div>
+
+
 </div>
 
 ]]></template>

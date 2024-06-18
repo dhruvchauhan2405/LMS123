@@ -4,6 +4,11 @@
         <client_script><![CDATA[api.controller = function ($location, $scope, $sce) {
 	var c = this;
 
+	// Function to handle post question button click
+	c.handlePostQuestion = function () {
+		window.location.href = '?id=lms_question';
+	};
+
 	// Function to redirect to discussion detail page
 	c.redirectToDiscussionDetail = function (sys_id) {
 		var portalURL = $location.absUrl().split('?')[0];
@@ -12,18 +17,23 @@
 		window.location.href = url;
 	};
 
-	// Function to show all discussions
-	c.showAllDiscussions = function () {
-		c.filteredDiscussions = c.data.discussions;
-	};
-
-	// Initialize search parameters
+	// Initialize search parameters and pagination
 	c.searchQuery = '';
 	c.searchPerformed = false;
 	c.searchResultsCount = 0;
+	c.currentPage = 1;
+	c.itemsPerPage = 6;
+	c.pageCount = 0;
+
+	// Function to show all discussions
+	c.showAllDiscussions = function () {
+		c.filteredDiscussions = c.data.discussions;
+		c.updatePagination();
+	};
 
 	// Function to handle the search
 	c.searchDiscussions = function () {
+		c.searchQuery = document.getElementById('searchInput').value;
 		if (c.searchQuery.trim() !== '') {
 			c.filteredDiscussions = c.data.discussions.filter(function(disc) {
 				return disc.question.toLowerCase().includes(c.searchQuery.toLowerCase());
@@ -33,6 +43,35 @@
 		} else {
 			c.showAllDiscussions();
 			c.searchPerformed = false;
+		}
+		c.updatePagination();
+	};
+
+	c.handleKeyPress = function(event) {
+		if (event.keyCode === 13) {
+			c.searchDiscussions();
+		}
+	};
+
+	// Function to update pagination
+	c.updatePagination = function () {
+		c.pageCount = Math.ceil(c.filteredDiscussions.length / c.itemsPerPage);
+		c.paginatedDiscussions = c.filteredDiscussions.slice((c.currentPage - 1) * c.itemsPerPage, c.currentPage * c.itemsPerPage);
+	};
+
+	// Function to go to the previous page
+	c.prevPage = function () {
+		if (c.currentPage > 1) {
+			c.currentPage--;
+			c.updatePagination();
+		}
+	};
+
+	// Function to go to the next page
+	c.nextPage = function () {
+		if (c.currentPage < c.pageCount) {
+			c.currentPage++;
+			c.updatePagination();
 		}
 	};
 
@@ -185,12 +224,32 @@
   margin-bottom: 20px;
 }
 
-.forum-search input {
+
+.forum-search input[type="text"] {
+  width: 300px;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  font-size: 16px;
-  width: 300px;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.forum-search input[type="text"]:focus {
+  width: 400px; /* Expand the width on focus */
+}
+/* Animation for search input */
+@keyframes inputFocus {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.forum-search input[type="text"]:focus {
+  animation: inputFocus 0.5s ease;
 }
 
 .forum-search button {
@@ -213,7 +272,49 @@
   text-align: center;
   margin-bottom: 20px;
 }
-</css>
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  background-color: #4364f7;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #6fb1fc;
+}
+
+.pagination span {
+  font-size: 16px;
+}
+
+.discussion-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.discussion-replies {
+  font-size: 0.9em;
+  color: #777;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -246,11 +347,22 @@
 			}
 		}
 
+		// Fetch the count of replies for the current discussion
+		var grReplies = new GlideAggregate('x_1383177_lms_app_forum_answers');
+		grReplies.addQuery('question_ref', grDiscussion.getUniqueValue());
+		grReplies.addAggregate('COUNT');
+		grReplies.query();
+		var repliesCount = 0;
+		if (grReplies.next()) {
+			repliesCount = grReplies.getAggregate('COUNT');
+		}
+
 		data.discussions.push({
 			question: grDiscussion.getValue('question'),
 			detailed_description: grDiscussion.getValue('detailed_description'),
 			question_by: userName, 
-			sys_id: grDiscussion.getUniqueValue()
+			sys_id: grDiscussion.getUniqueValue(),
+			replies_count: repliesCount 
 		});
 	}
 
@@ -264,23 +376,23 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:44:36</sys_created_on>
         <sys_id>852c2e4a93a64210b09bf2918bba10f9</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>81</sys_mod_count>
         <sys_name>LMS Discussion Forum</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_852c2e4a93a64210b09bf2918bba10f9</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-18 05:47:09</sys_updated_on>
+        <sys_updated_on>2024-06-18 09:30:58</sys_updated_on>
         <template><![CDATA[<div class="forum-page">
   <div class="forum-header">
     <h1>${Discussion Forum}</h1>
     <p>${Engage in conversations, ask questions, and share knowledge with your peers.}</p>
-    <button onclick="location.href = '?id=lms_question';"id="post-question-btn">${Post your Question}</button>
+    <button ng-click="c.handlePostQuestion()" id="post-question-btn">${Post your Question}</button>
   </div>
 
   <div class="forum-search">
-    <input type="text" ng-model="c.searchQuery" placeholder="Search for discussions..." />
+    <input type="text" ng-keypress="c.handleKeyPress($event)" id="searchInput" placeholder="Search for discussions..." />
     <button ng-click="c.searchDiscussions()">Search</button>
   </div>
 
@@ -290,12 +402,19 @@
       <p>{{c.searchResultsCount}} result(s) found.</p>
     </div>
 
-    <div class="discussion-card" ng-click="c.redirectToDiscussionDetail(disc.sys_id)" ng-repeat="disc in c.filteredDiscussions | filter:{question:c.searchQuery}">
+    <div class="discussion-card" ng-click="c.redirectToDiscussionDetail(disc.sys_id)" ng-repeat="disc in c.paginatedDiscussions">
       <h2 class="discussion-title" ng-bind="disc.question"></h2>
       <p class="discussion-excerpt" ng-bind-html="disc.detailed_description"></p>
       <div class="discussion-footer">
         <span class="discussion-author">${Posted by: }<span ng-bind="disc.question_by"></span></span>
+        <span class="discussion-replies">{{disc.replies_count}} Replies</span>
       </div>
+    </div>
+
+    <div class="pagination" ng-if="c.pageCount > 1">
+      <button ng-click="c.prevPage()" ng-disabled="c.currentPage === 1">Previous</button>
+      <span>Page {{c.currentPage}} of {{c.pageCount}}</span>
+      <button ng-click="c.nextPage()" ng-disabled="c.currentPage === c.pageCount">Next</button>
     </div>
   </div>
 </div>

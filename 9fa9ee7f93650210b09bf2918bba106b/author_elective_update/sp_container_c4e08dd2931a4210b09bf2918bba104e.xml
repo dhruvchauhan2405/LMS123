@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color>#FF744B</background_color>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name>padding-top-20</container_class_name>
+        <name>Learning Management System - Container 8</name>
+        <order>8</order>
+        <semantic_tag/>
+        <sp_page display_value="lms_index">80e08dd2931a4210b09bf2918bba104b</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-23 05:18:44</sys_created_on>
+        <sys_id>c4e08dd2931a4210b09bf2918bba104e</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>Learning Management System - Container 8</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_container_c4e08dd2931a4210b09bf2918bba104e</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-12 06:38:30</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_container_c4e08dd2931a4210b09bf2918bba104e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color>#FF744B</background_color><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name>padding-top-20</container_class_name><name>Learning Management System - Container 8</name><order>8</order><semantic_tag/><sp_page display_value="lms_index">80e08dd2931a4210b09bf2918bba104b</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-05-23 05:18:44</sys_created_on><sys_id>c4e08dd2931a4210b09bf2918bba104e</sys_id><sys_mod_count>50</sys_mod_count><sys_name>Learning Management System - Container 8</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sp_container_c4e08dd2931a4210b09bf2918bba104e</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-06-12 06:38:30</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>1413154633</payload_hash>
+        <record_name>Learning Management System - Container 8</record_name>
+        <reverted_from/>
+        <source>87ab33a093f64210b09bf2918bba10e5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-12 06:38:30</sys_created_on>
+        <sys_id>63e218bc933a4210b09bf2918bba1023</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1900b2b5f710000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-12 06:38:30</sys_updated_on>
+        <type>Container</type>
+        <update_guid>2be218bcbc3a421053916a115e144322</update_guid>
+        <update_guid_history>2be218bcbc3a421053916a115e144322:1413154633,a69ec0785e3a4210155f980e69646502:217566122,a67d4cf4453a42104e6119dca4b0022d:1413154633,a97b8074db3a4210ae77ef7a2f9d2c1b:217566122,923dc798c5b20210d174ffde3eca3ba3:1413154633,093dc798f3b20210b98a834ee994253a:-1686224152,dc2d47981bb20210e2183c8ca11fdd20:1413154633,361d079886b20210ad3bcd989cf88038:-1686224152,861dc3981cb202100c7164cc3c6ac2c0:1413154633,6f2269566ee282103dcf47c308c30433:217566122,1af12556b8e28210eb77a34d883fe5dd:1413154633,bcf1255602e282108a79dc5bc9ea6f1e:-1686224152,f2b1ed1685e28210bf096fcd2090d9fd:1413154633,bda1ad1681e282101740261cd4e6996a:217566122,ead7fb824d2e4210aa3642033de25875:1413154633,73a73b82bd2e4210cdd4911a7e424d1f:-1686224152,7637c774d3e24210c55171d294a4e5dd:-490635641,ce28eba81ee2821055061f05e21fbd20:704952870,3718aba8cee282101ae804d10be2278c:-490635641,8a18aba82fe2821018ed44b2bd74180b:704952870,3d9763a86ce2821086e59f583d648638:1900541381,b77f87ec3d628210e636646aeef686c7:704952870,b4eecbac1862821070ace5cf9848a151:-490635641,f235316c44ea42106244928b125163f8:704952870,a984ad68e0aa4210c2f1cbf7cfc541b4:1900541381,60e3212815aa4210e49999cb317c9e26:-3755652,704221284baa42102ada007ec2d04521:1299246329,9d145564696a4210d51dd1edc42f8e44:2044632203,bcc2d524946a4210f4d3f85c48b28a1c:-46559012,dcb21524c56a4210dcd7694cf7bd0f70:461854863,73821de05d6a42101da0ea8643f9d317:1895490266,397f4520386a42100b3559a37b53df24:-1621020515,517f0520d46a42108ffa929260ee035f:-425432004,b9eb489891a20210df3555b0c39ff242:-1621020515,ddeb4898fea20210eccf3cae2c9a210a:-425432004,85b28cdc03620210bb96230630bdbd72:-1621020515,f3a24cdcf862021045ef0c6e128098ed:1478358270,4192c8dc4a6202103f54d03e9d70ca45:-1621020515,421240dc8a62021036f9e358ca797236:-425432004,f70200dc1962021033d4ea43248d9028:-1621020515,61193344c26202102e9239a8a5f31121:-425432004,c61ee7fb52560210e3318e484853be04:-1621020515,36ea3a7f78520210a57b8778ad3bcb53:-425432004,6c8a767fde52021067c2629f23b8f20a:157341344,e07af27faa520210d80d78edf868c7ba:1352929855,81f7fa7b2f520210f090cad02382b42b:157341344,b3e7ba7bb452021079bc4dea179a63a2:1352929855,b603811a881a42106f624a6016a27f93:157341344,2b01cd16981a4210031fd5c435a8f4d7:-413629572,6e01c116ca1a4210576076faee8a075b:781958939,8ce00956aa1a42105ff70c87620a7bb1:1977547450</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Learning Management System - Container 8">ee7ae7e293760210b09bf2918bba1089</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-18 08:49:36</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>00e9d17c8ca8416780c861b2adce2891</sys_id>
+        <sys_metadata>c4e08dd2931a4210b09bf2918bba104e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Learning Management System - Container 8</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_container_c4e08dd2931a4210b09bf2918bba104e</sys_update_name>
+        <sys_update_version display_value="sp_container_c4e08dd2931a4210b09bf2918bba104e">63e218bc933a4210b09bf2918bba1023</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-18 08:49:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

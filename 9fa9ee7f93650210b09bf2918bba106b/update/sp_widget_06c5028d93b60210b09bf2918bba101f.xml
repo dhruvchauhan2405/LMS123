@@ -4,171 +4,219 @@
         <client_script><![CDATA[api.controller = function($location, $scope) {
     var c = this;
 
+    // Initialize tabs
+    c.initTabs = function() {
+        // Show the default tab (first one) on page load
+        var defaultTab = document.querySelector('.tab-link');
+        c.openTab(defaultTab, 'myCourses');
+    };
+
+    // Function to open a specific tab
+    c.openTab = function(tabElement, tabName) {
+        var i, tabcontent, tablinks;
+
+        // Hide all tab content
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove active class from all tab links
+        tablinks = document.getElementsByClassName("tab-link");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+
+        // Show the current tab content
+        document.getElementById(tabName).style.display = "block";
+
+        // Add an active class to the tab link that opened the tab
+        tabElement.classList.add("active");
+    };
+
+    // Function to handle click events on tab links
+    c.handleTabClick = function(event, tabName) {
+        var tabElement = event.currentTarget;
+        c.openTab(tabElement, tabName);
+    };
+
+    // Default initialization
+    c.initTabs();
+
+    // Other functions (module_page, redirectToCourses, courseDetailPage) as before
     c.module_page = function(sys_id) {
         var portalURL = $location.absUrl().split('?')[0];
-        var pageID = 'lms_modules_content'; // Update with actual page ID
+        var pageID = 'lms_modules_content'; 
         var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
-        window.location.href = url;			
-    };	
-	    c.courseDetailPage = function(sys_id) {
+        window.location.href = url;            
+    };
+
+    c.courseDetailPage = function(sys_id) {
         var portalURL = $location.absUrl().split('?')[0];
         var pageID = 'lms_course_details'; // Update with actual page ID
         var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
         window.location.href = url;
-			
-    };	
-		
+    };
+
+    c.redirectToCourses = function() {
+        window.location.href = 'lms?id=lms_courses';
+    };
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+        <css>body {
+    font-family: Arial, sans-serif;
 }
 
-.course-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: auto; /* Adjust width as needed */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+  /*height: 500px;*/
 }
 
-.course-controls button {
-  background: #f0f0f0;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.course-controls button:hover {
-  background: #e0e0e0;
+.tab-link {
+    flex: 1; /* Each tab takes up 50% width */
+    text-align: center; /* Center align text */
+    padding: 14px 0;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: none;
+    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-.course-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 20px;
+.tab-link.active {
+    background-color: #00bcd4;
+    color: white;
+}
+
+.tab-link:not(.active):hover {
+    background-color: #ddd;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.course-container, .requested-courses-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
 }
 
 @media (min-width: 600px) {
-  .course-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .course-container, .requested-courses-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 900px) {
-  .course-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .course-container, .requested-courses-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.course-card {
-  position: relative;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 7px;
-  margin-right: 7px;
+.course-card, .requested-course {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin: 10px 7px;
+}
+
+.course-card:hover .course-hover-details, .requested-course:hover .course-hover-details {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .course-name {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
 }
 
 .course-image {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  aspect-ratio: 1;
-}
-
-.course-card:hover .course-hover-details {
-  opacity: 1;
-  transform: translateY(0);
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    aspect-ratio: 1;
 }
 
 .course-hover-details {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
 }
 
 .course-hover-details h3 {
-  font-size: 1.5em;
-  text-align: center;
-  margin-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .course-hover-details p {
-  font-size: 0.9em;
-  color: #333;
-  text-align: center;
+    font-size: 0.9em;
+    color: #333;
+    text-align: center;
 }
 
-.requested-courses-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+.no-courses {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.requested-course {
-  position: relative;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+.no-courses p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.requested-course:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
+.no-courses button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.requested-course .course-name {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
+.no-courses button:hover {
+    background-color: #0056b3;
 }
-
-.requested-course .course-image {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  aspect-ratio: 1;
-}</css>
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -246,45 +294,59 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-13 09:38:46</sys_created_on>
         <sys_id>06c5028d93b60210b09bf2918bba101f</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>LMS My Learnings</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_06c5028d93b60210b09bf2918bba101f</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-14 09:37:13</sys_updated_on>
+        <sys_updated_on>2024-06-18 07:03:40</sys_updated_on>
         <template><![CDATA[<div class="container">
-  <!-- My Learnings Section -->
-  <h2>My Learnings</h2>
-  <div class="course-container">    
-    <div class="course-card"
-         ng-click="c.module_page(s.sys_id)"
-         ng-repeat="s in c.data.courses">
-      <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-      <div class="course-name" ng-bind="s.Name"></div>
-      <div class="course-hover-details">
-        <h3 ng-bind="s.Name"></h3>
-        <p ng-bind="s.Description"></p>
-      </div>
+    <div class="tabs">
+        <button class="tab-link active" ng-click="c.handleTabClick($event, 'myCourses')">My Courses</button>
+        <button class="tab-link" ng-click="c.handleTabClick($event, 'requestedCourses')">Requested Courses</button>
     </div>
-  </div>
 
-  <!-- Requested Section -->
-  <h2>Requested</h2>
-  <div class="requested-courses-container">
-    <div class="requested-course"
-         ng-click="c.courseDetailPage(s.sys_id)"
-         ng-repeat="s in c.data.requestedCourses">
-      <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-      <div class="course-name" ng-bind="s.Name"></div>
-      <div class="course-hover-details">
-        <h3 ng-bind="s.Name"></h3>
-        <p ng-bind="s.Description"></p>
-      </div>
+    <div class="tab-content" id="myCourses" style="display: block;">
+        <!-- My Courses Section -->
+        <h2>My Courses</h2>
+        <div class="course-container" ng-if="c.data.courses.length > 0">
+            <div class="course-card" ng-click="c.module_page(s.sys_id)" ng-repeat="s in c.data.courses">
+                <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+                <div class="course-name" ng-bind="s.Name"></div>
+                <div class="course-hover-details">
+                    <h3 ng-bind="s.Name"></h3>
+                    <p ng-bind="s.Description"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-courses" ng-if="c.data.courses.length === 0">
+            <p>You have not enrolled in any courses.</p>
+            <button ng-click="c.redirectToCourses()">View Course List</button>
+        </div>
     </div>
-  </div>
 
+    <div class="tab-content" id="requestedCourses">
+        <!-- Requested Courses Section -->
+        <h2>Requested Courses</h2>
+        <div class="requested-courses-container" ng-if="c.data.requestedCourses.length > 0">
+            <div class="requested-course" ng-click="c.courseDetailPage(s.sys_id)" ng-repeat="s in c.data.requestedCourses">
+                <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+                <div class="course-name" ng-bind="s.Name"></div>
+                <div class="course-hover-details">
+                    <h3 ng-bind="s.Name"></h3>
+                    <p ng-bind="s.Description"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-courses" ng-if="c.data.requestedCourses.length === 0">
+            <p>No courses have been requested.</p>
+        </div>
+    </div>
+</div>
 ]]></template>
     </sp_widget>
 </record_update>

@@ -2,52 +2,104 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($sce, $location) {
-  /* widget controller */
-  var c = this;
-  c.data.selectedTab = 'description'; 
-  c.data.showModal = false;
-  c.data.showCancelModal = false; // New state for cancel confirmation modal
-  c.data.agreeToTerms = false;
+	/* widget controller */
+	var c = this;
+	c.data.selectedTab = 'description'; 
+	c.data.showModal = false;
+	c.data.showCancelModal = false; // New state for cancel confirmation modal
+	c.data.agreeToTerms = false;
 
-  // HTML content is safe to bind
-  if (c.data.course && c.data.course.description && c.data.course.description.value) {
-    c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
-  }
+	// HTML content is safe to bind
+	if (c.data.course && c.data.course.description && c.data.course.description.value) {
+		c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
+	}
 
- c.enroll = function() {
-    c.server.update().then(function() {
-       var portalURL = $location.absUrl().split('?')[0];
-      var pageID = 'lms_enrollment_status'; 
-      var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
-      window.location.href = url;
-    });
-  };
+	c.enroll = function() {
+		c.server.update().then(function() {
+			var portalURL = $location.absUrl().split('?')[0];
+			var pageID = 'lms_enrollment_status'; 
+			var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+			window.location.href = url;
+		});
+	};
 
-  c.startCourse = function() {
-    var portalURL = $location.absUrl().split('?')[0];
-    var pageID = 'lms_modules_content'; 
-    var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
-    window.location.href = url;
-  };
+	c.startCourse = function() {
+		var portalURL = $location.absUrl().split('?')[0];
+		var pageID = 'lms_modules_content'; 
+		var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+		window.location.href = url;
+	};
 
-  c.cancelEnrollment = function() {
-    c.data.showCancelModal = true; // to show the cancel confirmation modal
-  };
+	c.cancelEnrollment = function() {
+		c.data.showCancelModal = true; // to show the cancel confirmation modal
+	};
 
-  c.confirmCancel = function() {
+	c.confirmCancel = function() {
 		c.data.action='cancel';
-    c.server.update().then(function() {
-      var portalURL = $location.absUrl().split('?')[0];
-      var pageID = 'lms_courses';
-      var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
-      window.location.href = url;
-    });
-  };
+		c.server.update().then(function() {
+			var portalURL = $location.absUrl().split('?')[0];
+			var pageID = 'lms_course_details';
+			var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+			window.location.href = url;
+		});
+	};
+
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {
-  
+        <css>/* Updated CSS for sidebar */
+.sidebar {
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
+.sidebar button {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+}
+
+.sidebar button:hover {
+  background-color: #5952c6;
+}
+
+/* Styling for Pending Approval h3 */
+.sidebar h2[ng-if="c.data.isPending"] {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar h2[ng-if="c.data.isPending"]:before {
+  display: block;
+}
+
+/* General styling for the main container and content */
+body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -92,49 +144,11 @@
 
 .course-description {
   font-family: 'Verdana', sans-serif;
-
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-}
-
-.sidebar {
-  width: 300px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20px;
-  height: fit-content;
-}
-
-.sidebar img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.sidebar h2 {
-  margin-top: 20px;
-  font-size: 1.5em;
-}
-
-.sidebar button {
-  background-color: #6c63ff;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 1em;
-}
-
-.sidebar button:hover {
-  background-color: #5952c6;
 }
 
 .module-item {
@@ -176,26 +190,25 @@
 }
 
 .tab-list {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
   display: flex;
-  border-bottom: 2px solid #ddd;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .tab-list li {
-  padding: 10px 20px;
+  flex: 1;
+  text-align: center;
   cursor: pointer;
-  border: 1px solid #ddd;
-  border-bottom: none;
-  margin-right: 5px;
-  background-color: #f5f5f5;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.3s;
 }
 
 .tab-list li.active {
-  background-color: #ffffff;
-  border-top: 2px solid #007bff;
-  border-right: 2px solid #ddd;
-  border-left: 2px solid #ddd;
+  border-bottom-color: #007bff;
+  font-weight: bold;
 }
 
 .tab-content {
@@ -215,8 +228,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -241,28 +253,6 @@
   text-decoration: none;
   cursor: pointer;
 }
-
-.tabs {
-  margin-top: 20px;
-}
-
-.tab-list {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-}
-
-.tab-list li {
-  margin-right: 20px;
-  cursor: pointer;
-  padding: 10px;
-  border-bottom: 2px solid transparent;
-}
-
-.tab-list li.active {
-  border-bottom: 2px solid #007bff;
-  font-weight: bold;
-}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -278,103 +268,101 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  var courseSysId = $sp.getParameter('sys_id');
-  if (!input) {
-    data.course = null;
-    data.modules = [];
-    data.enrollmentCount = 0;
-    data.enrollmentCreated = false; // Initialize the enrollment creation flag
-    data.isEnrolled = false; // Initialize the enrollment check flag
-    data.isPending = false; // Initialize the pending approval flag
-    data.course_sys_id = courseSysId;
+	var courseSysId = $sp.getParameter('sys_id');
+	if (!input) {
+		data.course = null;
+		data.modules = [];
+		data.enrollmentCount = 0;
+		data.enrollmentCreated = false; // Initialize the enrollment creation flag
+		data.isEnrolled = false; // Initialize the enrollment check flag
+		data.isPending = false; // Initialize the pending approval flag
+		data.course_sys_id = courseSysId;
 
-    try {
-      var courseTable = 'x_1383177_lms_app_course';
-      var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
+		try {
+			var courseTable = 'x_1383177_lms_app_course';
+			var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
 
-      if (courseSysId) {
-        var gr = new GlideRecordSecure(courseTable);
-        if (gr.get(courseSysId)) {
-          data.course = $sp.getFieldsObject(gr, gs.getMessage(courseFields));
+			if (courseSysId) {
+				var gr = new GlideRecordSecure(courseTable);
+				if (gr.get(courseSysId)) {
+					data.course = $sp.getFieldsObject(gr, gs.getMessage(courseFields));
 
-          // Getting related modules
-          var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
-          var moduleTable = 'x_1383177_lms_app_module';
+					// Getting related modules
+					var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+					var moduleTable = 'x_1383177_lms_app_module';
 
-          var moduleGr = new GlideRecordSecure(courseModuleTable);
-          moduleGr.addQuery('x_1383177_lms_app_course', courseSysId);
-          moduleGr.orderBy('order');
-          moduleGr.query();
+					var moduleGr = new GlideRecordSecure(courseModuleTable);
+					moduleGr.addQuery('x_1383177_lms_app_course', courseSysId);
+					moduleGr.orderBy('order');
+					moduleGr.query();
 
-          while (moduleGr.next()) {
-            var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); 
-            var moduleGrDetails = new GlideRecordSecure(moduleTable);
-            if (moduleGrDetails.get(moduleSysId)) {
-              var moduleObj = {
-                name: gs.getMessage(moduleGrDetails.getValue('name')),
-                description: gs.getMessage(moduleGrDetails.getValue('short_description')),
-              };
-              data.modules.push(moduleObj);
-            }
-          }
+					while (moduleGr.next()) {
+						var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); 
+						var moduleGrDetails = new GlideRecordSecure(moduleTable);
+						if (moduleGrDetails.get(moduleSysId)) {
+							var moduleObj = {
+								name: gs.getMessage(moduleGrDetails.getValue('name')),
+								description: gs.getMessage(moduleGrDetails.getValue('short_description')),
+							};
+							data.modules.push(moduleObj);
+						}
+					}
 
-          // Get the count of enrollments for the course using GlideAggregate
-          var enrollmentTable = 'x_1383177_lms_app_enrollment';
-          var enrollmentGa = new GlideAggregate(enrollmentTable);
-          enrollmentGa.addQuery('course_name', courseSysId); 
-          enrollmentGa.addAggregate('COUNT');
-          enrollmentGa.query();
-          if (enrollmentGa.next()) {
-            data.enrollmentCount = enrollmentGa.getAggregate('COUNT');
-          }
+					// Get the count of enrollments for the course using GlideAggregate
+					var enrollmentTable = 'x_1383177_lms_app_enrollment';
+					var enrollmentGa = new GlideAggregate(enrollmentTable);
+					enrollmentGa.addQuery('course_name', courseSysId); 
+					enrollmentGa.addAggregate('COUNT');
+					enrollmentGa.query();
+					if (enrollmentGa.next()) {
+						data.enrollmentCount = enrollmentGa.getAggregate('COUNT');
+					}
+					
+					var enrollmentGr = new GlideRecordSecure(enrollmentTable);
+					enrollmentGr.addQuery('course_name', courseSysId);
+					enrollmentGr.addQuery('learner_name', gs.getUserID());
+					enrollmentGr.query();
+					while (enrollmentGr.next()) {
+						var status = enrollmentGr.getValue('status');
+						if (status == 'approved') {
+							data.isEnrolled = true;
+							break;
+						} else if (status == 'Approval Pending' || status == 'requested') {
+							data.isPending = true;
+						}
+					}
+				}
+			}
+		} catch (e) {
+			gs.error(gs.getMessage("Error retrieving course details: {0}", e.message));
+		}
+	}
 
-          // Check if the current user is enrolled in the course
-          var currentUser = gs.getUserID();
-          var enrollmentGr = new GlideRecordSecure(enrollmentTable);
-          enrollmentGr.addQuery('course_name', courseSysId);
-          enrollmentGr.addQuery('learner_name', currentUser);
-          enrollmentGr.query();
-          while (enrollmentGr.next()) {
-            var status = enrollmentGr.getValue('status');
-            if (status == 'approved') {
-              data.isEnrolled = true;
-              break;
-            } else if (status == 'Approval Pending' || status == 'requested') {
-              data.isPending = true;
-            }
-          }
-        }
-      }
-    } catch (e) {
-      gs.error(gs.getMessage("Error retrieving course details: {0}", e.message));
-    }
-  }
+	if (input) {
+		var courseSysId1 = $sp.getParameter('sys_id');
 
-  if (input) {
-    var courseSysId1 = $sp.getParameter('sys_id');
-    
-    if (input.action === 'cancel') {
-      gs.addInfoMessage(gs.getUserID());
-      var enrollmentDeleteGr = new GlideRecordSecure('x_1383177_lms_app_enrollment');
-      enrollmentDeleteGr.addQuery('course_name', courseSysId1);
-      enrollmentDeleteGr.addQuery('learner_name', gs.getUserID());
-      enrollmentDeleteGr.query();
+		if (input.action == 'cancel') {
+			gs.addInfoMessage(gs.getUserID());
+			var enrollmentDeleteGr = new GlideRecordSecure('x_1383177_lms_app_enrollment');
+			enrollmentDeleteGr.addQuery('course_name', courseSysId1);
+			enrollmentDeleteGr.addQuery('learner_name', gs.getUserID());
+			enrollmentDeleteGr.query();
 
-      while (enrollmentDeleteGr.next()) {
-        enrollmentDeleteGr.deleteRecord();
-      }
+			while (enrollmentDeleteGr.next()) {
+				enrollmentDeleteGr.deleteRecord();
+			}
 
-      data.cancellationSuccess = true; // Add a flag to indicate successful cancellation
-    } else {
-      var enrollmentNewGr = new GlideRecordSecure('x_1383177_lms_app_enrollment'); 
-      enrollmentNewGr.initialize();
-      
-      enrollmentNewGr.setValue('learner_name', gs.getUserID()); 
-      enrollmentNewGr.setValue('course_name', courseSysId1); 
-      enrollmentNewGr.insert();
-      data.enrollmentCreated = true;
-    }
-  }
+			data.cancellationSuccess = true; // Add a flag to indicate successful cancellation
+		} else {
+			var enrollmentNewGr = new GlideRecordSecure('x_1383177_lms_app_enrollment'); 
+			enrollmentNewGr.initialize();
+
+			enrollmentNewGr.setValue('learner_name', gs.getUserID()); 
+			enrollmentNewGr.setValue('course_name', courseSysId1); 
+			enrollmentNewGr.insert();
+			data.enrollmentCreated = true;
+		}
+	}
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -382,38 +370,38 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>128</sys_mod_count>
+        <sys_mod_count>154</sys_mod_count>
         <sys_name>LMS Course Detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-17 10:04:46</sys_updated_on>
+        <sys_updated_on>2024-06-18 09:33:52</sys_updated_on>
         <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">
       <div class="details">
         <h1>{{ c.data.course.course_name.display_value }}</h1>
         <p>${Created by} {{ c.data.course.sys_created_by.display_value }} | {{ c.data.course.learning_medium.display_value }}</p>
-        <p>${Last updated:} {{ c.data.course.sys_updated_on.display_value | date:'yyyy-MM-dd' }} | ${Enrollments:} {{ c.data.enrollmentCount }}</p>
+        <p>${Last updated:} {{ c.data.course.sys_updated_on.display_value }} | ${Enrollments:} {{ c.data.enrollmentCount }}</p>
       </div>
     </div>
 
     <!-- Tabs -->
     <div class="tabs">
       <ul class="tab-list">
-        <li ng-class="{active: c.data.selectedTab === 'description'}" ng-click="c.data.selectedTab = 'description'">${Description}</li>
-        <li ng-class="{active: c.data.selectedTab === 'content'}" ng-click="c.data.selectedTab = 'content'">${Course Content}</li>
+        <li ng-class="{active: c.data.selectedTab == 'description'}" ng-click="c.data.selectedTab = 'description'">${Description}</li>
+        <li ng-class="{active: c.data.selectedTab == 'content'}" ng-click="c.data.selectedTab = 'content'">${Course Content}</li>
       </ul>
     </div>
 
     <!-- Tab Content -->
     <div class="tab-content">
-      <div ng-show="c.data.selectedTab === 'description'">
+      <div ng-show="c.data.selectedTab == 'description'">
         <div ng-bind-html="c.data.course.description.value"></div>
       </div>
-      <div ng-show="c.data.selectedTab === 'content'">
+      <div ng-show="c.data.selectedTab == 'content'">
         <h2>${Course content}</h2>
         <p>{{ c.data.modules.length }} ${sections}</p>
         <ul>
@@ -432,7 +420,7 @@
   </div>
 
   <div class="sidebar">
-    <h3 ng-if="c.data.isPending" style="background-color: orange; color: white;">${Pending Approval}</h3>
+    <h2 ng-if="c.data.isPending" style="background-color: orange; color: white;">${Your approval is pending.}</h2>
     <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="${Course Image}">
     <h2>{{ c.data.course.course_name.display_value }}</h2>
     <button ng-if="c.data.isEnrolled" ng-click="c.startCourse()" style="background-color: green; color: white;">${Start now}</button>
@@ -440,20 +428,25 @@
     <button ng-if="c.data.isPending" ng-click="c.cancelEnrollment()" style="background-color: #880808; color: white;">${Cancel Request}</button>
   </div>
 
-  <!-- Modal -->
-  <div class="modal" ng-show="c.data.showModal">
-    <div class="modal-content">
-      <span class="close" ng-click="c.data.showModal = false">&times;</span>
-      <h2>${Enroll in Course}</h2>
-      <p><strong>${Terms & Conditions}</strong></p>
-      <p>${Training and Certification Terms and Conditions}</p>
-      <a href="#">${Training and Certification Terms and Conditions}</a>
-      <div>
-        <input type="checkbox" ng-model="c.data.agreeToTerms"> ${With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.}
-      </div>
-      <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">${Enroll}</button>
+<div class="modal" ng-show="c.data.showModal">
+  <div class="modal-content">
+    <span class="close" ng-click="c.data.showModal = false">&times;</span>
+    <h2>${Enroll in Course: }{{ c.data.course.course_name.display_value }}</h2>
+    <p><strong>${Terms & Conditions}</strong></p>
+    <ul>
+      <li>${You agree to abide by the course's content usage policies.}</li>
+      <li>${You understand that this course may require periodic assessments.}</li>
+      <li>${You acknowledge that course materials are for personal use only and not for redistribution.}</li>
+      <li>${You consent to receive communications related to course updates and important announcements.}</li>
+      <li>${You agree to comply with the platform's terms of service and privacy policy.}</li>
+    </ul>
+    <div>
+      <input type="checkbox" ng-model="c.data.agreeToTerms">${ With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.}
     </div>
+    <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">${Enroll}</button>
   </div>
+</div>
+
 
   <!-- Cancel Confirmation Modal -->
   <div class="modal" ng-show="c.data.showCancelModal">
