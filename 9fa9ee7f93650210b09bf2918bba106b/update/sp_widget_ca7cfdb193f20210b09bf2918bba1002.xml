@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($location) {
+	var c = this;
+
+	// Function to get query parameter from URL
+	c.getQueryParameter = function(name) {
+		var url = $location.absUrl();
+		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		var results = regex.exec(url);
+		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	};
+
+	// Get search parameter from URL
+	var searchQuery = c.getQueryParameter('search');
+
+	// Fetch courses based on the search query
+	if (searchQuery) {
+		c.server.get({
+			search: searchQuery
+		}).then(function(response) {
+			c.courses = response.data.courses;
+		});
+	} else {
+		c.server.get().then(function(response) {
+			c.courses = response.data.courses;
+		});
+	}
+
+	// Redirect to course details
+	c.redirectToCourseDetail = function(sys_id) {
+		var portalURL = $location.absUrl().split('?')[0];
+		var pageID = 'lms_course_details'; // Update with actual page ID
+		var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+		window.location.href = url;
+	};
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+.courses-list {
+  padding: 20px;
+}
+
+.courses-list h1 {
+  text-align: left;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.course-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 600px) {
+  .course-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .course-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.course-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  aspect-ratio: 1;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image {
+  transform: scale(1.1);
+}
+
+.course-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.course-short-description {
+  font-size: 1.0em;
+  color: #777;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.course-description {
+  font-size: 1em;
+  color: #555;
+  text-align: center;
+}
+
+.no-courses 
+{
+
+  padding: 20px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-courses h2 {
+  margin-top: 0;
+  color: #e74c3c;
+}
+
+.no-courses p {
+  font-size: 1.25em;
+}
+.backtocourse {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3241c9;
+
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.backtocourse:hover {
+  background-color: white;
+  color: #3241c9;
+}
+
+.altcourse{
+  color: white;
+}
+
+.altcourse:hover {
+  color: #3241c9;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_search_results</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Search Results</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var search = input ? input.search : '';  // Safely access 'input.search'
+	var gr = new GlideRecord('x_1383177_lms_app_course');
+
+	if (search) {
+		gr.addQuery('course_name', 'CONTAINS', search);
+	}
+
+	gr.query();
+
+	var courses = [];
+	while (gr.next()) {
+		courses.push({
+			sys_id: gr.getUniqueValue(), // Ensure sys_id is included
+			course_name: gr.getValue('course_name'),
+			thumbnail: gr.getDisplayValue('thumbnail'),
+			short_description: gr.getValue('short_description')
+		});
+	}
+
+	data.courses = courses;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-15 16:53:32</sys_created_on>
+        <sys_id>ca7cfdb193f20210b09bf2918bba1002</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>LMS Search Results</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_ca7cfdb193f20210b09bf2918bba1002</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-15 18:44:28</sys_updated_on>
+        <template><![CDATA[<div class="courses-list">
+  <h1>Search Results:</h1>
+  <div class="course-container">
+    <div class="course-card" ng-click="c.redirectToCourseDetail(course.sys_id)" ng-repeat="course in c.courses">
+      <img class="course-image" ng-src="{{ course.thumbnail }}">
+      <h2 class="course-name">{{course.course_name}}</h2>
+      <p class="course-short-description">{{course.short_description}}</p>
+
+    </div>
+  </div>
+  <div class="no-courses" ng-if="c.courses.length === 0">
+    <h2>Oops! Course Not Found :(</h2>
+    <p>Unfortunately, the course you're looking for isn't available in our LMS!</p>
+  </div>
+  <div class="backtocourse" ng-if="c.courses.length === 0">
+    <a href="lms?id=lms_courses" class="altcourse">Explore other courses</a>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

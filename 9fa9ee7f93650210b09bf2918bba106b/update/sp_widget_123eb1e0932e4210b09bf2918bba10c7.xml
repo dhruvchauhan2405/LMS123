@@ -2,39 +2,39 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($scope, $location) {
-    var c = this;
+	var c = this;
 
-    c.redirectToCoursePage = function(domainSysId) {
-        var portalURL = $location.absUrl().split('?')[0];
-        var pageID = 'lms_courses'; // Replace this with the actual page ID of the course list
-        var url = portalURL + '?id=' + pageID + '&domain_sys_id=' + encodeURIComponent(domainSysId);
-        window.location.href = url;
-    };
+	c.redirectToCoursePage = function(domainSysId) {
+		var portalURL = $location.absUrl().split('?')[0];
+		var pageID = 'lms_courses'; 
+		var url = portalURL + '?id=' + pageID + '&domain_sys_id=' + encodeURIComponent(domainSysId);
+		window.location.href = url;
+	};
 
-    // Function to scroll domains
-    function scrollDomains(direction) {
-        var scrollAmount = 800;
-        var scrollBehavior = { left: direction * scrollAmount, behavior: 'smooth' };
-        document.getElementById('domainList').scrollBy(scrollBehavior);
+	// Function to scroll domains
+	function scrollDomains(direction) {
+		var scrollAmount = 800;
+		var scrollBehavior = { left: direction * scrollAmount, behavior: 'smooth' };
+		document.getElementById('domainList').scrollBy(scrollBehavior);
 
-        setTimeout(function() {
-            var domainList = document.getElementById('domainList');
-            if (direction === 1 && domainList.scrollLeft + domainList.clientWidth >= domainList.scrollWidth) {
-                domainList.scrollTo({ left: 0, behavior: 'smooth' });
-            } else if (direction === -1 && domainList.scrollLeft === 0) {
-                domainList.scrollTo({ left: domainList.scrollWidth, behavior: 'smooth' });
-            }
-        }, 800); // Match with the smooth scroll duration
-    }
+		setTimeout(function() {
+			var domainList = document.getElementById('domainList');
+			if (direction === 1 && domainList.scrollLeft + domainList.clientWidth >= domainList.scrollWidth) {
+				domainList.scrollTo({ left: 0, behavior: 'smooth' });
+			} else if (direction === -1 && domainList.scrollLeft === 0) {
+				domainList.scrollTo({ left: domainList.scrollWidth, behavior: 'smooth' });
+			}
+		}, 800);
+	}
 
-    // Event listeners for scrolling
-    document.getElementById('prevBtn').addEventListener('click', function() {
-        scrollDomains(-0.5);
-    });
+	// Event listeners for scrolling
+	document.getElementById('prevBtn').addEventListener('click', function() {
+		scrollDomains(-0.5);
+	});
 
-    document.getElementById('nextBtn').addEventListener('click', function() {
-        scrollDomains(0.5);
-    });
+	document.getElementById('nextBtn').addEventListener('click', function() {
+		scrollDomains(0.5);
+	});
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -91,7 +91,6 @@
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
   color: #333;
@@ -118,22 +117,22 @@
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
         <name>LMS Domains Slider</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  if (!input) {
-    data.domains = [];
-    var grDomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
-    grDomain.addActiveQuery();
-    grDomain.query();
+	if (!input) {
+		data.domains = [];
+		var grDomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+		grDomain.addActiveQuery();
+		grDomain.query();
 
-    while (grDomain.next()) {
-      data.domains.push({
-        Name: grDomain.getDisplayValue('name'),
-        sys_id: grDomain.getUniqueValue()
-      });
-    }
-  }
+		while (grDomain.next()) {
+			data.domains.push({
+				Name: gs.getMessage(grDomain.getDisplayValue('name')),
+				sys_id: grDomain.getUniqueValue()
+			});
+		}
+	}
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -141,22 +140,22 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-30 09:33:06</sys_created_on>
         <sys_id>123eb1e0932e4210b09bf2918bba10c7</sys_id>
-        <sys_mod_count>118</sys_mod_count>
+        <sys_mod_count>123</sys_mod_count>
         <sys_name>LMS Domains Slider</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_123eb1e0932e4210b09bf2918bba10c7</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-12 05:13:51</sys_updated_on>
+        <sys_updated_on>2024-06-17 10:49:42</sys_updated_on>
         <template><![CDATA[<div class="container">
-    <div class="btn" id="prevBtn">&lt;</div>
-    <div class="domains" id="domainList">
-        <div class="domain" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.sys_id)">
-            <h3 class="domain-title" ng-bind="s.Name"></h3>
-        </div>
+  <div class="btn" id="prevBtn">&lt;</div>
+  <div class="domains" id="domainList">
+    <div class="domain" ng-repeat="s in c.data.domains" ng-click="c.redirectToCoursePage(s.sys_id)">
+      <h3 class="domain-title" ng-bind="s.Name"></h3>
     </div>
-    <div class="btn" id="nextBtn">&gt;</div>
+  </div>
+  <div class="btn" id="nextBtn">&gt;</div>
 </div>
 ]]></template>
     </sp_widget>

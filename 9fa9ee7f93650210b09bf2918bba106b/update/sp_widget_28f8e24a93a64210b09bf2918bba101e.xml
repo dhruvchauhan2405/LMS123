@@ -1,164 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
-        <controller_as>c</controller_as>
-        <css>body {
-  margin: 0;
-  padding: 0;
-  background-color: #f0f4f8;
-  font-family: 'Roboto', sans-serif;
-}
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+  var c = this;
+  
+  // Fetch the course details and modules
+  c.data.course = {};
+  c.data.modules = [];
+  c.selectedModule = null;
+	
+  // Make sure HTML content is safe to bind
+  if (c.data.module && c.data.module.description && c.data.module.description.value) {
+    c.data.course.module.value = $sce.trustAsHtml(c.data.module.description.value);
+  }
+  // Function to select a module
+  c.selectModule = function(moduleSysId) {
+    c.selectedModule = moduleSysId;
+  };
 
-.module-content-page {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 20px auto;
+  // Navigate to the previous lesson
+  c.prevLesson = function() {
+    // Implement the logic to go to the previous lesson
+  };
+
+  // Navigate to the next lesson
+  c.nextLesson = function() {
+    // Implement the logic to go to the next lesson
+  };
+
+  // Fetch the data when the page loads
+  c.server.get().then(function(response) {
+    c.data.course = response.data.course;
+    c.data.modules = response.data.modules;
+
+    // Automatically select the first module
+    if (c.data.modules.length > 0) {
+      c.selectModule(c.data.modules[0].sys_id);
+    }
+  });
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>  padding: 20px;
 }
 
 .module-header {
-  text-align: left;
-  margin-bottom: 40px;
-  padding: 10px;
-  background: #00796b; /* Teal background */
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-in-out;
+  margin-bottom: 20px;
 }
 
 .module-header h1 {
-  font-size: 2.5em;
+  font-size: 28px;
   margin-bottom: 10px;
 }
 
 .module-header p {
-  font-size: 1.2em;
+  font-size: 16px;
+  color: #666;
 }
 
 .module-contents {
   display: flex;
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-.lessons {
-  flex: 3;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeInLeft 1s ease-in-out;
-}
-
-.lesson {
   margin-bottom: 20px;
 }
 
-.lesson h2 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  color: #00796b; /* Teal color */
+.lessons {
+  flex: 2;
+  margin-right: 20px;
 }
 
-.lesson p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #555;
+.lesson {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
 .module-list {
   flex: 1;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeInRight 1s ease-in-out;
 }
 
 .module-list h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #00796b; /* Teal color */
-}
-
-.module-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.module-list ul li {
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
-.module-list ul li a {
-  text-decoration: none;
-  font-size: 1.2em;
-  color: #333;
-  transition: color 0.3s, transform 0.3s;
+.module-list ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.module-list ul li a:hover, .module-list ul li a.active {
-  color: #00796b; /* Teal color */
+.module-list li {
+  margin-bottom: 10px;
+}
+
+.module-list li a {
+  text-decoration: none;
+  color: #0072c6;
   font-weight: bold;
-  transform: scale(1.1);
+}
+
+.module-list li a.active,
+.module-list li a:hover {
+  text-decoration: underline;
 }
 
 .navigation-buttons {
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
   margin-top: 20px;
 }
 
-.prev-lesson, .next-lesson {
-  padding: 15px 25px;
-  font-size: 1.2em;
-  background-color: #00796b; /* Teal background */
+.navigation-buttons button {
+  padding: 10px 20px;
+  background-color: #0072c6;
   color: #fff;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 10px;
 }
 
-.prev-lesson:hover, .next-lesson:hover {
-  background-color: #004d40; /* Darker teal */
-  transform: translateY(-5px);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-</css>
+.navigation-buttons button:hover {
+  background-color: #005bb5;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -169,44 +131,82 @@
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
         <name>LMS Module Content</name>
-        <option_schema/>
+        <option_schema>[]</option_schema>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  data.course = {};
+  data.modules = [];
+
+  var courseSysId = $sp.getParameter('sys_id');
+  if (!courseSysId) {
+    gs.error('No course sys_id provided');
+    return;
+  }
+
+  // Fetch course details
+  var courseGr = new GlideRecord('x_1383177_lms_app_course');
+  if (courseGr.get(courseSysId)) {
+    data.course.sys_id = courseGr.getValue('sys_id');
+    data.course.course_name = courseGr.getValue('course_name');
+    data.course.short_description = courseGr.getValue('short_description');
+  }
+
+ var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+          var moduleTable = 'x_1383177_lms_app_module';
+
+          var moduleGr = new GlideRecordSecure(courseModuleTable);
+          moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
+          moduleGr.orderBy('order');
+          moduleGr.query();
+
+          while (moduleGr.next()) {
+            var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
+            var moduleGrDetails = new GlideRecordSecure(moduleTable);
+            if (moduleGrDetails.get(moduleSysId)) {
+              var moduleObj = {
+                name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
+                description: moduleGrDetails.getValue('short_description'), // Adjust field names as per your module table
+              };
+              data.modules.push(moduleObj);
+            }
+          }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-11 06:18:06</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-17 09:17:58</sys_updated_on>
         <template><![CDATA[<div class="module-content-page">
   <div class="module-header">
-    <h1>Module Title</h1>
-    <p>Description of the module goes here.</p>
+    <h1>{{c.data.course.course_name}}</h1>
+    <p>{{c.data.course.short_description}}</p>
   </div>
   <div class="module-contents">
-    <div class="lessons">
-      <div class="lesson">
-        <h2>Lesson 1: Introduction to Web Development</h2>
-        <p>This lesson covers the basics of web development, including HTML, CSS, and JavaScript.</p>
-        
+    <div class="lessons" ng-repeat="module in c.data.modules">
+      <div class="lesson" ng-if="c.selectedModule === module.sys_id">
+        <h2>{{module.name}}</h2>
+        <p ng-bind-html="c.data.module.content_body.value">{{module.description}}</p>
       </div>
       <!-- Add more lessons here -->
     </div>
     <div class="module-list">
       <h2>Module List</h2>
       <ul>
-        <li><a href="javascript:void(0)" class="active">Module 1</a></li>
-        <li><a href="javascript:void(0)">Module 2</a></li>
-        <li><a href="javascript:void(0)">Module 3</a></li>
-        <!-- Add more modules here -->
+       <li ng-repeat="module in c.data.modules">
+          <a href="javascript:void(0)" ng-click="c.selectModule(module.sys_id)" ng-class="{'active': c.selectedModule === module.sys_id}">
+            {{module.name}}
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -215,6 +215,8 @@
     <button class="next-lesson">Next Lesson</button>
   </div>
 </div>
+
+
 ]]></template>
     </sp_widget>
 </record_update>

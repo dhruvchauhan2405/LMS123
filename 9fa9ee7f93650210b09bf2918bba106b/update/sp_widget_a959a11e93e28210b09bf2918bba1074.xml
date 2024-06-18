@@ -81,48 +81,49 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 18:31:12</sys_created_on>
         <sys_id>a959a11e93e28210b09bf2918bba1074</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>LMS Filler Card 3</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_a959a11e93e28210b09bf2918bba1074</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-11 06:02:02</sys_updated_on>
-        <template><![CDATA[<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"a>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-17 10:11:17</sys_updated_on>
+        <template><![CDATA[<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="card-container">
-    <div class="card">
-      <div class="content">
-        <div class="front">
-          <p class="special-font">Learn</p>
-        </div>
-        <div class="back">
-          <p class="special-font">Enjoy!</p>
-        </div>
+  <div class="card">
+    <div class="content">
+      <div class="front">
+        <p class="special-font">${learn}</p>
+      </div>
+      <div class="back">
+        <p class="special-font">${enjoy}</p>
       </div>
     </div>
-    <div class="card">
-      <div class="content">
-        <div class="front">
-          <p class="special-font">Code</p>
-        </div>
-        <div class="back">
-          <p class="special-font">Create!</p>
-        </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="front">
+        <p class="special-font">${code}</p>
+      </div>
+      <div class="back">
+        <p class="special-font">${create}</p>
       </div>
     </div>
-    <div class="card">
-      <div class="content">
-        <div class="front">
-          <p class="special-font">Build</p>
-        </div>
-        <div class="back">
-          <p class="special-font">Innovate!</p>
-        </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="front">
+        <p class="special-font">${build}</p>
+      </div>
+      <div class="back">
+        <p class="special-font">${innovate}</p>
       </div>
     </div>
-  </div>]]></template>
+  </div>
+</div>
+]]></template>
     </sp_widget>
 </record_update>

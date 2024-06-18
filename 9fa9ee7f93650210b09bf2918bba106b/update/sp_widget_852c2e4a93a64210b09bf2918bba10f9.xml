@@ -2,36 +2,34 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function ($location, $scope) {
-    var c = this;
+	var c = this;
 
-    // Function to handle post question button click
-    c.handlePostQuestion = function () {
-        // Redirect the user to the page where they can post a question
-        window.location.href = '?id=lms_question';
-    };
+	// Function to handle post question button click
+	c.handlePostQuestion = function () {
+	};
 
-    // Attach the handlePostQuestion function to the button click event
-    document.getElementById('post-question-btn').addEventListener('click', c.handlePostQuestion);
+	// Attach the handlePostQuestion function to the button click event
+	document.getElementById('post-question-btn').addEventListener('click', c.handlePostQuestion);
 
-    // Function to redirect to discussion detail page
-    c.redirectToDiscussionDetail = function (sys_id) {
-        var portalURL = $location.absUrl().split('?')[0];
-        var pageID = 'lms_forum_answers';
-        var url = portalURL + '?id=' + pageID +
-                  '&sys_id=' + sys_id;
-        window.location.href = url;
-    };
+	// Function to redirect to discussion detail page
+	c.redirectToDiscussionDetail = function (sys_id) {
+		var portalURL = $location.absUrl().split('?')[0];
+		var pageID = 'lms_forum_answers';
+		var url = portalURL + '?id=' + pageID +
+				'&sys_id=' + sys_id;
+		window.location.href = url;
+	};
 
-    // Function to show all discussions
-    c.showAllDiscussions = function () {
-        c.filteredDiscussions = c.data.discussions;
-    };
+	// Function to show all discussions
+	c.showAllDiscussions = function () {
+		c.filteredDiscussions = c.data.discussions;
+	};
 
-    // Call the function to show all discussions
-    c.showAllDiscussions();
-	  if (c.data.discussions && c.data.discussions.detailed_description) {
-    c.data.discussions.detailed_description.value = $sce.trustAsHtml(c.data.discussions.detailed_description.value);
-  }
+	// Call the function to show all discussions
+	c.showAllDiscussions();
+	if (c.data.discussions && c.data.discussions.detailed_description) {
+		c.data.discussions.detailed_description.value = $sce.trustAsHtml(c.data.discussions.detailed_description.value);
+	}
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -70,11 +68,7 @@
 }
 
 .forum-content {
-  gap: 20px; /* Removed display: flex */
-}
-
-.discussion-list {
-  /* flex: 3; */ /* Remove this line */
+  gap: 20px; 
 }
 
 .discussion-card {
@@ -100,13 +94,13 @@
 
 .discussion-excerpt {
   font-size: 1.2em;
-  line-height: 1.4; /* Adjust line height as needed */
+  line-height: 1.4; 
   color: #555;
   margin-bottom: 10px;
-  max-height: 3.6em; /* Approximately two lines of text */
+  max-height: 3.6em; 
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to two lines */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -187,34 +181,35 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function () {
-    data.discussions = [];
-    
-    var grDiscussion = new GlideRecord('x_1383177_lms_app_discussion');
-    grDiscussion.query();
+	data.discussions = [];
 
-    while (grDiscussion.next()) {
-        var questionBy = grDiscussion.getValue('question_by');
-        var userName = '';
+	var grDiscussion = new GlideRecord('x_1383177_lms_app_discussion');
+	grDiscussion.orderByDesc('sys_updated_on'); 
+	grDiscussion.query();
 
-        // Fetch the user's name from sys_user table using the sys_id
-        if (questionBy) {
-            var grUser = new GlideRecord('sys_user');
-            if (grUser.get(questionBy)) {
-                userName = grUser.getValue('name');
-            }
-        }
+	while (grDiscussion.next()) {
+		var questionBy = grDiscussion.getValue('question_by');
+		var userName = '';
 
-        data.discussions.push({
-            question: grDiscussion.getValue('question'),
-            detailed_description: grDiscussion.getValue('detailed_description'),
-            question_by: userName, // Use the fetched user name
-            sys_id: grDiscussion.getUniqueValue()
-        });
-    }
+		// Fetch the user's name from sys_user table using the sys_id
+		if (questionBy) {
+			var grUser = new GlideRecord('sys_user');
+			if (grUser.get(questionBy)) {
+				userName = grUser.getValue('name');
+			}
+		}
 
-    if (input) {
-        // Handle user input if needed
-    }
+		data.discussions.push({
+			question: grDiscussion.getValue('question'),
+			detailed_description: grDiscussion.getValue('detailed_description'),
+			question_by: userName, 
+			sys_id: grDiscussion.getUniqueValue()
+		});
+	}
+
+	if (input) {
+
+	}
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -222,34 +217,31 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:44:36</sys_created_on>
         <sys_id>852c2e4a93a64210b09bf2918bba10f9</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>LMS Discussion Forum</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_852c2e4a93a64210b09bf2918bba10f9</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-11 10:26:01</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-17 10:28:35</sys_updated_on>
         <template><![CDATA[<div class="forum-page">
-    <div class="forum-header">
-        <h1>Discussion Forum</h1>
-        <p>Engage in conversations, ask questions, and share knowledge with your peers.</p>
-        <button id="post-question-btn">Post your Question</button>
+  <div class="forum-header">
+    <h1>${Discussion Forum}</h1>
+    <p>${Engage in conversations, ask questions, and share knowledge with your peers.}</p>
+    <button onclick="location.href = '?id=lms_question';"id="post-question-btn">${Post your Question}</button>
+  </div>
+
+  <div class="forum-content">
+
+    <div class="discussion-card" ng-click="c.redirectToDiscussionDetail(disc.sys_id, disc.question, disc.detailed_description, disc.question_by)" ng-repeat="disc in c.filteredDiscussions | filter:{question:c.searchQuery}">
+      <h2 class="discussion-title" ng-bind="disc.question"></h2>
+      <p class="discussion-excerpt" ng-bind-html="disc.detailed_description"></p>
+      <div class="discussion-footer">
+        <span class="discussion-author">${Posted by: }<span ng-bind="disc.question_by"></span></span>
+      </div>
     </div>
-
-    <div class="forum-content">
-
-<div class="discussion-card" ng-click="c.redirectToDiscussionDetail(disc.sys_id, disc.question, disc.detailed_description, disc.question_by)" ng-repeat="disc in c.filteredDiscussions | filter:{question:c.searchQuery}">
-    <h2 class="discussion-title" ng-bind="disc.question"></h2>
-    <p class="discussion-excerpt" ng-bind-html="disc.detailed_description"></p>
-    <div class="discussion-footer">
-        <span class="discussion-author">Posted by: <span ng-bind="disc.question_by"></span></span>
-    </div>
-</div>
-
-
-        <!-- More discussion cards -->
-    </div>
+  </div>
 </div>
 ]]></template>
     </sp_widget>

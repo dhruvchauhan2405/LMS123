@@ -6,21 +6,42 @@
   var c = this;
   c.data.selectedTab = 'description'; 
   c.data.showModal = false;
+  c.data.showCancelModal = false; // New state for cancel confirmation modal
   c.data.agreeToTerms = false;
 
-  // Make sure HTML content is safe to bind
+  // HTML content is safe to bind
   if (c.data.course && c.data.course.description && c.data.course.description.value) {
     c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
   }
 
-  c.enroll = function() {
-		c.server.update().then(function(){
-			var portalURL = $location.absUrl().split('?')[0];
-    var pageID = 'lms_enrollment_status'; // Update with actual page ID
+ c.enroll = function() {
+    c.server.update().then(function() {
+       var portalURL = $location.absUrl().split('?')[0];
+      var pageID = 'lms_enrollment_status'; 
+      var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+      window.location.href = url;
+    });
+  };
+
+  c.startCourse = function() {
+    var portalURL = $location.absUrl().split('?')[0];
+    var pageID = 'lms_modules_content'; 
     var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
-    window.location.href = url
-		});
-    
+    window.location.href = url;
+  };
+
+  c.cancelEnrollment = function() {
+    c.data.showCancelModal = true; // to show the cancel confirmation modal
+  };
+
+  c.confirmCancel = function() {
+		c.data.action='cancel';
+    c.server.update().then(function() {
+      var portalURL = $location.absUrl().split('?')[0];
+      var pageID = 'lms_courses';
+      var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+      window.location.href = url;
+    });
   };
 };
 ]]></client_script>
@@ -257,72 +278,103 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-	
-	if(!input){
-	data.course = null;
-	data.modules = [];
-	data.enrollmentCount = 0;
-	data.enrollmentCreated = false; // Initialize the enrollment creation flag
+  var courseSysId = $sp.getParameter('sys_id');
+  if (!input) {
+    data.course = null;
+    data.modules = [];
+    data.enrollmentCount = 0;
+    data.enrollmentCreated = false; // Initialize the enrollment creation flag
+    data.isEnrolled = false; // Initialize the enrollment check flag
+    data.isPending = false; // Initialize the pending approval flag
+    data.course_sys_id = courseSysId;
 
-	var courseSysId = $sp.getParameter('sys_id'); // Get sys_id from the query parameter
-	data.course_sys_id = courseSysId;
+    try {
+      var courseTable = 'x_1383177_lms_app_course';
+      var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
 
-	try {
-		var courseTable = 'x_1383177_lms_app_course';
-		var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
+      if (courseSysId) {
+        var gr = new GlideRecordSecure(courseTable);
+        if (gr.get(courseSysId)) {
+          data.course = $sp.getFieldsObject(gr, gs.getMessage(courseFields));
 
-		if (courseSysId) {
-			var gr = new GlideRecordSecure(courseTable);
-			if (gr.get(courseSysId)) {
-				data.course = $sp.getFieldsObject(gr, courseFields);
+          // Getting related modules
+          var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+          var moduleTable = 'x_1383177_lms_app_module';
 
-				// Get related modules
-				var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
-				var moduleTable = 'x_1383177_lms_app_module';
+          var moduleGr = new GlideRecordSecure(courseModuleTable);
+          moduleGr.addQuery('x_1383177_lms_app_course', courseSysId);
+          moduleGr.orderBy('order');
+          moduleGr.query();
 
-				var moduleGr = new GlideRecordSecure(courseModuleTable);
-				moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
-				moduleGr.orderBy('order');
-				moduleGr.query();
+          while (moduleGr.next()) {
+            var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); 
+            var moduleGrDetails = new GlideRecordSecure(moduleTable);
+            if (moduleGrDetails.get(moduleSysId)) {
+              var moduleObj = {
+                name: gs.getMessage(moduleGrDetails.getValue('name')),
+                description: gs.getMessage(moduleGrDetails.getValue('short_description')),
+              };
+              data.modules.push(moduleObj);
+            }
+          }
 
-				while (moduleGr.next()) {
-					var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
-					var moduleGrDetails = new GlideRecordSecure(moduleTable);
-					if (moduleGrDetails.get(moduleSysId)) {
-						var moduleObj = {
-							name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
-							description: moduleGrDetails.getValue('short_description'), // Adjust field names as per your module table
-						};
-						data.modules.push(moduleObj);
-					}
-				}
+          // Get the count of enrollments for the course using GlideAggregate
+          var enrollmentTable = 'x_1383177_lms_app_enrollment';
+          var enrollmentGa = new GlideAggregate(enrollmentTable);
+          enrollmentGa.addQuery('course_name', courseSysId); 
+          enrollmentGa.addAggregate('COUNT');
+          enrollmentGa.query();
+          if (enrollmentGa.next()) {
+            data.enrollmentCount = enrollmentGa.getAggregate('COUNT');
+          }
 
-				// Get the count of enrollments for the course using GlideAggregate
-				var enrollmentTable = 'x_1383177_lms_app_enrollment'; // Replace with your enrollment table name
-				var enrollmentGa = new GlideAggregate(enrollmentTable);
-				enrollmentGa.addQuery('course_name', courseSysId); // Adjust the field name if needed
-				enrollmentGa.addAggregate('COUNT');
-				enrollmentGa.query();
-				if (enrollmentGa.next()) {
-					data.enrollmentCount = enrollmentGa.getAggregate('COUNT');
-				}
-			}
-		}
-	} catch (e) {
-		gs.error("Error retrieving course details: " + e.message);
-	}
-	}
+          // Check if the current user is enrolled in the course
+          var currentUser = gs.getUserID();
+          var enrollmentGr = new GlideRecordSecure(enrollmentTable);
+          enrollmentGr.addQuery('course_name', courseSysId);
+          enrollmentGr.addQuery('learner_name', currentUser);
+          enrollmentGr.query();
+          while (enrollmentGr.next()) {
+            var status = enrollmentGr.getValue('status');
+            if (status == 'approved') {
+              data.isEnrolled = true;
+              break;
+            } else if (status == 'Approval Pending' || status == 'requested') {
+              data.isPending = true;
+            }
+          }
+        }
+      }
+    } catch (e) {
+      gs.error(gs.getMessage("Error retrieving course details: {0}", e.message));
+    }
+  }
 
-	if (input) {
-		var courseSysId1 = $sp.getParameter('sys_id');
-		var enrollmentGr = new GlideRecordSecure('x_1383177_lms_app_enrollment'); // Added quotes around table name
-		enrollmentGr.initialize();
-		enrollmentGr.setValue('learner_name', gs.getUserID()); // Set learner to current user
-		enrollmentGr.setValue('course_name', courseSysId1); // Set course name to current course
-		enrollmentGr.insert();
-		data.enrollmentCreated = true;
-	}
+  if (input) {
+    var courseSysId1 = $sp.getParameter('sys_id');
+    
+    if (input.action === 'cancel') {
+      gs.addInfoMessage(gs.getUserID());
+      var enrollmentDeleteGr = new GlideRecordSecure('x_1383177_lms_app_enrollment');
+      enrollmentDeleteGr.addQuery('course_name', courseSysId1);
+      enrollmentDeleteGr.addQuery('learner_name', gs.getUserID());
+      enrollmentDeleteGr.query();
 
+      while (enrollmentDeleteGr.next()) {
+        enrollmentDeleteGr.deleteRecord();
+      }
+
+      data.cancellationSuccess = true; // Add a flag to indicate successful cancellation
+    } else {
+      var enrollmentNewGr = new GlideRecordSecure('x_1383177_lms_app_enrollment'); 
+      enrollmentNewGr.initialize();
+      
+      enrollmentNewGr.setValue('learner_name', gs.getUserID()); 
+      enrollmentNewGr.setValue('course_name', courseSysId1); 
+      enrollmentNewGr.insert();
+      data.enrollmentCreated = true;
+    }
+  }
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -330,29 +382,29 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>81</sys_mod_count>
+        <sys_mod_count>128</sys_mod_count>
         <sys_name>LMS Course Detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-13 07:10:55</sys_updated_on>
+        <sys_updated_on>2024-06-17 10:04:46</sys_updated_on>
         <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">
       <div class="details">
         <h1>{{ c.data.course.course_name.display_value }}</h1>
-        <p>Created by {{ c.data.course.sys_created_by.display_value }} | {{ c.data.course.learning_medium.display_value }}</p>
-        <p>Last updated: {{ c.data.course.sys_updated_on.display_value | date:'yyyy-MM-dd' }} | Enrollments: {{ c.data.enrollmentCount }}</p>
+        <p>${Created by} {{ c.data.course.sys_created_by.display_value }} | {{ c.data.course.learning_medium.display_value }}</p>
+        <p>${Last updated:} {{ c.data.course.sys_updated_on.display_value | date:'yyyy-MM-dd' }} | ${Enrollments:} {{ c.data.enrollmentCount }}</p>
       </div>
     </div>
 
     <!-- Tabs -->
     <div class="tabs">
       <ul class="tab-list">
-        <li ng-class="{active: c.data.selectedTab === 'description'}" ng-click="c.data.selectedTab = 'description'">Description</li>
-        <li ng-class="{active: c.data.selectedTab === 'content'}" ng-click="c.data.selectedTab = 'content'">Course Content</li>
+        <li ng-class="{active: c.data.selectedTab === 'description'}" ng-click="c.data.selectedTab = 'description'">${Description}</li>
+        <li ng-class="{active: c.data.selectedTab === 'content'}" ng-click="c.data.selectedTab = 'content'">${Course Content}</li>
       </ul>
     </div>
 
@@ -362,8 +414,8 @@
         <div ng-bind-html="c.data.course.description.value"></div>
       </div>
       <div ng-show="c.data.selectedTab === 'content'">
-        <h2>Course content</h2>
-        <p>{{ c.data.modules.length }} sections</p>
+        <h2>${Course content}</h2>
+        <p>{{ c.data.modules.length }} ${sections}</p>
         <ul>
           <li ng-repeat="module in c.data.modules" class="module-item">
             <div class="module-header" ng-click="module.expanded = !module.expanded">
@@ -380,23 +432,37 @@
   </div>
 
   <div class="sidebar">
-    <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="Course Image">
+    <h3 ng-if="c.data.isPending" style="background-color: orange; color: white;">${Pending Approval}</h3>
+    <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="${Course Image}">
     <h2>{{ c.data.course.course_name.display_value }}</h2>
-    <button ng-click="c.data.showModal = true">Start Enrollment</button>
+    <button ng-if="c.data.isEnrolled" ng-click="c.startCourse()" style="background-color: green; color: white;">${Start now}</button>
+    <button ng-if="!c.data.isEnrolled && !c.data.isPending" ng-click="c.data.showModal = true">${Start Enrollment}</button>
+    <button ng-if="c.data.isPending" ng-click="c.cancelEnrollment()" style="background-color: #880808; color: white;">${Cancel Request}</button>
   </div>
 
   <!-- Modal -->
   <div class="modal" ng-show="c.data.showModal">
     <div class="modal-content">
       <span class="close" ng-click="c.data.showModal = false">&times;</span>
-      <h2>Enroll in Course</h2>
-      <p><strong>Terms & Conditions</strong></p>
-      <p>Training and Certification Terms and Conditions</p>
-      <a href="#">Training and Certification Terms and Conditions</a>
+      <h2>${Enroll in Course}</h2>
+      <p><strong>${Terms & Conditions}</strong></p>
+      <p>${Training and Certification Terms and Conditions}</p>
+      <a href="#">${Training and Certification Terms and Conditions}</a>
       <div>
-        <input type="checkbox" ng-model="c.data.agreeToTerms"> With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.
+        <input type="checkbox" ng-model="c.data.agreeToTerms"> ${With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.}
       </div>
-      <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">Enroll</button>
+      <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">${Enroll}</button>
+    </div>
+  </div>
+
+  <!-- Cancel Confirmation Modal -->
+  <div class="modal" ng-show="c.data.showCancelModal">
+    <div class="modal-content">
+      <span class="close" ng-click="c.data.showCancelModal = false">&times;</span>
+      <h2>${Cancel Enrollment Request}</h2>
+      <p>${Are you sure you want to cancel your enrollment request for this course?}</p>
+      <button ng-click="c.confirmCancel()" style="background-color: #880808; color: white;">${Yes, Cancel Request}</button>
+      <button ng-click="c.data.showCancelModal = false">${No, Keep Request}</button>
     </div>
   </div>
 </div>

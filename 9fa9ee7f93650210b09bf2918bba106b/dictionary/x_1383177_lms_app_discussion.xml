@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="e5393e7293b10210b09bf2918bba10bd" label="Discussion Forum" max_length="40" name="x_1383177_lms_app_discussion" type="collection">
         <element label="Detailed description" max_length="5000" name="detailed_description" type="translated_html"/>
-        <element label="Module name" mandatory="true" max_length="32" name="module_name" reference="x_1383177_lms_app_module" type="reference"/>
+        <element label="Module name" max_length="32" name="module_name" reference="x_1383177_lms_app_module" type="reference"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element display="true" label="Question" mandatory="true" max_length="500" name="question" type="translated_text"/>
         <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Question by" max_length="32" name="question_by" read_only="true" reference="sys_user" type="reference" use_dynamic_default="true"/>

@@ -3,12 +3,11 @@
         <element label="Course" mandatory="true" max_length="32" name="course_name" reference="x_1383177_lms_app_course" type="reference"/>
         <element label="Learner" mandatory="true" max_length="40" name="learner_name" reference="sys_user" reference_qual="roles=x_1383177_lms_app.learner^EQ" reference_qual_condition="roles=x_1383177_lms_app.learner^EQ" type="reference"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
-        <element choice="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
+        <element choice="3" default="approval pending" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>
-                <element inactive="true" inactive_on_update="true" label="-- New choice --" sequence="0" value="-- New choice --"/>
                 <element inactive_on_update="false" label="Approved" sequence="0" value="approved"/>
                 <element inactive_on_update="false" label="Rejected" sequence="1" value="rejected"/>
-                <element inactive_on_update="false" label="Approval Pending" sequence="2" value="approval pending"/>
+                <element inactive_on_update="false" label="Approval Pending" sequence="2" value="requested"/>
             </choice>
         </element>
         <index name="index">

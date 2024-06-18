@@ -18,7 +18,7 @@
   };
 
   c.goHome = function() {
-    var homeURL = 'https://dev211199.service-now.com/lms?id=lms_index';
+    var homeURL = 'https://dev211199.service-now.com/lms?id=lms_courses';
     window.location.href = homeURL;
   };
 };
@@ -144,10 +144,17 @@
 
 .course-image {
   width: 100%;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 20px;
+  height: 300px; /* Adjust height as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .course-info {
@@ -225,16 +232,18 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-12 10:01:34</sys_created_on>
         <sys_id>ca61c970933e4210b09bf2918bba1014</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>88</sys_mod_count>
         <sys_name>LMS Enrollment Status</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_ca61c970933e4210b09bf2918bba1014</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-13 10:11:54</sys_updated_on>
+        <sys_updated_on>2024-06-17 06:34:48</sys_updated_on>
         <template><![CDATA[<div class="course-widget">
-  <div class="course-image" style="background-image: url('{{ c.data.course.thumbnail.display_value }}');"></div>
+  <div class="course-image">
+    <img src="enrollmentStatus.jpg" alt="Course Image">
+  </div>
   <div class="course-info">
     <div class="course-title">{{c.data.course.course_name}}</div>
     <div class="course-description">{{ c.data.course.short_description }}</div>
@@ -245,7 +254,6 @@
       <div ng-if="!c.free">
         <p>We have received your request and we will get back to you soon.</p>
         <button class="home-button" ng-click="c.goHome()">Home</button>
-
       </div>
     </div>
   </div>

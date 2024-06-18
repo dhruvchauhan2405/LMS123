@@ -8,7 +8,14 @@
         var portalURL = $location.absUrl().split('?')[0];
         var pageID = 'lms_modules_content'; // Update with actual page ID
         var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+        window.location.href = url;			
+    };	
+	    c.courseDetailPage = function(sys_id) {
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_course_details'; // Update with actual page ID
+        var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
         window.location.href = url;
+			
     };	
 		
 };
@@ -124,7 +131,44 @@
   color: #333;
   text-align: center;
 }
-</css>
+
+.requested-courses-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.requested-course {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.requested-course:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.requested-course .course-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.requested-course .course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  aspect-ratio: 1;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -140,6 +184,7 @@
         <roles/>
         <script><![CDATA[(function() {
     data.courses = [];
+    data.requestedCourses = [];
     var userId = gs.getUserID(); // Get the current user's ID
 
     // Query the enrollment table for courses the current user is enrolled in
@@ -148,8 +193,13 @@
     grEnrollment.query();
 
     var enrolledCourseIds = [];
+    var requestedCourseIds = [];
     while (grEnrollment.next()) {
-        enrolledCourseIds.push(grEnrollment.getValue('course_name'));
+        if (grEnrollment.getValue('status') == 'approval pending' || grEnrollment.getValue('status') == 'requested') {
+            requestedCourseIds.push(grEnrollment.getValue('course_name'));
+        } else {
+            enrolledCourseIds.push(grEnrollment.getValue('course_name'));
+        }
     }
 
     if (enrolledCourseIds.length > 0) {
@@ -169,6 +219,23 @@
         }
     }
 
+    if (requestedCourseIds.length > 0) {
+        // Query the course table for the requested courses
+        var grRequestedCourse = new GlideRecordSecure('x_1383177_lms_app_course');
+        grRequestedCourse.addQuery('sys_id', 'IN', requestedCourseIds);
+        grRequestedCourse.query();
+
+        while (grRequestedCourse.next()) {
+            data.requestedCourses.push({
+                Name: grRequestedCourse.getDisplayValue('course_name'),
+                Short_description: grRequestedCourse.getDisplayValue('short_description'),
+                Thumbnail: grRequestedCourse.getDisplayValue('thumbnail'),
+                sys_id: grRequestedCourse.getUniqueValue(),
+                Description: grRequestedCourse.getDisplayValue('short_description') // Add full description
+            });
+        }
+    }
+
     if (input) {
         // Handle user input if needed
     }
@@ -179,20 +246,22 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-13 09:38:46</sys_created_on>
         <sys_id>06c5028d93b60210b09bf2918bba101f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>LMS My Learnings</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_06c5028d93b60210b09bf2918bba101f</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-13 09:49:54</sys_updated_on>
+        <sys_updated_on>2024-06-14 09:37:13</sys_updated_on>
         <template><![CDATA[<div class="container">
+  <!-- My Learnings Section -->
+  <h2>My Learnings</h2>
   <div class="course-container">    
     <div class="course-card"
          ng-click="c.module_page(s.sys_id)"
          ng-repeat="s in c.data.courses">
-       <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+      <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
       <div class="course-name" ng-bind="s.Name"></div>
       <div class="course-hover-details">
         <h3 ng-bind="s.Name"></h3>
@@ -200,7 +269,22 @@
       </div>
     </div>
   </div>
-</div>
+
+  <!-- Requested Section -->
+  <h2>Requested</h2>
+  <div class="requested-courses-container">
+    <div class="requested-course"
+         ng-click="c.courseDetailPage(s.sys_id)"
+         ng-repeat="s in c.data.requestedCourses">
+      <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+      <div class="course-name" ng-bind="s.Name"></div>
+      <div class="course-hover-details">
+        <h3 ng-bind="s.Name"></h3>
+        <p ng-bind="s.Description"></p>
+      </div>
+    </div>
+  </div>
+
 ]]></template>
     </sp_widget>
 </record_update>

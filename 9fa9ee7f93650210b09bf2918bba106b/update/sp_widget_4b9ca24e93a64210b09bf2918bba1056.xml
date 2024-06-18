@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($location) {
+        <client_script><![CDATA[api.controller = function($location, $timeout, $sce) {
     var c = this;
 
     // Function to get query parameter from URL
@@ -15,20 +15,53 @@
     // Get sys_id from URL
     var sys_id = c.getQueryParameter('sys_id');
 
-    // Pass sys_id to server script
+    // Pass sys_id to server script to fetch discussion details
     if (sys_id) {
         c.server.update({
             sys_id: sys_id
         }).then(function(response) {
+            // Handle server response as needed
             console.log('Server response:', response);
+            c.data.question = response.data.question; // Assuming server response includes question details
+            c.data.answers = response.data.answers;   // Assuming server response includes answers
+        }).catch(function(error) {
+            console.error('Error fetching discussion details:', error);
         });
     } else {
         console.error('No sys_id parameter found in URL');
     }
 
-  if (c.data.answers && c.data.answers.content) {
-    c.data.answers.content.value = $sce.trustAsHtml(c.data.answers.content.value);
-  }
+    // Function to submit answer
+    c.submitAnswer = function(isValid) {
+        // Trigger the validation
+        c.submitted = true;
+
+        // Don't proceed if the form is not valid
+        if (!isValid) return;
+
+        // Gather answer data
+        var answerData = {
+            sys_id: sys_id,   // Assuming sys_id is needed to associate the answer with the question
+            answer: c.answer  // Assuming c.answer holds the answer text from the form
+        };
+
+        // Pass the answer data object to the server
+        c.server.update(answerData).then(function(response) {
+            // Handle server response
+            console.log('Answer submitted successfully:', response);
+            // Optionally redirect to the discussion page after a delay
+            $timeout(function() {
+                $location.search({ id: 'lms_forum_answers', sys_id: sys_id });
+            }, 500);
+        }).catch(function(error) {
+            console.error('Error submitting answer:', error);
+        });
+    };
+
+    // Trust content as HTML if necessary (assuming you have this requirement)
+    if (c.data.answers && c.data.answers.content) {
+        c.data.answers.content.value = $sce.trustAsHtml(c.data.answers.content.value);
+    }
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -259,7 +292,6 @@
 
     // Get sys_id from URL query parameter using $sp.getParameter
     var sys_id = $sp.getParameter('sys_id');
-  
 
     if (sys_id) {
         // Fetch and populate question details based on the selected sys_id
@@ -304,9 +336,33 @@
                     content: grAnswers.getValue('answer')
                 });
             }
-        } 
+        }
     } else {
         gs.info('No sys_id parameter received.');
+    }
+
+    // Handle input to insert a new answer
+    if (input && input.answer && sys_id) {
+        var grNewAnswer = new GlideRecordSecure('x_1383177_lms_app_forum_answers');
+        grNewAnswer.initialize();
+        grNewAnswer.setValue('question_ref', sys_id); // Link answer to the question
+        grNewAnswer.setValue('answer', input.answer);
+
+        // Insert the new answer record
+        var answerSysId = grNewAnswer.insert();
+
+        // If the record is created successfully, send the success message to the client, else send the error message
+        if (!gs.nil(answerSysId)) {
+            data.status = 'success';
+            data.message = 'Your answer has been successfully submitted.';
+        } else {
+            data.status = 'error';
+            data.message = 'Failed to submit your answer.';
+        }
+    } else {
+        // Respond with error if input data is missing
+        data.status = 'error';
+        data.message = 'Invalid input data.';
     }
 })();
 ]]></script>
@@ -315,14 +371,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-12 07:30:51</sys_updated_on>
+        <sys_updated_on>2024-06-17 08:20:38</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
     <div class="discussion-header">
         <h1 ng-bind="data.question.question"></h1>
@@ -332,21 +388,22 @@
     </div>
 
     <div class="discussion-replies">
-        <div class="reply-form">
-            <h2>Post Your Answer</h2>
-            <div class="editor-container">
-                <textarea id="editor" placeholder="Write your answer here..."></textarea>
-                <div class="reply-form-controls">
-                    <label for="attachment">
-                        <i class="fa fa-paperclip"></i>
-                        <span>Attach files: </span>
-                        <input type="file" id="attachment" multiple hidden>
-                    </label>
-                    <button>Submit</button>
-                </div>
-            </div>
-        </div>
+  <div class="reply-form" ng-submit="c.submitAnswer(c.answerForm.$valid)" name="c.answerForm" novalidate>
+    <h2>Post Your Answer</h2>
+    <div class="editor-container">
+      <textarea id="editor" ng-model="c.answer" rows="5" placeholder="Write your answer here..." required></textarea>
+      <div class="reply-form-controls">
+        <label for="attachment">
+          <i class="fa fa-paperclip"></i>
+          <span>Attach files: </span>
+          <input type="file" id="attachment" multiple>
+        </label>
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
     </div>
+  </div>
+</div>
+
 
   <div class="replies-list">
         <h2>Replies</h2>

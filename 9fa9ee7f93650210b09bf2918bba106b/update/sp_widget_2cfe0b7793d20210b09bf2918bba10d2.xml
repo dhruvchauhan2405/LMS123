@@ -6,7 +6,6 @@
 	var c = this;
 	c.submitForm = function(isValid) {
 		c.submitted = true;
-		spUtil.addInfoMessage('saved');
 		if (!isValid)
 			return;
 
@@ -79,18 +78,6 @@
         <roles/>
         <script><![CDATA[(function() {
 
-	/* Step 1. Load initial data from the server */
-	/* populate the 'data' object */
-	/* e.g., data.table = $sp.getValue('table'); */
-
-	if(!input) {
-
-	}
-
-
-
-	/* Step 4. Process user input */
-
 	if(input) {
 		//Insert the new registration record
 		if(validateAddition(input.name)){
@@ -99,43 +86,18 @@
 			grNewAddition.setValue('name', input.name);
 			grNewAddition.setValue('description', input.description);
 
-			if(!input.comments) {
-				grNewAddition.setValue('comments', "");
-			} else {
-				grNewAddition.setValue('comments', input.comments);
-			}
-
 			var userSysId = grNewAddition.insert();
 
 			//if the record is created successfully, send the success
 			// message to the client, else send the error message
 			if (!gs.nil(userSysId)) {
 				data.status = "success";
-				data.message = "Your have successfully added a domain.";
+				data.message = gs.getMessage("Your have successfully added a domain.");
 			} else {
-				data.status = "error";
+				data.status = gs.getMessage("error");
 			}
 		}
 
-	}
-	function validateAddition(name) {
-		var isNoDuplicate = true;
-
-		//abort if registration already exists
-		if (additionExists(name)) {
-			data.message = "There is already a domain exists for this name.";
-			data.status = "error";
-			isNoDuplicate = false;
-		}
-
-		return isNoDuplicate;
-	}	
-	function additionExists(name) {
-		var reg = new GlideRecordSecure("x_1383177_lms_app_course_domain");
-		reg.addQuery("name", name);
-		reg.query();
-
-		return reg.hasNext();
 	}
 
 
@@ -146,40 +108,40 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-28 07:30:20</sys_created_on>
         <sys_id>2cfe0b7793d20210b09bf2918bba10d2</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>LMS Domain Form</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2cfe0b7793d20210b09bf2918bba10d2</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-10 06:29:08</sys_updated_on>
+        <sys_updated_on>2024-06-17 09:44:28</sys_updated_on>
         <template><![CDATA[<div class="container">
   <form name="addition" class="custom-form" novalidate ng-submit="c.submitForm(addition.$valid)">
     <legend>
-      Add a new Domain
+      ${Add a new Domain}
     </legend>
     <div class="form-group" ng-class="{'has-error' : addition.name.$invalid && c.submitted }">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter your name"
+      <label for="name">${Name}</label>
+      <input type="text" class="form-control" id="name" placeholder="${Enter your name}"
              ng-model="c.name"
              ng-required="true">
-      <p class="help-block" ng-show="addition.name.$invalid && c.submitted">Field is required.</p>
+      <p class="help-block" ng-show="addition.name.$invalid && c.submitted">${Field is required.}</p>
     </div>
     <div class="form-group" ng-class="{'has-error' : addition.description.$invalid && c.submitted }">
-      <label for="description">Description</label>
-      <textarea class="form-control" id="description" rows="5" placeholder="Enter a description (max 500 words)"
+      <label for="description">${Description}</label>
+      <textarea class="form-control" id="description" rows="5" placeholder="${Enter a description (max 500 words)}"
                 ng-model="c.description"
                 ng-required="true"></textarea>
-      <p class="help-block" ng-show="addition.description.$invalid && c.submitted">Field is required.</p>
+      <p class="help-block" ng-show="addition.description.$invalid && c.submitted">${Field is required.}</p>
     </div>
     <div class="word-limit text-right">
-      Maximum 500 words
+      ${Maximum 500 words}
     </div>
-    <button type="submit" class="btn btn-save">Save</button>
+    <button type="submit" class="btn btn-save">${Save}</button>
   </form>
 </div>
-<div ng-if="c.message" id="errorMessage" class="alert alert-danger" role="alert">{{c.message}}</div>
+<div ng-if="c.message" id="errorMessage" class="alert alert-danger" role="alert">{{{c.message}}</div>
 <div ng-if="c.success" id="successMessage" class="alert alert-success" role="alert">{{c.success}}</div>	
   ]]></template>
     </sp_widget>

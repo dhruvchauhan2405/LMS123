@@ -3,167 +3,167 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller = function() {
    
-};]]></client_script>
+};	]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {&#13;
-    font-family: 'Poppins', sans-serif;&#13;
-}&#13;
-&#13;
-/* Header Styling */&#13;
-.header {&#13;
-    background-color: #343a40; /* Dark background */&#13;
-    padding: 15px 50px; /* Increased padding */&#13;
-    display: flex;&#13;
-    justify-content: space-between;&#13;
-    align-items: center;&#13;
-    border-bottom: 1px solid #555; /* Darker border */&#13;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */&#13;
-    transition: background-color 0.3s, border-bottom 0.3s;&#13;
-}&#13;
-&#13;
-.logo img {&#13;
-    height: 60px; /* Adjust the height as needed */&#13;
-    transition: height 0.3s;&#13;
-}&#13;
-&#13;
-/* Navigation Styling */&#13;
-.navigation {&#13;
-    display: flex;&#13;
-    justify-content: center;&#13;
-    flex-grow: 1;&#13;
-    animation: fadeIn 0.5s ease-in-out; /* Add animation */&#13;
-}&#13;
-&#13;
-.navigation a {&#13;
-    margin: 0 30px; /* Increased margin */&#13;
-    text-decoration: none;&#13;
-    color: #ffffff; /* White text color */&#13;
-    font-size: 1.5rem; /* Increased font size */&#13;
-    font-weight: 600;&#13;
-    transition: color 0.3s, transform 0.3s; /* Add transition */&#13;
-    outline: none; /* Remove outline */&#13;
-}&#13;
-&#13;
-.navigation a:hover {&#13;
-    color: #f39c12; /* Hover color */&#13;
-    transform: translateY(-3px); /* Hover effect */&#13;
-}&#13;
-&#13;
-.navigation a:focus {&#13;
-    box-shadow: none; /* Hover color */&#13;
-}&#13;
-&#13;
-/* Search and Account Styling */&#13;
-.search-account {&#13;
-    display: flex;&#13;
-    align-items: center;&#13;
-}&#13;
-&#13;
-.search-bar {&#13;
-    margin-right: 30px; /* Increased margin */&#13;
-    position: relative;&#13;
-    transition: margin-right 0.3s;&#13;
-}&#13;
-&#13;
-.search-bar input {&#13;
-    padding: 10px 15px; /* Increased padding */&#13;
-    border: 1px solid #555; /* Darker border */&#13;
-    border-radius: 4px;&#13;
-    font-size: 1.25rem; /* Increased font size */&#13;
-    width: 300px; /* Longer width */&#13;
-    transition: width 0.3s, border-color 0.3s;&#13;
-}&#13;
-&#13;
-.search-bar input:focus {&#13;
-    border-color: #f39c12; /* Focus border color */&#13;
-}&#13;
-&#13;
-.search-bar button {&#13;
-    position: absolute;&#13;
-    right: 0;&#13;
-    top: 0;&#13;
-    border: none;&#13;
-    background: none;&#13;
-    padding: 10px 15px; /* Increased padding */&#13;
-    cursor: pointer;&#13;
-    color: #555; /* Dark icon color */&#13;
-    transition: color 0.3s;&#13;
-}&#13;
-&#13;
-.search-bar button:hover {&#13;
-    color: #f39c12; /* Hover color */&#13;
-}&#13;
-&#13;
-.account {&#13;
-   	box-shadow: none;&#13;
-    font-size: 1.5rem; /* Increased font size */&#13;
-    font-weight: 600;&#13;
-    color: #ffffff; /* White text color */&#13;
-    text-decoration: none;&#13;
-    transition: color 0.3s, transform 0.3s; /* Add transition */&#13;
-}&#13;
-&#13;
-.account:hover {&#13;
-    color: #f39c12; /* Hover color */&#13;
-    transform: translateY(-3px); /* Hover effect */&#13;
-}&#13;
-&#13;
-/* Media Queries for Responsiveness */&#13;
-@media (max-width: 768px) {&#13;
-    .header {&#13;
-        flex-direction: column;&#13;
-        align-items: flex-start;&#13;
-        padding: 15px 20px;&#13;
-        transition: padding 0.3s;&#13;
-    }&#13;
-&#13;
-    .logo img {&#13;
-        height: 40px;&#13;
-    }&#13;
-&#13;
-    .navigation {&#13;
-        flex-direction: column;&#13;
-        align-items: flex-start;&#13;
-        width: 100%;&#13;
-    }&#13;
-&#13;
-    .navigation a {&#13;
-       	box-shadow: none;&#13;
-        margin: 5px 0;&#13;
-        font-size: 1.25rem;&#13;
-    }&#13;
-&#13;
-    .search-account {&#13;
-        width: 100%;&#13;
-        justify-content: space-between;&#13;
-        margin-top: 10px;&#13;
-    }&#13;
-&#13;
-    .search-bar {&#13;
-        width: calc(100% - 150px);&#13;
-        margin-right: 0;&#13;
-    }&#13;
-&#13;
-    .search-bar input {&#13;
-        width: 100%;&#13;
-    }&#13;
-&#13;
-    .account {&#13;
-        margin-left: 10px;&#13;
-    }&#13;
-}&#13;
-&#13;
-/* Keyframes for Animation */&#13;
-@keyframes fadeIn {&#13;
-    0% {&#13;
-        opacity: 0;&#13;
-        transform: translateY(-20px);&#13;
-    }&#13;
-    100% {&#13;
-        opacity: 1;&#13;
-        transform: translateY(0);&#13;
-    }&#13;
-}&#13;
+        <css>body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header Styling */
+.header {
+  background-color: #343a40; /* Dark background */
+  padding: 15px 50px; /* Increased padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #555; /* Darker border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: background-color 0.3s, border-bottom 0.3s;
+}
+
+.logo img {
+  height: 60px; /* Adjust the height as needed */
+  transition: height 0.3s;
+}
+
+/* Navigation Styling */
+.navigation {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  animation: fadeIn 0.5s ease-in-out; /* Add animation */
+}
+
+.navigation a {
+  margin: 0 30px; /* Increased margin */
+  text-decoration: none;
+  color: #ffffff; /* White text color */
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s; /* Add transition */
+  outline: none; /* Remove outline */
+}
+
+.navigation a:hover {
+  color: #f39c12; /* Hover color */
+  transform: translateY(-3px); /* Hover effect */
+}
+
+.navigation a:focus {
+  box-shadow: none; /* Hover color */
+}
+
+/* Search and Account Styling */
+.search-account {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  margin-right: 30px; /* Increased margin */
+  position: relative;
+  transition: margin-right 0.3s;
+}
+
+.search-bar input {
+  padding: 10px 15px; /* Increased padding */
+  border: 1px solid #555; /* Darker border */
+  border-radius: 4px;
+  font-size: 1.25rem; /* Increased font size */
+  width: 300px; /* Longer width */
+  transition: width 0.3s, border-color 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #f39c12; /* Focus border color */
+}
+
+.search-bar button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  background: none;
+  padding: 10px 15px; /* Increased padding */
+  cursor: pointer;
+  color: #555; /* Dark icon color */
+  transition: color 0.3s;
+}
+
+.search-bar button:hover {
+  color: #f39c12; /* Hover color */
+}
+
+.account {
+  box-shadow: none;
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: 600;
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s; /* Add transition */
+}
+
+.account:hover {
+  color: #f39c12; /* Hover color */
+  transform: translateY(-3px); /* Hover effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    transition: padding 0.3s;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navigation a {
+    box-shadow: none;
+    margin: 5px 0;
+    font-size: 1.25rem;
+  }
+
+  .search-account {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    width: calc(100% - 150px);
+    margin-right: 0;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .account {
+    margin-left: 10px;
+  }
+}
+
+/* Keyframes for Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -191,42 +191,50 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 05:47:49</sys_created_on>
         <sys_id>1707cd1e931a4210b09bf2918bba1033</sys_id>
-        <sys_mod_count>94</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>LMS Header</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_header_footer_1707cd1e931a4210b09bf2918bba1033</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-12 08:25:15</sys_updated_on>
+        <sys_updated_on>2024-06-15 17:07:07</sys_updated_on>
         <template><![CDATA[<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <header class="header" id="header">
-    <div class="logo">
-        <a href="lms?id=lms_index"><img src="x_1383177_lms_app.LMS Logo.jpg" alt="LMS Logo"></a>
+  <div class="logo">
+    <a href="lms?id=lms_index"><img src="x_1383177_lms_app.LMS Logo.jpg" alt="LMS Logo"></a>
+  </div>
+  <nav class="navigation">
+    <a href="lms?id=lms_course_domain">Domain</a>
+    <a href="lms?id=lms_courses">Courses</a>
+    <a href="lms?id=lms_my_learning">My Learning</a>
+    <a href="lms?id=lms_discussion_forum">Forum</a>
+  </nav>
+  <div class="search-account">
+    <div class="search-bar" id="search-bar">
+      <input type="text" id="course-search-input" placeholder="Find your course...">
+      <button type="submit" id="course-search-button"><i class="fa fa-search"></i></button>
     </div>
-    <nav class="navigation">
-        <a href="lms?id=lms_course_domain">Domain</a>
-        <a href="lms?id=lms_courses">Courses</a>
-        <a href="lms?id=lms_my_learning">My Learning</a>
-        <a href="lms?id=lms_discussion_forum">Forum</a>
-    </nav>
-    <div class="search-account">
-        <div class="search-bar">
-            <input type="text" id="course-search-input" placeholder="Find your course...">
-            <button type="submit" id="course-search-button"><i class="fa fa-search"></i></button>
-        </div>
-        <a href="lms?id=lms_my_account" class="account">My Account</a>
-    </div>
+    <a href="lms?id=lms_my_account" class="account">My Account</a>
+  </div>
 </header>
 
 <script>
-document.getElementById('course-search-button').addEventListener('click', function() {
+  document.getElementById('course-search-button').addEventListener('click', function() {
     var query = document.getElementById('course-search-input').value;
     if (query) {
-        window.location.href = 'lms?id=lms_courses&search=' + encodeURIComponent(query);
+      window.location.href = 'lms?id=lms_search_result&search=' + encodeURIComponent(query);
     }
-});
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var currentUrl = window.location.href;
+    var searchBar = document.getElementById('search-bar');
+    if (currentUrl.includes('lms?id=lms_index')) {
+      searchBar.style.display = 'none';
+    }
+  });
 </script>
 ]]></template>
     </sp_header_footer>

@@ -6,11 +6,11 @@
         <css>body {
   font-family: 'Poppins', sans-serif;
   display: flex;
-  justify-content: center; /* Centers the entire content vertically and horizontally */
+  justify-content: center; 
   align-items: center;
   height: 100vh;
   margin: 0;
-  text-align: center; /* Already centers text within the body element */
+  text-align: center; 
 }
 
 .content {
@@ -21,18 +21,17 @@
 }
 
 .headline {
-  font-size: 3em; /* Adjust font size as needed */
+  font-size: 3em; 
   font-weight: bold;
   margin: 0;
   color: black;
 }
 
 .separator {
-  border: 0; /* Remove default border styles */
-  border-top: 5px solid #ccc; /* Reduced thickness for a smaller line */
-  margin-top: 10px; /* Adjust margin for spacing */
-  /* Added border-radius for rounded corners */
-  border-radius: 50px;  /* Adjust radius for desired curvature */
+  border: 0; 
+  border-top: 5px solid #ccc; 
+  margin-top: 10px; 
+  border-radius: 50px; 
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -45,7 +44,7 @@
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
         <name>LMS Domain Page Title</name>
-        <option_schema/>
+        <option_schema>[{"hint":"","name":"domains","section":"Presentation","label":"Domains","type":"string"},{"name":"courses","section":"Presentation","label":"Courses","type":"string"}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
@@ -54,16 +53,16 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-04 10:20:59</sys_created_on>
         <sys_id>a829ffc2932e4210b09bf2918bba102a</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>LMS Domain Page Title</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_a829ffc2932e4210b09bf2918bba102a</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-11 05:27:46</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-17 10:08:25</sys_updated_on>
         <template><![CDATA[<div class="content">
-  <p class="headline">Domains</p>
+  <p class="headline">${Domains}</p>
     <hr class="separator">
 </div>]]></template>
     </sp_widget>
