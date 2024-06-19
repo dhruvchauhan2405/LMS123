@@ -43,7 +43,6 @@
     // Default initialization
     c.initTabs();
 
-    // Other functions (module_page, redirectToCourses, courseDetailPage) as before
     c.module_page = function(sys_id) {
         var portalURL = $location.absUrl().split('?')[0];
         var pageID = 'lms_modules_content'; 
@@ -53,7 +52,7 @@
 
     c.courseDetailPage = function(sys_id) {
         var portalURL = $location.absUrl().split('?')[0];
-        var pageID = 'lms_course_details'; // Update with actual page ID
+        var pageID = 'lms_course_details';
         var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
         window.location.href = url;
     };
@@ -259,10 +258,9 @@
         while (grCourse.next()) {
             data.courses.push({
                 Name: grCourse.getDisplayValue('course_name'),
-                Short_description: grCourse.getDisplayValue('short_description'),
                 Thumbnail: grCourse.getDisplayValue('thumbnail'),
                 sys_id: grCourse.getUniqueValue(),
-                Description: grCourse.getDisplayValue('short_description') // Add full description
+                Description: grCourse.getDisplayValue('short_description') 
             });
         }
     }
@@ -276,7 +274,6 @@
         while (grRequestedCourse.next()) {
             data.requestedCourses.push({
                 Name: grRequestedCourse.getDisplayValue('course_name'),
-                Short_description: grRequestedCourse.getDisplayValue('short_description'),
                 Thumbnail: grRequestedCourse.getDisplayValue('thumbnail'),
                 sys_id: grRequestedCourse.getUniqueValue(),
                 Description: grRequestedCourse.getDisplayValue('short_description') // Add full description
@@ -294,14 +291,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-13 09:38:46</sys_created_on>
         <sys_id>06c5028d93b60210b09bf2918bba101f</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>LMS My Learnings</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_06c5028d93b60210b09bf2918bba101f</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-18 07:03:40</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-18 10:34:48</sys_updated_on>
         <template><![CDATA[<div class="container">
     <div class="tabs">
         <button class="tab-link active" ng-click="c.handleTabClick($event, 'myCourses')">My Courses</button>

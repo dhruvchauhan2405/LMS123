@@ -2,17 +2,15 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($location) {
-  /* widget controller */
   var c = this;
   var courseSysId = $location.search().sys_id;
   c.free =c.data.isCourseFree;
   c.data.isCourseFree = false;
-	console.log(c.data.course);
 	//spUtil.addInfoMessage(c.h);
   
   c.startCourse = function() {
     var portalURL = $location.absUrl().split('?')[0];
-    var pageID = 'lms_modules_content'; // Update with the actual start course page ID
+    var pageID = 'lms_modules_content';
     var url = portalURL + '?id=' + pageID + '&sys_id=' + courseSysId;
     window.location.href = url;
   };
@@ -206,16 +204,15 @@
 	if(!input){
   //data.isCourseFree = false;
 		var courseTable = 'x_1383177_lms_app_course';
-    var courseFields = 'course_name,short_description,thumbnail,accessibility';
-    var courseSysId = $sp.getParameter('sys_id'); // Get sys_id from the query parameter
+    var courseSysId = $sp.getParameter('sys_id'); 
     if (courseSysId) {
       var grCourse = new GlideRecordSecure(courseTable);
       if (grCourse.get(courseSysId)) {
 				data.course = {
-					course_name: grCourse.getValue("course_name"),
-					short_description: grCourse.getValue("short_description"),
-					thumbnail: grCourse.getValue("thumbnail"),
-					accessibility: grCourse.getValue("accessibility"),
+					course_name: gs.getMessage(grCourse.getValue("course_name")),
+					short_description: gs.getMessage(grCourse.getValue("short_description")),
+					thumbnail: gs.getMessage(grCourse.getValue("thumbnail")),
+					accessibility: gs.getMessage(grCourse.getValue("accessibility")),
 				};
 				// Check if the course is free or requestable
         var accessibility = grCourse.getValue('accessibility');
@@ -232,14 +229,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-12 10:01:34</sys_created_on>
         <sys_id>ca61c970933e4210b09bf2918bba1014</sys_id>
-        <sys_mod_count>88</sys_mod_count>
+        <sys_mod_count>91</sys_mod_count>
         <sys_name>LMS Enrollment Status</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_ca61c970933e4210b09bf2918bba1014</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-17 06:34:48</sys_updated_on>
+        <sys_updated_on>2024-06-19 05:05:18</sys_updated_on>
         <template><![CDATA[<div class="course-widget">
   <div class="course-image">
     <img src="enrollmentStatus.jpg" alt="Course Image">
@@ -249,11 +246,11 @@
     <div class="course-description">{{ c.data.course.short_description }}</div>
     <div class="course-buttons">
       <div ng-if="c.free">
-        <button class="start-course-button" ng-click="c.startCourse()">Start Course</button>
+        <button class="start-course-button" ng-click="c.startCourse()">${Start Course}</button>
       </div>
       <div ng-if="!c.free">
-        <p>We have received your request and we will get back to you soon.</p>
-        <button class="home-button" ng-click="c.goHome()">Home</button>
+        <p>${We have received your request and we will get back to you soon.}</p>
+        <button class="home-button" ng-click="c.goHome()">${Home}</button>
       </div>
     </div>
   </div>
