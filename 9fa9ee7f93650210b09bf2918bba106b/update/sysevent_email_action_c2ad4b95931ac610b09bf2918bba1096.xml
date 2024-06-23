@@ -69,7 +69,7 @@
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
-        <recipient_fields>email</recipient_fields>
+        <recipient_fields>learner_name,sys_created_by</recipient_fields>
         <recipient_groups/>
         <recipient_users/>
         <reply_to/>
@@ -84,7 +84,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c2ad4b95931ac610b09bf2918bba1096</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Auto Approved Course </sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -92,7 +92,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sysevent_email_action_c2ad4b95931ac610b09bf2918bba1096</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-05-21 15:46:43</sys_updated_on>
+        <sys_updated_on>2024-06-20 08:40:10</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="LMS Email Template">5adcae6993d60a10b09bf2918bba106b</template>
         <type>email</type>

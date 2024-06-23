@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($location, $timeout, $sce) {
+        <client_script><![CDATA[api.controller = function($location, $timeout, $sce, i18n) {
 	var c = this;
+
 	// Function to get query parameter from URL
 	c.getQueryParameter = function(name) {
 		var url = $location.absUrl();
@@ -20,13 +21,18 @@
 			sys_id: sys_id
 		}).then(function(response) {
 			console.log('Server response:', response);
+			c.formatTimestamps();
+		}).catch(function(error) {
+			console.error('Error fetching data:', error);
 		});
 	} else {
 		console.error('No sys_id parameter found in URL');
 	}
+
 	if (c.data.answers && c.data.answers.content) {
 		c.data.answers.content.value = $sce.trustAsHtml(c.data.answers.content.value);
 	}
+
 	c.redirectToDiscussionDetail = function(sys_id) {
 		var portalURL = $location.absUrl().split('?')[0];
 		var pageID = 'lms_forum_answers';
@@ -34,8 +40,54 @@
 		window.location.href = url;
 	};
 
+	// Function to submit the answer
+	c.submitAnswer = function(isValid) {
+		console.log('Form submitted, isValid:', isValid);
+		if (isValid) {
+			var answerData = {
+				question_ref: sys_id,
+				answer: c.answer
+			};
+			c.server.get({
+				action: 'submitAnswer',
+				answerData: answerData
+			}).then(function(response) {
+				if (response.data.success) {
+					c.redirectToDiscussionDetail(sys_id);
+				} else {
+					console.error('Error submitting answer');
+				}
+			});
+		}
+	};
 
+	//function to format timestamps
+	c.formatTimestamps = function() {
+		if (c.data.question && c.data.question.timestamp) {
+			c.data.question.timestamp = c.timeAgo(new Date(c.data.question.timestamp));
+		}
+		c.data.answers.forEach(function(answer) {
+			answer.timestamp = c.timeAgo(new Date(answer.timestamp));
+		});
+	};
 
+	// Function to calculate time ago
+	c.timeAgo = function(date) {
+		var now = new Date();
+		var seconds = Math.floor((now - date) / 1000);
+		var interval = Math.floor(seconds / 31536000);
+
+		if (interval >= 1) return interval + " year" + (interval > 1 ? "s" : "") + " ago";
+		interval = Math.floor(seconds / 2592000);
+		if (interval >= 1) return interval + " month" + (interval > 1 ? "s" : "") + " ago";
+		interval = Math.floor(seconds / 86400);
+		if (interval >= 1) return interval + " day" + (interval > 1 ? "s" : "") + " ago";
+		interval = Math.floor(seconds / 3600);
+		if (interval >= 1) return interval + " hour" + (interval > 1 ? "s" : "") + " ago";
+		interval = Math.floor(seconds / 60);
+		if (interval >= 1) return interval + " minute" + (interval > 1 ? "s" : "") + " ago";
+		return "just now";
+	};
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -44,7 +96,7 @@
   margin: 0;
   padding: 0;
   background-color: #e8f0fe;
-  
+
 }
 
 .discussion-detail-page {
@@ -64,6 +116,7 @@
 }
 
 .discussion-header h1 {
+  font-weight: bold;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
@@ -81,6 +134,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-top: 30px;
 }
 
 .reply-form {
@@ -265,7 +319,22 @@
   text-align: center;
   margin-bottom: 20px;
 }
-</css>
+
+.question-meta span {
+  color: #e0e0e0;
+}
+
+.detailed-description-container {
+  background: #f9f9f9;
+  color: black;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+.detailed-description-container p {
+  margin: 0;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -286,13 +355,13 @@
 	// Get sys_id from URL query parameter using $sp.getParameter
 	var sys_id = $sp.getParameter('sys_id');
 
-
 	if (sys_id) {
 		// Fetch and populate question details based on the selected sys_id
 		var grQuestion = new GlideRecordSecure('x_1383177_lms_app_discussion');
 		if (grQuestion.get(sys_id)) {
 			var questionBySysId = grQuestion.getValue('question_by');
 			var questionByName = '';
+			var createdOn = grQuestion.getValue('sys_created_on');
 
 			// Fetch the user's name from sys_user table using the sys_id
 			if (questionBySysId) {
@@ -305,17 +374,21 @@
 			data.question = {
 				question: grQuestion.getValue('question'),
 				detailed_description: grQuestion.getValue('detailed_description'),
-				question_by: questionByName
+				question_by: questionByName,
+				timestamp: createdOn
+
 			};
 
 			// Fetch and populate answers from the "forum answers" table based on the selected sys_id
 			var grAnswers = new GlideRecordSecure('x_1383177_lms_app_forum_answers');
 			grAnswers.addQuery('question_ref', sys_id);
+			grAnswers.orderByDesc('sys_updated_on');
 			grAnswers.query();
 
 			while (grAnswers.next()) {
 				var answeredBySysId = grAnswers.getValue('answered_by');
 				var answeredByName = '';
+				var updatedOn = grAnswers.getValue('sys_updated_on');
 
 				// Fetch the user's name from sys_user table using the sys_id
 				if (answeredBySysId) {
@@ -327,14 +400,27 @@
 
 				data.answers.push({
 					author: answeredByName,
-					content: grAnswers.getValue('answer')
+					content: grAnswers.getValue('answer'),
+					timestamp: updatedOn
 				});
 			}
-		} 
+		}
 	} else {
 		gs.info('No sys_id parameter received.');
 	}
 
+	// Handle form submission to save the answer
+	if (input && input.action === 'submitAnswer' && input.answerData) {
+		var grAnswer = new GlideRecord('x_1383177_lms_app_forum_answers');
+		grAnswer.initialize();
+		grAnswer.setValue('question_ref', input.answerData.question_ref);
+		grAnswer.setValue('answer', input.answerData.answer);
+		grAnswer.setValue('answered_by', gs.getUserID()); 
+		grAnswer.insert();
+		data.success = true;		
+	} else {
+		data.success = false;
+	}
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -342,46 +428,49 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>62</sys_mod_count>
+        <sys_mod_count>122</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-18 07:12:46</sys_updated_on>
+        <sys_updated_on>2024-06-20 04:58:56</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
   <div class="discussion-header">
+    <div class="question-meta">
+      <span>Posted by: <span ng-bind="data.question.question_by"></span></span>
+      <span style="float: right;">Posted: <span ng-bind="data.question.timestamp"></span></span>
+    </div>
     <h1 ng-bind="data.question.question"></h1>
-    <p class="reply-content" ng-bind-html="data.question.detailed_description"></p>
-
-    <!-- Display other details if needed -->
+    <div class="detailed-description-container">
+      <p class="reply-content" ng-bind-html="data.question.detailed_description"></p>
+    </div>
   </div>
+
 
   <div class="replies-list">
-  <h2>Replies</h2>
-  <div ng-if="data.answers.length === 0" class="no-replies">
+    <h2>Replies</h2>
+    <div ng-if="data.answers.length === 0" class="no-replies">
       No replies yet. You can be the first to share your answer!
     </div>
-  <div class="reply-card" ng-repeat="answer in data.answers">
-    <div class="reply-author" ng-bind="answer.author"></div>
-    <div class="reply-content">
-      <p ng-if="answer.content.length <= 200" ng-bind-html="answer.content"></p>
-      <div ng-if="answer.content.length > 200">
-        <p ng-bind-html="answer.content.substring(0, 200) + '...'"></p>
-        <p ng-if="answer.expanded" ng-bind-html="answer.content"></p>
-        <a href="javascript:void(0);" ng-click="answer.expanded = !answer.expanded">{{ answer.expanded ? 'Show less' : 'Expand this answer' }}</a>
+    <div class="reply-card" ng-repeat="answer in data.answers">
+      <div class="reply-author" ng-bind="answer.author"></div>
+      <div class="reply-timestamp" ng-bind="answer.timestamp" style="float: right; font-size: 0.9em; color: gray;"></div>
+      <div class="reply-content">
+        <p ng-if="answer.content.length <= 200" ng-bind-html="answer.content"></p>
+        <div ng-if="answer.content.length > 200">
+          <p ng-bind-html="answer.content.substring(0, 200) + '...'"></p>
+          <p ng-if="answer.expanded" ng-bind-html="answer.content"></p>
+          <a href="javascript:void(0);" ng-click="answer.expanded = !answer.expanded">{{ answer.expanded ? 'Show less' : 'Expand this answer' }}</a>
+        </div>
       </div>
     </div>
+
   </div>
-</div>
 
-
-  
-  
-  
   <div class="discussion-replies">
-    <div class="reply-form" ng-submit="c.submitAnswer(c.answerForm.$valid)" name="c.answerForm" novalidate>
+    <form class="reply-form" ng-submit="c.submitAnswer(c.answerForm.$valid)" name="c.answerForm" novalidate>
       <h2>Post Your Answer</h2>
       <div class="editor-container">
         <textarea id="editor" ng-model="c.answer" rows="5" placeholder="Write your answer here..." required></textarea>
@@ -394,12 +483,9 @@
           <button type="submit" class="submit-btn">Submit</button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
-
-</div>
-
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>

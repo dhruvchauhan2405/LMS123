@@ -13,16 +13,7 @@
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f5f5f5;
-}
-.big-text2 {
+        <css>.big-text2 {
             font-size: 24px; /* Adjust the font size as needed */
             
             white-space: nowrap; 
@@ -56,8 +47,8 @@
   color: black;
 }
 .small-text {
-  font-size: 1em;
-  color: black;
+  font-size: 2em;
+  color: #666;
   margin: 10px 0 0 0;
 }
 .image-container {
@@ -97,14 +88,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-31 17:22:12</sys_created_on>
         <sys_id>3f23f88d936a4210b09bf2918bba10b1</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>LMS Homepage (Text/Image)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_3f23f88d936a4210b09bf2918bba10b1</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-19 04:47:50</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-20 07:12:53</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="text-container">
     <p class="big-text">${Improve your skill}</p>

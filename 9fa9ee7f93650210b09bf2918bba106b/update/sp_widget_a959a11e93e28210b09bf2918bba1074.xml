@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function() {
+  var c = this;
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>    body {
       background: #eee;
@@ -75,24 +77,23 @@
         <option_schema/>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 18:31:12</sys_created_on>
         <sys_id>a959a11e93e28210b09bf2918bba1074</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>LMS Filler Card 3</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_a959a11e93e28210b09bf2918bba1074</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-17 10:11:17</sys_updated_on>
-        <template><![CDATA[<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<div class="card-container">
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-18 11:09:34</sys_updated_on>
+        <template><![CDATA[<div class="card-container">
   <div class="card">
     <div class="content">
       <div class="front">
@@ -103,6 +104,7 @@
       </div>
     </div>
   </div>
+  
   <div class="card">
     <div class="content">
       <div class="front">
@@ -113,6 +115,7 @@
       </div>
     </div>
   </div>
+  
   <div class="card">
     <div class="content">
       <div class="front">

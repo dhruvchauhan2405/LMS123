@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a1da4e9793fa4210b09bf2918bba1064" label="Module User (M2M)" max_length="40" name="x_1383177_lms_app_m2m_x_1383177_lm_sys_user" type="collection">
+        <element label="Course" max_length="32" name="course" reference="x_1383177_lms_app_course" type="reference"/>
+        <element choice="3" default="incomplete" label="Progress" max_length="40" name="progress" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Complete" value="complete"/>
+                <element inactive_on_update="false" label="Incomplete" value="incomplete"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Users" max_length="32" name="sys_user" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" label="Modules" max_length="32" name="x_1383177_lms_app_module" reference="x_1383177_lms_app_module" type="reference"/>
+        <index name="index">
+            <element name="course"/>
+        </index>
+        <index name="index2">
+            <element name="sys_user"/>
+        </index>
+        <index name="index3">
+            <element name="x_1383177_lms_app_module"/>
+        </index>
+    </element>
+</database>

@@ -2,44 +2,79 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($location, $scope) {
-	var c = this;
+    var c = this;
+    c.pageNumber = 1;
+    c.pageSize = 9;
+    c.totalCount = 0;
+    c.totalPages = 0;
+    c.allCourses = [];
+    c.filteredCourses = [];
 
-	// Function to initialize all courses
-	c.initializeCourses = function() {
-		c.allCourses = angular.copy(c.data.courses);
-		c.filteredCourses = c.allCourses;
-	};
+    // Function to initialize courses with pagination
+    c.initializeCourses = function() {
+        c.allCourses = c.data.courses; // Assuming courses are provided in c.data.courses
+        c.totalCount = c.allCourses.length;
+        c.totalPages = Math.ceil(c.totalCount / c.pageSize);
+        c.updateFilteredCourses();
+    };
 
+    c.updateFilteredCourses = function() {
+        var start = (c.pageNumber - 1) * c.pageSize;
+        var end = start + c.pageSize;
+        c.filteredCourses = c.allCourses.slice(start, end);
+    };
 
-	c.filterCoursesByDomain = function(domainSysId) {
-		if (domainSysId) {
-			c.filteredCourses = c.allCourses.filter(function(course) {
-				return course.domainSysIds.includes(domainSysId);
-			});
-		} else {
-			c.showAllCourses();
-		}
-	};
+    c.filterCoursesByDomain = function(domainSysId) {
+        if (domainSysId) {
+            c.allCourses = c.data.courses.filter(function(course) {
+                return course.DomainSysIds.includes(domainSysId);
+            });
+            c.totalCount = c.allCourses.length;
+            c.totalPages = Math.ceil(c.totalCount / c.pageSize);
+            c.pageNumber = 1; // Reset to first page
+            c.updateFilteredCourses();
+        } else {
+            c.allCourses = c.data.courses; // Reset to all courses if no domain filter is applied
+            c.totalCount = c.allCourses.length;
+            c.totalPages = Math.ceil(c.totalCount / c.pageSize);
+            c.pageNumber = 1; // Reset to first page
+            c.updateFilteredCourses();
+        }
+    };
 
-	c.redirectToCourseDetail = function(sys_id) {
-		var portalURL = $location.absUrl().split('?')[0];
-		var pageID = 'lms_course_details';
-		var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
-		window.location.href = url;
-	};
+    c.redirectToCourseDetail = function(sys_id) {
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_course_details';
+        var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+        window.location.href = url;
+    };
 
-	
-	$scope.$watch(function() {
-		return $location.search();
-	}, function(params) {
-		var domainSysId = params.domain_sys_id;
-		c.filterCoursesByDomain(domainSysId);
-	});
+    $scope.$watch(function() {
+        return $location.search();
+    }, function(params) {
+        var domainSysId = params.domain_sys_id;
+        c.filterCoursesByDomain(domainSysId);
+    });
 
-	// Initialize with all courses
-	c.initializeCourses();
+    // Pagination controls
+    c.nextPage = function() {
+        if (c.pageNumber < c.totalPages) {
+            c.pageNumber++;
+            c.updateFilteredCourses();
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+        }
+    };
 
+    c.prevPage = function() {
+        if (c.pageNumber > 1) {
+            c.pageNumber--;
+            c.updateFilteredCourses();
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+        }
+    };
 
+    // Initialize with the first set of courses
+    c.initializeCourses();
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -132,6 +167,35 @@
   color: #333;
   text-align: center;
 }
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 130px;
+}
+
+.pagination-controls button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  font-size: 1.2em;
+  margin: 0 10px;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -185,14 +249,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 05:11:35</sys_created_on>
         <sys_id>2b52cdac93e64210b09bf2918bba107d</sys_id>
-        <sys_mod_count>100</sys_mod_count>
+        <sys_mod_count>111</sys_mod_count>
         <sys_name>LMS Courses (Course Page)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2b52cdac93e64210b09bf2918bba107d</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-19 04:55:27</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-21 10:22:08</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="course-container">   
     <div class="course-card"
@@ -206,7 +270,12 @@
       </div>
     </div>
   </div>
-</div>
-]]></template>
+<!-- Pagination Controls -->
+  <div class="pagination-controls">
+    <button ng-click="c.prevPage()" ng-disabled="c.pageNumber === 1">Previous</button>
+    <span>Page {{c.pageNumber}} of {{c.totalPages}}</span>
+    <button ng-click="c.nextPage()" ng-disabled="c.pageNumber >= c.totalPages">Next</button>
+  </div>
+</div>]]></template>
     </sp_widget>
 </record_update>

@@ -2,18 +2,16 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($location, $scope, $timeout) {
-  var c = this;
+	var c = this;
 
-  c.filteredCourses = angular.copy(c.data.courses);
-	console.log(c.filteredCourses);
-  c.redirectToCourseDetail = function(sys_id) {
-    var portalURL = $location.absUrl().split('?')[0];
-    var pageID = 'lms_course_details';
-    var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
-    window.location.href = url;
-  };
-
-  
+	c.filteredCourses = angular.copy(c.data.courses);
+	
+	c.redirectToCourseDetail = function(sys_id) {
+		var portalURL = $location.absUrl().split('?')[0];
+		var pageID = 'lms_course_details';
+		var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+		window.location.href = url;
+	};
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -101,7 +99,7 @@
     data.courses = [];
     var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
     grCourse.addActiveQuery();
-    grCourse.orderByDesc('sys_updated_on'); // Sort by sys_updated_on in descending order
+    grCourse.orderByDesc('sys_updated_on'); 
     grCourse.setLimit(6); // Limit to 6 records
     grCourse.query();
 
@@ -123,16 +121,15 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-29 07:27:01</sys_created_on>
         <sys_id>31c7189893e20210b09bf2918bba102f</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>LMS Courses (Homepage)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_31c7189893e20210b09bf2918bba102f</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-11 07:06:20</sys_updated_on>
-        <template><![CDATA[<div class="container">
-  
+        <sys_updated_on>2024-06-18 11:28:35</sys_updated_on>
+        <template><![CDATA[<div class="container"> 
   <div class="course-container">
     <div class="course-card" ng-repeat="s in c.filteredCourses" ng-click="c.redirectToCourseDetail(s.sys_id)">
       <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">

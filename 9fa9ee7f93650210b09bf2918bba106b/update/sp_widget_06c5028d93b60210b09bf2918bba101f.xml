@@ -46,7 +46,7 @@
     c.module_page = function(sys_id) {
         var portalURL = $location.absUrl().split('?')[0];
         var pageID = 'lms_modules_content'; 
-        var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id;
+        var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id + '&module=-1';
         window.location.href = url;            
     };
 
@@ -64,7 +64,7 @@
 ]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
-    font-family: Arial, sans-serif;
+    font-family: Popins, sans-serif;
 }
 
 .container {
@@ -232,6 +232,7 @@
         <script><![CDATA[(function() {
     data.courses = [];
     data.requestedCourses = [];
+    data.completedCourses = [];
     var userId = gs.getUserID(); // Get the current user's ID
 
     // Query the enrollment table for courses the current user is enrolled in
@@ -241,13 +242,22 @@
 
     var enrolledCourseIds = [];
     var requestedCourseIds = [];
+    var completedCourseIds = [];
     while (grEnrollment.next()) {
-        if (grEnrollment.getValue('status') == 'approval pending' || grEnrollment.getValue('status') == 'requested') {
+        var status = grEnrollment.getValue('status');
+			var completion_status = grEnrollment.getValue('completion_status');
+        if (status == 'approval pending' || status == 'requested') {
             requestedCourseIds.push(grEnrollment.getValue('course_name'));
+        } else if (completion_status == 'complete') {
+            completedCourseIds.push(grEnrollment.getValue('course_name'));
         } else {
             enrolledCourseIds.push(grEnrollment.getValue('course_name'));
         }
     }
+
+    data.totalCourses = enrolledCourseIds.length;
+    data.totalRequestedCourses = requestedCourseIds.length;
+    data.totalCompletedCourses = completedCourseIds.length;
 
     if (enrolledCourseIds.length > 0) {
         // Query the course table for the courses the current user is enrolled in
@@ -257,10 +267,10 @@
 
         while (grCourse.next()) {
             data.courses.push({
-                Name: grCourse.getDisplayValue('course_name'),
+                Name: gs.getMessage(grCourse.getDisplayValue('course_name')),
                 Thumbnail: grCourse.getDisplayValue('thumbnail'),
                 sys_id: grCourse.getUniqueValue(),
-                Description: grCourse.getDisplayValue('short_description') 
+                Description: gs.getMessage(grCourse.getDisplayValue('short_description'))
             });
         }
     }
@@ -273,10 +283,30 @@
 
         while (grRequestedCourse.next()) {
             data.requestedCourses.push({
-                Name: grRequestedCourse.getDisplayValue('course_name'),
+                Name: gs.getMessage(grRequestedCourse.getDisplayValue('course_name')),
                 Thumbnail: grRequestedCourse.getDisplayValue('thumbnail'),
                 sys_id: grRequestedCourse.getUniqueValue(),
-                Description: grRequestedCourse.getDisplayValue('short_description') // Add full description
+                Description: gs.getMessage(grRequestedCourse.getDisplayValue('short_description')) // Add full description
+            });
+        }
+    }
+
+    if (completedCourseIds.length > 0) {
+        // Query the course table for the completed courses
+        /*var grCompletedCourse = new GlideRecordSecure('x_1383177_lms_app_enrollment');
+        grCompletedCourse.addQuery('sys_id', 'IN', completedCourseIds);
+				grCompletedCourse.addQuery('completion_status', 'complete');
+        grCompletedCourse.query();*/
+				
+				var grCompleteCourseDetail = new GlideRecordSecure('x_1383177_lms_app_course');
+        grCompleteCourseDetail.addQuery('sys_id', 'IN', completedCourseIds);
+        grCompleteCourseDetail.query();
+        while (grCompleteCourseDetail.next()) {
+            data.completedCourses.push({
+                Name: gs.getMessage(grCompleteCourseDetail.getDisplayValue('course_name')),
+                Thumbnail: grCompleteCourseDetail.getDisplayValue('thumbnail'),
+                sys_id: grCompleteCourseDetail.getUniqueValue(),
+                Description: gs.getMessage(grCompleteCourseDetail.getDisplayValue('short_description'))
             });
         }
     }
@@ -291,58 +321,72 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-13 09:38:46</sys_created_on>
         <sys_id>06c5028d93b60210b09bf2918bba101f</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>LMS My Learnings</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_06c5028d93b60210b09bf2918bba101f</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-18 10:34:48</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-21 18:48:29</sys_updated_on>
         <template><![CDATA[<div class="container">
-    <div class="tabs">
-        <button class="tab-link active" ng-click="c.handleTabClick($event, 'myCourses')">My Courses</button>
-        <button class="tab-link" ng-click="c.handleTabClick($event, 'requestedCourses')">Requested Courses</button>
+  <div class="tabs">
+    <button class="tab-link active" ng-click="c.handleTabClick($event, 'myCourses')">${My Courses ({{ c.data.courses.length }})}</button>
+    <button class="tab-link" ng-click="c.handleTabClick($event, 'requestedCourses')">${Requested Courses ({{ c.data.requestedCourses.length }})}</button>
+    <button class="tab-link" ng-click="c.handleTabClick($event, 'completedCourses')">${Completed Courses ({{ c.data.completedCourses.length }})}</button>
+  </div>
+
+  <div class="tab-content" id="myCourses" style="display: block;">
+    <!-- My Courses Section -->
+    <div class="course-container" ng-if="c.data.courses.length > 0">
+      <div class="course-card" ng-click="c.module_page(s.sys_id)" ng-repeat="s in c.data.courses">
+        <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+        <div class="course-name" ng-bind="s.Name"></div>
+        <div class="course-hover-details">
+          <h3 ng-bind="s.Name"></h3>
+          <p ng-bind="s.Description"></p>
+        </div>
+      </div>
     </div>
-
-    <div class="tab-content" id="myCourses" style="display: block;">
-        <!-- My Courses Section -->
-        <h2>My Courses</h2>
-        <div class="course-container" ng-if="c.data.courses.length > 0">
-            <div class="course-card" ng-click="c.module_page(s.sys_id)" ng-repeat="s in c.data.courses">
-                <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-                <div class="course-name" ng-bind="s.Name"></div>
-                <div class="course-hover-details">
-                    <h3 ng-bind="s.Name"></h3>
-                    <p ng-bind="s.Description"></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="no-courses" ng-if="c.data.courses.length === 0">
-            <p>You have not enrolled in any courses.</p>
-            <button ng-click="c.redirectToCourses()">View Course List</button>
-        </div>
+    <div class="no-courses" ng-if="c.data.courses.length === 0">
+      <p>${You have not enrolled in any courses.}</p>
+      <button ng-click="c.redirectToCourses()">${View Course List}</button>
     </div>
+  </div>
 
-    <div class="tab-content" id="requestedCourses">
-        <!-- Requested Courses Section -->
-        <h2>Requested Courses</h2>
-        <div class="requested-courses-container" ng-if="c.data.requestedCourses.length > 0">
-            <div class="requested-course" ng-click="c.courseDetailPage(s.sys_id)" ng-repeat="s in c.data.requestedCourses">
-                <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-                <div class="course-name" ng-bind="s.Name"></div>
-                <div class="course-hover-details">
-                    <h3 ng-bind="s.Name"></h3>
-                    <p ng-bind="s.Description"></p>
-                </div>
-            </div>
+  <div class="tab-content" id="requestedCourses">
+    <!-- Requested Courses Section -->
+    <div class="requested-courses-container" ng-if="c.data.requestedCourses.length > 0">
+      <div class="requested-course" ng-click="c.courseDetailPage(s.sys_id)" ng-repeat="s in c.data.requestedCourses">
+        <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+        <div class="course-name" ng-bind="s.Name"></div>
+        <div class="course-hover-details">
+          <h3 ng-bind="s.Name"></h3>
+          <p ng-bind="s.Description"></p>
         </div>
-
-        <div class="no-courses" ng-if="c.data.requestedCourses.length === 0">
-            <p>No courses have been requested.</p>
-        </div>
+      </div>
     </div>
+    <div class="no-courses" ng-if="c.data.requestedCourses.length === 0">
+      <p>${No courses have been requested.}</p>
+    </div>
+  </div>
+
+  <div class="tab-content" id="completedCourses">
+    <!-- Completed Courses Section -->
+    <div class="course-container" ng-if="c.data.completedCourses.length > 0">
+      <div class="course-card" ng-click="c.module_page(s.sys_id)" ng-repeat="s in c.data.completedCourses">
+        <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
+        <div class="course-name" ng-bind="s.Name"></div>
+        <div class="course-hover-details">
+          <h3 ng-bind="s.Name"></h3>
+          <p ng-bind="s.Description"></p>
+        </div>
+      </div>
+    </div>
+    <div class="no-courses" ng-if="c.data.completedCourses.length === 0">
+      <p>${You have not completed any courses.}</p>
+    </div>
+  </div>
 </div>
 ]]></template>
     </sp_widget>

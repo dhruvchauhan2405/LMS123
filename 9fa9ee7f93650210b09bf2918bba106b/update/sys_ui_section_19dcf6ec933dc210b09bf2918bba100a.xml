@@ -1,130 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="19dcf6ec933dc210b09bf2918bba100a" sys_domain="global" table="x_1383177_lms_app_enrollment" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.begin_split</element>
+            <element>number</element>
             <position>0</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>e7967bf193520210b09bf2918bba1063</sys_id>
+            <sys_created_on>2024-06-21 04:31:58</sys_created_on>
+            <sys_id>314ccee3937e8210b09bf2918bba100c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
-            <sys_user/>
-            <type>.begin_split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>number</element>
-            <position>1</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>6f967bf193520210b09bf2918bba1063</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
+            <sys_updated_on>2024-06-21 04:31:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>learner_name</element>
-            <position>2</position>
+            <position>1</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>ef967bf193520210b09bf2918bba1063</sys_id>
+            <sys_created_on>2024-06-21 04:31:58</sys_created_on>
+            <sys_id>354ccee3937e8210b09bf2918bba100c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
+            <sys_updated_on>2024-06-21 04:31:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>course_name</element>
-            <position>3</position>
+            <position>2</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>63967bf193520210b09bf2918bba1064</sys_id>
+            <sys_created_on>2024-06-21 04:31:58</sys_created_on>
+            <sys_id>394ccee3937e8210b09bf2918bba100c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
+            <sys_updated_on>2024-06-21 04:31:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>4</position>
+            <position>3</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>e3967bf193520210b09bf2918bba1064</sys_id>
+            <sys_created_on>2024-06-21 04:31:58</sys_created_on>
+            <sys_id>3d4ccee3937e8210b09bf2918bba100c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
+            <sys_updated_on>2024-06-21 04:31:58</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>status</element>
-            <position>5</position>
+            <position>4</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>67967bf193520210b09bf2918bba1064</sys_id>
+            <sys_created_on>2024-06-21 04:31:58</sys_created_on>
+            <sys_id>314ccee3937e8210b09bf2918bba100d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>email</element>
-            <position>6</position>
-            <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>e7967bf193520210b09bf2918bba1064</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
-            <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
+            <sys_updated_on>2024-06-21 04:31:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>learner_name.email</element>
-            <position>7</position>
+            <position>5</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>6b967bf193520210b09bf2918bba1064</sys_id>
+            <sys_created_on>2024-06-21 04:31:58</sys_created_on>
+            <sys_id>354ccee3937e8210b09bf2918bba100d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
+            <sys_updated_on>2024-06-21 04:31:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.end_split</element>
-            <position>8</position>
+            <element>completion_status</element>
+            <position>6</position>
             <sys_created_by>abhishek.s</sys_created_by>
-            <sys_created_on>2024-05-22 05:15:49</sys_created_on>
-            <sys_id>eb967bf193520210b09bf2918bba1064</sys_id>
+            <sys_created_on>2024-06-21 04:31:58</sys_created_on>
+            <sys_id>394ccee3937e8210b09bf2918bba100d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383177_lms_app_enrollment" sys_domain="global" view="Default view">19dcf6ec933dc210b09bf2918bba100a</sys_ui_section>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-05-22 05:15:49</sys_updated_on>
+            <sys_updated_on>2024-06-21 04:31:58</sys_updated_on>
             <sys_user/>
-            <type>.end_split</type>
+            <type/>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
