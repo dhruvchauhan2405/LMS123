@@ -120,201 +120,272 @@
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+        <css>/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f4f4f9;
 }
 
 .container {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
+.sidebar, .content {
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}
+
+/* Sidebar Styles */
 .sidebar {
-    width: 250px;
-    background-color: #f8f8f8;
-    border-right: 1px solid #ddd;
-    overflow-y: auto;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-}
-
-.sidebar-content {
-    padding: 20px;
+  width: 300px;
+  background-color: #2d3436;
+  color: #ffffff;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .sidebar-content h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.sidebar-content p{
+  text-align: right;
 }
 
 .sidebar-content ul {
-    list-style: none;
+  list-style: none;
 }
 
 .sidebar-content ul li {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sidebar-content ul li a {
-    text-decoration: none;
-    color: #007bff;
-    display: block;
-    padding: 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    flex-grow: 1;
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  flex-grow: 1;
 }
 
 .sidebar-content ul li a:hover,
 .sidebar-content ul li a.active {
-    background-color: #007bff;
-    color: white;
+  background-color: #0984e3;
+  color: #ffffff;
 }
 
 .sidebar-content ul li .tick-mark {
-    color: green;
-    margin-left: 10px;
+  color: #2ecc71;
+  margin-left: 10px;
 }
+
 .completed {
-  color: #008000; /* Green color for completed modules */
+  color: #2ecc71; /* Green color for completed modules */
 }
 
+.sidebar-footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #34495e;
+}
 
+.sidebar-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.sidebar-footer a:hover {
+  color: #0984e3;
+}
+
+/* Content Styles */
 .content {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 40px;
-    display: flex;
-    justify-content: center; /* Center content horizontally */
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f9;
 }
 
 .page {
-    width: 80%; /* Set the maximum width */
-    max-width: 1200px; /* Set the maximum width */
-    min-width: 300px; /* Set the minimum width */
-    height: 700px; /* Set the maximum height */
-    min-height: 200px; /* Set the minimum height */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 40px;
-    overflow: scroll; /* Ensure proper scrolling behavior */
+  width: 90%;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  overflow: auto;
 }
 
+/* Module Header Styles */
 .module-header {
-    text-align: center;
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  color: #2d3436;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .module-header .header-logo {
-    width: 200px;
-    margin-bottom: 20px;
+  width: 100px;
+  margin-bottom: 20px;
 }
 
-.module-header h1 {
-    padding-top: 30px;
-    font-size: 3.5rem;
-    text-align: center;
-    margin-bottom: 20px;
+.module-header .course-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
 }
 
-.module-header p {
-    font-size: 1.3rem;
-    text-align: center; /* Center align the description */
-    margin-bottom: 40px;
+.module-header .course-description {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: #636e72;
 }
 
+.module-header .next-lesson {
+  padding: 15px 30px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background-color 0.3s;
+}
+
+.module-header .next-lesson:hover {
+  background-color: #74b9ff;
+}
+
+/* Lessons and Navigation Buttons Styles */
 .lessons {
-    margin-bottom: 40px;
-    height: calc(100% - 45px); /* Adjust height to accommodate progress bar */
-    overflow-y: auto;
-    position: relative; /* Ensure relative positioning for absolute elements */
+  margin-bottom: 40px;
+  height: calc(100% - 45px);
+  overflow-y: auto;
 }
 
 .lessons .lesson h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2d3436;
 }
 
 .lessons .lesson p {
-    font-size: 2rem;
-    line-height: 1.5;
+  font-size: 1.8rem;
+  text-align: justify;
+  line-height: 1.6;
+  color: #636e72;
 }
 
 .navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+
 }
 
 .navigation-buttons button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background-color 0.3s;
 }
 
 .navigation-buttons button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #b2bec3;
+  cursor: not-allowed;
+}
+
+.navigation-buttons button:hover {
+  background-color: #74b9ff;
 }
 
 /* Modal CSS */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
   max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #2d3436;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #636e72;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #74b9ff;
 }
 
 .close {
-  color: #aaa;
+  color: #636e72;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -322,23 +393,62 @@ body {
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
+  color: #2d3436;
   cursor: pointer;
-}
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+/* Completion Page Styles */
+.completion-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  //background-color: #f4f4f9;
+  text-align: center;
+  padding: 40px;
 }
+
+.completion-content {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.completion-content .celebration-graphic {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.completion-content h1 {
+  font-size: 2.5rem;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.completion-content .completion-message {
+  font-size: 1.7rem;
+  color: #636e72;
+  margin-bottom: 40px;
+}
+
+.completion-content .complete-course {
+  padding: 15px 30px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.completion-content .complete-course:hover {
+  background-color: #74b9ff;
+}
+
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -447,14 +557,14 @@ body {
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>246</sys_mod_count>
+        <sys_mod_count>281</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-21 17:55:49</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-23 12:54:12</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="sidebar">
     <div class="sidebar-content">
@@ -470,6 +580,9 @@ body {
           </li>
         </ul>
       </div>
+      <div class="sidebar-footer">
+        <a href="javascript:void(0)" ng-click="c.goToMyLearnings()">My Learnings</a>
+      </div>
     </div>
   </div>
   <div class="content">
@@ -477,10 +590,12 @@ body {
       <!-- Initial Page Content -->
       <div class="module-header" ng-show="!c.isModuleView && !c.completedCoursePage">
         <img src="lms_white.png" alt="LMS Logo" class="header-logo">
-        <h1>{{c.data.course.course_name}}</h1>
-        <p>{{c.data.course.short_description}}</p>
+        <h1 class="course-title">{{c.data.course.course_name}}</h1>
+        <p class="course-description">{{c.data.course.short_description}}</p>
         <button class="next-lesson" ng-click="c.nextLesson()">Start Course</button>
       </div>
+
+
       <!-- Module Content -->
       <div class="green-progress"></div>
       <div class="module-contents" ng-show="c.isModuleView">
@@ -497,18 +612,24 @@ body {
       </div>
       <!-- Completion Page -->
       <div class="completion-page" ng-show="c.completedCoursePage">
-        <h1>Congratulations on completing the modules!</h1>
-        <button class="complete-course" ng-click="c.completeCourse()">Complete Course</button>
+        <div class="completion-content">
+          <img src="LMS_celebration.png" alt="Celebration Graphic" class="celebration-graphic">
+          <h1>Congratulations, you're all set!</h1>
+          <p class="completion-message">You have successfully completed the course. Keep up the great work and continue learning!</p>
+          <button class="complete-course" ng-click="c.completeCourse()">Complete Course</button>
+        </div>
       </div>
+
+
     </div>
   </div>
 </div>
 
 <!-- Modal for course completion -->
 <div class="modal" ng-show="c.showCompletionModal">
-  
+
   <div class="modal-content">
-    
+
     <h2>Congratulations!</h2>
     <p>You have completed the course successfully.</p>
     <button ng-click="c.goToMyLearnings()">Go to My Learnings</button>
