@@ -4,7 +4,11 @@
         <css>.paddingtop_20 {
 	  padding-top: 20px;
 }
-</css>
+
+main.body.padding-top.ng-scope {
+    padding-top: 0;
+  	
+}</css>
         <draft>false</draft>
         <dynamic_title_structure/>
         <human_readable_url_structure/>
@@ -19,14 +23,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 05:18:44</sys_created_on>
         <sys_id>80e08dd2931a4210b09bf2918bba104b</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>lms_index</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_page_80e08dd2931a4210b09bf2918bba104b</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-05-30 07:38:10</sys_updated_on>
+        <sys_updated_on>2024-06-24 05:54:22</sys_updated_on>
         <title>Learning Management System</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>

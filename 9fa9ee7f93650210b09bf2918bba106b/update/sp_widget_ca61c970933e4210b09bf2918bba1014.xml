@@ -22,169 +22,130 @@
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.main-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.content {
-  flex: 3;
-  padding: 20px;
-}
-
-.header .details {
-  margin-bottom: 20px;
-}
-
-.tabs {
-  margin-bottom: 20px;
-}
-
-.tab-list {
-  list-style-type: none;
+        <css>/* Basic reset */
+body, div, p, button {
+  margin: 0;
   padding: 0;
-  display: flex;
-  cursor: pointer;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #2c3e50;
 }
 
-.tab-list li {
-  margin-right: 10px;
-  padding: 10px 20px;
-  border: 1px solid #ddd;
-  border-bottom: none;
-}
-
-.tab-list li.active {
-  background-color: #f5f5f5;
-  font-weight: bold;
-}
-
-.tab-content {
-  border: 1px solid #ddd;
-  padding: 20px;
-}
-
-.module-item {
-  margin-bottom: 10px;
-}
-
-.module-header {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.module-description {
-  margin-left: 20px;
-}
-
-.sidebar {
-  flex: 1;
-  padding: 20px;
-  border-left: 1px solid #ddd;
-}
-
-.sidebar img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.sidebar button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #0072c6;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.sidebar button:hover {
-  background-color: #005bb5;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-  width: 80%;
-  max-width: 500px;
-}
-
-.modal-content .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
+/* Course widget container */
 .course-widget {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.course-image {
-  width: 100%;
-  height: 300px; /* Adjust height as needed */
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+  max-width: 1100px;
+  margin: 20px auto;
+  margin-bottom: 80px;
+  margin-top: 40px;
 }
 
+.course-widget:hover {
+  transform: scale(1.02);
+}
+
+/* Course image */
 .course-image img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
   object-fit: cover;
 }
 
+/* Course information */
 .course-info {
   padding: 20px;
+  text-align: center;
+    margin-bottom: 6rem;
 }
 
+/* Course title */
 .course-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
+/* Course description */
 .course-description {
-  margin-bottom: 20px;
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.6;
 }
 
+/* Course motivation */
+.course-motivation p {
+    font-size: 16px;
+    color: #2ecc71;
+    margin-bottom: 20px;
+    text-align: center;
+    font-style: italic;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* Course buttons container */
 .course-buttons {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.course-buttons button {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #0072c6;
+/* Start course button */
+.start-course-button {
+  padding: 10px 20px;
+  font-size: 16px;
   color: #fff;
+  background-color: #28a745;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.course-buttons button:hover {
-  background-color: #005bb5;
+.start-course-button:hover {
+  background-color: #218838;
+}
+
+/* Home button */
+.home-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -229,14 +190,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-12 10:01:34</sys_created_on>
         <sys_id>ca61c970933e4210b09bf2918bba1014</sys_id>
-        <sys_mod_count>91</sys_mod_count>
+        <sys_mod_count>115</sys_mod_count>
         <sys_name>LMS Enrollment Status</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_ca61c970933e4210b09bf2918bba1014</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-19 05:05:18</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-23 13:58:09</sys_updated_on>
         <template><![CDATA[<div class="course-widget">
   <div class="course-image">
     <img src="enrollmentStatus.jpg" alt="Course Image">
@@ -244,6 +205,9 @@
   <div class="course-info">
     <div class="course-title">{{c.data.course.course_name}}</div>
     <div class="course-description">{{ c.data.course.short_description }}</div>
+    <div class="course-motivation">
+      <p>${Expand your knowledge and skills with our comprehensive course. Unlock new opportunities and achieve your goals today!}</p>
+    </div>
     <div class="course-buttons">
       <div ng-if="c.free">
         <button class="start-course-button" ng-click="c.startCourse()">${Start Course}</button>

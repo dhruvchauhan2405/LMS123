@@ -196,7 +196,26 @@
   font-size: 1.2em;
   margin: 0 10px;
 }
-</css>
+
+.course-access {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.free-access {
+  background-color: #50bf06;
+}
+
+.requestable {
+  background-color: #166dde;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -231,6 +250,7 @@
 
 		data.courses.push({
 			Name: gs.getMessage(grCourse.getDisplayValue('course_name')),
+			Access: gs.getMessage(grCourse.getDisplayValue('accessibility')),
 			Short_description: gs.getMessage(grCourse.getDisplayValue('short_description')),
 			Thumbnail: grCourse.getDisplayValue('thumbnail'),
 			sys_id: grCourse.getUniqueValue(),
@@ -249,21 +269,24 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 05:11:35</sys_created_on>
         <sys_id>2b52cdac93e64210b09bf2918bba107d</sys_id>
-        <sys_mod_count>111</sys_mod_count>
+        <sys_mod_count>128</sys_mod_count>
         <sys_name>LMS Courses (Course Page)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2b52cdac93e64210b09bf2918bba107d</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-21 10:22:08</sys_updated_on>
+        <sys_updated_on>2024-06-24 10:50:11</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="course-container">   
     <div class="course-card"
          ng-click="c.redirectToCourseDetail(s.sys_id)"
          ng-repeat="s in c.filteredCourses">
+       
       <img class="course-image" ng-src="{{ s.Thumbnail }}" alt="{{ s.Name }}">
-      <div class="course-name" ng-bind="s.Name"></div>
+      <div class="course-name" ng-bind="s.Name"></div> 
+      <div class="course-access" ng-bind="s.Access" ng-class="{'free-access': s.Access === 'Free to access', 'requestable': s.Access === 'Requestable'}"></div>
+      
       <div class="course-hover-details">
         <h3 ng-bind="s.Name"></h3>
         <p ng-bind="s.Description"></p>

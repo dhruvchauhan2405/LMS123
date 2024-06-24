@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">84c7eab593660210b09bf2918bba10fd</sp_column>
+        <sp_widget display_value="LMS Module Contents">28f8e24a93a64210b09bf2918bba101e</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-04 04:35:48</sys_created_on>
+        <sys_id>882aee4a93a64210b09bf2918bba10b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_instance_882aee4a93a64210b09bf2918bba10b1</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-04 04:35:48</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=882aee4a93a64210b09bf2918bba10b1"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_instance_882aee4a93a64210b09bf2918bba10b1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">84c7eab593660210b09bf2918bba10fd</sp_column><sp_widget display_value="LMS Module Contents">28f8e24a93a64210b09bf2918bba101e</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-06-04 04:35:48</sys_created_on><sys_id>882aee4a93a64210b09bf2918bba10b1</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sp_instance_882aee4a93a64210b09bf2918bba10b1</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-06-04 04:35:48</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=882aee4a93a64210b09bf2918bba10b1"/></record_update>]]></payload>
+        <payload_hash>-1643558578</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>9bacd006936e0210b09bf2918bba1057</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-04 04:35:48</sys_created_on>
+        <sys_id>c02a2a8a93a64210b09bf2918bba107f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fe1882a510000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-04 04:35:48</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>082a2a8ad8a64210ee4305956589947e</update_guid>
+        <update_guid_history>082a2a8ad8a64210ee4305956589947e:-1643558578</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">438e25a893074210b09bf2918bba1056</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-24 04:55:59</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>3b7f0c7740964fae94f8854bf5c1c9a4</sys_id>
+        <sys_metadata>882aee4a93a64210b09bf2918bba10b1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_instance_882aee4a93a64210b09bf2918bba10b1</sys_update_name>
+        <sys_update_version display_value="sp_instance_882aee4a93a64210b09bf2918bba10b1">c02a2a8a93a64210b09bf2918bba107f</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-24 04:55:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

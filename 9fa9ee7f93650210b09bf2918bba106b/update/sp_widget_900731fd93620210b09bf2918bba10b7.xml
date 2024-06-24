@@ -47,7 +47,7 @@
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>/* Updated CSS for sidebar */
+        <css>
 .sidebar {
   width: 300px;
   background-color: #fff;
@@ -136,14 +136,16 @@ body {
 .header h1 {
   margin: 0;
   font-size: 2em;
+  color: #f2f2f2;
 }
 
 .header p {
   margin: 5px 0;
+  color: #f2f2f2;
 }
 
 .course-description {
-  font-family: 'Verdana', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -228,31 +230,103 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1100px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .close {
-  color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover {
+  color: #e74c3c;
 }
+
+h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #34495e;
+}
+
+ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #34495e;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+label span {
+  font-size: 16px;
+  color: #34495e;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #2980b9;
+  transform: translateY(0);
+}
+
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -370,14 +444,14 @@ body {
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>154</sys_mod_count>
+        <sys_mod_count>163</sys_mod_count>
         <sys_name>LMS Course Detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-18 09:33:52</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-24 06:38:52</sys_updated_on>
         <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">
@@ -428,24 +502,28 @@ body {
     <button ng-if="c.data.isPending" ng-click="c.cancelEnrollment()" style="background-color: #880808; color: white;">${Cancel Request}</button>
   </div>
 
-<div class="modal" ng-show="c.data.showModal">
-  <div class="modal-content">
-    <span class="close" ng-click="c.data.showModal = false">&times;</span>
-    <h2>${Enroll in Course: }{{ c.data.course.course_name.display_value }}</h2>
-    <p><strong>${Terms & Conditions}</strong></p>
-    <ul>
-      <li>${You agree to abide by the course's content usage policies.}</li>
-      <li>${You understand that this course may require periodic assessments.}</li>
-      <li>${You acknowledge that course materials are for personal use only and not for redistribution.}</li>
-      <li>${You consent to receive communications related to course updates and important announcements.}</li>
-      <li>${You agree to comply with the platform's terms of service and privacy policy.}</li>
-    </ul>
-    <div>
-      <input type="checkbox" ng-model="c.data.agreeToTerms">${ With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.}
+  <div class="modal" ng-show="c.data.showModal">
+    <div class="modal-content">
+      <span class="close" ng-click="c.data.showModal = false">&times;</span>
+      <h2>Enroll in Course: {{ c.data.course.course_name.display_value }}</h2>
+      <p><strong>Terms & Conditions</strong></p>
+      <ul>
+        <li>You agree to abide by the course's content usage policies.</li>
+        <li>You understand that this course may require periodic assessments.</li>
+        <li>You acknowledge that course materials are for personal use only and not for redistribution.</li>
+        <li>You consent to receive communications related to course updates and important announcements.</li>
+        <li>You agree to comply with the platform's terms of service and privacy policy.</li>
+      </ul>
+      <div>
+        <label>
+          <input type="checkbox" ng-model="c.data.agreeToTerms">
+          <span>With my acknowledgement, I attest that I am of legal age to consent to these terms, conditions, and policies. I have read and accept all Terms and Conditions.</span>
+        </label>
+      </div>
+      <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">Enroll</button>
     </div>
-    <button ng-click="c.enroll()" ng-disabled="!c.data.agreeToTerms">${Enroll}</button>
   </div>
-</div>
+
 
 
   <!-- Cancel Confirmation Modal -->

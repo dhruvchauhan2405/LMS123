@@ -5,9 +5,9 @@
 	var c = this;
 	c.selectedModuleIndex = null;
 	c.isModuleView = false;
+	c.activeTab = 'modules'; // Default active tab
 	c.showCompletionModal = false;
-	c.completedCoursePage = false;
-
+	c.courseCompleted = c.data.percentage === 100; // Initialize courseCompleted flag
 
 	// Function to select a module by index
 	c.selectModuleByIndex = function(index) {
@@ -42,7 +42,7 @@
 
 	// Navigate to the next lesson
 	c.nextLesson = function() {
-
+		
 		//If Module view is off
 		if (!c.isModuleView) {
 			// If on the initial page, switch to the first module
@@ -51,43 +51,57 @@
 				c.selectModuleByIndex(0);
 			}
 		}
-
-
+		
+		
 		else if (c.selectedModuleIndex !== null) {
-			c.data.selectedmodule = c.selectedModuleIndex;
-			c.data.modules[c.selectedModuleIndex].status = true;
-			c.server.update().then(function(response){
-				c.data.percentage= response.percent;
-			});
-			if (c.selectedModuleIndex < c.data.modules.length - 1) {
-				c.selectModuleByIndex(c.selectedModuleIndex+1);
-
-			} else {
-
-				c.isModuleView = false;
-				c.showCompletionModal = false; 
-				c.completedCoursePage = true;
+			
+			
+			// Only mark the current module as completed if it's not already completed
+			
+			
+			if (!c.data.modules[c.selectedModuleIndex].status) {
+				
+				c.data.selectedmodule = c.selectedModuleIndex;
+				c.data.modules[c.selectedModuleIndex].status = true;
+				c.updateProgressPercentage();
+				//data.percentage=data.percent;
+				// Update server-side record
+				c.server.update().then(function(response) {
+					// Optional: Handle server response
+				});
 			}
 
+			if (c.selectedModuleIndex < c.data.modules.length - 1) {
+				// Navigate to the next module
+				c.selectModuleByIndex(c.selectedModuleIndex + 1);
+			} else {
+				// Navigate to a new page with the Complete Course button
+				c.server.update().then(function(response) {
+					// Optional: Handle server response
+				});
+				c.isModuleView = false;
+				c.showCompletionModal = false;
+				c.completedCoursePage = true; // Show the new page with Complete Course button
+			}
 		}
 	};
 
-
 	// Complete the course
 	c.completeCourse = function() {
-		c.data.action='complete';
-		c.server.update().then(function() {
+		// Show completion modal if all modules are completed
+		if (c.allModulesCompleted()) {
 			c.showCompletionModal = true;
-		});
-
-		//if (c.data.percentage==100) {
-		
-		// $scope.$apply(); // Ensure Angular updates the scope
-
+			console.log(c.showCompletionModal);
+			// $scope.$apply(); // Ensure Angular updates the scope
+		}
 	};
 
 	// Function to check if all modules are completed
-
+	c.allModulesCompleted = function() {
+		return c.data.modules.every(function(module) {
+			return module.completed;
+		});
+	};
 
 	// Navigate to the previous lesson
 	c.prevLesson = function() {
@@ -101,7 +115,32 @@
 		// Assuming there is a function to navigate to My Learnings page
 		window.location.href = 'https://dev211199.service-now.com/lms?id=lms_my_learning'; // Adjust the URL as necessary
 	};
-};]]></client_script>
+
+	// Function to update progress percentage
+	c.updateProgressPercentage = function() {
+		var completedModules = c.data.count;
+		var totalModules = c.data.modules.length;
+		if (!c.courseCompleted) {
+			if (!c.data.modules[c.selectedModuleIndex].completed){
+				c.data.count++;
+
+				c.data.percentage = Math.round((completedModules / totalModules) * 100);
+				//c.data.percentage=c.data.percent;
+				if (c.data.percentage === 100) {
+					c.courseCompleted = true; // Set the flag when the course is completed
+				}
+
+				document.getElementById("hello").innerHTML = "Progress:" + c.data.percentage + "%";
+			}else{
+				c.data.count++;
+				c.data.percentage = Math.round(( c.data.count / totalModules) * 100);
+				document.getElementById("hello").innerHTML = "Progress:" + c.data.percentage + "%";
+			}
+
+		} 
+	};
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Universal Styles */
 * {
@@ -332,7 +371,7 @@ body {
 
 /* Modal CSS */
 .modal {
-  display: flex;
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -381,22 +420,17 @@ body {
   background-color: #74b9ff;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 .close {
+  color: #636e72;
   float: right;
   font-size: 28px;
   font-weight: bold;
-  color: #333;
-  cursor: pointer;
-  transition: color 0.3s;
 }
 
-.close:hover {
-  color: #e74c3c;
+.close:hover,
+.close:focus {
+  color: #2d3436;
+  cursor: pointer;
 }
 
 /* Completion Page Styles */
@@ -458,10 +492,10 @@ body {
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>lms_module_content</id>
+        <id>test_lms</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>LMS Module Content</name>
+        <name>Test LMS</name>
         <option_schema>[]</option_schema>
         <public>true</public>
         <roles/>
@@ -492,17 +526,17 @@ body {
 		while (moduleGr.next()) {
 			var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
 			var m2mgr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-			m2mgr.addQuery('sys_user', gs.getUserID());
-			m2mgr.addQuery('course', courseSysId);
-			m2mgr.addQuery('x_1383177_lms_app_module',moduleSysId);
-			m2mgr.query();
-			if(m2mgr.next()){
-				data.a= true;
-			}
+				m2mgr.addQuery('sys_user', gs.getUserID());
+				m2mgr.addQuery('course', courseSysId);
+				m2mgr.addQuery('x_1383177_lms_app_module',moduleSysId);
+				m2mgr.query();
+				if(m2mgr.next()){
+					data.a= true;
+				}
 			else{
 				data.a=false;
 			}
-
+				
 			var moduleGrDetails = new GlideRecord(moduleTable);
 			if (moduleGrDetails.get(moduleSysId)) {
 				var moduleObj = {
@@ -516,102 +550,78 @@ body {
 		}
 		data.count=0;
 		var m2mgr2 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-		m2mgr2.addQuery('sys_user', gs.getUserID());
-		m2mgr2.addQuery('course', courseSysId);
-		m2mgr2.query();
-		while(m2mgr2.next()){
-			data.count++;
-		}
-
+				m2mgr2.addQuery('sys_user', gs.getUserID());
+				m2mgr2.addQuery('course', courseSysId);
+				m2mgr2.query();
+				while(m2mgr2.next()){
+					data.count++;
+				}
+		
 		var totalModules = data.modules.length;
 		data.percentage= Math.round((data.count / totalModules) * 100);
+		//gs.addInfoMessage(data.count);
 	}
 
 
-	if (input) {
-		var userId = gs.getUserID();
-		var moduleSysId1 = input.modules[input.selectedmodule].sys_id;
+    if (input) {
+        var userId = gs.getUserID();
+        var moduleSysId1 = input.modules[input.selectedmodule].sys_id;
+				
+			
 
+        // Create a new GlideRecord instance
+        var progressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
 
+        // Add query conditions to check if the record already exists
+        progressGr.addQuery('sys_user', userId);
+        progressGr.addQuery('course', courseSysId);
+        progressGr.addQuery('x_1383177_lms_app_module', moduleSysId1);
+        progressGr.query();
 
-		// Create a new GlideRecord instance
-		var progressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-
-		// Add query conditions to check if the record already exists
-		progressGr.addQuery('sys_user', userId);
-		progressGr.addQuery('course', courseSysId);
-		progressGr.addQuery('x_1383177_lms_app_module', moduleSysId1);
-		progressGr.query();
-
-		// If no matching records are found, insert a new record
-		if (!progressGr.next()) {
-			var newProgressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-			newProgressGr.initialize();
-			newProgressGr.setValue('sys_user', userId);
-			newProgressGr.setValue('course', courseSysId);
-			newProgressGr.setValue('x_1383177_lms_app_module', moduleSysId1);
-			newProgressGr.setValue('progress', 'complete');
-			newProgressGr.insert();
-		}
-
-		data.count=0;
-		var m2mgr22 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-		m2mgr22.addQuery('sys_user', gs.getUserID());
-		m2mgr22.addQuery('course', courseSysId);
-		m2mgr22.query();
-		while(m2mgr22.next()){
-			data.count++;
-		}
-		data.percent=0;
-		var totalModules2 = input.modules.length;
-		data.percent= Math.round((data.count / totalModules2) * 100);
-
-		if (input.action == 'complete'){
-			var courseCompleteGr = new GlideRecord('x_1383177_lms_app_enrollment');
-			courseCompleteGr.addQuery('course_name', courseSysId);
-			courseCompleteGr.addQuery('learner_name', gs.getUserID());
-			courseCompleteGr.query();
-			if (courseCompleteGr.next()){
-				courseCompleteGr.setValue('completion_status', 'complete');
-				courseCompleteGr.update();
-			}
-		}
-	}
-})();]]></script>
+        // If no matching records are found, insert a new record
+        if (!progressGr.next()) {
+            var newProgressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+            newProgressGr.initialize();
+            newProgressGr.setValue('sys_user', userId);
+            newProgressGr.setValue('course', courseSysId);
+            newProgressGr.setValue('x_1383177_lms_app_module', moduleSysId1);
+            newProgressGr.setValue('progress', 'complete');
+            newProgressGr.insert();
+        }
+			
+			data.count=0;
+			var m2mgr22 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+				m2mgr22.addQuery('sys_user', gs.getUserID());
+				m2mgr22.addQuery('course', courseSysId);
+				m2mgr22.query();
+				while(m2mgr22.next()){
+					data.count++;
+				}
+			data.percent=0;
+			var totalModules2 = input.modules.length;
+			data.percent= Math.round((data.count / totalModules2) * 100);
+			gs.addInfoMessage(data.percent);
+    }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-06-04 04:30:39</sys_created_on>
-        <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>506</sys_mod_count>
-        <sys_name>LMS Module Content</sys_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-24 09:23:41</sys_created_on>
+        <sys_id>a4db6620934b4210b09bf2918bba1085</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test LMS</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
+        <sys_update_name>sp_widget_a4db6620934b4210b09bf2918bba1085</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-24 13:48:35</sys_updated_on>
-        <template><![CDATA[<div class="container">  
+        <sys_updated_on>2024-06-24 09:23:41</sys_updated_on>
+        <template><![CDATA[<div class="container">
   <div class="sidebar">
     <div class="sidebar-content">
-      <img class="course-image" src="{{c.data.course.thumbnail}}"> 
+      <img class="course-image" src="{{c.data.course.thumbnail}}">
       <h2>{{c.data.course.course_name}}</h2>
-   
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       <div>
         <p id='hello'>Progress: {{c.data.percentage}}%</p> <!-- Progress Status -->
         <ul>
@@ -623,92 +633,11 @@ body {
           </li>
         </ul>
       </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       <div class="sidebar-footer">
         <a href="javascript:void(0)" ng-click="c.goToMyLearnings()">${My Learnings}</a>
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <div class="content">
     <div class="page">
       <!-- Initial Page Content -->
@@ -750,14 +679,15 @@ body {
 </div>
 
 <!-- Modal for course completion -->
-<div class="modal" ng-show="c.showCompletionModal" >
+<div class="modal" ng-show="c.showCompletionModal">
 
   <div class="modal-content">
-    <span class="close" ng-click="c.data.showCompletionModal = false">&times;</span>
+
     <h2>${Congratulations!}</h2>
     <p>${You have completed the course successfully.}</p>
-    <button ng-click="c.goToMyLearnings()">${Go to My Learnings}</button>
+    <button ng-click="c.goToMyLearnings()">${Go to My Learnings</button>
   </div>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>

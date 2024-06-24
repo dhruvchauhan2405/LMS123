@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope) {
+    var c = this;
+    c.latestEnrollment = {};
+
+    // Function to fetch latest enrolled course and progress
+    c.fetchLatestEnrolledCourse = function() {
+        // Check if there is a latest enrollment
+			console.log("Init fetch");
+        if (c.data.latestEnrollment && c.data.latestEnrollment.course) {
+						console.log("Latest Course Recieved!");
+            c.latestEnrollment = c.data.latestEnrollment.course;
+            c.progress = 50; // Example progress percentage, replace with actual logic
+        } else {
+            // No latest enrollment found
+					console.log("No Course Recieved!");
+            c.latestEnrollment = null;
+        }
+    };
+
+    // Initialize the widget
+    c.initializeWidget = function() {
+        c.fetchLatestEnrolledCourse();
+    };
+
+    // Call initialize function
+    c.initializeWidget();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.widget-latest-course {
+  width: 100%;
+  max-width: 400px; /* Adjust as necessary */
+  margin: 0 auto;
+}
+
+.course-progress {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_continue_course</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Continue Course</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.latestEnrollment = null;
+
+    // Get the user ID of the current user
+    var userID = gs.getUserID();
+    gs.addInfoMessage("Current User ID: " + userID);
+
+    // Query the enrollment table for the latest incomplete enrollment for the current user
+    var grEnrollment = new GlideRecordSecure('x_1383177_lms_app_enrollment');
+    grEnrollment.addQuery('learner_name', userID);
+    grEnrollment.addQuery('completion_status', 'Incomplete');
+    grEnrollment.orderByDesc('sys_created_on');
+    grEnrollment.setLimit(1);
+    grEnrollment.query();
+
+    gs.addInfoMessage("Enrollment Record Count: " + grEnrollment.getRowCount());
+
+    if (grEnrollment.next()) {
+        gs.addInfoMessage("Found Enrollment Record: " + grEnrollment.getDisplayValue('course_name'));
+        data.latestEnrollment = {
+            courseName: grEnrollment.getDisplayValue('course_name'),
+            courseSysId: grEnrollment.getValue('course_name')
+        };
+
+        // Query the course table to get the details of the course
+        var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
+        if (grCourse.get(data.latestEnrollment.courseSysId)) {
+            data.latestEnrollment.course = {
+                Name: grCourse.getDisplayValue('course_name'),
+                Thumbnail: grCourse.getDisplayValue('thumbnail'),
+                Description: grCourse.getDisplayValue('short_description')
+            };
+            gs.addInfoMessage("Found Course Record: " + grCourse.getDisplayValue('course_name'));
+        } else {
+            gs.addInfoMessage("Course Record Not Found for Sys ID: " + data.latestEnrollment.courseSysId);
+        }
+    } else {
+        gs.addInfoMessage("No incomplete enrollment records found for user.");
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-06-24 11:31:37</sys_created_on>
+        <sys_id>1e198b68938b4210b09bf2918bba10d4</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>LMS Continue Course</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_1e198b68938b4210b09bf2918bba10d4</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-24 12:00:24</sys_updated_on>
+        <template><![CDATA[<div class="widget-latest-course">
+  <div class="course-container">
+    <div class="course-card">
+      <img class="course-image" ng-src="{{ c.latestCourse.Thumbnail }}" alt="{{ c.latestCourse.Name }}">
+      <div class="course-name" ng-bind="c.latestCourse.Name"></div>
+      <div class="course-progress">
+        <div class="progress-bar" style="width: {{ c.progress }}%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

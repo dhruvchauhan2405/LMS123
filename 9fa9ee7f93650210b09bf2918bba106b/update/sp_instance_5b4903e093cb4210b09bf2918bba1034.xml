@@ -10,23 +10,23 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="1">d6d4728693e64210b09bf2918bba1094</sp_column>
-        <sp_widget display_value="LMS Breadcrumbs">fa65d0d493e20210b09bf2918bba1063</sp_widget>
+        <sp_column display_value="1">96f8e66c930b4210b09bf2918bba103e</sp_column>
+        <sp_widget display_value="LMS Continue Course">1e198b68938b4210b09bf2918bba10d4</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-06-04 05:22:42</sys_created_on>
-        <sys_id>53d47a8693e64210b09bf2918bba10ac</sys_id>
+        <sys_created_on>2024-06-24 11:32:30</sys_created_on>
+        <sys_id>5b4903e093cb4210b09bf2918bba1034</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sp_instance_53d47a8693e64210b09bf2918bba10ac</sys_update_name>
+        <sys_update_name>sp_instance_5b4903e093cb4210b09bf2918bba1034</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-04 05:22:42</sys_updated_on>
+        <sys_updated_on>2024-06-24 11:32:30</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=53d47a8693e64210b09bf2918bba10ac"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=5b4903e093cb4210b09bf2918bba1034"/>
 </record_update>
