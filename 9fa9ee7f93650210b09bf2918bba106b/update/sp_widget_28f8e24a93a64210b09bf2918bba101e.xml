@@ -143,7 +143,7 @@ body {
 }
 
 .sidebar-content .course-image{
-	width: 100%;
+  width: 100%;
   height:100px;
   object-fit: contain;
   border-radius: 10px 10px 10px 10px;
@@ -151,13 +151,14 @@ body {
 }
 
 .sidebar-content h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
   color: #ffffff;
+  text-align: center;
 }
 
 .sidebar-content p{
-  text-align: right;
+  text-align: left;
 }
 
 .sidebar-content ul {
@@ -285,7 +286,7 @@ body {
 }
 
 .lesson{
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .lessons .lesson h2 {
@@ -318,7 +319,7 @@ body {
   cursor: pointer;
   font-size: 1.4rem;
   transition: background-color 0.3s;
-  
+
 }
 
 .navigation-buttons button:disabled {
@@ -452,36 +453,47 @@ body {
 }
 
 /* Progress Donut Styles */
-.progress-donut {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin: 20px auto;
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.donut-ring {
-  transform: rotate(-90deg);
-  width: 100%;
-  height: 100%;
-}
+  .progress-donut {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    float: left;
+    margin-left: 150px;
+  }
 
-.donut-segment {
-  fill: transparent;
-}
+  .donut-ring {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+  }
 
-.donut-segment:nth-child(2) {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 0.5s ease;
-}
+  .donut-segment {
+    fill: transparent;
+  }
 
-.donut-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.2rem;
-  color: #2c3e50;
-}</css>
+  .donut-segment:nth-child(2) {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+
+  .donut-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: #2c3e50;
+  }
+
+  #progress-text {
+    font-size: 1.25rem;
+  }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -613,31 +625,29 @@ body {
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>526</sys_mod_count>
+        <sys_mod_count>541</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-25 04:07:58</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-25 05:21:54</sys_updated_on>
         <template><![CDATA[<div class="container">  
   <div class="sidebar">
     <div class="sidebar-content">
       <img class="course-image" src="{{c.data.course.thumbnail}}"> 
       <h2>{{c.data.course.course_name}}</h2>
       <div>
-        <div class="progress-donut">
-          
-            
-          
-          <svg class="donut-ring" width="100%" height="100%" viewBox="0 0 42 42">
-            <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ecf0f1" stroke-width="3"></circle>
-            <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#0984e3" stroke-width="3" stroke-dasharray="{{c.data.percentage * 0.01 * 100}} 100"></circle>
-          </svg>
-              <p id="progress-text">Progress: {{c.data.percentage}}% <!-- Progress Status --></p>
-          
+        <div class="progress-container">
+        <p id="progress-text">Progress: {{c.data.percentage}}% <!-- Progress Status --></p>
+        <div class="progress-donut">                  
+            <svg class="donut-ring" width="100%" height="100%" viewBox="0 0 42 42">
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ecf0f1" stroke-width="3"></circle>
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#0984e3" stroke-width="3" stroke-dasharray="{{c.data.percentage * 0.01 * 100}} 100"></circle>
+            </svg>
         </div>
+    </div>
           <ul>
           <li ng-repeat="module in c.data.modules">
             <a href="javascript:void(0)" ng-click="c.selectModule(module.sys_id)" ng-class="{'active': c.selectedModule === module.sys_id, 'completed': module.completed}">

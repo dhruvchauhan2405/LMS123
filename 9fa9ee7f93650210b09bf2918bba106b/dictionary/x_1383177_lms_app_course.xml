@@ -19,6 +19,7 @@
             </choice>
         </element>
         <element label="Description" max_length="5000" name="description" type="translated_html"/>
+        <element label="Enrollment limit" max_length="40" name="enrollment_limit" type="integer"/>
         <element choice="1" label="Delivery Type" mandatory="true" max_length="40" name="learning_medium" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Online" sequence="0" value="online"/>
