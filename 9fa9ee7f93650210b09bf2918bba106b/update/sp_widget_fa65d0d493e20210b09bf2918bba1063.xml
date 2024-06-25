@@ -4,8 +4,8 @@
         <client_script><![CDATA[function($scope, $location) {
   $scope.c.breadcrumbs = []; // Initialize breadcrumbs
   $scope.c.expanded = false;
-
-  // Define breadcrumb map
+ 
+  /* Define breadcrumb map
   var breadcrumbMap = {
     'lms_course_domain': ['Course Domain'],
     'lms_courses': ['Courses'],
@@ -19,9 +19,9 @@
     'lms_search_result': ['Search Results'],
 		'lms_my_profile':['My Profile']
   };
-
+ 
   var currentPage = $location.search().id; // Get current page ID
-
+ 
   if (breadcrumbMap[currentPage]) {
     breadcrumbMap[currentPage].forEach(function(label, index) {
       $scope.c.breadcrumbs.push({
@@ -29,8 +29,8 @@
         url: index === 0 ? '?id=lms_index' : ''
       });
     });
-  }
-
+  }*/
+ 
   // Method to expand breadcrumbs
   $scope.c.expand = function() {
     $scope.c.expanded = true;
@@ -84,7 +84,7 @@
   data.breadcrumbs = [];
   var currentPage = $sp.getParameter('id'); // Get current page ID
   var courseId = $sp.getParameter('course_id'); // Example: Get course ID from URL
-
+ 
   // Define breadcrumb map
   var breadcrumbMap = {
     'lms_course_domain': ['Course Domain'],
@@ -99,11 +99,11 @@
     'lms_search_result': ['Search Results'],
 		'lms_my_profile':['My Profile']
   };
-
+ 
   if (currentPage === 'lms_course_details' && courseId) {
     var gr = new GlideRecord('x_1383177_lms_app_course');
     if (gr.get(courseId)) {
-      data.breadcrumbs.push({ label: 'Home', url: '?id=lms_index' });
+      //data.breadcrumbs.push({ label: 'Home', url: '?id=lms_index' });
       data.breadcrumbs.push({ label: 'Courses', url: '?id=lms_courses' });
       data.breadcrumbs.push({ label: gr.getValue('name'), url: '' }); // Current page
     }
@@ -115,21 +115,20 @@
       });
     });
   }
-})();
-]]></script>
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-29 07:16:42</sys_created_on>
         <sys_id>fa65d0d493e20210b09bf2918bba1063</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>LMS Breadcrumbs</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_fa65d0d493e20210b09bf2918bba1063</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-25 05:22:39</sys_updated_on>
+        <sys_updated_on>2024-06-25 08:59:16</sys_updated_on>
         <template><![CDATA[<nav aria-label="Page breadcrumbs" role="navigation" class="breadcrumbs">
   <ul class="nav nav-pills nav-sm">
     <li>

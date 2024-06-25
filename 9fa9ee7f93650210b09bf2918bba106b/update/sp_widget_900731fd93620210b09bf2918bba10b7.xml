@@ -2,48 +2,53 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($sce, $location) {
-	/* widget controller */
-	var c = this;
-	c.data.selectedTab = 'description'; 
-	c.data.showModal = false;
-	c.data.showCancelModal = false; // New state for cancel confirmation modal
-	c.data.agreeToTerms = false;
+    /* widget controller */
+    var c = this;
+    c.data.selectedTab = 'description'; 
+    c.data.showModal = false;
+    c.data.showCancelModal = false; // New state for cancel confirmation modal
+    c.data.agreeToTerms = false;
 
-	// HTML content is safe to bind
-	if (c.data.course && c.data.course.description && c.data.course.description.value) {
-		c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
-	}
+    // HTML content is safe to bind
+    if (c.data.course && c.data.course.description && c.data.course.description.value) {
+        c.data.course.description.value = $sce.trustAsHtml(c.data.course.description.value);
+    }
 
-	c.enroll = function() {
-		c.server.update().then(function() {
-			var portalURL = $location.absUrl().split('?')[0];
-			var pageID = 'lms_enrollment_status'; 
-			var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
-			window.location.href = url;
-		});
-	};
+    c.enroll = function() {
+        c.server.update().then(function() {
+            var portalURL = $location.absUrl().split('?')[0];
+            var pageID = 'lms_enrollment_status'; 
+            var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+            window.location.href = url;
+        });
+    };
 
-	c.startCourse = function() {
-		var portalURL = $location.absUrl().split('?')[0];
-		var pageID = 'lms_modules_content'; 
-		var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
-		window.location.href = url;
-	};
+    c.startCourse = function() {
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_modules_content'; 
+        var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+        window.location.href = url;
+    };
 
-	c.cancelEnrollment = function() {
-		c.data.showCancelModal = true; // to show the cancel confirmation modal
-	};
+    c.cancelEnrollment = function() {
+        c.data.showCancelModal = true; // to show the cancel confirmation modal
+    };
 
-	c.confirmCancel = function() {
-		c.data.action='cancel';
-		c.server.update().then(function() {
-			var portalURL = $location.absUrl().split('?')[0];
-			var pageID = 'lms_course_details';
-			var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
-			window.location.href = url;
-		});
-	};
+    c.confirmCancel = function() {
+        c.data.action='cancel';
+        c.server.update().then(function() {
+            var portalURL = $location.absUrl().split('?')[0];
+            var pageID = 'lms_course_details';
+            var url = portalURL + '?id=' + pageID + '&sys_id=' + c.data.course_sys_id;
+            window.location.href = url;
+        });
+    };
 
+    // Function to handle the "Course is filled" button
+    c.courseFilled = function() {
+        // Do nothing or show a message indicating that the course is filled
+        alert('This course has reached its enrollment limit and is currently full.');
+    };
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -271,6 +276,7 @@ h2 {
 }
 
 p {
+  text-align: justify;
   margin-top: 10px;
   font-size: 18px;
   color: #34495e;
@@ -342,101 +348,110 @@ button:active {
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-	var courseSysId = $sp.getParameter('sys_id');
-	if (!input) {
-		data.course = null;
-		data.modules = [];
-		data.enrollmentCount = 0;
-		data.enrollmentCreated = false; // Initialize the enrollment creation flag
-		data.isEnrolled = false; // Initialize the enrollment check flag
-		data.isPending = false; // Initialize the pending approval flag
-		data.course_sys_id = courseSysId;
+    var courseSysId = $sp.getParameter('sys_id');
+    if (!input) {
+        data.course = null;
+        data.modules = [];
+        data.enrollmentCount = 0;
+        data.enrollmentCreated = false; // Initialize the enrollment creation flag
+        data.isEnrolled = false; // Initialize the enrollment check flag
+        data.isPending = false; // Initialize the pending approval flag
+        data.course_sys_id = courseSysId;
+        data.enrollmentLimitReached = false; // Initialize the enrollment limit flag
 
-		try {
-			var courseTable = 'x_1383177_lms_app_course';
-			var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by';
+        try {
+            var courseTable = 'x_1383177_lms_app_course';
+            var courseFields = 'course_name,description,thumbnail,learning_medium,sys_updated_on,sys_created_by,enrollment_limit';
 
-			if (courseSysId) {
-				var gr = new GlideRecordSecure(courseTable);
-				if (gr.get(courseSysId)) {
-					data.course = $sp.getFieldsObject(gr, gs.getMessage(courseFields));
+            if (courseSysId) {
+                var gr = new GlideRecordSecure(courseTable);
+                if (gr.get(courseSysId)) {
+                    data.course = $sp.getFieldsObject(gr, gs.getMessage(courseFields));
 
-					// Getting related modules
-					var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
-					var moduleTable = 'x_1383177_lms_app_module';
+                    // Get the enrollment limit from the course record
+                    var enrollmentLimit = gr.getValue('enrollment_limit');
 
-					var moduleGr = new GlideRecordSecure(courseModuleTable);
-					moduleGr.addQuery('x_1383177_lms_app_course', courseSysId);
-					moduleGr.orderBy('order');
-					moduleGr.query();
+                    // Getting related modules
+                    var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+                    var moduleTable = 'x_1383177_lms_app_module';
 
-					while (moduleGr.next()) {
-						var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); 
-						var moduleGrDetails = new GlideRecordSecure(moduleTable);
-						if (moduleGrDetails.get(moduleSysId)) {
-							var moduleObj = {
-								name: gs.getMessage(moduleGrDetails.getValue('name')),
-								description: gs.getMessage(moduleGrDetails.getValue('short_description')),
-							};
-							data.modules.push(moduleObj);
-						}
-					}
+                    var moduleGr = new GlideRecordSecure(courseModuleTable);
+                    moduleGr.addQuery('x_1383177_lms_app_course', courseSysId);
+                    moduleGr.orderBy('order');
+                    moduleGr.query();
 
-					// Get the count of enrollments for the course using GlideAggregate
-					var enrollmentTable = 'x_1383177_lms_app_enrollment';
-					var enrollmentGa = new GlideAggregate(enrollmentTable);
-					enrollmentGa.addQuery('course_name', courseSysId); 
-					enrollmentGa.addAggregate('COUNT');
-					enrollmentGa.query();
-					if (enrollmentGa.next()) {
-						data.enrollmentCount = enrollmentGa.getAggregate('COUNT');
-					}
-					
-					var enrollmentGr = new GlideRecordSecure(enrollmentTable);
-					enrollmentGr.addQuery('course_name', courseSysId);
-					enrollmentGr.addQuery('learner_name', gs.getUserID());
-					enrollmentGr.query();
-					while (enrollmentGr.next()) {
-						var status = enrollmentGr.getValue('status');
-						if (status == 'approved') {
-							data.isEnrolled = true;
-							break;
-						} else if (status == 'Approval Pending' || status == 'requested') {
-							data.isPending = true;
-						}
-					}
-				}
-			}
-		} catch (e) {
-			gs.error(gs.getMessage("Error retrieving course details: {0}", e.message));
-		}
-	}
+                    while (moduleGr.next()) {
+                        var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); 
+                        var moduleGrDetails = new GlideRecordSecure(moduleTable);
+                        if (moduleGrDetails.get(moduleSysId)) {
+                            var moduleObj = {
+                                name: gs.getMessage(moduleGrDetails.getValue('name')),
+                                description: gs.getMessage(moduleGrDetails.getValue('short_description')),
+                            };
+                            data.modules.push(moduleObj);
+                        }
+                    }
 
-	if (input) {
-		var courseSysId1 = $sp.getParameter('sys_id');
+                    // Get the count of enrollments for the course using GlideAggregate
+                    var enrollmentTable = 'x_1383177_lms_app_enrollment';
+                    var enrollmentGa = new GlideAggregate(enrollmentTable);
+                    enrollmentGa.addQuery('course_name', courseSysId); 
+                    enrollmentGa.addAggregate('COUNT');
+                    enrollmentGa.query();
+                    if (enrollmentGa.next()) {
+                        data.enrollmentCount = enrollmentGa.getAggregate('COUNT');
+                    }
 
-		if (input.action == 'cancel') {
-			gs.addInfoMessage(gs.getUserID());
-			var enrollmentDeleteGr = new GlideRecordSecure('x_1383177_lms_app_enrollment');
-			enrollmentDeleteGr.addQuery('course_name', courseSysId1);
-			enrollmentDeleteGr.addQuery('learner_name', gs.getUserID());
-			enrollmentDeleteGr.query();
+                    // Check if the enrollment limit is reached
+                    if (enrollmentLimit && data.enrollmentCount >= enrollmentLimit) {
+                        data.enrollmentLimitReached = true;
+                    }
+                    
+                    var enrollmentGr = new GlideRecordSecure(enrollmentTable);
+                    enrollmentGr.addQuery('course_name', courseSysId);
+                    enrollmentGr.addQuery('learner_name', gs.getUserID());
+                    enrollmentGr.query();
+                    while (enrollmentGr.next()) {
+                        var status = enrollmentGr.getValue('status');
+                        if (status == 'approved') {
+                            data.isEnrolled = true;
+                            break;
+                        } else if (status == 'Approval Pending' || status == 'requested') {
+                            data.isPending = true;
+                        }
+                    }
+                }
+            }
+        } catch (e) {
+            gs.error(gs.getMessage("Error retrieving course details: {0}", e.message));
+        }
+    }
 
-			while (enrollmentDeleteGr.next()) {
-				enrollmentDeleteGr.deleteRecord();
-			}
+    if (input) {
+        var courseSysId1 = $sp.getParameter('sys_id');
 
-			data.cancellationSuccess = true; // Add a flag to indicate successful cancellation
-		} else {
-			var enrollmentNewGr = new GlideRecordSecure('x_1383177_lms_app_enrollment'); 
-			enrollmentNewGr.initialize();
+        if (input.action == 'cancel') {
+            gs.addInfoMessage(gs.getUserID());
+            var enrollmentDeleteGr = new GlideRecordSecure('x_1383177_lms_app_enrollment');
+            enrollmentDeleteGr.addQuery('course_name', courseSysId1);
+            enrollmentDeleteGr.addQuery('learner_name', gs.getUserID());
+            enrollmentDeleteGr.query();
 
-			enrollmentNewGr.setValue('learner_name', gs.getUserID()); 
-			enrollmentNewGr.setValue('course_name', courseSysId1); 
-			enrollmentNewGr.insert();
-			data.enrollmentCreated = true;
-		}
-	}
+            while (enrollmentDeleteGr.next()) {
+                enrollmentDeleteGr.deleteRecord();
+            }
+
+            data.cancellationSuccess = true; // Add a flag to indicate successful cancellation
+        } else {
+            var enrollmentNewGr = new GlideRecordSecure('x_1383177_lms_app_enrollment'); 
+            enrollmentNewGr.initialize();
+
+            enrollmentNewGr.setValue('learner_name', gs.getUserID()); 
+            enrollmentNewGr.setValue('course_name', courseSysId1); 
+            enrollmentNewGr.insert();
+            data.enrollmentCreated = true;
+        }
+    }
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -444,14 +459,14 @@ button:active {
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>163</sys_mod_count>
+        <sys_mod_count>182</sys_mod_count>
         <sys_name>LMS Course Detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-24 06:38:52</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-25 08:56:15</sys_updated_on>
         <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">
@@ -497,9 +512,11 @@ button:active {
     <h2 ng-if="c.data.isPending" style="background-color: orange; color: white;">${Your approval is pending.}</h2>
     <img ng-src="{{ c.data.course.thumbnail.display_value }}" alt="${Course Image}">
     <h2>{{ c.data.course.course_name.display_value }}</h2>
-    <button ng-if="c.data.isEnrolled" ng-click="c.startCourse()" style="background-color: green; color: white;">${Start now}</button>
-    <button ng-if="!c.data.isEnrolled && !c.data.isPending" ng-click="c.data.showModal = true">${Start Enrollment}</button>
+    <button ng-if="(c.data.isEnrolled && c.data.enrollmentLimitReached) || (c.data.isEnrolled && !c.data.enrollmentLimitReached)" ng-click="c.startCourse()" style="background-color: green; color: white;">${Start now}</button>
+    <button ng-if="!c.data.isEnrolled && c.data.enrollmentLimitReached" ng-click="c.courseFilled()" style="background-color: red; color: white;">${Course is filled}</button>
+    <button ng-if="!c.data.isEnrolled && !c.data.isPending && !c.data.enrollmentLimitReached" ng-click="c.data.showModal = true">${Start Enrollment}</button>
     <button ng-if="c.data.isPending" ng-click="c.cancelEnrollment()" style="background-color: #880808; color: white;">${Cancel Request}</button>
+    
   </div>
 
   <div class="modal" ng-show="c.data.showModal">
