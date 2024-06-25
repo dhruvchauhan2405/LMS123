@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope) {
+        <client_script><![CDATA[api.controller = function($scope, $location) {
     var c = this;
     c.latestEnrollment = {};
 
-    // Function to fetch latest enrolled course and progress
+    // Function to fetch the latest enrolled course and progress
     c.fetchLatestEnrolledCourse = function() {
         // Check if there is a latest enrollment
-			console.log("Init fetch");
         if (c.data.latestEnrollment && c.data.latestEnrollment.course) {
-						console.log("Latest Course Recieved!");
             c.latestEnrollment = c.data.latestEnrollment.course;
-            c.progress = 50; // Example progress percentage, replace with actual logic
+            c.progress = c.latestEnrollment.progress || 0; // Use actual progress if available, else default to 0
         } else {
             // No latest enrollment found
-					console.log("No Course Recieved!");
             c.latestEnrollment = null;
         }
+    };
+
+    // Function to redirect to course detail page
+    c.redirectToCourseDetail = function(sys_id) {
+        var portalURL = $location.absUrl().split('?')[0];
+    var pageID = 'lms_modules_content';
+    var url = portalURL + '?id=' + pageID + '&sys_id=' + c.latestEnrollment.sys_id;
+    window.location.href = url;
     };
 
     // Initialize the widget
@@ -25,32 +30,157 @@
         c.fetchLatestEnrolledCourse();
     };
 
-    // Call initialize function
+    // Initialize on load
     c.initializeWidget();
 };
 ]]></client_script>
         <controller_as>c</controller_as>
         <css>.widget-latest-course {
+  
+  font-family: 'Poppins', sans-serif;
   width: 100%;
-  max-width: 400px; /* Adjust as necessary */
-  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.widget-header {
+  font-size: 24px;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.course-container {
+  
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+  width: auto;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image {
+  transform: scale(1.1);
+}
+
+.course-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: left;
+}
+
+.course-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #777;
+  text-align: left;
+  margin-bottom: 15px;
 }
 
 .course-progress {
   width: 100%;
-  height: 20px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
   overflow: hidden;
+  height: 25px;
   margin-top: 10px;
+  position: relative;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #007bff;
-  transition: width 0.3s ease;
+  background-color: #4caf50;
+  text-align: right;
+  line-height: 25px;
+  color: white;
+  padding-right: 10px;
+  border-radius: 10px 0 0 10px;
+  transition: width 2s ease-in-out;
 }
-</css>
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.3));
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (max-width: 768px) {
+  .course-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-image {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .course-details {
+    align-items: center;
+    text-align: center;
+  }
+
+  .course-title,
+  .course-description {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-card {
+    width: 100%;
+  }
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -69,7 +199,7 @@
 
     // Get the user ID of the current user
     var userID = gs.getUserID();
-    gs.addInfoMessage("Current User ID: " + userID);
+    //gs.addInfoMessage("Current User ID: " + userID);
 
     // Query the enrollment table for the latest incomplete enrollment for the current user
     var grEnrollment = new GlideRecordSecure('x_1383177_lms_app_enrollment');
@@ -79,10 +209,10 @@
     grEnrollment.setLimit(1);
     grEnrollment.query();
 
-    gs.addInfoMessage("Enrollment Record Count: " + grEnrollment.getRowCount());
+    //gs.addInfoMessage("Enrollment Record Count: " + grEnrollment.getRowCount());
 
     if (grEnrollment.next()) {
-        gs.addInfoMessage("Found Enrollment Record: " + grEnrollment.getDisplayValue('course_name'));
+        //gs.addInfoMessage("Found Enrollment Record: " + grEnrollment.getDisplayValue('course_name'));
         data.latestEnrollment = {
             courseName: grEnrollment.getDisplayValue('course_name'),
             courseSysId: grEnrollment.getValue('course_name')
@@ -92,16 +222,17 @@
         var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
         if (grCourse.get(data.latestEnrollment.courseSysId)) {
             data.latestEnrollment.course = {
+								sys_id: grCourse.getValue('sys_id'),
                 Name: grCourse.getDisplayValue('course_name'),
                 Thumbnail: grCourse.getDisplayValue('thumbnail'),
                 Description: grCourse.getDisplayValue('short_description')
             };
-            gs.addInfoMessage("Found Course Record: " + grCourse.getDisplayValue('course_name'));
+            //gs.addInfoMessage("Found Course Record: " + grCourse.getDisplayValue('course_name'));
         } else {
-            gs.addInfoMessage("Course Record Not Found for Sys ID: " + data.latestEnrollment.courseSysId);
+            //gs.addInfoMessage("Course Record Not Found for Sys ID: " + data.latestEnrollment.courseSysId);
         }
     } else {
-        gs.addInfoMessage("No incomplete enrollment records found for user.");
+        //gs.addInfoMessage("No incomplete enrollment records found for user.");
     }
 })();
 ]]></script>
@@ -110,25 +241,28 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-24 11:31:37</sys_created_on>
         <sys_id>1e198b68938b4210b09bf2918bba10d4</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>LMS Continue Course</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_1e198b68938b4210b09bf2918bba10d4</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-24 12:00:24</sys_updated_on>
+        <sys_updated_on>2024-06-24 18:22:41</sys_updated_on>
         <template><![CDATA[<div class="widget-latest-course">
+  <div class="widget-header">Continue your course:</div>
   <div class="course-container">
-    <div class="course-card">
-      <img class="course-image" ng-src="{{ c.latestCourse.Thumbnail }}" alt="{{ c.latestCourse.Name }}">
-      <div class="course-name" ng-bind="c.latestCourse.Name"></div>
-      <div class="course-progress">
-        <div class="progress-bar" style="width: {{ c.progress }}%;"></div>
+    <div class="course-card" ng-click="c.redirectToCourseDetail('{{ c.latestEnrollment.sys_id }}')">
+      <img class="course-image" src="{{ c.latestEnrollment.Thumbnail }}" alt="{{ c.latestEnrollment.Name }}">
+      <div class="course-details">
+        <div class="course-title">{{ c.latestEnrollment.Name }}</div>
+        <div class="course-description">Keep up the great work! You're making excellent progress.</div>
+        <div class="course-progress">
+          <div class="progress-bar" style="width: {{ c.progress }}%;"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>

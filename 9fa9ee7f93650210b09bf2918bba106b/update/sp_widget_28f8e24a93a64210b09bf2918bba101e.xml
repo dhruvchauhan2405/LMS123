@@ -451,7 +451,37 @@ body {
   background-color: #74b9ff;
 }
 
-</css>
+/* Progress Donut Styles */
+.progress-donut {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 20px auto;
+}
+
+.donut-ring {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.donut-segment {
+  fill: transparent;
+}
+
+.donut-segment:nth-child(2) {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.donut-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #2c3e50;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -583,132 +613,45 @@ body {
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>506</sys_mod_count>
+        <sys_mod_count>526</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-24 13:48:35</sys_updated_on>
+        <sys_updated_on>2024-06-25 04:07:58</sys_updated_on>
         <template><![CDATA[<div class="container">  
   <div class="sidebar">
     <div class="sidebar-content">
       <img class="course-image" src="{{c.data.course.thumbnail}}"> 
       <h2>{{c.data.course.course_name}}</h2>
-   
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       <div>
-        <p id='hello'>Progress: {{c.data.percentage}}%</p> <!-- Progress Status -->
-        <ul>
+        <div class="progress-donut">
+          
+            
+          
+          <svg class="donut-ring" width="100%" height="100%" viewBox="0 0 42 42">
+            <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ecf0f1" stroke-width="3"></circle>
+            <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#0984e3" stroke-width="3" stroke-dasharray="{{c.data.percentage * 0.01 * 100}} 100"></circle>
+          </svg>
+              <p id="progress-text">Progress: {{c.data.percentage}}% <!-- Progress Status --></p>
+          
+        </div>
+          <ul>
           <li ng-repeat="module in c.data.modules">
             <a href="javascript:void(0)" ng-click="c.selectModule(module.sys_id)" ng-class="{'active': c.selectedModule === module.sys_id, 'completed': module.completed}">
               {{module.name}}
               <span ng-if="module.status" class="tick-mark">✔</span>
             </a>
           </li>
-        </ul>
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+          </ul>
+      </div>      
       <div class="sidebar-footer">
         <a href="javascript:void(0)" ng-click="c.goToMyLearnings()">${My Learnings}</a>
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <div class="content">
     <div class="page">
       <!-- Initial Page Content -->
@@ -718,8 +661,6 @@ body {
         <p class="course-description">{{c.data.course.short_description}}</p>
         <button class="next-lesson" ng-click="c.nextLesson()">Start Course</button>
       </div>
-
-
       <!-- Module Content -->
       <div class="green-progress"></div>
       <div class="module-contents" ng-show="c.isModuleView">
@@ -743,8 +684,6 @@ body {
           <button class="complete-course" ng-click="c.completeCourse()">${Complete Course}</button>
         </div>
       </div>
-
-
     </div>
   </div>
 </div>
