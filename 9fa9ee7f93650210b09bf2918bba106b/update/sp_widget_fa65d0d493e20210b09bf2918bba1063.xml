@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>standard</category>
-        <client_script><![CDATA[function($scope, $location) {
+        <client_script><![CDATA[api.controller=function($scope, $location) {
   $scope.c.breadcrumbs = []; // Initialize breadcrumbs
   $scope.c.expanded = false;
  
-  /* Define breadcrumb map
-  var breadcrumbMap = {
-    'lms_course_domain': ['Course Domain'],
-    'lms_courses': ['Courses'],
-    'lms_discussion_forum': ['Discussion Forum'],
-    'lms_forum_answers': ['Discussion Forum', 'Forum Answers'],
-    'lms_course_details': ['Courses', 'Course Details'],
-    'lms_enrollment_status': ['Enrollment Status'],
-    'lms_modules_content': ['Modules', 'Modules Content'],
-    'lms_my_learning': ['My Learning'],
-    'lms_question': ['Discussion Forum', 'Post your Question'],
-    'lms_search_result': ['Search Results'],
-		'lms_my_profile':['My Profile']
-  };
- 
-  var currentPage = $location.search().id; // Get current page ID
- 
-  if (breadcrumbMap[currentPage]) {
-    breadcrumbMap[currentPage].forEach(function(label, index) {
-      $scope.c.breadcrumbs.push({
-        label: label,
-        url: index === 0 ? '?id=lms_index' : ''
-      });
-    });
-  }*/
  
   // Method to expand breadcrumbs
   $scope.c.expand = function() {
@@ -83,29 +58,51 @@
         <script><![CDATA[(function() {
   data.breadcrumbs = [];
   var currentPage = $sp.getParameter('id'); // Get current page ID
-  var courseId = $sp.getParameter('course_id'); // Example: Get course ID from URL
+  //var courseId = $sp.getParameter('course_id'); // Example: Get course ID from URL
+	var sysId = $sp.getParameter('sys_id');
+	var domainId = $sp.getParameter('domain_sys_id');
  
   // Define breadcrumb map
   var breadcrumbMap = {
-    'lms_course_domain': ['Course Domain'],
+    'lms_course_domain': ['Domains'],
     'lms_courses': ['Courses'],
     'lms_discussion_forum': ['Discussion Forum'],
     'lms_forum_answers': ['Discussion Forum', 'Forum Answers'],
     'lms_course_details': ['Courses', 'Course Details'],
     'lms_enrollment_status': ['Enrollment Status'],
     'lms_modules_content': ['Modules', 'Modules Content'],
-    'lms_my_learning': ['My Learning'],
+    'lms_my_learning': ['My Learnings'],
     'lms_question': ['Discussion Forum', 'Post your Question'],
     'lms_search_result': ['Search Results'],
 		'lms_my_profile':['My Profile']
   };
  
-  if (currentPage === 'lms_course_details' && courseId) {
-    var gr = new GlideRecord('x_1383177_lms_app_course');
-    if (gr.get(courseId)) {
+  if (currentPage == 'lms_course_details' && sysId) {
+    var grCourse = new GlideRecord('x_1383177_lms_app_course');
+    if (grCourse.get(sysId)) {
       //data.breadcrumbs.push({ label: 'Home', url: '?id=lms_index' });
       data.breadcrumbs.push({ label: 'Courses', url: '?id=lms_courses' });
-      data.breadcrumbs.push({ label: gr.getValue('name'), url: '' }); // Current page
+      data.breadcrumbs.push({ label: 'Course Details', url: '' }); // Current page
+    }
+  } else if (currentPage == 'lms_forum_answers' && sysId) {
+    var grAnswer = new GlideRecord('x_1383177_lms_app_discussion');
+    if (grAnswer.get(sysId)) {
+      //data.breadcrumbs.push({ label: 'Home', url: '?id=lms_index' });
+      data.breadcrumbs.push({ label: 'Discussion Forum', url: '?id=lms_discussion_forum' });
+      data.breadcrumbs.push({ label: 'Forum Answers', url: '' }); // Current page
+    }
+  } else if (currentPage == 'lms_question') {
+    
+      //data.breadcrumbs.push({ label: 'Home', url: '?id=lms_index' });
+      data.breadcrumbs.push({ label: 'Discussion Forum', url: '?id=lms_discussion_forum' });
+      data.breadcrumbs.push({ label: 'Post your question', url: '' }); // Current page
+    
+  } else if (currentPage == 'lms_courses' && domainId) {
+    var domain = new GlideRecord('x_1383177_lms_app_course_domain');
+    if (domain.get(domainId)) {
+      //data.breadcrumbs.push({ label: 'Home', url: '?id=lms_index' });
+      data.breadcrumbs.push({ label: 'Domain', url: '?id=lms_course_domain' });
+      data.breadcrumbs.push({ label: 'Courses', url: '' }); // Current page
     }
   } else if (breadcrumbMap[currentPage]) {
     breadcrumbMap[currentPage].forEach(function(label, index) {
@@ -121,28 +118,28 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-29 07:16:42</sys_created_on>
         <sys_id>fa65d0d493e20210b09bf2918bba1063</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>LMS Breadcrumbs</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_fa65d0d493e20210b09bf2918bba1063</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-25 08:59:16</sys_updated_on>
+        <sys_updated_on>2024-06-26 04:57:41</sys_updated_on>
         <template><![CDATA[<nav aria-label="Page breadcrumbs" role="navigation" class="breadcrumbs">
   <ul class="nav nav-pills nav-sm">
     <li>
       <span><a ng-href="?id=lms_index">Home</a>
         <i aria-hidden="true" class="fa fa-chevron-right flip-icon-rtl"></i></span>
     </li>
-    <li ng-if="!c.expanded && c.breadcrumbs && c.breadcrumbs.length > 2">
+    <li ng-if="!c.expanded && c.data.breadcrumbs && c.data.breadcrumbs.length > 2">
       <span><a ng-click="c.expand()"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
         <i aria-hidden="true" class="fa fa-chevron-right flip-icon-rtl"></i></span>
     </li>
-    <li ng-if="!c.breadcrumbs">
+    <li ng-if="!c.data.breadcrumbs">
       <span style="display: inline;" class="a-disabled" aria-current="page">{{page.title}}</span>
     </li>
-    <li ng-if="c.expanded || ((c.breadcrumbs.length > 2 && $index > c.breadcrumbs.length-3) || (c.breadcrumbs.length <= 2))" ng-repeat="item in c.breadcrumbs track by $index">
+    <li ng-if="c.expanded || ((c.data.breadcrumbs.length > 2 && $index > c.data.breadcrumbs.length-3) || (c.data.breadcrumbs.length <= 2))" ng-repeat="item in c.data.breadcrumbs track by $index">
       <span><a ng-if="!$last" ng-href="{{item.url}}">{{item.label}}</a>
         <span class="a-disabled" ng-if="$last" aria-current="page">{{item.label}}</span>
         <i aria-hidden="true" ng-if="!$last" class="fa fa-chevron-right flip-icon-rtl"></i></span>

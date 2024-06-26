@@ -199,14 +199,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-05 04:57:22</sys_created_on>
         <sys_id>35a8b356936e8210b09bf2918bba10a1</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>LMS Questions</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_35a8b356936e8210b09bf2918bba10a1</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-19 10:01:15</sys_updated_on>
+        <sys_updated_on>2024-06-26 04:58:36</sys_updated_on>
         <template><![CDATA[<div class="question-container">
   <h1>${Post Your Question}</h1>
   <form class="question-form" ng-submit="c.submitForm(c.questionForm.$valid)" name="c.questionForm" novalidate>
@@ -218,14 +218,14 @@
       <label for="question-details">${Details}</label>
       <textarea id="question-details" ng-model="c.questionDetails" rows="5" placeholder="Provide detailed information about your question" required></textarea>
     </div>
-    <div class="form-group">
+    <!--<div class="form-group">
       <label for="question-tags">${Tags}</label>
       <input type="text" id="question-tags" placeholder="Add tags to categorize your question">
     </div>
     <div class="form-group file-upload">
       <label for="file-attachment">${Attach File}</label>
       <input type="file" id="file-attachment" multiple>
-    </div>
+    </div>-->
     <button type="submit" class="submit-btn">${Submit Question}</button>
   </form>
 </div>

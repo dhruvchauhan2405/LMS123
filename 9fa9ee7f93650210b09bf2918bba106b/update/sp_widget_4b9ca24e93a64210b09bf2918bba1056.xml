@@ -73,10 +73,12 @@
 
 	// Function to calculate time ago
 	c.timeAgo = function(date) {
-		var now = new Date();
-		var seconds = Math.floor((now - date) / 1000);
-		var interval = Math.floor(seconds / 31536000);
-
+		var currentDate = new Date();
+    currentDate.setMinutes(currentDate.getMinutes() - 330); // Add 330 minutes to current time
+    
+    var seconds = Math.floor((currentDate - new Date(date)) / 1000);
+    var interval = seconds / 31536000;
+		
 		if (interval >= 1) return interval + " year" + (interval > 1 ? "s" : "") + " ago";
 		interval = Math.floor(seconds / 2592000);
 		if (interval >= 1) return interval + " month" + (interval > 1 ? "s" : "") + " ago";
@@ -186,17 +188,17 @@
   align-items: center;
   gap: 5px;
   padding: 10px 20px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
+  //background-color: #f5f5f5;
+  //border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
   font-size: 1em;
   color: #333;
-  border: 1px solid #ddd;
+  //border: 1px solid #ddd;
 }
 
 .reply-form label:hover {
-  background-color: #e0e0e0;
+  //background-color: #e0e0e0;
 }
 
 .reply-form i {
@@ -428,14 +430,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>122</sys_mod_count>
+        <sys_mod_count>132</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-20 04:58:56</sys_updated_on>
+        <sys_updated_on>2024-06-26 06:47:42</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
   <div class="discussion-header">
     <div class="question-meta">
@@ -476,9 +478,9 @@
         <textarea id="editor" ng-model="c.answer" rows="5" placeholder="Write your answer here..." required></textarea>
         <div class="reply-form-controls">
           <label for="attachment">
-            <i class="fa fa-paperclip"></i>
+            <!--<i class="fa fa-paperclip"></i>
             <span>Attach files: </span>
-            <input type="file" id="attachment" multiple>
+            <input type="file" id="attachment" multiple>-->
           </label>
           <button type="submit" class="submit-btn">Submit</button>
         </div>

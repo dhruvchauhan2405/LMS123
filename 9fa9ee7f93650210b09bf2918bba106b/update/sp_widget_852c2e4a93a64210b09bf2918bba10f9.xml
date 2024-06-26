@@ -77,20 +77,23 @@
 
 	// Function to calculate time difference
 	c.timeSince = function(date) {
-		var seconds = Math.floor((new Date() - new Date(date)) / 1000);
-		var interval = seconds / 31536000;
+			var currentDate = new Date();
+    currentDate.setMinutes(currentDate.getMinutes() - 330); // Add 330 minutes to current time
+    
+    var seconds = Math.floor((currentDate - new Date(date)) / 1000);
+    var interval = seconds / 31536000;
 
-		if (interval > 1) return Math.floor(interval) + " year" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
-		interval = seconds / 2592000;
-		if (interval > 1) return Math.floor(interval) + " month" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
-		interval = seconds / 86400;
-		if (interval > 1) return Math.floor(interval) + " day" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
-		interval = seconds / 3600;
-		if (interval > 1) return Math.floor(interval) + " hour" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
-		interval = seconds / 60;
-		if (interval > 1) return Math.floor(interval) + " minute" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
-		return Math.floor(seconds) + " second" + (Math.floor(seconds) > 1 ? "s" : "") + " ago";
-	};
+			if (interval > 1) return Math.floor(interval) + " year" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
+			interval = seconds / 2592000;
+			if (interval > 1) return Math.floor(interval) + " month" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
+			interval = seconds / 86400;
+			if (interval > 1) return Math.floor(interval) + " day" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
+			interval = seconds / 3600;
+			if (interval > 1) return Math.floor(interval) + " hour" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
+			interval = seconds / 60;
+			if (interval >= 1) return Math.floor(interval) + " minute" + (Math.floor(interval) > 1 ? "s" : "") + " ago";
+			return "just now";
+		};
 	
 	// Call the function to show all discussions
 	c.showAllDiscussions();
@@ -394,14 +397,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:44:36</sys_created_on>
         <sys_id>852c2e4a93a64210b09bf2918bba10f9</sys_id>
-        <sys_mod_count>87</sys_mod_count>
+        <sys_mod_count>99</sys_mod_count>
         <sys_name>LMS Discussion Forum</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_852c2e4a93a64210b09bf2918bba10f9</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-25 06:41:01</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-06-26 06:53:49</sys_updated_on>
         <template><![CDATA[<div class="forum-page">
   <div class="forum-header">
     <h1>${Discussion Forum}</h1>
