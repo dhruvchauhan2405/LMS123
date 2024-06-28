@@ -1,109 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function(spUtil, $scope, i18n) {
-	var c = this;
-	c.selectedModuleIndex = null;
-	c.isModuleView = false;
-	c.showCompletionModal = false;
-	c.completedCoursePage = false;
+        <client_script><![CDATA[api.controller = function(spUtil, $scope, i18n, $window, $timeout) {
+    var c = this;
+    c.selectedModuleIndex = null;
+    c.isModuleView = false;
+    c.showCompletionModal = false;
+    c.completedCoursePage = false;
 
+    // Function to select a module by index
+    c.selectModuleByIndex = function(index) {
+        c.selectedModuleIndex = index;
+        c.selectedModule = c.data.modules[index].sys_id;
+        c.isModuleView = true; // Switch to module view
+    };
 
-	// Function to select a module by index
-	c.selectModuleByIndex = function(index) {
-		c.selectedModuleIndex = index;
-		c.selectedModule = c.data.modules[index].sys_id;
-		c.isModuleView = true; // Switch to module view
-	};
+    // Function to select a module by sys_id
+    c.selectModule = function(moduleSysId) {
+        c.completedCoursePage = false;
+        for (var i = 0; i < c.data.modules.length; i++) {
+            if (c.data.modules[i].sys_id === moduleSysId) {
+                c.selectModuleByIndex(i);
+                break;
+            }
+        }
+    };
 
-	// Function to select a module by sys_id
-	c.selectModule = function(moduleSysId) {
-		c.completedCoursePage = false;
-		for (var i = 0; i < c.data.modules.length; i++) {
-			if (c.data.modules[i].sys_id === moduleSysId) {
-				c.selectModuleByIndex(i);
-				break;
-			}
-		}
-	};
+    // Helper function to get the current module
+    c.getCurrentModule = function() {
+        if (c.selectedModuleIndex !== null) {
+            return c.data.modules[c.selectedModuleIndex];
+        }
+        return {};
+    };
 
-	// Helper function to get the current module
-	c.getCurrentModule = function() {
-		if (c.selectedModuleIndex !== null) {
-			return c.data.modules[c.selectedModuleIndex];
-		}
-		return {};
-	};
+    // Check if current module is the last module
+    c.isLastModule = function() {
+        return c.selectedModuleIndex !== null && c.selectedModuleIndex === c.data.modules.length - 1;
+    };
 
-	// Check if current module is the last module
-	c.isLastModule = function() {
-		return c.selectedModuleIndex !== null && c.selectedModuleIndex === c.data.modules.length - 1;
-	};
+    // Navigate to the next lesson
+    c.nextLesson = function() {
+        // If Module view is off
+        if (!c.isModuleView) {
+            // If on the initial page, switch to the first module
+            c.isModuleView = true;
+            if (c.data.modules.length > 0) {
+                c.selectModuleByIndex(0);
+            }
+        } else if (c.selectedModuleIndex !== null) {
+            c.data.selectedmodule = c.selectedModuleIndex;
+            c.data.modules[c.selectedModuleIndex].status = true;
+            c.server.update().then(function(response) {
+                c.data.percentage = response.percent;
+            });
+            if (c.selectedModuleIndex < c.data.modules.length - 1) {
+                c.selectModuleByIndex(c.selectedModuleIndex + 1);
+            } else {
+                c.isModuleView = false;
+                c.showCompletionModal = false;
+                c.completedCoursePage = true;
+            }
 
-	// Navigate to the next lesson
-	c.nextLesson = function() {
+            // Scroll to the bottom of the header
+            $timeout(function() {
+                var headerElement = document.querySelector('.module-header');
+                if (headerElement) {
+                    var headerHeight = headerElement.offsetHeight;
+                    window.scrollTo(0, headerHeight);
+                } else {
+                    window.scrollTo(0, 0);
+                }
+            }, 0);
+        }
+    };
 
-		//If Module view is off
-		if (!c.isModuleView) {
-			// If on the initial page, switch to the first module
-			c.isModuleView = true;
-			if (c.data.modules.length > 0) {
-				c.selectModuleByIndex(0);
-			}
-		}
+    // Complete the course
+    c.completeCourse = function() {
+        c.data.action = 'complete';
+        c.server.update().then(function() {
+            c.showCompletionModal = true;
+        });
+    };
 
+    // Navigate to the previous lesson
+    c.prevLesson = function() {
+        if (c.selectedModuleIndex !== null && c.selectedModuleIndex > 0) {
+            c.selectModuleByIndex(c.selectedModuleIndex - 1);
+        }
+    };
 
-		else if (c.selectedModuleIndex !== null) {
-			c.data.selectedmodule = c.selectedModuleIndex;
-			c.data.modules[c.selectedModuleIndex].status = true;
-			c.server.update().then(function(response){
-				c.data.percentage= response.percent;
-			});
-			if (c.selectedModuleIndex < c.data.modules.length - 1) {
-				c.selectModuleByIndex(c.selectedModuleIndex+1);
-
-			} else {
-
-				c.isModuleView = false;
-				c.showCompletionModal = false; 
-				c.completedCoursePage = true;
-			}
-
-		}
-	};
-
-
-	// Complete the course
-	c.completeCourse = function() {
-		c.data.action='complete';
-		c.server.update().then(function() {
-			c.showCompletionModal = true;
-		});
-
-		//if (c.data.percentage==100) {
-		
-		// $scope.$apply(); // Ensure Angular updates the scope
-
-	};
-
-	// Function to check if all modules are completed
-
-
-	// Navigate to the previous lesson
-	c.prevLesson = function() {
-		if (c.selectedModuleIndex !== null && c.selectedModuleIndex > 0) {
-			c.selectModuleByIndex(c.selectedModuleIndex - 1);
-		}
-	};
-
-	// Function to navigate to My Learnings page
-	c.goToMyLearnings = function() {
-		// Assuming there is a function to navigate to My Learnings page
-		window.location.href = 'https://dev211199.service-now.com/lms?id=lms_my_learning'; // Adjust the URL as necessary
-	};
-};]]></client_script>
+    // Function to navigate to My Learnings page
+    c.goToMyLearnings = function() {
+        // Assuming there is a function to navigate to My Learnings page
+        window.location.href = 'https://dev211199.service-now.com/lms?id=lms_my_learning'; // Adjust the URL as necessary
+    };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Universal Styles */
+html {
+    scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
@@ -626,14 +624,14 @@ body {
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>545</sys_mod_count>
+        <sys_mod_count>557</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-26 06:18:34</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-26 16:42:39</sys_updated_on>
         <template><![CDATA[<div class="container">  
   <div class="sidebar">
     <div class="sidebar-content">

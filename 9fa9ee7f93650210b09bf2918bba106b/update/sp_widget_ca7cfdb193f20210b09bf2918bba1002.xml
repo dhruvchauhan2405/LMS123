@@ -41,6 +41,7 @@
         <css>
 .courses-list {
   padding: 20px;
+  margin-bottom: 300px;
 }
 
 .courses-list h1 {
@@ -76,13 +77,13 @@
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  //transition: all 0.3s ease;
   overflow: hidden;
   margin: 10px;
 }
 
 .course-card:hover {
-  transform: translateY(-5px);
+  //transform: translateY(-5px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -93,11 +94,11 @@
   border-radius: 5px;
   margin-bottom: 10px;
   aspect-ratio: 1;
-  transition: transform 0.3s ease;
+  //transition: transform 0.3s ease;
 }
 
 .course-card:hover .course-image {
-  transform: scale(1.1);
+  //transform: scale(1.1);
 }
 
 .course-name {
@@ -167,6 +168,60 @@
 .altcourse:hover {
   color: #3241c9;
 }
+
+
+.course-card:hover .course-hover-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.course-hover-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.course-hover-details h3 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.course-hover-details p {
+  font-size: 0.9em;
+  color: #333;
+  text-align: center;
+}
+
+
+.course-access {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.free-access {
+  background-color: #50bf06;
+}
+
+.requestable {
+  background-color: #166dde;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -195,6 +250,7 @@
 	while (grCourseSearch.next()) {
 		courses.push({
 			sys_id: grCourseSearch.getUniqueValue(), 
+			Access: gs.getMessage(grCourseSearch.getDisplayValue('accessibility')),
 			course_name: grCourseSearch.getValue('course_name'),
 			thumbnail: grCourseSearch.getDisplayValue('thumbnail'),
 			short_description: grCourseSearch.getValue('short_description')
@@ -209,21 +265,26 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-15 16:53:32</sys_created_on>
         <sys_id>ca7cfdb193f20210b09bf2918bba1002</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>LMS Search Results</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_ca7cfdb193f20210b09bf2918bba1002</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-18 10:42:45</sys_updated_on>
+        <sys_updated_on>2024-06-27 05:28:53</sys_updated_on>
         <template><![CDATA[<div class="courses-list">
   <h1>Search Results for "{{c.search}}":</h1>
   <div class="course-container">
     <div class="course-card" ng-click="c.redirectToCourseDetail(course.sys_id)" ng-repeat="course in c.courses">
       <img class="course-image" ng-src="{{ course.thumbnail }}">
       <h2 class="course-name">{{course.course_name}}</h2>
-      <p class="course-short-description">{{course.short_description}}</p>
+      <div class="course-access" ng-bind="course.Access" ng-class="{'free-access': course.Access === 'Free to access', 'requestable': course.Access === 'Requestable'}"></div>
+      <!--<p class="course-short-description">{{course.short_description}}</p>-->
+    	<div class="course-hover-details">
+        <h3 ng-bind="course.course_name"></h3>
+        <p ng-bind="course.short_description"></p>
+      </div>
     </div>
   </div>
   
