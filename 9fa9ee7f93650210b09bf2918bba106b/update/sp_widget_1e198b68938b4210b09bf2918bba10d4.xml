@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $location) {
+        <client_script><![CDATA[api.controller = function($scope, $location, i18n) {
     var c = this;
     c.latestEnrollment = null;
     c.progress = 0;
@@ -257,22 +257,22 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-24 11:31:37</sys_created_on>
         <sys_id>1e198b68938b4210b09bf2918bba10d4</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>78</sys_mod_count>
         <sys_name>LMS Continue Course</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_1e198b68938b4210b09bf2918bba10d4</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-26 05:57:14</sys_updated_on>
+        <sys_updated_on>2024-06-28 06:44:09</sys_updated_on>
         <template><![CDATA[<div class="widget-latest-course" ng-if="c.latestEnrollment">
-  <div class="widget-header">Continue your course:</div>
+  <div class="widget-header">${Continue your course:}</div>
   <div class="course-container">
     <div class="course-card" ng-click="c.redirectToCourseDetail('{{ c.latestEnrollment.sys_id }}')">
       <img class="course-image" src="{{ c.latestEnrollment.Thumbnail }}" alt="{{ c.latestEnrollment.Name }}">
       <div class="course-details">
-        <div class="course-title">{{ c.latestEnrollment.Name }}</div>
-        <div class="course-description">Keep up the great work! You're making excellent progress.</div>
+        <div class="course-title">${{{ c.latestEnrollment.Name }}}</div>
+        <div class="course-description">${Keep up the great work! You're making excellent progress.}</div>
         <div class="course-progress">
           <div class="progress-bar" style="width: {{ c.progress }}%;">{{ c.progress }}%</div>
         </div>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="DELETE">
+        <cs_topic_id display_value="_PRVW__930706fa2fc302103125ca595fb9ce4c">570706fa93c30210b09bf2918bba104d</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"variable_name":"course_name","nlu_entity":"","nlu_entity_label":""},{"variable_name":"course_list","nlu_entity":"","nlu_entity_label":""},{"variable_name":"choose_another_course","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Affirmative</nlu_intent>
+        <nlu_intent_label>Affirmative</nlu_intent_label>
+        <nlu_model>Setup_Topics_Model</nlu_model>
+        <nlu_model_label>Setup Topics Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-01 06:29:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>930702be93c30210b09bf2918bba1070</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_cs_topic_language_930702be93c30210b09bf2918bba1070</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-01 06:29:23</sys_updated_on>
+    </sys_cs_topic_language>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_cs_topic_language_930702be93c30210b09bf2918bba1070</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language"><sys_cs_topic_language action="INSERT_OR_UPDATE"><cs_topic_id display_value="_PRVW__930706fa2fc302103125ca595fb9ce4c">570706fa93c30210b09bf2918bba104d</cs_topic_id><language_code>en</language_code><nlu_entities>[{"variable_name":"course_name","nlu_entity":"","nlu_entity_label":""},{"variable_name":"course_list","nlu_entity":"","nlu_entity_label":""},{"variable_name":"choose_another_course","nlu_entity":"","nlu_entity_label":""}]</nlu_entities><nlu_intent>Affirmative</nlu_intent><nlu_intent_label>Affirmative</nlu_intent_label><nlu_model>Setup_Topics_Model</nlu_model><nlu_model_label>Setup Topics Model</nlu_model_label><nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider><sys_class_name>sys_cs_topic_language</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-01 06:29:23</sys_created_on><sys_domain>global</sys_domain><sys_id>930702be93c30210b09bf2918bba1070</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_cs_topic_language_930702be93c30210b09bf2918bba1070</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-01 06:29:23</sys_updated_on></sys_cs_topic_language></record_update>]]></payload>
+        <payload_hash>-314025641</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>67c36d8d930f0210b09bf2918bba102b</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-01 06:29:23</sys_created_on>
+        <sys_id>130702be93c30210b09bf2918bba1072</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1906cfbdcfd0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-01 06:29:23</sys_updated_on>
+        <type>CS Topic Language</type>
+        <update_guid>570702bed7c30210b8ffa6750d351971</update_guid>
+        <update_guid_history>570702bed7c30210b8ffa6750d351971:-314025641</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2024-07-02 04:30:42</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_topic_language">sys_cs_topic_language</sys_db_object>
+        <sys_id>82530ce3073345468eb482727fd83899</sys_id>
+        <sys_metadata>930702be93c30210b09bf2918bba1070</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_cs_topic_language_930702be93c30210b09bf2918bba1070</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_language_930702be93c30210b09bf2918bba1070">130702be93c30210b09bf2918bba1072</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-07-02 04:30:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  font-family: 'Arial', sans-serif;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-container {
+  background: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 20px;
+  //transition: transform 0.3s, background 0.3s;
+}
+
+.dashboard-container:hover {
+  //transform: scale(1.02);
+  background: #333;
+}
+
+.dashboard-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  text-align: center;
+  color: #f1f1f1;
+}
+
+#progress-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.course {
+  background: #3a3a3a;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 calc(33.333% - 40px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.course:hover {
+  transform: translateY(-10px);
+  background: #444;
+}
+
+.course-name {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.progress {
+  position: relative;
+  margin: 4px;
+}
+
+.barOverflow {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 50px;
+  margin-bottom: -14px;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 5px solid #555;
+  border-bottom-color: #0bf;
+  border-right-color: #0bf;
+  transform: rotate(calc(var(--progress) * 1.8deg));
+  transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.progress-text {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.progress[data-progress="100"] .bar {
+  border-bottom-color: #0f0;
+  border-right-color: #0f0;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_progress_dashboard</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Progress Dashboard</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-01 09:11:06</sys_created_on>
+        <sys_id>c41ce23a93870210b09bf2918bba1045</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>LMS Progress Dashboard</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_c41ce23a93870210b09bf2918bba1045</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-01 09:21:29</sys_updated_on>
+        <template><![CDATA[<div class="profile-section">
+  <!-- Profile Information -->
+  <div id="profile-info">
+    <!-- Add your profile information here -->
+  </div>
+
+  <!-- Progress Dashboard -->
+  <div class="dashboard-container">
+    <h2>My Learning Progress</h2>
+    <div id="progress-dashboard">
+      <div class="course">
+        <div class="course-name">Course 1</div>
+        <div class="progress">
+          <div class="barOverflow">
+            <div class="bar" data-progress="10"></div>
+          </div>
+          <span class="progress-text">10%</span>
+        </div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Course 2</div>
+        <div class="progress">
+          <div class="barOverflow">
+            <div class="bar" data-progress="100"></div>
+          </div>
+          <span class="progress-text">100%</span>
+        </div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Course 3</div>
+        <div class="progress">
+          <div class="barOverflow">
+            <div class="bar" data-progress="34"></div>
+          </div>
+          <span class="progress-text">34%</span>
+        </div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Course 4</div>
+        <div class="progress">
+          <div class="barOverflow">
+            <div class="bar" data-progress="56.5"></div>
+          </div>
+          <span class="progress-text">56.5%</span>
+        </div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Course 5</div>
+        <div class="progress">
+          <div class="barOverflow">
+            <div class="bar" data-progress="75"></div>
+          </div>
+          <span class="progress-text">75%</span>
+        </div>
+      </div>
+
+      <div class="course">
+        <div class="course-name">Course 6</div>
+        <div class="progress">
+          <div class="barOverflow">
+            <div class="bar" data-progress="20"></div>
+          </div>
+          <span class="progress-text">20%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

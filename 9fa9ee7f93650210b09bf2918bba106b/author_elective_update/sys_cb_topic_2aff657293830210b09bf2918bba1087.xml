@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="DELETE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description>This is for testing my LMS virtual agent.</description>
+        <dialog_acts_enabled>true</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{"graph_api_version":"1.0.61","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"3af0e5b3eedc4dfea4b84a42844cc32e":{"id":"3af0e5b3eedc4dfea4b84a42844cc32e","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"e6a7896094aa4475b0860d60b0b3e6a3":{"id":"e6a7896094aa4475b0860d60b0b3e6a3","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"19ca50d4f25e40c890c8837028aecc76","edgeType":"Edge","source":"3af0e5b3eedc4dfea4b84a42844cc32e","target":"e6a7896094aa4475b0860d60b0b3e6a3","sourcePort":"","targetPort":""}]}}}</graph>
+        <key_phrases>LMS Test Topic,Test,Testing,LMS,Topic</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>true</modify_confirmation_enabled>
+        <name>LMS Test Topic</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles>x_1383177_lms_app.lms_manager,x_1383177_lms_app.instructor,x_1383177_lms_app.course_manager,x_1383177_lms_app.content_manager,scrum_user,scrum_master,x_1383177_lms_app.learner</roles>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-01 04:48:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>2aff657293830210b09bf2918bba1087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Test Topic</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_cb_topic_2aff657293830210b09bf2918bba1087</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-01 04:48:34</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="DELETE" query="documentkey=2aff657293830210b09bf2918bba1087"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_cb_topic_2aff657293830210b09bf2918bba1087</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic"><sys_cb_topic action="INSERT_OR_UPDATE"><applicability/><applicability_mode>query</applicability_mode><autopilot_topic>false</autopilot_topic><category/><channels/><connect_queue/><context_profiles/><description>This is for testing my LMS virtual agent.</description><dialog_acts_enabled>true</dialog_acts_enabled><expose_on_palette>false</expose_on_palette><flexible_conversation_switching>false</flexible_conversation_switching><foundational>false</foundational><graph>{"graph_api_version":"1.0.61","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"3af0e5b3eedc4dfea4b84a42844cc32e":{"id":"3af0e5b3eedc4dfea4b84a42844cc32e","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"e6a7896094aa4475b0860d60b0b3e6a3":{"id":"e6a7896094aa4475b0860d60b0b3e6a3","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"19ca50d4f25e40c890c8837028aecc76","edgeType":"Edge","source":"3af0e5b3eedc4dfea4b84a42844cc32e","target":"e6a7896094aa4475b0860d60b0b3e6a3","sourcePort":"","targetPort":""}]}}}</graph><key_phrases>LMS Test Topic,Test,Testing,LMS,Topic</key_phrases><library>false</library><live_agent>false</live_agent><model_type>nlu_keyword</model_type><modify_confirmation_enabled>true</modify_confirmation_enabled><name>LMS Test Topic</name><nlu_intent/><nlu_intent_label/><nlu_model/><nlu_model_label/><nlu_provider/><palette_label/><roles>x_1383177_lms_app.lms_manager,x_1383177_lms_app.instructor,x_1383177_lms_app.course_manager,x_1383177_lms_app.content_manager,scrum_user,scrum_master,x_1383177_lms_app.learner</roles><root_topic_id/><secure_custom_input_control>false</secure_custom_input_control><source_topic_id/><sys_class_name>sys_cb_topic</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-01 04:48:34</sys_created_on><sys_domain>global</sys_domain><sys_id>2aff657293830210b09bf2918bba1087</sys_id><sys_mod_count>0</sys_mod_count><sys_name>LMS Test Topic</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_cb_topic_2aff657293830210b09bf2918bba1087</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-01 04:48:34</sys_updated_on><triggerable_by_notification>false</triggerable_by_notification><type>STANDARD</type></sys_cb_topic><sys_translated_text action="delete_multiple" query="documentkey=2aff657293830210b09bf2918bba1087"/></record_update>]]></payload>
+        <payload_hash>-1952923036</payload_hash>
+        <record_name>LMS Test Topic</record_name>
+        <reverted_from/>
+        <source>67c36d8d930f0210b09bf2918bba102b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-01 04:48:35</sys_created_on>
+        <sys_id>7aff657293830210b09bf2918bba108a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1906c9f91cb0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-01 04:48:35</sys_updated_on>
+        <type>Topic</type>
+        <update_guid>7eff657247830210d979c21305c28689</update_guid>
+        <update_guid_history>7eff657247830210d979c21305c28689:-1952923036</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-01 04:55:15</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic">sys_cb_topic</sys_db_object>
+        <sys_id>1a3fc2637fbf43b48325796138553b10</sys_id>
+        <sys_metadata>2aff657293830210b09bf2918bba1087</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS Test Topic</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_2aff657293830210b09bf2918bba1087</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_2aff657293830210b09bf2918bba1087">7aff657293830210b09bf2918bba108a</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-01 04:55:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

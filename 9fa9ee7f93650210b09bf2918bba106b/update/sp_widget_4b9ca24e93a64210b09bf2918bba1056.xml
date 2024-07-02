@@ -430,19 +430,19 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:46:39</sys_created_on>
         <sys_id>4b9ca24e93a64210b09bf2918bba1056</sys_id>
-        <sys_mod_count>132</sys_mod_count>
+        <sys_mod_count>134</sys_mod_count>
         <sys_name>LMS Forum Answers</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_4b9ca24e93a64210b09bf2918bba1056</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-26 06:47:42</sys_updated_on>
+        <sys_updated_on>2024-06-28 07:54:01</sys_updated_on>
         <template><![CDATA[<div class="discussion-detail-page">
   <div class="discussion-header">
     <div class="question-meta">
-      <span>Posted by: <span ng-bind="data.question.question_by"></span></span>
-      <span style="float: right;">Posted: <span ng-bind="data.question.timestamp"></span></span>
+      <span>${Posted by}: <span ng-bind="data.question.question_by"></span></span>
+      <span style="float: right;">${Posted}: <span ng-bind="data.question.timestamp"></span></span>
     </div>
     <h1 ng-bind="data.question.question"></h1>
     <div class="detailed-description-container">
@@ -452,9 +452,9 @@
 
 
   <div class="replies-list">
-    <h2>Replies</h2>
+    <h2>${Replies}</h2>
     <div ng-if="data.answers.length === 0" class="no-replies">
-      No replies yet. You can be the first to share your answer!
+      ${No replies yet. You can be the first to share your answer!}
     </div>
     <div class="reply-card" ng-repeat="answer in data.answers">
       <div class="reply-author" ng-bind="answer.author"></div>
@@ -473,7 +473,7 @@
 
   <div class="discussion-replies">
     <form class="reply-form" ng-submit="c.submitAnswer(c.answerForm.$valid)" name="c.answerForm" novalidate>
-      <h2>Post Your Answer</h2>
+      <h2>${Post Your Answer}</h2>
       <div class="editor-container">
         <textarea id="editor" ng-model="c.answer" rows="5" placeholder="Write your answer here..." required></textarea>
         <div class="reply-form-controls">
@@ -482,7 +482,7 @@
             <span>Attach files: </span>
             <input type="file" id="attachment" multiple>-->
           </label>
-          <button type="submit" class="submit-btn">Submit</button>
+          <button type="submit" class="submit-btn">${Submit}</button>
         </div>
       </div>
     </form>

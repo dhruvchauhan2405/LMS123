@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($location) {
+        <client_script><![CDATA[api.controller = function($location, i18n) {
 	var c = this;
 
 	// Function to get query parameter from URL
@@ -265,16 +265,16 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-15 16:53:32</sys_created_on>
         <sys_id>ca7cfdb193f20210b09bf2918bba1002</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>LMS Search Results</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_ca7cfdb193f20210b09bf2918bba1002</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-27 05:28:53</sys_updated_on>
+        <sys_updated_on>2024-06-28 08:00:02</sys_updated_on>
         <template><![CDATA[<div class="courses-list">
-  <h1>Search Results for "{{c.search}}":</h1>
+  <h1>${Search Results for "{{c.search}}":}</h1>
   <div class="course-container">
     <div class="course-card" ng-click="c.redirectToCourseDetail(course.sys_id)" ng-repeat="course in c.courses">
       <img class="course-image" ng-src="{{ course.thumbnail }}">
@@ -289,12 +289,12 @@
   </div>
   
   <div class="no-courses" ng-if="c.courses.length === 0">
-    <h2>Oops! Course Not Found :(</h2>
-    <p>Unfortunately, the course you're looking for isn't available in our LMS!</p>
+    <h2>${Oops! Course Not Found :}(</h2>
+    <p>${Unfortunately, the course you're looking for isn't available in our LMS!}</p>
   </div>
   
   <div class="backtocourse" ng-if="c.courses.length === 0">
-    <a href="lms?id=lms_courses" class="altcourse">Explore other courses</a>
+    <a href="lms?id=lms_courses" class="altcourse">{Explore other courses}</a>
   </div>
 </div>
 ]]></template>
