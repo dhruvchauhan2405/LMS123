@@ -68,7 +68,50 @@
   border-radius: 25px;
   z-index: -1;
 }
-</css>
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .big-text, .big-text2 {
+    font-size: 2.5em;
+  }
+
+  .small-text {
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .text-container {
+    margin: 0 0 20px 0;
+  }
+
+  .image-container {
+    margin: 0;
+  }
+
+  .big-text, .big-text2 {
+    font-size: 2em;
+  }
+
+  .small-text {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .big-text, .big-text2 {
+    font-size: 1.5em;
+  }
+
+  .small-text {
+    font-size: 0.875em;
+  }
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -89,14 +132,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-31 17:22:12</sys_created_on>
         <sys_id>3f23f88d936a4210b09bf2918bba10b1</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>LMS Homepage (Text/Image)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_3f23f88d936a4210b09bf2918bba10b1</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-24 04:35:10</sys_updated_on>
+        <sys_updated_on>2024-07-02 06:13:33</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="text-container">
     <p class="big-text">${Improve your skill}</p>

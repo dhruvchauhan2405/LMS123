@@ -333,6 +333,22 @@ button:active {
   transform: translateY(0);
 }
 
+/* Adjust sidebar positioning for mobile devices */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column-reverse; /* Reverse order: content first, sidebar second */
+  }
+
+  .sidebar {
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Space between content and sidebar */
+    position: static; /* Remove sticky positioning */
+  }
+
+  .sidebar h2[ng-if="c.data.isPending"] {
+    margin-top: 0; /* Adjust top margin for pending message */
+  }
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -459,14 +475,14 @@ button:active {
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-03 06:13:58</sys_created_on>
         <sys_id>900731fd93620210b09bf2918bba10b7</sys_id>
-        <sys_mod_count>183</sys_mod_count>
+        <sys_mod_count>185</sys_mod_count>
         <sys_name>LMS Course Detail</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_900731fd93620210b09bf2918bba10b7</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-28 06:54:05</sys_updated_on>
+        <sys_updated_on>2024-07-02 07:48:10</sys_updated_on>
         <template><![CDATA[<div class="main-container" ng-if="c.data.course">
   <div class="content">
     <div class="header">

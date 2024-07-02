@@ -17,161 +17,193 @@
 }
 
 /* Header Styling */
-.header {
-  background-color: #343a40; 
-  padding: 15px 50px; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #555;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
-  transition: background-color 0.3s, border-bottom 0.3s;
-}
+    .header {
+      background-color: #343a40;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #555;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, border-bottom 0.3s;
+    }
 
-.logo img {
-  height: 60px; 
-  transition: height 0.3s;
-}
+    .logo img {
+      height: 60px;
+      transition: height 0.3s;
+    }
 
-/* Navigation Styling */
-.navigation {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  animation: fadeIn 0.5s ease-in-out; 
-}
+    /* Navigation Styling */
+    .navigation {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      animation: fadeIn 0.5s ease-in-out;
+    }
 
-.navigation a {
-  margin: 0 30px; 
-  text-decoration: none;
-  color: #ffffff; 
-  font-size: 1.5rem; 
-  font-weight: 600;
-  transition: color 0.3s, transform 0.3s; 
-  outline: none; 
-}
+    .navigation a {
+      margin: 0 30px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s, transform 0.3s;
+      outline: none;
+    }
 
-.navigation a:hover {
-  color: #f39c12; 
-  transform: translateY(-3px); 
-}
+    .navigation a:hover {
+      color: #f39c12;
+      transform: translateY(-3px);
+    }
 
-.navigation a:focus {
-  box-shadow: none; 
-}
+    .navigation a:focus {
+      box-shadow: none;
+    }
 
-/* Search and Account Styling */
-.search-account {
-  display: flex;
-  align-items: center;
-}
+    /* Search and Account Styling */
+    .search-account {
+      display: flex;
+      align-items: center;
+    }
 
-.search-bar {
-  margin-right: 30px;
-  position: relative;
-  transition: margin-right 0.3s;
-}
+    .search-bar {
+      margin-right: 30px;
+      position: relative;
+      transition: margin-right 0.3s;
+    }
 
-.search-bar input {
-  padding: 10px 15px; 
-  border: 1px solid #555; 
-  border-radius: 4px;
-  font-size: 1.25rem; 
-  width: 300px; 
-  transition: width 0.3s, border-color 0.3s;
-}
+    .search-bar input {
+      padding: 10px 15px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      width: 300px;
+      transition: width 0.3s, border-color 0.3s;
+    }
 
-.search-bar input:focus {
-  border-color: #f39c12; 
-}
+    .search-bar input:focus {
+      border-color: #f39c12;
+    }
 
-.search-bar button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: none;
-  background: none;
-  padding: 10px 15px; 
-  cursor: pointer;
-  color: #555; 
-  transition: color 0.3s;
-}
+    .search-bar button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: none;
+      background: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      color: #555;
+      transition: color 0.3s;
+    }
 
-.search-bar button:hover {
-  color: #f39c12; 
-}
+    .search-bar button:hover {
+      color: #f39c12;
+    }
 
-.account {
-  box-shadow: none;
-  font-size: 1.5rem; 
-  font-weight: 600;
-  color: #ffffff; 
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s; 
-}
+    .account {
+      box-shadow: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
 
-.account:hover {
-  color: #f39c12; 
-  transform: translateY(-3px); 
-}
+    .account:hover {
+      color: #f39c12;
+      transform: translateY(-3px);
+    }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-    transition: padding 0.3s;
-  }
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1024px) {
+      .navigation a {
+        margin: 0 20px;
+        font-size: 1.25rem;
+      }
 
-  .logo img {
-    height: 40px;
-  }
+      .search-bar input {
+        width: 250px;
+      }
+    }
 
-  .navigation {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        transition: padding 0.3s;
+      }
 
-  .navigation a {
-    box-shadow: none;
-    margin: 5px 0;
-    font-size: 1.25rem;
-  }
+      .logo img {
+        height: 40px;
+      }
 
-  .search-account {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
+      .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
 
-  .search-bar {
-    width: calc(100% - 150px);
-    margin-right: 0;
-  }
+      .navigation a {
+        box-shadow: none;
+        margin: 5px 0;
+        font-size: 1.25rem;
+      }
 
-  .search-bar input {
-    width: 100%;
-  }
+      .search-account {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
 
-  .account {
-    margin-left: 10px;
-  }
-}
+      .search-bar {
+        width: calc(100% - 150px);
+        margin-right: 0;
+      }
 
-/* Keyframes for Animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</css>
+      .search-bar input {
+        width: 100%;
+      }
+
+      .account {
+        margin-left: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 15px 10px;
+      }
+
+      .logo img {
+        height: 30px;
+      }
+
+      .navigation a {
+        font-size: 1rem;
+      }
+
+      .search-bar {
+        width: calc(100% - 100px);
+      }
+
+      .account {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Keyframes for Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -196,14 +228,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 05:47:49</sys_created_on>
         <sys_id>1707cd1e931a4210b09bf2918bba1033</sys_id>
-        <sys_mod_count>115</sys_mod_count>
+        <sys_mod_count>116</sys_mod_count>
         <sys_name>LMS Header</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_header_footer_1707cd1e931a4210b09bf2918bba1033</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-06-26 08:26:54</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 06:04:10</sys_updated_on>
         <template><![CDATA[<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <header class="header" id="header">

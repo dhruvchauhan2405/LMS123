@@ -35,14 +35,9 @@
 ]]></client_script>
         <controller_as>c</controller_as>
         <css>.widget-latest-course {
-
   font-family: 'Poppins', sans-serif;
   width: 100%;
   padding: 20px;
-  //background: #fff;
-  //border-radius: 10px;
-  //box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  //text-align: center;
 }
 
 .widget-header {
@@ -54,10 +49,8 @@
 }
 
 .course-container {
-
   display: flex;
   justify-content: center;
-  margin-left: 10px;
 }
 
 .course-card {
@@ -66,13 +59,14 @@
   border-radius: 10px;
   padding: 20px;
   width: 100%;
-      max-width: 102rem;
+  max-width: 102rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 26rem;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .course-card:hover {
@@ -86,11 +80,6 @@
   object-fit: cover;
   border-radius: 5px;
   margin-right: 20px;
-  //transition: transform 0.3s ease;
-}
-
-.course-card:hover {
-  transform: scale(1.02);
 }
 
 .course-details {
@@ -98,6 +87,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .course-title {
@@ -105,14 +95,12 @@
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
-  text-align: left;
 }
 
 .course-description {
   font-size: 14px;
   line-height: 1.5;
   color: #777;
-  text-align: left;
   margin-bottom: 15px;
 }
 
@@ -124,19 +112,20 @@
   height: 2.6rem;
   margin-top: 10px;
   position: relative;
-  max-width: 52rem;
+  box-sizing: border-box;
 }
 
 .progress-bar {
   height: 100%;
   background-color: #4caf50;
   text-align: right;
-  line-height: 2.75rem;
+  line-height: 2.6rem;
   color: black;
   font-weight: bold;
-  //padding-right: 10px;
   border-radius: 10px 0 0 10px;
   transition: width 2s ease-in-out;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .progress-bar::after {
@@ -159,29 +148,57 @@
   .course-card {
     flex-direction: column;
     align-items: center;
+    height: auto;
+    padding: 10px;
   }
 
   .course-image {
     margin-right: 0;
     margin-bottom: 15px;
+    width: 100%;
+    height: auto;
   }
 
   .course-details {
     align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .course-title,
   .course-description {
     text-align: center;
   }
+
+  .course-progress {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
   .course-card {
     width: 100%;
+    padding: 10px;
   }
-}</css>
+
+  .course-title {
+    font-size: 16px;
+  }
+
+  .course-description {
+    font-size: 12px;
+  }
+
+  .course-progress {
+    height: 2.2rem;
+  }
+
+  .progress-bar {
+    line-height: 2.2rem;
+    font-size: 12px;
+  }
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -257,14 +274,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-24 11:31:37</sys_created_on>
         <sys_id>1e198b68938b4210b09bf2918bba10d4</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>80</sys_mod_count>
         <sys_name>LMS Continue Course</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_1e198b68938b4210b09bf2918bba10d4</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-28 06:44:09</sys_updated_on>
+        <sys_updated_on>2024-07-02 06:19:51</sys_updated_on>
         <template><![CDATA[<div class="widget-latest-course" ng-if="c.latestEnrollment">
   <div class="widget-header">${Continue your course:}</div>
   <div class="course-container">

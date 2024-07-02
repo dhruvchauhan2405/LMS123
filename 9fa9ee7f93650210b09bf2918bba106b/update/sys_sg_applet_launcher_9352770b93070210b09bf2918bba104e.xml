@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher">
+    <sys_sg_applet_launcher action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <available_offline>false</available_offline>
+        <header_button display_value="Jump Logged In User Profile">f421809b93470210b09bf2918bba10d2</header_button>
+        <header_titles>375a2a347330330018eea18d4ef6a79a</header_titles>
+        <hide_empty_sections>true</hide_empty_sections>
+        <name>LMS Launcher</name>
+        <required_roles/>
+        <search_config/>
+        <sys_class_name>sys_sg_applet_launcher</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-02 08:56:44</sys_created_on>
+        <sys_id>9352770b93070210b09bf2918bba104e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>LMS Launcher</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_9352770b93070210b09bf2918bba104e</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-02 10:01:17</sys_updated_on>
+        <title/>
+    </sys_sg_applet_launcher>
+</record_update>
