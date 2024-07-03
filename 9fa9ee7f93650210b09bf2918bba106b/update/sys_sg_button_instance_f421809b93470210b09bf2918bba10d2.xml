@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance">
     <sys_sg_button_instance action="INSERT_OR_UPDATE">
         <active>true</active>
-        <button display_value="Jump to User Profile">875b724687103300a785940307cb0b4b</button>
+        <button display_value="Navigate to My Profile">8a66805393870210b09bf2918bba109a</button>
         <color_theme/>
         <description/>
         <disable_offline>false</disable_offline>
@@ -17,14 +17,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-02 10:01:16</sys_created_on>
         <sys_id>f421809b93470210b09bf2918bba10d2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Jump Logged In User Profile</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_button_instance_f421809b93470210b09bf2918bba10d2</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-02 10:01:16</sys_updated_on>
+        <sys_updated_on>2024-07-02 10:28:08</sys_updated_on>
         <table/>
     </sys_sg_button_instance>
     <sys_translated_text action="delete_multiple" query="documentkey=f421809b93470210b09bf2918bba10d2"/>

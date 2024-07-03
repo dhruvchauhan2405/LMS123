@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_content_section">
+    <sys_sg_content_section action="DELETE">
+        <active>true</active>
+        <card_size/>
+        <carousel>true</carousel>
+        <column_count/>
+        <custom_height/>
+        <custom_width/>
+        <data_item/>
+        <display_title>true</display_title>
+        <hide_header>false</hide_header>
+        <hide_section_if_empty>false</hide_section_if_empty>
+        <is_custom_size>false</is_custom_size>
+        <is_hidden_preference_name/>
+        <max_items_display_count>15</max_items_display_count>
+        <orientation>horizontal</orientation>
+        <required_roles/>
+        <row_count/>
+        <sys_class_name>sys_sg_content_section</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-03 04:12:15</sys_created_on>
+        <sys_id>0eda3fd793874210b09bf2918bba100a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Course</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_content_section_0eda3fd793874210b09bf2918bba100a</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-03 04:12:15</sys_updated_on>
+        <table/>
+        <title>Course</title>
+        <visible_condition/>
+        <wide_column_count/>
+    </sys_sg_content_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_content_section_0eda3fd793874210b09bf2918bba100a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_content_section"><sys_sg_content_section action="INSERT_OR_UPDATE"><active>true</active><card_size/><carousel>true</carousel><column_count/><custom_height/><custom_width/><data_item/><display_title>true</display_title><hide_header>false</hide_header><hide_section_if_empty>false</hide_section_if_empty><is_custom_size>false</is_custom_size><is_hidden_preference_name/><max_items_display_count>15</max_items_display_count><orientation>horizontal</orientation><required_roles/><row_count/><sys_class_name>sys_sg_content_section</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-03 04:12:15</sys_created_on><sys_id>0eda3fd793874210b09bf2918bba100a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Course</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_content_section_0eda3fd793874210b09bf2918bba100a</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-03 04:12:15</sys_updated_on><table/><title>Course</title><visible_condition/><wide_column_count/></sys_sg_content_section></record_update>]]></payload>
+        <payload_hash>-1623519554</payload_hash>
+        <record_name>Course</record_name>
+        <reverted_from/>
+        <source>e81584df93470210b09bf2918bba1068</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-03 04:12:15</sys_created_on>
+        <sys_id>8ada3fd793874210b09bf2918bba100e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19076cb083b0000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-03 04:12:15</sys_updated_on>
+        <type>Content Section</type>
+        <update_guid>ceda3fd70d874210483bc7994978180d</update_guid>
+        <update_guid_history>ceda3fd70d874210483bc7994978180d:-1623519554</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-03 04:19:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_content_section">sys_sg_content_section</sys_db_object>
+        <sys_id>ce170996f27745409f1351d5099d4099</sys_id>
+        <sys_metadata>0eda3fd793874210b09bf2918bba100a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Course</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_content_section_0eda3fd793874210b09bf2918bba100a</sys_update_name>
+        <sys_update_version display_value="sys_sg_content_section_0eda3fd793874210b09bf2918bba100a">8ada3fd793874210b09bf2918bba100e</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-03 04:19:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

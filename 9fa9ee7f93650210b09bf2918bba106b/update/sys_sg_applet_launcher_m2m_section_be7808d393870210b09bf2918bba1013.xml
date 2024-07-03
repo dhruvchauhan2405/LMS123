@@ -5,15 +5,15 @@
         <section/>
         <sys_class_name>sys_sg_applet_launcher_m2m_section</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
-        <sys_created_on>2024-07-02 09:28:36</sys_created_on>
-        <sys_id>5aa9fbcf93070210b09bf2918bba101e</sys_id>
+        <sys_created_on>2024-07-02 10:33:22</sys_created_on>
+        <sys_id>be7808d393870210b09bf2918bba1013</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_sg_applet_launcher_m2m_section_5aa9fbcf93070210b09bf2918bba101e</sys_update_name>
+        <sys_update_name>sys_sg_applet_launcher_m2m_section_be7808d393870210b09bf2918bba1013</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-02 09:28:36</sys_updated_on>
+        <sys_updated_on>2024-07-02 10:33:22</sys_updated_on>
     </sys_sg_applet_launcher_m2m_section>
 </record_update>
