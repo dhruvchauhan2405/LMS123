@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_tab">
+    <sys_sg_applet_launcher_tab action="DELETE">
+        <active>true</active>
+        <applet_launcher display_value="">161b809793870210b09bf2918bba10b3</applet_launcher>
+        <icon display_value="Group">143d8da2b72200108223e126de11a927</icon>
+        <label>Domains</label>
+        <sys_class_name>sys_sg_applet_launcher_tab</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 10:33:14</sys_created_on>
+        <sys_id>f47884d393870210b09bf2918bba10b6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Domains</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_tab_f47884d393870210b09bf2918bba10b6</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 10:45:29</sys_updated_on>
+    </sys_sg_applet_launcher_tab>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_applet_launcher_tab_f47884d393870210b09bf2918bba10b6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_tab"><sys_sg_applet_launcher_tab action="INSERT_OR_UPDATE"><active>true</active><applet_launcher display_value="">161b809793870210b09bf2918bba10b3</applet_launcher><icon display_value="Group">143d8da2b72200108223e126de11a927</icon><label>Domains</label><sys_class_name>sys_sg_applet_launcher_tab</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-02 10:33:14</sys_created_on><sys_id>f47884d393870210b09bf2918bba10b6</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Domains</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_applet_launcher_tab_f47884d393870210b09bf2918bba10b6</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-02 10:45:29</sys_updated_on></sys_sg_applet_launcher_tab></record_update>]]></payload>
+        <payload_hash>652393285</payload_hash>
+        <record_name>Domains</record_name>
+        <reverted_from/>
+        <source>67c36d8d930f0210b09bf2918bba102b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 10:45:29</sys_created_on>
+        <sys_id>ac4bc89793870210b09bf2918bba1017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190730caf810000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 10:45:29</sys_updated_on>
+        <type>Launcher tab</type>
+        <update_guid>644bc8975c870210d2286328d411f517</update_guid>
+        <update_guid_history>644bc8975c870210d2286328d411f517:652393285,f47884d393870210eb4f7ed44c5b24b8:-522372333,f47884d393870210eb4f7ed44c5b24b8:-522372333</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 11:34:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_applet_launcher_tab">sys_sg_applet_launcher_tab</sys_db_object>
+        <sys_id>967f4377aebb4ad09c6f4631ba97c784</sys_id>
+        <sys_metadata>f47884d393870210b09bf2918bba10b6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Domains</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_applet_launcher_tab_f47884d393870210b09bf2918bba10b6</sys_update_name>
+        <sys_update_version display_value="sys_sg_applet_launcher_tab_f47884d393870210b09bf2918bba10b6">ac4bc89793870210b09bf2918bba1017</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 11:34:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

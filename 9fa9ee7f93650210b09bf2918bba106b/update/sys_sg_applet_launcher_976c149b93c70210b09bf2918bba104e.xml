@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher">
+    <sys_sg_applet_launcher action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <available_offline>false</available_offline>
+        <header_button/>
+        <header_titles/>
+        <hide_empty_sections>true</hide_empty_sections>
+        <name>Domains Testing</name>
+        <required_roles>x_1383177_lms_app.content_manager,x_1383177_lms_app.course,x_1383177_lms_app.course_domain,x_1383177_lms_app.course_manager,x_1383177_lms_app.discussion_user,x_1383177_lms_app.enrollment,x_1383177_lms_app.forum_answers_user,x_1383177_lms_app.instructor,x_1383177_lms_app.in_person_course_user,x_1383177_lms_app.learner,x_1383177_lms_app.lms_manager,x_1383177_lms_app.module,x_1383177_lms_app.progress_user,x_1383177_lms_app.request_user</required_roles>
+        <search_config/>
+        <sys_class_name>sys_sg_applet_launcher</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 12:00:30</sys_created_on>
+        <sys_id>976c149b93c70210b09bf2918bba104e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Domains Testing</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_976c149b93c70210b09bf2918bba104e</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 12:00:30</sys_updated_on>
+        <title>Domains Testing</title>
+    </sys_sg_applet_launcher>
+</record_update>

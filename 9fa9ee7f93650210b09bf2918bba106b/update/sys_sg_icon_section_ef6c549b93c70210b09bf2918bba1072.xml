@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_icon_section">
+    <sys_sg_icon_section action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applets>2f6c149b93c70210b09bf2918bba10cd</applets>
+        <card_size/>
+        <column_count/>
+        <custom_height/>
+        <custom_width/>
+        <data_item/>
+        <display_feed_count>true</display_feed_count>
+        <hide_header>false</hide_header>
+        <hide_section_if_empty>false</hide_section_if_empty>
+        <is_custom_size>false</is_custom_size>
+        <is_hidden_preference_name/>
+        <orientation>vertical</orientation>
+        <required_roles>x_1383177_lms_app.content_manager,x_1383177_lms_app.course,x_1383177_lms_app.course_domain,x_1383177_lms_app.course_manager,x_1383177_lms_app.discussion_user,x_1383177_lms_app.enrollment,x_1383177_lms_app.forum_answers_user,x_1383177_lms_app.instructor,x_1383177_lms_app.in_person_course_user,x_1383177_lms_app.learner,x_1383177_lms_app.lms_manager,x_1383177_lms_app.module,x_1383177_lms_app.progress_user,x_1383177_lms_app.request_user</required_roles>
+        <row_count/>
+        <sys_class_name>sys_sg_icon_section</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 12:00:31</sys_created_on>
+        <sys_id>ef6c549b93c70210b09bf2918bba1072</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Course Domain</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_icon_section_ef6c549b93c70210b09bf2918bba1072</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 12:00:31</sys_updated_on>
+        <table/>
+        <title>Course Domain</title>
+        <visible_condition/>
+        <wide_column_count/>
+    </sys_sg_icon_section>
+</record_update>
