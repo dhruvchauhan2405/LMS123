@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_m2m_section">
     <sys_sg_applet_launcher_m2m_section action="INSERT_OR_UPDATE">
         <applet_launcher display_value="">9352770b93070210b09bf2918bba104e</applet_launcher>
-        <order/>
-        <section/>
+        <order>40</order>
+        <section display_value="Domain Records">63f9186f930b4210b09bf2918bba108e</section>
         <sys_class_name>sys_sg_applet_launcher_m2m_section</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
-        <sys_created_on>2024-07-02 10:33:22</sys_created_on>
-        <sys_id>be7808d393870210b09bf2918bba1013</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2024-07-03 06:28:21</sys_created_on>
+        <sys_id>abf9186f930b4210b09bf2918bba1090</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_sg_applet_launcher_m2m_section_be7808d393870210b09bf2918bba1013</sys_update_name>
+        <sys_update_name>sys_sg_applet_launcher_m2m_section_abf9186f930b4210b09bf2918bba1090</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-02 10:33:22</sys_updated_on>
+        <sys_updated_on>2024-07-03 06:30:15</sys_updated_on>
     </sys_sg_applet_launcher_m2m_section>
 </record_update>

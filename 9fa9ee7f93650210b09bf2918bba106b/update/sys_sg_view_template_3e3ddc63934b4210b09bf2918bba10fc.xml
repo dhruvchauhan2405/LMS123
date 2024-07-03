@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <name>Domain Home Page Template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-03 06:42:30</sys_created_on>
+        <sys_id>3e3ddc63934b4210b09bf2918bba10fc</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Domain Home Page Template</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_3e3ddc63934b4210b09bf2918bba10fc</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-03 06:44:45</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":15,"Bottom":17},"Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"Root","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_02","CellId":"container_02","CornerRadius":50,"Background":{"Opacity":"1","Type":"Color","ColorVariable":"--now-alert--critical--border-color","CellId":"Background_container_02","Id":"Background_container_02","elementId":"ef831d4e-910d-f9cf-4702-a5b0cd9f38af"},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_01","CellId":"text_01","TextAlignment":"Center","TextColorVariable":"--now-alert--color"}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=3e3ddc63934b4210b09bf2918bba10fc"/>
+</record_update>

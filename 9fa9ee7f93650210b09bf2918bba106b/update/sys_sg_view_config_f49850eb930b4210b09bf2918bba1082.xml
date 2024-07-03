@@ -3,22 +3,22 @@
         <active>true</active>
         <advanced>false</advanced>
         <description/>
-        <name>Domains card</name>
+        <name>Domains New Config</name>
         <scratchpad_script/>
         <sys_class_name>sys_sg_view_config</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-07-02 11:10:45</sys_created_on>
-        <sys_id>2e01545f93870210b09bf2918bba10c7</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>Domains card</sys_name>
+        <sys_created_on>2024-07-03 06:22:09</sys_created_on>
+        <sys_id>f49850eb930b4210b09bf2918bba1082</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Domains New Config</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_sg_view_config_2e01545f93870210b09bf2918bba10c7</sys_update_name>
+        <sys_update_name>sys_sg_view_config_f49850eb930b4210b09bf2918bba1082</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-03 05:36:27</sys_updated_on>
+        <sys_updated_on>2024-07-03 06:22:09</sys_updated_on>
         <table>x_1383177_lms_app_course_domain</table>
-        <template display_value="Topic Template 05 v2-copy">36bd406f93c74210b09bf2918bba1047</template>
+        <template display_value="Topic Template 05 v2">446caaa107bd5110264f78e99cd30019</template>
     </sys_sg_view_config>
-    <sys_translated_text action="delete_multiple" query="documentkey=2e01545f93870210b09bf2918bba10c7"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=f49850eb930b4210b09bf2918bba1082"/>
 </record_update>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream_m2m_segment">
+    <sys_sg_item_stream_m2m_segment action="DELETE">
+        <item_stream display_value="Domains Stream">ee01545f93870210b09bf2918bba10c1</item_stream>
+        <segment display_value="Domains List Segment">2601181f93870210b09bf2918bba10e8</segment>
+        <sys_class_name>sys_sg_item_stream_m2m_segment</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 11:10:45</sys_created_on>
+        <sys_id>ae01545f93870210b09bf2918bba10c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_item_stream_m2m_segment_ae01545f93870210b09bf2918bba10c4</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 11:10:45</sys_updated_on>
+    </sys_sg_item_stream_m2m_segment>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_item_stream_m2m_segment_ae01545f93870210b09bf2918bba10c4</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream_m2m_segment"><sys_sg_item_stream_m2m_segment action="INSERT_OR_UPDATE"><item_stream display_value="Domains Stream">ee01545f93870210b09bf2918bba10c1</item_stream><segment display_value="Domains List Segment">2601181f93870210b09bf2918bba10e8</segment><sys_class_name>sys_sg_item_stream_m2m_segment</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-02 11:10:45</sys_created_on><sys_id>ae01545f93870210b09bf2918bba10c4</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_item_stream_m2m_segment_ae01545f93870210b09bf2918bba10c4</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-02 11:10:45</sys_updated_on></sys_sg_item_stream_m2m_segment></record_update>]]></payload>
+        <payload_hash>-1870410741</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>67c36d8d930f0210b09bf2918bba102b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 11:10:45</sys_created_on>
+        <sys_id>a601545f93870210b09bf2918bba10c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907323d07d0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 11:10:45</sys_updated_on>
+        <type>Stream M2M segment</type>
+        <update_guid>ea01545faa870210e303fc50eab064c6</update_guid>
+        <update_guid_history>ea01545faa870210e303fc50eab064c6:-1870410741</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-03 06:22:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_item_stream_m2m_segment">sys_sg_item_stream_m2m_segment</sys_db_object>
+        <sys_id>0a850c6901ca4cfe9373efb407539851</sys_id>
+        <sys_metadata>ae01545f93870210b09bf2918bba10c4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_item_stream_m2m_segment_ae01545f93870210b09bf2918bba10c4</sys_update_name>
+        <sys_update_version display_value="sys_sg_item_stream_m2m_segment_ae01545f93870210b09bf2918bba10c4">a601545f93870210b09bf2918bba10c7</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-03 06:22:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element_attribute">
     <sys_sg_view_config_element_attribute action="INSERT_OR_UPDATE">
-        <description>text_03_FieldValue</description>
+        <description>text_06_FieldValue</description>
         <name display_value="FieldValue">c2eed5c2b7321010df65f6efce11a9cf</name>
         <sys_class_name>sys_sg_view_config_element_attribute</sys_class_name>
-        <sys_created_by>pranav.k</sys_created_by>
-        <sys_created_on>2024-07-02 11:18:13</sys_created_on>
-        <sys_id>48c254df93870210b09bf2918bba10a3</sys_id>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-03 05:29:46</sys_created_on>
+        <sys_id>a99c4ceb93c74210b09bf2918bba1081</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
-        <sys_update_name>sys_sg_view_config_element_attribute_48c254df93870210b09bf2918bba10a3</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-02 11:18:13</sys_updated_on>
+        <sys_update_name>sys_sg_view_config_element_attribute_a99c4ceb93c74210b09bf2918bba1081</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-03 05:29:46</sys_updated_on>
         <translated_value/>
-        <value>name</value>
-        <view_config_element display_value="text_03_element">c4c254df93870210b09bf2918bba10a1</view_config_element>
+        <value>course_type</value>
+        <view_config_element display_value="text_06_element">219c4ceb93c74210b09bf2918bba107f</view_config_element>
     </sys_sg_view_config_element_attribute>
-    <sys_translated_text action="delete_multiple" query="documentkey=48c254df93870210b09bf2918bba10a3"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=a99c4ceb93c74210b09bf2918bba1081"/>
 </record_update>
