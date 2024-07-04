@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_list_screen">
+    <sys_sg_list_screen action="DELETE">
+        <available_offline>false</available_offline>
+        <description/>
+        <dynamic_prefetch_count/>
+        <empty_state/>
+        <fetch_type>on_demand</fetch_type>
+        <filter/>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon>
+        <name>Forum Answers Screen</name>
+        <parameter_screen/>
+        <roles_override/>
+        <sys_class_name>sys_sg_list_screen</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:00:08</sys_created_on>
+        <sys_id>73045eff9383c210b09bf2918bba1035</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Forum Answers Screen</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_list_screen_73045eff9383c210b09bf2918bba1035</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:00:08</sys_updated_on>
+    </sys_sg_list_screen>
+    <sys_translated_text action="DELETE" query="documentkey=73045eff9383c210b09bf2918bba1035"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_list_screen_73045eff9383c210b09bf2918bba1035</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_list_screen"><sys_sg_list_screen action="INSERT_OR_UPDATE"><available_offline>false</available_offline><description/><dynamic_prefetch_count/><empty_state/><fetch_type>on_demand</fetch_type><filter/><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon><name>Forum Answers Screen</name><parameter_screen/><roles_override/><sys_class_name>sys_sg_list_screen</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-04 10:00:08</sys_created_on><sys_id>73045eff9383c210b09bf2918bba1035</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Forum Answers Screen</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_list_screen_73045eff9383c210b09bf2918bba1035</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-04 10:00:08</sys_updated_on></sys_sg_list_screen><sys_translated_text action="delete_multiple" query="documentkey=73045eff9383c210b09bf2918bba1035"/></record_update>]]></payload>
+        <payload_hash>1171034429</payload_hash>
+        <record_name>Forum Answers Screen</record_name>
+        <reverted_from/>
+        <source>41306067934b4210b09bf2918bba1081</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:00:09</sys_created_on>
+        <sys_id>3b045eff9383c210b09bf2918bba1037</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907d2fe5580000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:00:09</sys_updated_on>
+        <type>List screen</type>
+        <update_guid>7f045effac83c2107f6eddee3ee2a536</update_guid>
+        <update_guid_history>7f045effac83c2107f6eddee3ee2a536:1171034429</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:06:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_list_screen">sys_sg_list_screen</sys_db_object>
+        <sys_id>5642cf26d083473c81a1b9a0fa04b590</sys_id>
+        <sys_metadata>73045eff9383c210b09bf2918bba1035</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Forum Answers Screen</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_list_screen_73045eff9383c210b09bf2918bba1035</sys_update_name>
+        <sys_update_version display_value="sys_sg_list_screen_73045eff9383c210b09bf2918bba1035">3b045eff9383c210b09bf2918bba1037</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:06:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

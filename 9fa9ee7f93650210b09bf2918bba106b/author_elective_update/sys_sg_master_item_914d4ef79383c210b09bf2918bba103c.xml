@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item">
+    <sys_sg_master_item action="DELETE">
+        <condition_order/>
+        <datasource_table>x_1383177_lms_app_discussion</datasource_table>
+        <datasource_table_condition/>
+        <embedded_screen/>
+        <item_view/>
+        <name>Forum List Config</name>
+        <sys_class_name>sys_sg_master_item</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 09:30:29</sys_created_on>
+        <sys_id>914d4ef79383c210b09bf2918bba103c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Forum List Config</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_master_item_914d4ef79383c210b09bf2918bba103c</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:00:09</sys_updated_on>
+        <use_view_config>true</use_view_config>
+        <view_config/>
+    </sys_sg_master_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_master_item_914d4ef79383c210b09bf2918bba103c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item"><sys_sg_master_item action="INSERT_OR_UPDATE"><condition_order/><datasource_table>x_1383177_lms_app_discussion</datasource_table><datasource_table_condition/><embedded_screen/><item_view/><name>Forum List Config</name><sys_class_name>sys_sg_master_item</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-04 09:30:29</sys_created_on><sys_id>914d4ef79383c210b09bf2918bba103c</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Forum List Config</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_master_item_914d4ef79383c210b09bf2918bba103c</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-04 10:00:09</sys_updated_on><use_view_config>true</use_view_config><view_config/></sys_sg_master_item></record_update>]]></payload>
+        <payload_hash>-1249015039</payload_hash>
+        <record_name>Forum List Config</record_name>
+        <reverted_from/>
+        <source>41306067934b4210b09bf2918bba1081</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:08:42</sys_created_on>
+        <sys_id>c10616b393c3c210b09bf2918bba1032</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907d37b8610000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:08:42</sys_updated_on>
+        <type>List item config</type>
+        <update_guid>40145eff6b83c210f6f3285ceb642c60</update_guid>
+        <update_guid_history>40145eff6b83c210f6f3285ceb642c60:1497139724,40145eff6b83c210f6f3285ceb642c60:1497139724,40145eff6b83c210f6f3285ceb642c60:1497139724,83cfcabbd683c210113fd6ee915032cf:-1842926323,994d4ef79583c210e59214426458333d:-267112235</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:08:48</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_master_item">sys_sg_master_item</sys_db_object>
+        <sys_id>15865c207b544b2bbcba26fc0b325971</sys_id>
+        <sys_metadata>914d4ef79383c210b09bf2918bba103c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Forum List Config</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_master_item_914d4ef79383c210b09bf2918bba103c</sys_update_name>
+        <sys_update_version display_value="sys_sg_master_item_914d4ef79383c210b09bf2918bba103c">c10616b393c3c210b09bf2918bba1032</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:08:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

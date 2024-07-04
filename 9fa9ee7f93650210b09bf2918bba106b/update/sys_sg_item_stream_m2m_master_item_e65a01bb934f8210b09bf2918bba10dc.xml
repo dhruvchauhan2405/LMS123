@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream_m2m_master_item">
+    <sys_sg_item_stream_m2m_master_item action="INSERT_OR_UPDATE">
+        <item_stream display_value="Image stream">5e5a01bb934f8210b09bf2918bba10ce</item_stream>
+        <master_item display_value="Image Item">1a5a01bb934f8210b09bf2918bba10d9</master_item>
+        <sys_class_name>sys_sg_item_stream_m2m_master_item</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-04 04:38:06</sys_created_on>
+        <sys_id>e65a01bb934f8210b09bf2918bba10dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_item_stream_m2m_master_item_e65a01bb934f8210b09bf2918bba10dc</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-04 04:38:06</sys_updated_on>
+    </sys_sg_item_stream_m2m_master_item>
+</record_update>

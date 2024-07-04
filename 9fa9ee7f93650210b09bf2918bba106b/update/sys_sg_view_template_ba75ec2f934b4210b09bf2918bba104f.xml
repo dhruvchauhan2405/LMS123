@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Courses List</description>
+        <name>Courses</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-03 07:18:33</sys_created_on>
+        <sys_id>ba75ec2f934b4210b09bf2918bba104f</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Courses</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_ba75ec2f934b4210b09bf2918bba104f</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-03 07:34:37</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{},"Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"Root","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"viewgroup_01","Background":{"Opacity":"1","Type":"Color","ColorVariable":"NULL","CellId":"Background_viewgroup_01","Id":"Background_viewgroup_01","elementId":"9115ff07-575c-e83d-c4f5-eb59393488ae"},"Children":[{"Type":"Image","Scaling":"Fit","Id":"image_01","CellId":"image_01","CornerRadius":50,"Height":130,"Width":130,"Margin":{"Right":10,"Top":20,"Bottom":20}},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Equal","Id":"viewgroup_02","Background":{"Opacity":1,"Type":"Color","ColorVariable":"NULL","CellId":"Background_viewgroup_02","Id":"Background_viewgroup_02","elementId":"6e79c76a-4b61-28b7-6b0c-a15958b64afe","Color":"#FFFFFF"},"Children":[{"Type":"Text","TextColor":"#293E40","MaxLines":1,"CellId":"text_02","Id":"text_02","Margin":{},"TextAlignment":"Left","TextColorVariable":"--now-accordion_heading--primary--color"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_04","CellId":"container_04","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":10,"Id":"text_03","CellId":"text_03","TextAlignment":"Left","TextColorVariable":"--now-accordion_icon--color","Margin":{"Top":5,"Bottom":5}}]}]}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=ba75ec2f934b4210b09bf2918bba104f"/>
+</record_update>

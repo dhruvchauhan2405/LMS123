@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element">
+    <sys_sg_view_config_element action="INSERT_OR_UPDATE">
+        <name>text_08_element</name>
+        <sys_class_name>sys_sg_view_config_element</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-03 09:03:17</sys_created_on>
+        <sys_id>857d7c2b93cb4210b09bf2918bba1028</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_08_element</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_857d7c2b93cb4210b09bf2918bba1028</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-03 09:03:17</sys_updated_on>
+        <view_config display_value="Course detail view config">e576b02393cb4210b09bf2918bba1049</view_config>
+        <view_template_slot display_value="text_08">514d782b93cb4210b09bf2918bba10b8</view_template_slot>
+    </sys_sg_view_config_element>
+</record_update>

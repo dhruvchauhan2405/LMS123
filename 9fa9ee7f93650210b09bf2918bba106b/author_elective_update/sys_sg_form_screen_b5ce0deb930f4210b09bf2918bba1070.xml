@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_screen">
+    <sys_sg_form_screen action="DELETE">
+        <alert/>
+        <available_offline>false</available_offline>
+        <data_item/>
+        <description/>
+        <dynamic_prefetch_count/>
+        <empty_state/>
+        <fetch_type>not_required</fetch_type>
+        <filter/>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon>
+        <item_view/>
+        <name>Domain Courses</name>
+        <override_context_with_data_item>false</override_context_with_data_item>
+        <parameter_screen/>
+        <roles_override/>
+        <segments_height>medium</segments_height>
+        <segments_min_width>medium</segments_min_width>
+        <sys_class_name>sys_sg_form_screen</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-03 10:18:58</sys_created_on>
+        <sys_id>b5ce0deb930f4210b09bf2918bba1070</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Domain Courses</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_form_screen_b5ce0deb930f4210b09bf2918bba1070</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 05:19:39</sys_updated_on>
+        <table/>
+        <use_view_config>true</use_view_config>
+        <view_config display_value="Domain Courses Card">4714c9ef93cb4210b09bf2918bba10f3</view_config>
+    </sys_sg_form_screen>
+    <sys_translated_text action="DELETE" query="documentkey=b5ce0deb930f4210b09bf2918bba1070"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_form_screen_b5ce0deb930f4210b09bf2918bba1070</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_screen"><sys_sg_form_screen action="INSERT_OR_UPDATE"><alert/><available_offline>false</available_offline><data_item/><description/><dynamic_prefetch_count/><empty_state/><fetch_type>not_required</fetch_type><filter/><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon><item_view/><name>Domain Courses</name><override_context_with_data_item>false</override_context_with_data_item><parameter_screen/><roles_override/><segments_height>medium</segments_height><segments_min_width>medium</segments_min_width><sys_class_name>sys_sg_form_screen</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-03 10:18:58</sys_created_on><sys_id>b5ce0deb930f4210b09bf2918bba1070</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Domain Courses</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_form_screen_b5ce0deb930f4210b09bf2918bba1070</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-04 05:19:39</sys_updated_on><table/><use_view_config>true</use_view_config><view_config display_value="Domain Courses Card">4714c9ef93cb4210b09bf2918bba10f3</view_config></sys_sg_form_screen><sys_translated_text action="delete_multiple" query="documentkey=b5ce0deb930f4210b09bf2918bba1070"/></record_update>]]></payload>
+        <payload_hash>-1951651364</payload_hash>
+        <record_name>Domain Courses</record_name>
+        <reverted_from/>
+        <source>41306067934b4210b09bf2918bba1081</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 05:19:39</sys_created_on>
+        <sys_id>0bd35177938f8210b09bf2918bba10e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907c2f19340000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 05:19:39</sys_updated_on>
+        <type>Record screen</type>
+        <update_guid>cfd35177198f8210f440d483fcac79e8</update_guid>
+        <update_guid_history>cfd35177198f8210f440d483fcac79e8:-1951651364,8ecec52f850f42103caf765daea7c6d0:341614347</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 05:37:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_form_screen">sys_sg_form_screen</sys_db_object>
+        <sys_id>c0c3bbbbe0ae46f6a499899238e9ef84</sys_id>
+        <sys_metadata>b5ce0deb930f4210b09bf2918bba1070</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Domain Courses</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_form_screen_b5ce0deb930f4210b09bf2918bba1070</sys_update_name>
+        <sys_update_version display_value="sys_sg_form_screen_b5ce0deb930f4210b09bf2918bba1070">0bd35177938f8210b09bf2918bba10e9</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 05:37:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

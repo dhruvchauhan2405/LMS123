@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_browser_screen">
+    <sys_sg_browser_screen action="DELETE">
+        <available_offline>false</available_offline>
+        <check_acl>false</check_acl>
+        <description/>
+        <dynamic_prefetch_count/>
+        <empty_state/>
+        <external_browser>false</external_browser>
+        <fetch_type>not_required</fetch_type>
+        <filter/>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon>
+        <name>My Profile</name>
+        <relative_url>false</relative_url>
+        <roles_override/>
+        <sys_class_name>sys_sg_browser_screen</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 08:58:18</sys_created_on>
+        <sys_id>92b2fb0b93070210b09bf2918bba103e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Profile</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_browser_screen_92b2fb0b93070210b09bf2918bba103e</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 08:58:18</sys_updated_on>
+        <url>https://dev211199.service-now.com/lms?id=lms_my_profile</url>
+    </sys_sg_browser_screen>
+    <sys_translated_text action="DELETE" query="documentkey=92b2fb0b93070210b09bf2918bba103e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_browser_screen_92b2fb0b93070210b09bf2918bba103e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_browser_screen"><sys_sg_browser_screen action="INSERT_OR_UPDATE"><available_offline>false</available_offline><check_acl>false</check_acl><description/><dynamic_prefetch_count/><empty_state/><external_browser>false</external_browser><fetch_type>not_required</fetch_type><filter/><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon><name>My Profile</name><relative_url>false</relative_url><roles_override/><sys_class_name>sys_sg_browser_screen</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-02 08:58:18</sys_created_on><sys_id>92b2fb0b93070210b09bf2918bba103e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>My Profile</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_browser_screen_92b2fb0b93070210b09bf2918bba103e</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-02 08:58:18</sys_updated_on><url>https://dev211199.service-now.com/lms?id=lms_my_profile</url></sys_sg_browser_screen><sys_translated_text action="delete_multiple" query="documentkey=92b2fb0b93070210b09bf2918bba103e"/></record_update>]]></payload>
+        <payload_hash>-301711520</payload_hash>
+        <record_name>My Profile</record_name>
+        <reverted_from/>
+        <source>67c36d8d930f0210b09bf2918bba102b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-02 08:58:18</sys_created_on>
+        <sys_id>5eb2334b93070210b09bf2918bba1028</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19072aa8e610000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-02 08:58:18</sys_updated_on>
+        <type>Mobile web screen</type>
+        <update_guid>92b2334b2f07021036010127fce22a28</update_guid>
+        <update_guid_history>92b2334b2f07021036010127fce22a28:-301711520</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-03 09:28:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_browser_screen">sys_sg_browser_screen</sys_db_object>
+        <sys_id>6980c1eb718a4e1e83e04b1db2041de4</sys_id>
+        <sys_metadata>92b2fb0b93070210b09bf2918bba103e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Profile</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_browser_screen_92b2fb0b93070210b09bf2918bba103e</sys_update_name>
+        <sys_update_version display_value="sys_sg_browser_screen_92b2fb0b93070210b09bf2918bba103e">5eb2334b93070210b09bf2918bba1028</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-03 09:28:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

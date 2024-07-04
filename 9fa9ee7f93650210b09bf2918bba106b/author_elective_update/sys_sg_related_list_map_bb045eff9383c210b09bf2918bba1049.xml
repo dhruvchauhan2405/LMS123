@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_related_list_map">
+    <sys_sg_related_list_map action="DELETE">
+        <context_field/>
+        <destination_screen/>
+        <related_list_screen display_value="New Related lists screen">33045eff9383c210b09bf2918bba1047</related_list_screen>
+        <relationship>x_1383177_lms_app_forum_answers.question_ref</relationship>
+        <sys_class_name>sys_sg_related_list_map</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:00:09</sys_created_on>
+        <sys_id>bb045eff9383c210b09bf2918bba1049</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>73045eff9383c210b09bf2918bba1035</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_related_list_map_bb045eff9383c210b09bf2918bba1049</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:00:09</sys_updated_on>
+    </sys_sg_related_list_map>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_related_list_map_bb045eff9383c210b09bf2918bba1049</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_related_list_map"><sys_sg_related_list_map action="INSERT_OR_UPDATE"><context_field/><destination_screen/><related_list_screen display_value="New Related lists screen">33045eff9383c210b09bf2918bba1047</related_list_screen><relationship>x_1383177_lms_app_forum_answers.question_ref</relationship><sys_class_name>sys_sg_related_list_map</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-04 10:00:09</sys_created_on><sys_id>bb045eff9383c210b09bf2918bba1049</sys_id><sys_mod_count>0</sys_mod_count><sys_name>73045eff9383c210b09bf2918bba1035</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_related_list_map_bb045eff9383c210b09bf2918bba1049</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-04 10:00:09</sys_updated_on></sys_sg_related_list_map></record_update>]]></payload>
+        <payload_hash>-1680395109</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>41306067934b4210b09bf2918bba1081</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:06:31</sys_created_on>
+        <sys_id>45851a7393c3c210b09bf2918bba1058</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907d35b8ee0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:06:31</sys_updated_on>
+        <type>Related lists mapping</type>
+        <update_guid>f3045eff8b83c210fbdde8d81ada194b</update_guid>
+        <update_guid_history>f3045eff8b83c210fbdde8d81ada194b:-993751595,f3045eff8b83c210fbdde8d81ada194b:-993751595</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:06:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_related_list_map">sys_sg_related_list_map</sys_db_object>
+        <sys_id>10bb62fd178b476c8e21c7ac72831d90</sys_id>
+        <sys_metadata>bb045eff9383c210b09bf2918bba1049</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>73045eff9383c210b09bf2918bba1035</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_related_list_map_bb045eff9383c210b09bf2918bba1049</sys_update_name>
+        <sys_update_version display_value="sys_sg_related_list_map_bb045eff9383c210b09bf2918bba1049">45851a7393c3c210b09bf2918bba1058</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:06:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

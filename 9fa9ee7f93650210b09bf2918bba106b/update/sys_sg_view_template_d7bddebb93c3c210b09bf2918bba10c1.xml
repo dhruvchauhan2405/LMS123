@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <name>Forum Questions</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:42:26</sys_created_on>
+        <sys_id>d7bddebb93c3c210b09bf2918bba10c1</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Forum Questions</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_d7bddebb93c3c210b09bf2918bba10c1</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:59:50</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":15,"Bottom":17,"Right":20,"Left":20},"Orientation":"Vertical","Alignment":"Left","Distribution":"Equal","Id":"Root","Background":{"Color":"#E4E4E7","Opacity":1,"Type":"Color","CellId":"Background_Root","Id":"Background_Root","elementId":"30717a9a-fdf7-1930-b4b8-535967de3191"},"CornerRadius":7,"Children":[{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_02","CellId":"container_02","Margin":{"Top":10,"Right":10,"Bottom":10,"Left":10},"CornerRadius":5,"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_01","CellId":"text_01"},{"Type":"Text","TextColor":"#454D5B","MaxLines":1,"Id":"text_02","CellId":"text_02"}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=d7bddebb93c3c210b09bf2918bba10c1"/>
+</record_update>

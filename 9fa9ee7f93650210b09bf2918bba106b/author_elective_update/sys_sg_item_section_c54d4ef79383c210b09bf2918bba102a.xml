@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_section">
+    <sys_sg_item_section action="DELETE">
+        <active>true</active>
+        <card_size display_value="Medium">51703cd5c7023010be78953c14c2604e</card_size>
+        <column_count/>
+        <custom_height/>
+        <custom_width/>
+        <data_item/>
+        <destination_screen/>
+        <display_title>true</display_title>
+        <hide_header>false</hide_header>
+        <hide_section_if_empty>false</hide_section_if_empty>
+        <hide_see_all_button>false</hide_see_all_button>
+        <is_custom_size>false</is_custom_size>
+        <is_hidden_preference_name/>
+        <max_items_display_count>15</max_items_display_count>
+        <orientation>vertical</orientation>
+        <required_roles/>
+        <row_count/>
+        <scrolling_type>free</scrolling_type>
+        <sys_class_name>sys_sg_item_section</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 09:30:28</sys_created_on>
+        <sys_id>c54d4ef79383c210b09bf2918bba102a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Discussion Forum</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_item_section_c54d4ef79383c210b09bf2918bba102a</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 09:42:31</sys_updated_on>
+        <table/>
+        <title>Discussion Forum</title>
+        <visible_condition/>
+        <wide_column_count/>
+    </sys_sg_item_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_item_section_c54d4ef79383c210b09bf2918bba102a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_section"><sys_sg_item_section action="INSERT_OR_UPDATE"><active>true</active><card_size display_value="Medium">51703cd5c7023010be78953c14c2604e</card_size><column_count/><custom_height/><custom_width/><data_item/><destination_screen/><display_title>true</display_title><hide_header>false</hide_header><hide_section_if_empty>false</hide_section_if_empty><hide_see_all_button>false</hide_see_all_button><is_custom_size>false</is_custom_size><is_hidden_preference_name/><max_items_display_count>15</max_items_display_count><orientation>vertical</orientation><required_roles/><row_count/><scrolling_type>free</scrolling_type><sys_class_name>sys_sg_item_section</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-04 09:30:28</sys_created_on><sys_id>c54d4ef79383c210b09bf2918bba102a</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Discussion Forum</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_item_section_c54d4ef79383c210b09bf2918bba102a</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-04 09:42:31</sys_updated_on><table/><title>Discussion Forum</title><visible_condition/><wide_column_count/></sys_sg_item_section></record_update>]]></payload>
+        <payload_hash>-332419295</payload_hash>
+        <record_name>Discussion Forum</record_name>
+        <reverted_from/>
+        <source>41306067934b4210b09bf2918bba1081</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:09:10</sys_created_on>
+        <sys_id>08269a7393c3c210b09bf2918bba10f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907d3827e90000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:09:10</sys_updated_on>
+        <type>Record section</type>
+        <update_guid>e50012fb3583c210ecb12170386df359</update_guid>
+        <update_guid_history>e50012fb3583c210ecb12170386df359:-948786677,e50012fb3583c210ecb12170386df359:-948786677,c7cfcabb5283c210b987c0149ba83cd2:-121558247,4d4d4ef77183c2102029ceb3cade152b:2031968422</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 10:09:22</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_item_section">sys_sg_item_section</sys_db_object>
+        <sys_id>155e6f3031a94e7890d4b0c290885911</sys_id>
+        <sys_metadata>c54d4ef79383c210b09bf2918bba102a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Discussion Forum</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_item_section_c54d4ef79383c210b09bf2918bba102a</sys_update_name>
+        <sys_update_version display_value="sys_sg_item_section_c54d4ef79383c210b09bf2918bba102a">08269a7393c3c210b09bf2918bba10f8</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:09:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

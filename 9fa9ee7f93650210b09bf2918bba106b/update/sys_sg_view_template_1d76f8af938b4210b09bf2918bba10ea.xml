@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <name>Course detail template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-03 08:32:43</sys_created_on>
+        <sys_id>1d76f8af938b4210b09bf2918bba10ea</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Course detail template</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_1d76f8af938b4210b09bf2918bba10ea</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-03 09:24:01</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":15,"Bottom":17},"Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"Root","Children":[{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_02","CellId":"container_02","Margin":{"Bottom":40},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_04","CellId":"container_04","Background":{"Color":"#151920","Opacity":1,"Type":"Color","CellId":"Background_container_04","Id":"Background_container_04","elementId":"b4465400-e032-f27c-be0b-23414e87f86a"},"CornerRadius":5,"Margin":{"Left":2,"Bottom":4,"Right":2,"Top":4},"Children":[{"Type":"Text","TextColor":"#FFFFFF","MaxLines":1,"Id":"text_02","CellId":"text_02"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_06","CellId":"container_06","Background":{"Color":"#FFFFFF","Opacity":1,"Type":"Color","CellId":"Background_container_06","Id":"Background_container_06","elementId":"31ab45c7-fb34-2dc6-1016-e83b8896d818"},"Children":[{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_07","CellId":"container_07","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_07","CellId":"text_07"},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_08","CellId":"text_08"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_08","CellId":"container_08","Children":[{"Type":"Image","Scaling":"Fit","Id":"image_01","CellId":"image_01","Height":100,"Width":100}]}]}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_03","CellId":"container_03","Background":{"Color":"#E4E6EA","Opacity":1,"Type":"Color","CellId":"Background_container_03","Id":"Background_container_03","elementId":"f42b0755-c0ca-1557-5e4e-29e48c01eb95"},"CornerRadius":5,"Margin":{"Top":10,"Bottom":10,"Right":5,"Left":5},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_06","CellId":"text_06"},{"Type":"Text","TextColor":"#151920","MaxLines":100,"Id":"text_03","CellId":"text_03","TextAlignment":"Left"}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=1d76f8af938b4210b09bf2918bba10ea"/>
+</record_update>

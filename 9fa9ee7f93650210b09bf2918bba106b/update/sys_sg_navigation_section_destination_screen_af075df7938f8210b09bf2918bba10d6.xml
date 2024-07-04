@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_section_destination_screen">
+    <sys_sg_navigation_section_destination_screen action="INSERT_OR_UPDATE">
+        <applet display_value="Completed Courses list">57075df7938f8210b09bf2918bba10d4</applet>
+        <background_color/>
+        <background_color_variable/>
+        <foreground_color/>
+        <foreground_color_variable/>
+        <icon display_value="User Tasks Icon">26360f00c7910010d2eec08603c26015</icon>
+        <image/>
+        <name>Completed Courses</name>
+        <sys_class_name>sys_sg_navigation_section_destination_screen</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-04 05:33:37</sys_created_on>
+        <sys_id>af075df7938f8210b09bf2918bba10d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Completed Courses</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_navigation_section_destination_screen_af075df7938f8210b09bf2918bba10d6</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-04 05:33:37</sys_updated_on>
+    </sys_sg_navigation_section_destination_screen>
+</record_update>
