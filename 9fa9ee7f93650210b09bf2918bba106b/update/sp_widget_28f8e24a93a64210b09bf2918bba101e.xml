@@ -293,7 +293,7 @@ body {
 }
 
 .lessons .lesson p {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   text-align: justify;
   line-height: 1.6;
   color: #636e72;
@@ -641,14 +641,14 @@ body {
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>564</sys_mod_count>
+        <sys_mod_count>565</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-02 08:15:24</sys_updated_on>
+        <sys_updated_on>2024-07-05 10:03:57</sys_updated_on>
         <template><![CDATA[<div class="container">  
   <div class="sidebar">
     <div class="sidebar-content">

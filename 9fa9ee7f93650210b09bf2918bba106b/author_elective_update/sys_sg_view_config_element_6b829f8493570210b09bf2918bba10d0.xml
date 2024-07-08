@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element">
+    <sys_sg_view_config_element action="DELETE">
+        <name>text_05_element</name>
+        <sys_class_name>sys_sg_view_config_element</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-05 09:11:40</sys_created_on>
+        <sys_id>6b829f8493570210b09bf2918bba10d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_05_element</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_6b829f8493570210b09bf2918bba10d0</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-05 09:11:40</sys_updated_on>
+        <view_config display_value="Course Home Page">569392ff9383c210b09bf2918bba101a</view_config>
+        <view_template_slot display_value="text_05">a9721f8493570210b09bf2918bba10b0</view_template_slot>
+    </sys_sg_view_config_element>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_view_config_element_6b829f8493570210b09bf2918bba10d0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element"><sys_sg_view_config_element action="INSERT_OR_UPDATE"><name>text_05_element</name><sys_class_name>sys_sg_view_config_element</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-05 09:11:40</sys_created_on><sys_id>6b829f8493570210b09bf2918bba10d0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>text_05_element</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_view_config_element_6b829f8493570210b09bf2918bba10d0</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-05 09:11:40</sys_updated_on><view_config display_value="Course Home Page">569392ff9383c210b09bf2918bba101a</view_config><view_template_slot display_value="text_05">a9721f8493570210b09bf2918bba10b0</view_template_slot></sys_sg_view_config_element></record_update>]]></payload>
+        <payload_hash>172978303</payload_hash>
+        <record_name>text_05_element</record_name>
+        <reverted_from/>
+        <source>e81584df93470210b09bf2918bba1068</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-05 09:11:40</sys_created_on>
+        <sys_id>ef829f8493570210b09bf2918bba10d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1908229de5d0000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-05 09:11:40</sys_updated_on>
+        <type>Card element</type>
+        <update_guid>27829f844e5702107453548c642261d2</update_guid>
+        <update_guid_history>27829f844e5702107453548c642261d2:172978303</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-05 09:13:53</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_config_element">sys_sg_view_config_element</sys_db_object>
+        <sys_id>316bf8a05a1c4402b12e98a35d962884</sys_id>
+        <sys_metadata>6b829f8493570210b09bf2918bba10d0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_05_element</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_view_config_element_6b829f8493570210b09bf2918bba10d0</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_config_element_6b829f8493570210b09bf2918bba10d0">ef829f8493570210b09bf2918bba10d2</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-05 09:13:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

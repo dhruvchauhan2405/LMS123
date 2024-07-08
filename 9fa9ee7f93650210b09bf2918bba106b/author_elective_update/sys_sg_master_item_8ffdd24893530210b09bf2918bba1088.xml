@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item">
+    <sys_sg_master_item action="DELETE">
+        <condition_order/>
+        <datasource_table>x_1383177_lms_app_forum_answers</datasource_table>
+        <datasource_table_condition table="x_1383177_lms_app_forum_answers">question_refDYNAMIC^EQ<item endquery="false" field="question_ref" goto="false" newquery="false" operator="DYNAMIC" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </datasource_table_condition>
+        <embedded_screen/>
+        <item_view/>
+        <name>Answers LI Config</name>
+        <sys_class_name>sys_sg_master_item</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-05 05:21:59</sys_created_on>
+        <sys_id>8ffdd24893530210b09bf2918bba1088</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Answers LI Config</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_master_item_8ffdd24893530210b09bf2918bba1088</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-05 06:28:47</sys_updated_on>
+        <use_view_config>true</use_view_config>
+        <view_config display_value="Answers">8f2ba64893930210b09bf2918bba1086</view_config>
+    </sys_sg_master_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_master_item_8ffdd24893530210b09bf2918bba1088</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item"><sys_sg_master_item action="INSERT_OR_UPDATE"><condition_order/><datasource_table>x_1383177_lms_app_forum_answers</datasource_table><datasource_table_condition table="x_1383177_lms_app_forum_answers">question_refDYNAMIC^EQ<item endquery="false" field="question_ref" goto="false" newquery="false" operator="DYNAMIC" or="false" value=""/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></datasource_table_condition><embedded_screen/><item_view/><name>Answers LI Config</name><sys_class_name>sys_sg_master_item</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-05 05:21:59</sys_created_on><sys_id>8ffdd24893530210b09bf2918bba1088</sys_id><sys_mod_count>6</sys_mod_count><sys_name>Answers LI Config</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_master_item_8ffdd24893530210b09bf2918bba1088</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-05 06:28:47</sys_updated_on><use_view_config>true</use_view_config><view_config display_value="Answers">8f2ba64893930210b09bf2918bba1086</view_config></sys_sg_master_item></record_update>]]></payload>
+        <payload_hash>743093542</payload_hash>
+        <record_name>Answers LI Config</record_name>
+        <reverted_from/>
+        <source>6ef2960c93130210b09bf2918bba105c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-05 06:28:47</sys_created_on>
+        <sys_id>654de20c93930210b09bf2918bba10cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1908194bf0c0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-05 06:28:47</sys_updated_on>
+        <type>List item config</type>
+        <update_guid>2d4de20c099302105fc943d77b3d88cb</update_guid>
+        <update_guid_history>2d4de20c099302105fc943d77b3d88cb:743093542,fbdc66c82d9302106071bb474e414c2f:-1991715632,c38c66c8a4930210506e9f141499fa37:708901110,432baa48899302105aca94323d19c5f8:148117211,9b39e6c4449302106ffae850885cae72:607442263,9b39e6c4449302106ffae850885cae72:607442263,f8e8ee8416930210ef5ed16339d61fc7:1742812398,c7fdd248e5530210ede44b43b7cfc68a:607442263</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-05 06:43:53</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_master_item">sys_sg_master_item</sys_db_object>
+        <sys_id>4617cac4301943e6a8d3ea13753ea121</sys_id>
+        <sys_metadata>8ffdd24893530210b09bf2918bba1088</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Answers LI Config</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_master_item_8ffdd24893530210b09bf2918bba1088</sys_update_name>
+        <sys_update_version display_value="sys_sg_master_item_8ffdd24893530210b09bf2918bba1088">654de20c93930210b09bf2918bba10cc</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-05 06:43:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

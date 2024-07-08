@@ -7,19 +7,19 @@
         <hide_empty_sections>true</hide_empty_sections>
         <name>LMS Launcher</name>
         <required_roles/>
-        <search_config/>
+        <search_config display_value="Homepage Search - Catalog and Knowledge">c8a15fd07320330018eea18d4ef6a77a</search_config>
         <sys_class_name>sys_sg_applet_launcher</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-02 08:56:44</sys_created_on>
         <sys_id>9352770b93070210b09bf2918bba104e</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>LMS Launcher</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_applet_launcher_9352770b93070210b09bf2918bba104e</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-03 08:46:41</sys_updated_on>
+        <sys_updated_on>2024-07-04 15:29:26</sys_updated_on>
         <title/>
     </sys_sg_applet_launcher>
 </record_update>
