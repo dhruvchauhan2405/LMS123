@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance">
+    <sys_sg_button_instance action="DELETE">
+        <active>true</active>
+        <button display_value="New function">b107160193d34210b09bf2918bba106c</button>
+        <color_theme/>
+        <description/>
+        <disable_offline>false</disable_offline>
+        <field_name/>
+        <icon/>
+        <label>Post your QUestion</label>
+        <location>footer</location>
+        <name>Post question button</name>
+        <order/>
+        <parent>53bdd6bb93c3c210b09bf2918bba1094</parent>
+        <parent_table>sys_sg_list_screen</parent_table>
+        <sys_class_name>sys_sg_button_instance</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-08 07:25:31</sys_created_on>
+        <sys_id>7507160193d34210b09bf2918bba1071</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Post question button</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_button_instance_7507160193d34210b09bf2918bba1071</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-08 07:25:31</sys_updated_on>
+        <table/>
+    </sys_sg_button_instance>
+    <sys_translated_text action="DELETE" query="documentkey=7507160193d34210b09bf2918bba1071"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_button_instance_7507160193d34210b09bf2918bba1071</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance"><sys_sg_button_instance action="INSERT_OR_UPDATE"><active>true</active><button display_value="New function">b107160193d34210b09bf2918bba106c</button><color_theme/><description/><disable_offline>false</disable_offline><field_name/><icon/><label>Post your QUestion</label><location>footer</location><name>Post question button</name><order/><parent>53bdd6bb93c3c210b09bf2918bba1094</parent><parent_table>sys_sg_list_screen</parent_table><sys_class_name>sys_sg_button_instance</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-08 07:25:31</sys_created_on><sys_id>7507160193d34210b09bf2918bba1071</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Post question button</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_button_instance_7507160193d34210b09bf2918bba1071</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-08 07:25:31</sys_updated_on><table/></sys_sg_button_instance><sys_translated_text action="delete_multiple" query="documentkey=7507160193d34210b09bf2918bba1071"/></record_update>]]></payload>
+        <payload_hash>771433206</payload_hash>
+        <record_name>Post question button</record_name>
+        <reverted_from/>
+        <source>6ef2960c93130210b09bf2918bba105c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-08 07:25:31</sys_created_on>
+        <sys_id>b907160193d34210b09bf2918bba1074</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190913bc4be0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-08 07:25:31</sys_updated_on>
+        <type>Function instance</type>
+        <update_guid>fd07160151d34210140ccc5efadf0a73</update_guid>
+        <update_guid_history>fd07160151d34210140ccc5efadf0a73:771433206</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-08 07:26:26</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_button_instance">sys_sg_button_instance</sys_db_object>
+        <sys_id>0b11fe1b7bbb4d5089d2d3561fd7bb29</sys_id>
+        <sys_metadata>7507160193d34210b09bf2918bba1071</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Post question button</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_button_instance_7507160193d34210b09bf2918bba1071</sys_update_name>
+        <sys_update_version display_value="sys_sg_button_instance_7507160193d34210b09bf2918bba1071">b907160193d34210b09bf2918bba1074</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-08 07:26:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_segment">
+    <sys_sg_form_segment action="INSERT_OR_UPDATE">
+        <embedded_screen display_value="New details">ba734a0993534210b09bf2918bba10a4</embedded_screen>
+        <form display_value="latest course screen">94a2020993534210b09bf2918bba10b7</form>
+        <header_view_config/>
+        <is_sticky>false</is_sticky>
+        <order/>
+        <sys_class_name>sys_sg_form_segment</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-08 06:00:08</sys_created_on>
+        <sys_id>f673424993534210b09bf2918bba1061</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_form_segment_f673424993534210b09bf2918bba1061</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-08 06:00:08</sys_updated_on>
+    </sys_sg_form_segment>
+</record_update>

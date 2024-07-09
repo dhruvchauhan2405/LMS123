@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_parameter_screen">
+    <sys_sg_parameter_screen action="DELETE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <available_offline>false</available_offline>
+        <cancel_label/>
+        <description/>
+        <dynamic_prefetch_count/>
+        <empty_state/>
+        <fetch_type>dynamic_prefetch</fetch_type>
+        <filter/>
+        <header_only_on_first_page>false</header_only_on_first_page>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon/>
+        <name>Post your Questions</name>
+        <next_label/>
+        <pagination_type>all</pagination_type>
+        <prev_label/>
+        <reset_after_submit>true</reset_after_submit>
+        <resume>true</resume>
+        <roles_override/>
+        <submit_label>Submit</submit_label>
+        <sys_class_name>sys_sg_parameter_screen</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-08 07:32:23</sys_created_on>
+        <sys_id>5698528193d34210b09bf2918bba1063</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Post your Questions</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_parameter_screen_5698528193d34210b09bf2918bba1063</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-08 07:43:46</sys_updated_on>
+        <type display_value="">string</type>
+        <view_config/>
+    </sys_sg_parameter_screen>
+    <sys_translated_text action="DELETE" query="documentkey=5698528193d34210b09bf2918bba1063"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_parameter_screen_5698528193d34210b09bf2918bba1063</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_parameter_screen"><sys_sg_parameter_screen action="INSERT_OR_UPDATE"><active>true</active><advanced>false</advanced><available_offline>false</available_offline><cancel_label/><description/><dynamic_prefetch_count/><empty_state/><fetch_type>dynamic_prefetch</fetch_type><filter/><header_only_on_first_page>false</header_only_on_first_page><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon/><name>Post your Questions</name><next_label/><pagination_type>all</pagination_type><prev_label/><reset_after_submit>true</reset_after_submit><resume>true</resume><roles_override/><submit_label>Submit</submit_label><sys_class_name>sys_sg_parameter_screen</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-08 07:32:23</sys_created_on><sys_id>5698528193d34210b09bf2918bba1063</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Post your Questions</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_parameter_screen_5698528193d34210b09bf2918bba1063</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-08 07:43:46</sys_updated_on><type display_value="">string</type><view_config/></sys_sg_parameter_screen><sys_translated_text action="delete_multiple" query="documentkey=5698528193d34210b09bf2918bba1063"/></record_update>]]></payload>
+        <payload_hash>1279013542</payload_hash>
+        <record_name>Post your Questions</record_name>
+        <reverted_from/>
+        <source>6ef2960c93130210b09bf2918bba105c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-08 07:43:46</sys_created_on>
+        <sys_id>013bde0593d34210b09bf2918bba10a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190914c788a0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-08 07:43:46</sys_updated_on>
+        <type>Input form screen</type>
+        <update_guid>c53bde05fad34210cc8b454eb9b053a8</update_guid>
+        <update_guid_history>c53bde05fad34210cc8b454eb9b053a8:1279013542,cabad6056bd3421048a8f0ae06131771:-1629984823,6698528184d34210379acb301120a365:1016520327</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-08 08:47:15</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_parameter_screen">sys_sg_parameter_screen</sys_db_object>
+        <sys_id>377ea53cc7fa4f60a6dfe29dc1d78789</sys_id>
+        <sys_metadata>5698528193d34210b09bf2918bba1063</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Post your Questions</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_parameter_screen_5698528193d34210b09bf2918bba1063</sys_update_name>
+        <sys_update_version display_value="sys_sg_parameter_screen_5698528193d34210b09bf2918bba1063">013bde0593d34210b09bf2918bba10a9</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-08 08:47:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

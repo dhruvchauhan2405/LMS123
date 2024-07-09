@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <name>LMS card template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-08 09:03:27</sys_created_on>
+        <sys_id>907da28993174210b09bf2918bba1008</sys_id>
+        <sys_mod_count>51</sys_mod_count>
+        <sys_name>LMS card template</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_907da28993174210b09bf2918bba1008</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 07:13:05</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":38,"Left":40},"Orientation":"Vertical","Alignment":"Left","Distribution":"Equal","Id":"Root","Background":{"Opacity":"1","Type":"Image","CellId":"Background_Root","Id":"Background_Root"},"Height":210,"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_03","CellId":"container_03","Children":[]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_04","CellId":"container_04","Children":[]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Equal","Id":"container_02","CellId":"container_02","Height":20,"Width":200,"CornerRadius":50,"Background":{"Color":"#C8DA6E","Opacity":1,"Type":"Color","CellId":"Background_container_02","Id":"Background_container_02","elementId":"d14dac06-f40e-475b-5cc4-735705b41c8b"},"Margin":{},"Children":[{"Type":"Button","TextAlignment":"Center","Id":"button_01","CellId":"button_01","Height":30,"CornerRadius":50}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_06","CellId":"container_06","Children":[]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=907da28993174210b09bf2918bba1008"/>
+</record_update>

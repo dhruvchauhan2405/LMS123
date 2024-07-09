@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream">
+    <sys_sg_item_stream action="INSERT_OR_UPDATE">
+        <data_item display_value="course latest">46c2b10593134210b09bf2918bba1087</data_item>
+        <interleaved_field/>
+        <name>New item stream</name>
+        <sys_class_name>sys_sg_item_stream</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-08 04:47:09</sys_created_on>
+        <sys_id>46c2b50593134210b09bf2918bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New item stream</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_item_stream_46c2b50593134210b09bf2918bba10ea</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-08 04:47:09</sys_updated_on>
+        <table>x_1383177_lms_app_course</table>
+    </sys_sg_item_stream>
+</record_update>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function(spUtil, $scope, i18n, $window, $timeout) {
+        <client_script><![CDATA[api.controller = function(spUtil, $scope, i18n, $window, $timeout, $element) {
     var c = this;
     c.selectedModuleIndex = null;
     c.isModuleView = false;
@@ -95,6 +95,20 @@
         // Assuming there is a function to navigate to My Learnings page
         window.location.href = 'https://dev211199.service-now.com/lms?id=lms_my_learning'; // Adjust the URL as necessary
     };
+	 $scope.toggleSidebar = function() {
+    var sidebar = $element[0].querySelector('.sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('open');
+    }
+  };
+
+  // Ensure the sidebar is initially in the correct state
+  $scope.$on('$viewContentLoaded', function() {
+    var sidebar = $element[0].querySelector('.sidebar');
+    if (sidebar && window.innerWidth <= 767) {
+      sidebar.classList.remove('open');
+    }
+  });
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -143,9 +157,9 @@ body {
 
 .sidebar-content .course-image{
   width: 100%;
-  height:100px;
+  height: 100px;
   object-fit: contain;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
@@ -156,7 +170,7 @@ body {
   text-align: center;
 }
 
-.sidebar-content p{
+.sidebar-content p {
   text-align: left;
 }
 
@@ -178,12 +192,14 @@ body {
   padding: 12px;
   border-radius: 8px;
   transition: background-color 0.3s;
+  width: 100%;
 }
 
 .sidebar-content ul li a:hover,
 .sidebar-content ul li a.active {
   background-color: #0984e3;
   color: #ffffff;
+  width: 100%;
 }
 
 .sidebar-content ul li .tick-mark {
@@ -282,7 +298,7 @@ body {
   overflow-y: auto;
 }
 
-.lesson{
+.lesson {
   margin-top: 20px;
 }
 
@@ -304,7 +320,6 @@ body {
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 60px;
-
 }
 
 .navigation-buttons button {
@@ -316,7 +331,6 @@ body {
   cursor: pointer;
   font-size: 1.4rem;
   transition: background-color 0.3s;
-
 }
 
 .navigation-buttons button:disabled {
@@ -401,9 +415,8 @@ body {
 .completion-page {
   display: flex;
   justify-content: center;
-  align-items: flex-start;;
+  align-items: flex-start;
   height: 100vh;
-  //background-color: #f4f4f9;
   text-align: center;
   padding: 40px;
 }
@@ -493,23 +506,49 @@ body {
   font-size: 1.25rem;
 }
 
+/* Toggle Sidebar Button CSS */
+.toggle-sidebar {
+  display: none; /* Hide by default */
+  background-color: #0984e3;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
 @media only screen and (max-width: 767px) {
   .container {
-    flex-direction: column; /* Stack sidebar and content vertically */
+    flex-direction: column;
   }
 
   .sidebar {
-    position: sticky;
-    top: 0;
-    height: 100vh; /* Maintain full height sidebar */
-    max-width: 100%; /* Occupy full width */
-    margin-bottom: 20px; /* Add space at bottom */
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
   }
 
-  .content {
-    padding: 20px; /* Add padding for better spacing */
+  .sidebar.open {
+    max-height: 1000px; /* Set a high value to ensure it expands fully */
+    transition: max-height 0.3s ease-in;
   }
-}</css>
+
+  .toggle-sidebar {
+    display: block; /* Show toggle button on mobile screens */
+  }
+  .lessons .lesson p {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.4;
+  color: #636e72;
+  max-width: 100%; /* Ensure text expands */
+}
+}
+
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -641,15 +680,15 @@ body {
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>565</sys_mod_count>
+        <sys_mod_count>576</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-05 10:03:57</sys_updated_on>
-        <template><![CDATA[<div class="container">  
+        <sys_updated_on>2024-07-08 06:43:40</sys_updated_on>
+        <template><![CDATA[<div class="container">
   <div class="sidebar">
     <div class="sidebar-content">
       <img class="course-image" src="{{c.data.course.thumbnail}}"> 
@@ -678,6 +717,9 @@ body {
       </div>
     </div>
   </div>
+    
+  <div class="toggle-sidebar" ng-click="toggleSidebar()">${Modules}</div>
+  
   <div class="content">
     <div class="page">
       <!-- Initial Page Content -->
@@ -723,6 +765,9 @@ body {
     <p>${You have completed the course successfully.}</p>
     <button ng-click="c.goToMyLearnings()">${Go to My Learnings}</button>
   </div>
-</div>]]></template>
+</div>
+
+
+]]></template>
     </sp_widget>
 </record_update>

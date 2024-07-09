@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <name>Course modules</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-08 05:56:24</sys_created_on>
+        <sys_id>18a2c6c593534210b09bf2918bba1006</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Course modules</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_18a2c6c593534210b09bf2918bba1006</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-08 06:07:07</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":15,"Bottom":17},"Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"Root","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_01","CellId":"text_01"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_04","CellId":"text_04"}],"Id":"container_05","CellId":"container_05"}],"Id":"container_02","CellId":"container_02"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_02","CellId":"text_02"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_03","CellId":"text_03"}],"Id":"container_04","CellId":"container_04"}],"Id":"container_03","CellId":"container_03"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_05","CellId":"text_05"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_06","CellId":"text_06"}],"Id":"container_07","CellId":"container_07"}],"Id":"container_06","CellId":"container_06"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_07","CellId":"text_07"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[],"Id":"container_09","CellId":"container_09"}],"Id":"container_08","CellId":"container_08"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_09","CellId":"text_09"}],"Id":"container_10","CellId":"container_10"}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=18a2c6c593534210b09bf2918bba1006"/>
+</record_update>

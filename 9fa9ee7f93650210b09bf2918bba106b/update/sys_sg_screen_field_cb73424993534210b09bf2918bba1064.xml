@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_screen_field">
+    <sys_sg_screen_field action="INSERT_OR_UPDATE">
+        <data_item_field_name>x_1383177_lms_app_course.course_name</data_item_field_name>
+        <field_name/>
+        <hidden>false</hidden>
+        <order>10</order>
+        <record_id_field/>
+        <screen display_value="New details">ba734a0993534210b09bf2918bba10a4</screen>
+        <screen_data_item_table>x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm</screen_data_item_table>
+        <sys_class_name>sys_sg_screen_field</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-08 06:00:08</sys_created_on>
+        <sys_id>cb73424993534210b09bf2918bba1064</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_1383177_lms_app_course.course_name</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_screen_field_cb73424993534210b09bf2918bba1064</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-08 06:02:47</sys_updated_on>
+        <type>auto</type>
+        <value_only>false</value_only>
+    </sys_sg_screen_field>
+</record_update>

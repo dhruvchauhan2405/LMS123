@@ -10,14 +10,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-07-04 10:42:26</sys_created_on>
         <sys_id>d3bddebb93c3c210b09bf2918bba10c6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Forum Questions List Config</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_master_item_d3bddebb93c3c210b09bf2918bba10c6</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-05 04:33:54</sys_updated_on>
+        <sys_updated_on>2024-07-08 09:33:44</sys_updated_on>
         <use_view_config>true</use_view_config>
         <view_config display_value="Forum Questions">5fbddebb93c3c210b09bf2918bba10c3</view_config>
     </sys_sg_master_item>

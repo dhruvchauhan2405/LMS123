@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_media_section">
+    <sys_sg_media_section action="DELETE">
+        <active>true</active>
+        <button_instance/>
+        <card_size/>
+        <column_count/>
+        <custom_height/>
+        <custom_width/>
+        <data_item/>
+        <headline/>
+        <hide_header>false</hide_header>
+        <hide_section_if_empty>false</hide_section_if_empty>
+        <image_attachment display_value="image_processing20220427-20492-1qagdwq.png" sys_id="39c5d71d93930210b09bf2918bba104e">39c5d71d93930210b09bf2918bba104e</image_attachment>
+        <is_custom_size>false</is_custom_size>
+        <is_hidden_preference_name/>
+        <orientation>horizontal</orientation>
+        <required_roles/>
+        <row_count/>
+        <sys_class_name>sys_sg_media_section</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-03 09:42:39</sys_created_on>
+        <sys_id>b976c5a3930f4210b09bf2918bba109a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>My Learning Image</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_media_section_b976c5a3930f4210b09bf2918bba109a</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:38:13</sys_updated_on>
+        <table/>
+        <text/>
+        <title>My Learning Image</title>
+        <type>image</type>
+        <video_url/>
+        <visible_condition/>
+        <wide_column_count/>
+    </sys_sg_media_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_media_section_b976c5a3930f4210b09bf2918bba109a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_media_section"><sys_sg_media_section action="INSERT_OR_UPDATE"><active>true</active><button_instance/><card_size/><column_count/><custom_height/><custom_width/><data_item/><headline/><hide_header>false</hide_header><hide_section_if_empty>false</hide_section_if_empty><image_attachment display_value="image_processing20220427-20492-1qagdwq.png" sys_id="39c5d71d93930210b09bf2918bba104e">39c5d71d93930210b09bf2918bba104e</image_attachment><is_custom_size>false</is_custom_size><is_hidden_preference_name/><orientation>horizontal</orientation><required_roles/><row_count/><sys_class_name>sys_sg_media_section</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-03 09:42:39</sys_created_on><sys_id>b976c5a3930f4210b09bf2918bba109a</sys_id><sys_mod_count>4</sys_mod_count><sys_name>My Learning Image</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_media_section_b976c5a3930f4210b09bf2918bba109a</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-09 06:38:13</sys_updated_on><table/><text/><title>My Learning Image</title><type>image</type><video_url/><visible_condition/><wide_column_count/></sys_sg_media_section></record_update>]]></payload>
+        <payload_hash>1101784597</payload_hash>
+        <record_name>My Learning Image</record_name>
+        <reverted_from/>
+        <source>4a30f90193134210b09bf2918bba1075</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-09 06:38:13</sys_created_on>
+        <sys_id>72c5d35d93930210b09bf2918bba10c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1909636d2690000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:38:13</sys_updated_on>
+        <type>Media Section</type>
+        <update_guid>f6c5d35df39302101b0a6d7a49c2bcc3</update_guid>
+        <update_guid_history>f6c5d35df39302101b0a6d7a49c2bcc3:1101784597,e985f2c1385742105bfa4dfb7b53c1b2:-282564153,d3c351775b8f82106ac35c0d8a5fab05:1330068782,b3b709273f0f421052dc8055140e8c06:-282564153,7976c5a3ef0f4210fc0c07114fc3039c:1906737131</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-09 07:03:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_media_section">sys_sg_media_section</sys_db_object>
+        <sys_id>511149e056424a1d8c25c91f51e6baa9</sys_id>
+        <sys_metadata>b976c5a3930f4210b09bf2918bba109a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Learning Image</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_media_section_b976c5a3930f4210b09bf2918bba109a</sys_update_name>
+        <sys_update_version display_value="sys_sg_media_section_b976c5a3930f4210b09bf2918bba109a">72c5d35d93930210b09bf2918bba10c4</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 07:03:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
