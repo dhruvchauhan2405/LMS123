@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>LMS My Learning Mobile - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="copy_of_lms_my_learning_1">4c46c4e593970210b09bf2918bba10bb</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-09 10:09:56</sys_created_on>
+        <sys_id>0446c8e593970210b09bf2918bba100c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>LMS My Learning Mobile - Container 2</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_container_0446c8e593970210b09bf2918bba100c</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 10:10:47</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_container_0446c8e593970210b09bf2918bba100c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>LMS My Learning Mobile - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="copy_of_lms_my_learning_1">4c46c4e593970210b09bf2918bba10bb</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-09 10:09:56</sys_created_on><sys_id>0446c8e593970210b09bf2918bba100c</sys_id><sys_mod_count>1</sys_mod_count><sys_name>LMS My Learning Mobile - Container 2</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sp_container_0446c8e593970210b09bf2918bba100c</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-09 10:10:47</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1025129769</payload_hash>
+        <record_name>LMS My Learning Mobile - Container 2</record_name>
+        <reverted_from/>
+        <source>4a30f90193134210b09bf2918bba1075</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-09 10:10:47</sys_created_on>
+        <sys_id>2076cce593970210b09bf2918bba1022</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19096f96fe90000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 10:10:47</sys_updated_on>
+        <type>Container</type>
+        <update_guid>6476cce5a1970210834c353884d2ed21</update_guid>
+        <update_guid_history>6476cce5a1970210834c353884d2ed21:-1025129769,c446c8e5769702109a47c6d66affdc0d:-130177581</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="LMS My Learning Mobile - Container 2">a3ca046d93970210b09bf2918bba10e3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-09 10:29:50</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>3a2a2d8899364f1c96957f8949bbb590</sys_id>
+        <sys_metadata>0446c8e593970210b09bf2918bba100c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LMS My Learning Mobile - Container 2</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_container_0446c8e593970210b09bf2918bba100c</sys_update_name>
+        <sys_update_version display_value="sp_container_0446c8e593970210b09bf2918bba100c">2076cce593970210b09bf2918bba1022</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 10:29:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

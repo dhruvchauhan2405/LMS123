@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function(spUtil, $scope, i18n, $window, $timeout, $element) {
+    var c = this;
+    c.selectedModuleIndex = null;
+    c.isModuleView = false;
+    c.showCompletionModal = false;
+    c.completedCoursePage = false;
+
+    // Function to select a module by index
+    c.selectModuleByIndex = function(index) {
+        c.selectedModuleIndex = index;
+        c.selectedModule = c.data.modules[index].sys_id;
+        c.isModuleView = true; // Switch to module view
+    };
+
+    // Function to select a module by sys_id
+    c.selectModule = function(moduleSysId) {
+        c.completedCoursePage = false;
+        for (var i = 0; i < c.data.modules.length; i++) {
+            if (c.data.modules[i].sys_id === moduleSysId) {
+                c.selectModuleByIndex(i);
+                break;
+            }
+        }
+    };
+
+    // Helper function to get the current module
+    c.getCurrentModule = function() {
+        if (c.selectedModuleIndex !== null) {
+            return c.data.modules[c.selectedModuleIndex];
+        }
+        return {};
+    };
+
+    // Check if current module is the last module
+    c.isLastModule = function() {
+        return c.selectedModuleIndex !== null && c.selectedModuleIndex === c.data.modules.length - 1;
+    };
+
+    // Navigate to the next lesson
+    c.nextLesson = function() {
+        // If Module view is off
+        if (!c.isModuleView) {
+            // If on the initial page, switch to the first module
+            c.isModuleView = true;
+            if (c.data.modules.length > 0) {
+                c.selectModuleByIndex(0);
+            }
+        } else if (c.selectedModuleIndex !== null) {
+            c.data.selectedmodule = c.selectedModuleIndex;
+            c.data.modules[c.selectedModuleIndex].status = true;
+            c.server.update().then(function(response) {
+                c.data.percentage = response.percent;
+            });
+            if (c.selectedModuleIndex < c.data.modules.length - 1) {
+                c.selectModuleByIndex(c.selectedModuleIndex + 1);
+            } else {
+                c.isModuleView = false;
+                c.showCompletionModal = false;
+                c.completedCoursePage = true;
+            }
+
+            // Scroll to the bottom of the header
+            $timeout(function() {
+                var headerElement = document.querySelector('.module-header');
+                if (headerElement) {
+                    var headerHeight = headerElement.offsetHeight;
+                    window.scrollTo(0, headerHeight);
+                } else {
+                    window.scrollTo(0, 0);
+                }
+            }, 0);
+        }
+    };
+
+    // Complete the course
+    c.completeCourse = function() {
+        c.data.action = 'complete';
+        c.server.update().then(function() {
+            c.showCompletionModal = true;
+        });
+    };
+
+    // Navigate to the previous lesson
+    c.prevLesson = function() {
+        if (c.selectedModuleIndex !== null && c.selectedModuleIndex > 0) {
+            c.selectModuleByIndex(c.selectedModuleIndex - 1);
+        }
+    };
+
+    // Function to navigate to My Learnings page
+    c.goToMyLearnings = function() {
+        // Assuming there is a function to navigate to My Learnings page
+        window.location.href = 'https://dev211199.service-now.com/lms?id=lms_my_learning_mobile'; // Adjust the URL as necessary
+    };
+	 $scope.toggleSidebar = function() {
+    var sidebar = $element[0].querySelector('.sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('open');
+    }
+  };
+
+  // Ensure the sidebar is initially in the correct state
+  $scope.$on('$viewContentLoaded', function() {
+    var sidebar = $element[0].querySelector('.sidebar');
+    if (sidebar && window.innerWidth <= 767) {
+      sidebar.classList.remove('open');
+    }
+  });
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Universal Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f4f4f9;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar, .content {
+  margin-top: 5.5px;
+  margin-bottom: 14px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  background-color: #2d3436;
+  color: #ffffff;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.sidebar-content .course-image{
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.sidebar-content h2 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.sidebar-content p {
+  text-align: left;
+}
+
+.sidebar-content ul {
+  list-style: none;
+}
+
+.sidebar-content ul li {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-content ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.sidebar-content ul li a:hover,
+.sidebar-content ul li a.active {
+  background-color: #0984e3;
+  color: #ffffff;
+  width: 100%;
+}
+
+.sidebar-content ul li .tick-mark {
+  color: #2ecc71;
+  margin-left: 10px;
+}
+
+.completed {
+  color: #2ecc71; /* Green color for completed modules */
+}
+
+.sidebar-footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #34495e;
+}
+
+.sidebar-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.sidebar-footer a:hover {
+  color: #0984e3;
+}
+
+/* Content Styles */
+.content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f9;
+}
+
+.page {
+  width: 90%;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+/* Module Header Styles */
+.module-header {
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  color: #2d3436;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.module-header .header-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.module-header .course-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.module-header .course-description {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: #636e72;
+}
+
+.module-header .next-lesson {
+  padding: 15px 30px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background-color 0.3s;
+}
+
+.module-header .next-lesson:hover {
+  background-color: #74b9ff;
+}
+
+/* Lessons and Navigation Buttons Styles */
+.lessons {
+  margin-bottom: 10px;
+  height: calc(100% - 45px);
+  overflow-y: auto;
+}
+
+.lesson {
+  margin-top: 20px;
+}
+
+.lessons .lesson h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+.lessons .lesson p {
+  font-size: 1.5rem;
+  text-align: justify;
+  line-height: 1.6;
+  color: #636e72;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.navigation-buttons button {
+  padding: 10px 20px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background-color 0.3s;
+}
+
+.navigation-buttons button:disabled {
+  background-color: #b2bec3;
+  cursor: not-allowed;
+}
+
+.navigation-buttons button:hover {
+  background-color: #74b9ff;
+}
+
+/* Modal CSS */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #2d3436;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #636e72;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #74b9ff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #e74c3c;
+}
+
+/* Completion Page Styles */
+.completion-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  text-align: center;
+  padding: 40px;
+}
+
+.completion-content {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.completion-content .celebration-graphic {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.completion-content h1 {
+  font-size: 2.5rem;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.completion-content .completion-message {
+  font-size: 1.7rem;
+  color: #636e72;
+  margin-bottom: 40px;
+}
+
+.completion-content .complete-course {
+  padding: 15px 30px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.completion-content .complete-course:hover {
+  background-color: #74b9ff;
+}
+
+/* Progress Donut Styles */
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.2rem;
+}
+
+.progress-donut {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  float: left;
+  margin-left: 130px;
+}
+
+.donut-ring {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.donut-segment {
+  fill: transparent;
+  stroke-width: 0.6rem;
+}
+
+.donut-segment:nth-child(2) {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.donut-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+#progress-text {
+  font-size: 1.25rem;
+}
+
+/* Toggle Sidebar Button CSS */
+.toggle-sidebar {
+  display: none; /* Hide by default */
+  background-color: #0984e3;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .sidebar.open {
+    max-height: 1000px; /* Set a high value to ensure it expands fully */
+    transition: max-height 0.3s ease-in;
+  }
+
+  .toggle-sidebar {
+    display: block; /* Show toggle button on mobile screens */
+  }
+  .lessons .lesson p {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.4;
+  color: #636e72;
+  max-width: 100%; /* Ensure text expands */
+}
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_module_content_mobile</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS Module Content Mobile</name>
+        <option_schema>[]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var courseSysId = $sp.getParameter('sys_id');
+
+	if(!input){
+		data.course = {};
+		data.modules = [];
+		data.a=false;
+		// Fetch course details
+		var courseGr = new GlideRecord('x_1383177_lms_app_course');
+		if (courseGr.get(courseSysId)) {
+			data.course.sys_id = courseGr.getValue('sys_id');
+			data.course.course_name = courseGr.getValue('course_name');
+			data.course.short_description = courseGr.getValue('short_description');
+			data.course.thumbnail = courseGr.getDisplayValue('thumbnail');
+		}
+
+		var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+		var moduleTable = 'x_1383177_lms_app_module';
+
+		var moduleGr = new GlideRecordSecure(courseModuleTable);
+		moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
+		moduleGr.orderBy('order');
+		moduleGr.query();
+
+		while (moduleGr.next()) {
+			var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
+			var m2mgr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+			m2mgr.addQuery('sys_user', gs.getUserID());
+			m2mgr.addQuery('course', courseSysId);
+			m2mgr.addQuery('x_1383177_lms_app_module',moduleSysId);
+			m2mgr.query();
+			if(m2mgr.next()){
+				data.a= true;
+			}
+			else{
+				data.a=false;
+			}
+
+			var moduleGrDetails = new GlideRecord(moduleTable);
+			if (moduleGrDetails.get(moduleSysId)) {
+				var moduleObj = {
+					sys_id: moduleSysId,
+					name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
+					content_body: moduleGrDetails.getValue('content_body'), // Adjust field names as per your module table
+					status: data.a,
+				};
+				data.modules.push(moduleObj);
+			}
+		}
+		data.count=0;
+		var m2mgr2 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+		m2mgr2.addQuery('sys_user', gs.getUserID());
+		m2mgr2.addQuery('course', courseSysId);
+		m2mgr2.query();
+		while(m2mgr2.next()){
+			data.count++;
+		}
+
+		var totalModules = data.modules.length;
+		data.percentage= Math.round((data.count / totalModules) * 100);
+	}
+
+
+	if (input) {
+		var userId = gs.getUserID();
+		var moduleSysId1 = input.modules[input.selectedmodule].sys_id;
+
+
+
+		// Create a new GlideRecord instance
+		var progressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+
+		// Add query conditions to check if the record already exists
+		progressGr.addQuery('sys_user', userId);
+		progressGr.addQuery('course', courseSysId);
+		progressGr.addQuery('x_1383177_lms_app_module', moduleSysId1);
+		progressGr.query();
+
+		// If no matching records are found, insert a new record
+		if (!progressGr.next()) {
+			var newProgressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+			newProgressGr.initialize();
+			newProgressGr.setValue('sys_user', userId);
+			newProgressGr.setValue('course', courseSysId);
+			newProgressGr.setValue('x_1383177_lms_app_module', moduleSysId1);
+			newProgressGr.setValue('progress', 'complete');
+			newProgressGr.insert();
+		}
+
+		data.count=0;
+		var m2mgr22 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+		m2mgr22.addQuery('sys_user', gs.getUserID());
+		m2mgr22.addQuery('course', courseSysId);
+		m2mgr22.query();
+		while(m2mgr22.next()){
+			data.count++;
+		}
+		data.percent=0;
+		var totalModules2 = input.modules.length;
+		data.percent= Math.round((data.count / totalModules2) * 100);
+
+		if (input.action == 'complete'){
+			var courseCompleteGr = new GlideRecord('x_1383177_lms_app_enrollment');
+			courseCompleteGr.addQuery('course_name', courseSysId);
+			courseCompleteGr.addQuery('learner_name', gs.getUserID());
+			courseCompleteGr.query();
+			if (courseCompleteGr.next()){
+				courseCompleteGr.setValue('completion_status', 'complete');
+				courseCompleteGr.update();
+			}
+		}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-09 10:25:06</sys_created_on>
+        <sys_id>5eb904e993970210b09bf2918bba10b2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>LMS Module Content Mobile</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_5eb904e993970210b09bf2918bba10b2</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-09 10:26:47</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <img class="course-image" src="{{c.data.course.thumbnail}}"> 
+      <h2>{{c.data.course.course_name}}</h2>
+      <div>
+        <div class="progress-container">
+        <p id="progress-text">${Progress}: {{c.data.percentage}}% <!-- Progress Status --></p>
+        <div class="progress-donut">                  
+            <svg class="donut-ring" width="100%" height="100%" viewBox="0 0 42 42">
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ecf0f1" stroke-width="3"></circle>
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#0984e3" stroke-width="3" stroke-dasharray="{{c.data.percentage * 0.01 * 100}} 100"></circle>
+            </svg>
+        </div>
+    </div>
+          <ul>
+          <li ng-repeat="module in c.data.modules">
+            <a href="javascript:void(0)" ng-click="c.selectModule(module.sys_id)" ng-class="{'active': c.selectedModule === module.sys_id, 'completed': module.completed}">
+              {{module.name}}
+              <span ng-if="module.status" class="tick-mark">✔</span>
+            </a>
+          </li>
+          </ul>
+      </div>      
+      <div class="sidebar-footer">
+        <a href="javascript:void(0)" ng-click="c.goToMyLearnings()">${My Learnings}</a>
+      </div>
+    </div>
+  </div>
+    
+  <div class="toggle-sidebar" ng-click="toggleSidebar()">${Modules}</div>
+  
+  <div class="content">
+    <div class="page">
+      <!-- Initial Page Content -->
+      <div class="module-header" ng-show="!c.isModuleView && !c.completedCoursePage">
+        <img src="lms_white.png" alt="LMS Logo" class="header-logo">
+        <h1 class="course-title">{{c.data.course.course_name}}</h1>
+        <p class="course-description">{{c.data.course.short_description}}</p>
+        <button class="next-lesson" ng-click="c.nextLesson()">${Start Course}</button>
+      </div>
+      <!-- Module Content -->
+      <div class="green-progress"></div>
+      <div class="module-contents" ng-show="c.isModuleView">
+        <div class="lessons" onscroll="updateProgress()">
+          <div class="lesson">
+            <h2>{{c.getCurrentModule().name}}</h2>
+            <p ng-bind-html="c.getCurrentModule().content_body"></p>
+          </div>
+        </div>
+        <div class="navigation-buttons">
+          <button class="prev-lesson" ng-click="c.prevLesson()" ng-disabled="c.selectedModuleIndex === 0">${Previous Lesson}</button>
+          <button class="next-lesson" ng-click="c.nextLesson()">${Next Lesson}</button>
+        </div>
+      </div>
+      <!-- Completion Page -->
+      <div class="completion-page" ng-show="c.completedCoursePage">
+        <div class="completion-content">
+          <img src="LMS_celebration.png" alt="Celebration Graphic" class="celebration-graphic">
+          <h1>${Congratulations, you're all set!}</h1>
+          <p class="completion-message">${You have successfully completed the course. Keep up the great work and continue learning!}</p>
+          <button class="complete-course" ng-click="c.completeCourse()">${Complete Course}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for course completion -->
+<div class="modal" ng-show="c.showCompletionModal" >
+
+  <div class="modal-content">
+    <span class="close" ng-click="c.data.showCompletionModal = false">&times;</span>
+    <h2>${Congratulations!}</h2>
+    <p>${You have completed the course successfully.}</p>
+    <button ng-click="c.goToMyLearnings()">${Go to My Learnings}</button>
+  </div>
+</div>
+
+
+]]></template>
+    </sp_widget>
+</record_update>

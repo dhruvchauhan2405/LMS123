@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_data_item">
+    <sys_sg_data_item action="DELETE">
+        <condition_type>script</condition_type>
+        <description/>
+        <group_by/>
+        <instance_relative_url_qc/>
+        <name>New data item</name>
+        <offline_query_condition/>
+        <offline_query_condition_script/>
+        <query_condition table="x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course">x_1383177_lms_app_course_domain=40db4ad093f58210b09bf2918bba100b^EQ<item display_table="x_1383177_lms_app_course_domain" display_value="Java Programming" endquery="false" field="x_1383177_lms_app_course_domain" goto="false" newquery="false" operator="=" or="false" value="40db4ad093f58210b09bf2918bba100b"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </query_condition>
+        <query_condition_script><![CDATA[(function getQueryString(input) {
+	// Type appropriate comment here, and begin script below
+	var grDmCr = new GlideAggregate('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course');
+	grDmCr.addQuery('x_1383177_lms_app_course_domain', input.sys_id);
+	
+	grDmCr.query();
+	return grDmCr;
+
+})(input);]]></query_condition_script>
+        <sys_class_name>sys_sg_data_item</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-04 05:57:02</sys_created_on>
+        <sys_id>666cddbf938f8210b09bf2918bba105e</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>New data item</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_data_item_666cddbf938f8210b09bf2918bba105e</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-09 09:37:31</sys_updated_on>
+        <table>x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course</table>
+    </sys_sg_data_item>
+    <sys_translated_text action="DELETE" query="documentkey=666cddbf938f8210b09bf2918bba105e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_data_item_666cddbf938f8210b09bf2918bba105e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_sg_data_item"&gt;&lt;sys_sg_data_item action="INSERT_OR_UPDATE"&gt;&lt;condition_type&gt;script&lt;/condition_type&gt;&lt;description/&gt;&lt;group_by/&gt;&lt;instance_relative_url_qc/&gt;&lt;name&gt;New data item&lt;/name&gt;&lt;offline_query_condition/&gt;&lt;offline_query_condition_script/&gt;&lt;query_condition table="x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course"&gt;x_1383177_lms_app_course_domain=40db4ad093f58210b09bf2918bba100b^EQ&lt;item display_table="x_1383177_lms_app_course_domain" display_value="Java Programming" endquery="false" field="x_1383177_lms_app_course_domain" goto="false" newquery="false" operator="=" or="false" value="40db4ad093f58210b09bf2918bba100b"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/query_condition&gt;&lt;query_condition_script&gt;&lt;![CDATA[(function getQueryString(input) {
+	// Type appropriate comment here, and begin script below
+	var grDmCr = new GlideAggregate('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course');
+	grDmCr.addQuery('x_1383177_lms_app_course_domain', input.sys_id);
+	
+	grDmCr.query();
+	return grDmCr;
+
+})(input);]]&gt;&lt;/query_condition_script&gt;&lt;sys_class_name&gt;sys_sg_data_item&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-07-04 05:57:02&lt;/sys_created_on&gt;&lt;sys_id&gt;666cddbf938f8210b09bf2918bba105e&lt;/sys_id&gt;&lt;sys_mod_count&gt;13&lt;/sys_mod_count&gt;&lt;sys_name&gt;New data item&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_sg_data_item_666cddbf938f8210b09bf2918bba105e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-07-09 09:37:31&lt;/sys_updated_on&gt;&lt;table&gt;x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course&lt;/table&gt;&lt;/sys_sg_data_item&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=666cddbf938f8210b09bf2918bba105e"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2094638541</payload_hash>
+        <record_name>New data item</record_name>
+        <reverted_from/>
+        <source>a01623dd93d30210b09bf2918bba10a2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-09 09:37:31</sys_created_on>
+        <sys_id>d1deff1d93570210b09bf2918bba10fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19096daf99e0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-09 09:37:31</sys_updated_on>
+        <type>Data Item</type>
+        <update_guid>59deff1d5b5702100c2d4bc9cc4e48f9</update_guid>
+        <update_guid_history>59deff1d5b5702100c2d4bc9cc4e48f9:2094638541,cf2bff99a45702105590267d15c51aac:-1775983290,1319697f91cf8210ee4258e902270359:1819751324,cd57a5bbd8cf8210766b160c28d597ee:2079857751,29e521bb64cf8210ca85766ce644310f:406770692,8f24213bbecf8210db11acf40b7ca4b8:1057444255,f9e3a9f7b9cf82103341a4ff4c0bdcdd:-233407259,01b3e5f7f7cf821012919bd5d436bc8c:2079857751,8f83adb74dcf8210676e3720475a2630:-640462721,33022d373fcf82103d6032a4915c7a2c:1057444255,dac1657728cf8210a9f5a61a7de20886:-1549953785,eae0e5f392cf82105c746b81918926b0:1057444255,09df99b3d0cf82102e14d2b23b65c76e:-76305043,226cddbf0c8f8210a3e89ab337554060:1057444255</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-09 09:47:53</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_data_item">sys_sg_data_item</sys_db_object>
+        <sys_id>770d28631f9e452097a209f732aeb004</sys_id>
+        <sys_metadata>666cddbf938f8210b09bf2918bba105e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New data item</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_data_item_666cddbf938f8210b09bf2918bba105e</sys_update_name>
+        <sys_update_version display_value="sys_sg_data_item_666cddbf938f8210b09bf2918bba105e">d1deff1d93570210b09bf2918bba10fa</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-09 09:47:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

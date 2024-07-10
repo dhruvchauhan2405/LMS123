@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_segment">
+    <sys_sg_form_segment action="INSERT_OR_UPDATE">
+        <embedded_screen display_value="Answers Detailed Screen">cb214c3993d74210b09bf2918bba10ee</embedded_screen>
+        <form display_value="Answers Record Screen">47214c3993d74210b09bf2918bba10ec</form>
+        <header_view_config/>
+        <is_sticky>false</is_sticky>
+        <order/>
+        <sys_class_name>sys_sg_form_segment</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-10 04:26:13</sys_created_on>
+        <sys_id>0b214c3993d74210b09bf2918bba10f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_form_segment_0b214c3993d74210b09bf2918bba10f1</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-10 04:26:13</sys_updated_on>
+    </sys_sg_form_segment>
+</record_update>
