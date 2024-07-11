@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot_attribute">
+    <sys_sg_view_template_slot_attribute action="DELETE">
+        <description>button_03_TextColor</description>
+        <name display_value="TextColor">773f99c2b7321010df65f6efce11a9d7</name>
+        <sys_class_name>sys_sg_view_template_slot_attribute</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-11 06:05:25</sys_created_on>
+        <sys_id>357169429313c210b09bf2918bba108e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>773f99c2b7321010df65f6efce11a9d7</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_attribute_357169429313c210b09bf2918bba108e</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 06:05:25</sys_updated_on>
+        <translated_value/>
+        <value>#FFFFFF</value>
+        <view_template_slot display_value="button_03">f57169429313c210b09bf2918bba1088</view_template_slot>
+    </sys_sg_view_template_slot_attribute>
+    <sys_translated_text action="DELETE" query="documentkey=357169429313c210b09bf2918bba108e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_view_template_slot_attribute_357169429313c210b09bf2918bba108e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot_attribute"><sys_sg_view_template_slot_attribute action="INSERT_OR_UPDATE"><description>button_03_TextColor</description><name display_value="TextColor">773f99c2b7321010df65f6efce11a9d7</name><sys_class_name>sys_sg_view_template_slot_attribute</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-11 06:05:25</sys_created_on><sys_id>357169429313c210b09bf2918bba108e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>773f99c2b7321010df65f6efce11a9d7</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_view_template_slot_attribute_357169429313c210b09bf2918bba108e</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-11 06:05:25</sys_updated_on><translated_value/><value>#FFFFFF</value><view_template_slot display_value="button_03">f57169429313c210b09bf2918bba1088</view_template_slot></sys_sg_view_template_slot_attribute><sys_translated_text action="delete_multiple" query="documentkey=357169429313c210b09bf2918bba108e"/></record_update>]]></payload>
+        <payload_hash>1188239160</payload_hash>
+        <record_name>773f99c2b7321010df65f6efce11a9d7</record_name>
+        <reverted_from/>
+        <source>10735ebd93538210b09bf2918bba105d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-11 06:05:25</sys_created_on>
+        <sys_id>397169429313c210b09bf2918bba1090</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190a06584370000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 06:05:25</sys_updated_on>
+        <type>Card template element attribute</type>
+        <update_guid>7d716942a413c2100c37512e96b10a8f</update_guid>
+        <update_guid_history>7d716942a413c2100c37512e96b10a8f:1188239160</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-11 16:52:01</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_template_slot_attribute">sys_sg_view_template_slot_attribute</sys_db_object>
+        <sys_id>0fb4bf0c0d68481c82f9471f6df9b890</sys_id>
+        <sys_metadata>357169429313c210b09bf2918bba108e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>773f99c2b7321010df65f6efce11a9d7</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_view_template_slot_attribute_357169429313c210b09bf2918bba108e</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_template_slot_attribute_357169429313c210b09bf2918bba108e">397169429313c210b09bf2918bba1090</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 16:52:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
