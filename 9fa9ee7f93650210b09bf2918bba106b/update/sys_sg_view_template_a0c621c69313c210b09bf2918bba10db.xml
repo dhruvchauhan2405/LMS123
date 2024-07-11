@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <name>Requested Course card template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-11 06:28:32</sys_created_on>
+        <sys_id>a0c621c69313c210b09bf2918bba10db</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Requested Course card template</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_a0c621c69313c210b09bf2918bba10db</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 06:47:48</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":15,"Bottom":17},"Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"Root","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_02","CellId":"container_02","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_03","CellId":"container_03","Background":{"Color":"#B0B5BF","Opacity":1,"Type":"Color","CellId":"Background_container_03","Id":"Background_container_03","elementId":"8e05a5bb-177d-3301-64ba-744757ab1b39"},"CornerRadius":15,"Margin":{"Top":1,"Right":1,"Bottom":1,"Left":1},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_04","CellId":"container_04","CornerRadius":15,"Margin":{"Top":20,"Bottom":17},"Background":{"Color":"#FFFFFF","Opacity":1,"Type":"Color","CellId":"Background_container_04","Id":"Background_container_04","elementId":"284e29ed-1de5-ed7c-81b9-bd768c8d8474"},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_05","CellId":"container_05","CornerRadius":15,"Children":[{"Type":"Image","Scaling":"Fit","Id":"image_01","CellId":"image_01","Margin":{"Left":15},"Height":80,"Width":120,"CornerRadius":15}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"container_06","CellId":"container_06","Margin":{"Right":8},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_01","CellId":"text_01"},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_02","CellId":"text_02","Margin":{"Bottom":15}},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Center","Distribution":"Equal","Id":"container_07","CellId":"container_07","Height":20,"Width":100,"CornerRadius":15,"Background":{"Color":"#F0E000","Opacity":1,"Type":"Color","CellId":"Background_container_07","Id":"Background_container_07","elementId":"98368b94-66b3-ce9f-2398-2f47766f23da"},"Children":[{"Type":"Button","TextAlignment":"Center","Id":"button_01","CellId":"button_01"}]}]}]}]}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=a0c621c69313c210b09bf2918bba10db"/>
+</record_update>

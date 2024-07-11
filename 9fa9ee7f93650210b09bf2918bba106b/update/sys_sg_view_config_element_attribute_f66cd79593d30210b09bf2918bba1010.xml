@@ -6,14 +6,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-07-09 07:07:10</sys_created_on>
         <sys_id>f66cd79593d30210b09bf2918bba1010</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_view_config_element_attribute_f66cd79593d30210b09bf2918bba1010</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-09 07:07:10</sys_updated_on>
+        <sys_updated_on>2024-07-11 04:27:00</sys_updated_on>
         <translated_value/>
         <value>thumbnail</value>
         <view_config_element display_value="image_02_element">7e6c979593d30210b09bf2918bba1090</view_config_element>

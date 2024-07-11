@@ -18,14 +18,14 @@
         <destination_type>screen</destination_type>
         <external_browser>false</external_browser>
         <failure_message/>
-        <field_name/>
+        <field_name>sys_id</field_name>
         <hide_buttons/>
         <hide_fields/>
         <highlighted_icons/>
         <jump_to_previous>false</jump_to_previous>
         <jump_to_screen>false</jump_to_screen>
-        <link_label>course page</link_label>
-        <link_url>https://dev211199.service-now.com/lms?id=lms_modules_content_mobile&amp;sys_id={{sys_id}}&amp;module=-1</link_url>
+        <link_label>https://dev211199.service-now.com/lms?id=lms_modules_content_mobile&amp;sys_id=7503fc6a9362c210b09bf2918</link_label>
+        <link_url>https://dev211199.service-now.com/lms?id=lms_modules_content_mobile&amp;sys_id=7503fc6a9362c210b09bf2918</link_url>
         <mail_address/>
         <mail_content/>
         <mail_subject/>
@@ -58,15 +58,15 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-10 04:10:03</sys_created_on>
         <sys_id>0a7d372593d74210b09bf2918bba103d</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>My courses redirect</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_button_0a7d372593d74210b09bf2918bba103d</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-10 05:05:23</sys_updated_on>
-        <table>x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm</table>
+        <sys_updated_on>2024-07-11 07:32:18</sys_updated_on>
+        <table>x_1383177_lms_app_course</table>
         <take_value_from_field>false</take_value_from_field>
         <type>redirection</type>
         <unhighlighted_icons/>

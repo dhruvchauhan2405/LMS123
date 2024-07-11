@@ -5,19 +5,19 @@
         <auto_jump_to_destination>false</auto_jump_to_destination>
         <auto_redirection>false</auto_redirection>
         <button_table_field_name/>
-        <cancel_label/>
+        <cancel_label>No</cancel_label>
         <condition/>
         <condition_script/>
         <condition_type>declarative</condition_type>
-        <confirm_label/>
-        <confirmation_message/>
+        <confirm_label>Yes</confirm_label>
+        <confirmation_message>Are you sure you want to withdraw your course?</confirmation_message>
         <context>record</context>
         <description/>
         <destination_alp/>
         <destination_screen/>
         <destination_type>screen</destination_type>
         <external_browser>false</external_browser>
-        <failure_message/>
+        <failure_message>Oops, something went wrong!</failure_message>
         <field_name/>
         <hide_buttons/>
         <hide_fields/>
@@ -48,24 +48,24 @@
         <select_current_record>false</select_current_record>
         <show_acknowledgement>false</show_acknowledgement>
         <show_buttons/>
-        <show_confirmation>false</show_confirmation>
+        <show_confirmation>true</show_confirmation>
         <show_fields/>
         <show_refresh_on_previous>false</show_refresh_on_previous>
         <show_signature>false</show_signature>
         <sms/>
-        <success_message/>
+        <success_message>You have successfully unenrolled.</success_message>
         <sys_class_name>sys_sg_button</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-10 05:11:42</sys_created_on>
         <sys_id>899b8475931b4210b09bf2918bba1071</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Cancel Course</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_button_899b8475931b4210b09bf2918bba1071</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-10 05:11:42</sys_updated_on>
+        <sys_updated_on>2024-07-11 06:51:55</sys_updated_on>
         <table>x_1383177_lms_app_enrollment</table>
         <take_value_from_field>false</take_value_from_field>
         <type>write_back</type>

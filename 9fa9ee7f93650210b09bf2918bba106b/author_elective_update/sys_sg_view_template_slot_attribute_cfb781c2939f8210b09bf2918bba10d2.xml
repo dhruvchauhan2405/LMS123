@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot_attribute">
+    <sys_sg_view_template_slot_attribute action="DELETE">
+        <description>button_02_Button</description>
+        <name display_value="Button">652f59c2b7321010df65f6efce11a9a5</name>
+        <sys_class_name>sys_sg_view_template_slot_attribute</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 04:13:00</sys_created_on>
+        <sys_id>cfb781c2939f8210b09bf2918bba10d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>652f59c2b7321010df65f6efce11a9a5</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_attribute_cfb781c2939f8210b09bf2918bba10d2</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 04:13:00</sys_updated_on>
+        <translated_value/>
+        <value>e2ceb29193530210b09bf2918bba10f2</value>
+        <view_template_slot display_value="button_02">c7b781c2939f8210b09bf2918bba10b8</view_template_slot>
+    </sys_sg_view_template_slot_attribute>
+    <sys_translated_text action="DELETE" query="documentkey=cfb781c2939f8210b09bf2918bba10d2"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_view_template_slot_attribute_cfb781c2939f8210b09bf2918bba10d2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot_attribute"><sys_sg_view_template_slot_attribute action="INSERT_OR_UPDATE"><description>button_02_Button</description><name display_value="Button">652f59c2b7321010df65f6efce11a9a5</name><sys_class_name>sys_sg_view_template_slot_attribute</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-11 04:13:00</sys_created_on><sys_id>cfb781c2939f8210b09bf2918bba10d2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>652f59c2b7321010df65f6efce11a9a5</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_view_template_slot_attribute_cfb781c2939f8210b09bf2918bba10d2</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-11 04:13:00</sys_updated_on><translated_value/><value>e2ceb29193530210b09bf2918bba10f2</value><view_template_slot display_value="button_02">c7b781c2939f8210b09bf2918bba10b8</view_template_slot></sys_sg_view_template_slot_attribute><sys_translated_text action="delete_multiple" query="documentkey=cfb781c2939f8210b09bf2918bba10d2"/></record_update>]]></payload>
+        <payload_hash>181643965</payload_hash>
+        <record_name>652f59c2b7321010df65f6efce11a9a5</record_name>
+        <reverted_from/>
+        <source>a01623dd93d30210b09bf2918bba10a2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 04:13:01</sys_created_on>
+        <sys_id>c3b781c2939f8210b09bf2918bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1909ffe98c30000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 04:13:01</sys_updated_on>
+        <type>Card template element attribute</type>
+        <update_guid>0bb781c2859f821046a42ae5c5af32d4</update_guid>
+        <update_guid_history>0bb781c2859f821046a42ae5c5af32d4:181643965</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 04:28:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_template_slot_attribute">sys_sg_view_template_slot_attribute</sys_db_object>
+        <sys_id>115e5c7c6aed402081d8568c58768900</sys_id>
+        <sys_metadata>cfb781c2939f8210b09bf2918bba10d2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>652f59c2b7321010df65f6efce11a9a5</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_view_template_slot_attribute_cfb781c2939f8210b09bf2918bba10d2</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_template_slot_attribute_cfb781c2939f8210b09bf2918bba10d2">c3b781c2939f8210b09bf2918bba10d5</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 04:28:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

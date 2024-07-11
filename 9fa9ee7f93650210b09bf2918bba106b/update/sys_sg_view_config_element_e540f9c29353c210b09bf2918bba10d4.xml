@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element">
+    <sys_sg_view_config_element action="INSERT_OR_UPDATE">
+        <name>text_04_element</name>
+        <sys_class_name>sys_sg_view_config_element</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-11 07:10:07</sys_created_on>
+        <sys_id>e540f9c29353c210b09bf2918bba10d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_04_element</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_e540f9c29353c210b09bf2918bba10d4</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 07:10:07</sys_updated_on>
+        <view_config display_value="your course latest">5bde03fd93578210b09bf2918bba10c1</view_config>
+        <view_template_slot display_value="text_04">7d69d10a93df8210b09bf2918bba10c2</view_template_slot>
+    </sys_sg_view_config_element>
+</record_update>

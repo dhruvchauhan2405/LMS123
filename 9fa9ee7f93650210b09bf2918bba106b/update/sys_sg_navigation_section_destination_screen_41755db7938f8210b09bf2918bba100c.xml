@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_section_destination_screen">
     <sys_sg_navigation_section_destination_screen action="INSERT_OR_UPDATE">
-        <applet display_value="Requested Course list">34755db7938f8210b09bf2918bba1009</applet>
+        <applet display_value="Requested Course List">34755db7938f8210b09bf2918bba1009</applet>
         <background_color/>
         <background_color_variable/>
         <foreground_color/>
         <foreground_color_variable/>
-        <icon display_value="icon-File">0c66102fc7300010d2eec08603c260d5</icon>
+        <icon display_value="MS icon-Request-Solid">4752937a0fca6010729bb3c9c4767e68</icon>
         <image/>
-        <name>Requested Courses</name>
+        <name>Requested</name>
         <sys_class_name>sys_sg_navigation_section_destination_screen</sys_class_name>
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-04 05:26:37</sys_created_on>
         <sys_id>41755db7938f8210b09bf2918bba100c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Requested Courses</sys_name>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Requested</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_navigation_section_destination_screen_41755db7938f8210b09bf2918bba100c</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-04 05:26:37</sys_updated_on>
+        <sys_updated_on>2024-07-11 07:24:37</sys_updated_on>
     </sys_sg_navigation_section_destination_screen>
 </record_update>

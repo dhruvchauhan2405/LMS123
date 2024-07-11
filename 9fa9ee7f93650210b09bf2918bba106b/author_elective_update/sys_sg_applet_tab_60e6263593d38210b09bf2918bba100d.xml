@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_tab">
+    <sys_sg_applet_tab action="DELETE">
+        <active>true</active>
+        <icon display_value="Bag">081d8da2b72200108223e126de11a9c9</icon>
+        <label>New screen tab</label>
+        <screen display_value="New list screen">97046e3193d38210b09bf2918bba105c</screen>
+        <sys_class_name>sys_sg_applet_tab</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-10 16:30:14</sys_created_on>
+        <sys_id>60e6263593d38210b09bf2918bba100d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New screen tab</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_applet_tab_60e6263593d38210b09bf2918bba100d</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-10 16:30:14</sys_updated_on>
+    </sys_sg_applet_tab>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_applet_tab_60e6263593d38210b09bf2918bba100d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_tab"><sys_sg_applet_tab action="INSERT_OR_UPDATE"><active>true</active><icon display_value="Bag">081d8da2b72200108223e126de11a9c9</icon><label>New screen tab</label><screen display_value="New list screen">97046e3193d38210b09bf2918bba105c</screen><sys_class_name>sys_sg_applet_tab</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-10 16:30:14</sys_created_on><sys_id>60e6263593d38210b09bf2918bba100d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>New screen tab</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_applet_tab_60e6263593d38210b09bf2918bba100d</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-10 16:30:14</sys_updated_on></sys_sg_applet_tab></record_update>]]></payload>
+        <payload_hash>-1464540442</payload_hash>
+        <record_name>New screen tab</record_name>
+        <reverted_from/>
+        <source>10735ebd93538210b09bf2918bba105d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-10 16:30:14</sys_created_on>
+        <sys_id>a0e6263593d38210b09bf2918bba1010</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1909d7b30150000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-10 16:30:14</sys_updated_on>
+        <type>Screen tab</type>
+        <update_guid>e4e6263524d382104a198ac9f56eaf0f</update_guid>
+        <update_guid_history>e4e6263524d382104a198ac9f56eaf0f:-1464540442</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-10 17:44:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_applet_tab">sys_sg_applet_tab</sys_db_object>
+        <sys_id>6979412e738a40089559e5480a4eca40</sys_id>
+        <sys_metadata>60e6263593d38210b09bf2918bba100d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New screen tab</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_applet_tab_60e6263593d38210b09bf2918bba100d</sys_update_name>
+        <sys_update_version display_value="sys_sg_applet_tab_60e6263593d38210b09bf2918bba100d">a0e6263593d38210b09bf2918bba1010</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-10 17:44:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

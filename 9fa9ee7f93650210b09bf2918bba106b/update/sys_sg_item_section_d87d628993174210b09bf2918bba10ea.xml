@@ -8,8 +8,8 @@
         <data_item/>
         <destination_screen display_value="LMS screen">547daa4993174210b09bf2918bba1021</destination_screen>
         <display_title>false</display_title>
-        <hide_header>false</hide_header>
-        <hide_section_if_empty>false</hide_section_if_empty>
+        <hide_header>true</hide_header>
+        <hide_section_if_empty>true</hide_section_if_empty>
         <hide_see_all_button>true</hide_see_all_button>
         <is_custom_size>false</is_custom_size>
         <is_hidden_preference_name/>
@@ -22,14 +22,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-08 09:03:27</sys_created_on>
         <sys_id>d87d628993174210b09bf2918bba10ea</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Visit our website</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_item_section_d87d628993174210b09bf2918bba10ea</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-08 09:14:19</sys_updated_on>
+        <sys_updated_on>2024-07-10 18:52:27</sys_updated_on>
         <table/>
         <title>Visit our website</title>
         <visible_condition/>

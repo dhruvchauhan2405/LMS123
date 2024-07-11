@@ -118,7 +118,7 @@ html {
 }
 
 * {
-  margin: 0;
+  marginyy: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -152,7 +152,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .sidebar-content .course-image{
@@ -232,21 +234,20 @@ body {
 .content {
   flex-grow: 1;
   overflow-y: auto;
-  padding: 20px 40px;
   display: flex;
   justify-content: center;
   background-color: #f4f4f9;
 }
 
 .page {
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 4px;
 }
 
 /* Module Header Styles */
@@ -266,12 +267,12 @@ body {
 }
 
 .module-header .course-title {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
 .module-header .course-description {
-  font-size: 1.5rem;
+  font-size: 1t.3rem;
   margin-bottom: 40px;
   color: #636e72;
 }
@@ -283,7 +284,7 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1rem;
   transition: background-color 0.3s;
 }
 
@@ -303,13 +304,13 @@ body {
 }
 
 .lessons .lesson h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #2d3436;
 }
 
 .lessons .lesson p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: justify;
   line-height: 1.6;
   color: #636e72;
@@ -329,7 +330,7 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1rem;
   transition: background-color 0.3s;
 }
 
@@ -374,7 +375,7 @@ body {
 
 .modal-content p {
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #636e72;
 }
 
@@ -564,7 +565,7 @@ body {
         <roles/>
         <script><![CDATA[(function() {
 	var courseSysId = $sp.getParameter('sys_id');
-
+//gs.addInfoMessage(courseSysId);
 	if(!input){
 		data.course = {};
 		data.modules = [];
@@ -680,14 +681,14 @@ body {
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-09 10:25:06</sys_created_on>
         <sys_id>5eb904e993970210b09bf2918bba10b2</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>LMS Module Content Mobile</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_5eb904e993970210b09bf2918bba10b2</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-09 10:26:47</sys_updated_on>
+        <sys_updated_on>2024-07-11 07:01:01</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="sidebar">
     <div class="sidebar-content">

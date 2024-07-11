@@ -10,7 +10,7 @@
         <headline/>
         <hide_header>false</hide_header>
         <hide_section_if_empty>false</hide_section_if_empty>
-        <image_attachment display_value="Screenshot 2024-07-03 103612.png" sys_id="3315dfd993930210b09bf2918bba105f">3315dfd993930210b09bf2918bba105f</image_attachment>
+        <image_attachment display_value="Screenshot 2024-07-11 094051.png" sys_id="1c678582939f8210b09bf2918bba101f">1c678582939f8210b09bf2918bba101f</image_attachment>
         <is_custom_size>false</is_custom_size>
         <is_hidden_preference_name/>
         <orientation>horizontal</orientation>
@@ -20,14 +20,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-03 05:04:01</sys_created_on>
         <sys_id>04b6c0a793c74210b09bf2918bba103c</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Home Page Image</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_media_section_04b6c0a793c74210b09bf2918bba103c</sys_update_name>
         <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-09 06:35:23</sys_updated_on>
+        <sys_updated_on>2024-07-11 04:11:33</sys_updated_on>
         <table/>
         <text/>
         <title>Home Page Image</title>

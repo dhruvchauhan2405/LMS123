@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot">
+    <sys_sg_view_template_slot action="DELETE">
+        <name>button_01</name>
+        <sys_class_name>sys_sg_view_template_slot</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-10 19:35:39</sys_created_on>
+        <sys_id>fc51dfb193978210b09bf2918bba10a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>button_01</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_fc51dfb193978210b09bf2918bba10a8</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-10 19:35:39</sys_updated_on>
+        <type>button</type>
+        <view_template display_value="course latest template">1bde03fd93578210b09bf2918bba10be</view_template>
+    </sys_sg_view_template_slot>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_view_template_slot_fc51dfb193978210b09bf2918bba10a8</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot"><sys_sg_view_template_slot action="INSERT_OR_UPDATE"><name>button_01</name><sys_class_name>sys_sg_view_template_slot</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-10 19:35:39</sys_created_on><sys_id>fc51dfb193978210b09bf2918bba10a8</sys_id><sys_mod_count>0</sys_mod_count><sys_name>button_01</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_view_template_slot_fc51dfb193978210b09bf2918bba10a8</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-10 19:35:39</sys_updated_on><type>button</type><view_template display_value="course latest template">1bde03fd93578210b09bf2918bba10be</view_template></sys_sg_view_template_slot></record_update>]]></payload>
+        <payload_hash>1112613138</payload_hash>
+        <record_name>button_01</record_name>
+        <reverted_from/>
+        <source>10735ebd93538210b09bf2918bba105d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-10 19:35:39</sys_created_on>
+        <sys_id>3051dfb193978210b09bf2918bba10ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1909e24f2690000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-10 19:35:39</sys_updated_on>
+        <type>Card template element</type>
+        <update_guid>7451dfb1f39782106ede9b1c1c719faa</update_guid>
+        <update_guid_history>7451dfb1f39782106ede9b1c1c719faa:1112613138</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-11 07:07:26</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_template_slot">sys_sg_view_template_slot</sys_db_object>
+        <sys_id>046be67c8bd54eebbd5fddef0022c9b9</sys_id>
+        <sys_metadata>fc51dfb193978210b09bf2918bba10a8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>button_01</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_view_template_slot_fc51dfb193978210b09bf2918bba10a8</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_template_slot_fc51dfb193978210b09bf2918bba10a8">3051dfb193978210b09bf2918bba10ab</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 07:07:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
