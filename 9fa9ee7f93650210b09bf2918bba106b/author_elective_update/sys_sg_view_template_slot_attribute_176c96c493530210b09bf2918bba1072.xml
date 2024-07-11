@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot_attribute">
+    <sys_sg_view_template_slot_attribute action="DELETE">
+        <description>text_10_Typography</description>
+        <name display_value="Typography">30871ab9b701301096aa25efce11a925</name>
+        <sys_class_name>sys_sg_view_template_slot_attribute</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-05 05:15:11</sys_created_on>
+        <sys_id>176c96c493530210b09bf2918bba1072</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>30871ab9b701301096aa25efce11a925</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_attribute_176c96c493530210b09bf2918bba1072</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 10:40:52</sys_updated_on>
+        <translated_value/>
+        <value>Body</value>
+        <view_template_slot display_value="text_10">936c96c493530210b09bf2918bba1070</view_template_slot>
+    </sys_sg_view_template_slot_attribute>
+    <sys_translated_text action="DELETE" query="documentkey=176c96c493530210b09bf2918bba1072"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_view_template_slot_attribute_176c96c493530210b09bf2918bba1072</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot_attribute"><sys_sg_view_template_slot_attribute action="INSERT_OR_UPDATE"><description>text_10_Typography</description><name display_value="Typography">30871ab9b701301096aa25efce11a925</name><sys_class_name>sys_sg_view_template_slot_attribute</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-05 05:15:11</sys_created_on><sys_id>176c96c493530210b09bf2918bba1072</sys_id><sys_mod_count>1</sys_mod_count><sys_name>30871ab9b701301096aa25efce11a925</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_view_template_slot_attribute_176c96c493530210b09bf2918bba1072</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-11 10:40:52</sys_updated_on><translated_value/><value>Body</value><view_template_slot display_value="text_10">936c96c493530210b09bf2918bba1070</view_template_slot></sys_sg_view_template_slot_attribute><sys_translated_text action="delete_multiple" query="documentkey=176c96c493530210b09bf2918bba1072"/></record_update>]]></payload>
+        <payload_hash>1193744758</payload_hash>
+        <record_name>30871ab9b701301096aa25efce11a925</record_name>
+        <reverted_from/>
+        <source>b7589e029317c210b09bf2918bba10e0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 10:40:52</sys_created_on>
+        <sys_id>2480ee8a9317c210b09bf2918bba1067</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190a161b01e0000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 10:40:52</sys_updated_on>
+        <type>Card template element attribute</type>
+        <update_guid>e880ee8a7017c2101b9e7a7f6ac2e766</update_guid>
+        <update_guid_history>e880ee8a7017c2101b9e7a7f6ac2e766:1193744758,9b6c96c412530210ae675952f24c6f73:-1415559552</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 10:56:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_template_slot_attribute">sys_sg_view_template_slot_attribute</sys_db_object>
+        <sys_id>0ead783927334292999f0936b646cfe4</sys_id>
+        <sys_metadata>176c96c493530210b09bf2918bba1072</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>30871ab9b701301096aa25efce11a925</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_view_template_slot_attribute_176c96c493530210b09bf2918bba1072</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_template_slot_attribute_176c96c493530210b09bf2918bba1072">2480ee8a9317c210b09bf2918bba1067</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 10:56:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

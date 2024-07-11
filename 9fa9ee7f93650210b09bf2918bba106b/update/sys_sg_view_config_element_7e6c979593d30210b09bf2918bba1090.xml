@@ -5,15 +5,15 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-07-09 07:07:10</sys_created_on>
         <sys_id>7e6c979593d30210b09bf2918bba1090</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>image_02_element</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_view_config_element_7e6c979593d30210b09bf2918bba1090</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-09 07:07:10</sys_updated_on>
+        <sys_updated_on>2024-07-11 14:36:10</sys_updated_on>
         <view_config display_value="Course detail view config">e576b02393cb4210b09bf2918bba1049</view_config>
-        <view_template_slot display_value="image_02">781c139593d30210b09bf2918bba107a</view_template_slot>
+        <view_template_slot display_value="image_02">b206df46931bc210b09bf2918bba10bd</view_template_slot>
     </sys_sg_view_config_element>
 </record_update>

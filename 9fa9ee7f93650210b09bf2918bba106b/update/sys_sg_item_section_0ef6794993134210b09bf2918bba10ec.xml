@@ -22,16 +22,16 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-08 05:05:27</sys_created_on>
         <sys_id>0ef6794993134210b09bf2918bba10ec</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Your Learning</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Continue Learning</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_item_section_0ef6794993134210b09bf2918bba10ec</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-10 05:58:19</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 10:02:35</sys_updated_on>
         <table/>
-        <title>Your Learning</title>
+        <title>Continue Learning</title>
         <visible_condition/>
         <wide_column_count>1</wide_column_count>
     </sys_sg_item_section>

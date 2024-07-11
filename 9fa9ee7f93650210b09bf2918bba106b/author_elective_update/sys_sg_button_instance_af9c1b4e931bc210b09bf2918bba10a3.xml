@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance">
+    <sys_sg_button_instance action="DELETE">
+        <active>true</active>
+        <button display_value="Enrollment function">e2ceb29193530210b09bf2918bba10f2</button>
+        <color_theme/>
+        <description/>
+        <disable_offline>false</disable_offline>
+        <field_name/>
+        <icon/>
+        <label>Enroll</label>
+        <location>footer</location>
+        <name>Enrollment Function</name>
+        <order/>
+        <parent>3987d8d393c70210b09bf2918bba10c5</parent>
+        <parent_table>sys_sg_list_screen</parent_table>
+        <sys_class_name>sys_sg_button_instance</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 15:03:29</sys_created_on>
+        <sys_id>af9c1b4e931bc210b09bf2918bba10a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Enrollment Function</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_button_instance_af9c1b4e931bc210b09bf2918bba10a3</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 15:03:29</sys_updated_on>
+        <table/>
+    </sys_sg_button_instance>
+    <sys_translated_text action="DELETE" query="documentkey=af9c1b4e931bc210b09bf2918bba10a3"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_button_instance_af9c1b4e931bc210b09bf2918bba10a3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance"><sys_sg_button_instance action="INSERT_OR_UPDATE"><active>true</active><button display_value="Enrollment function">e2ceb29193530210b09bf2918bba10f2</button><color_theme/><description/><disable_offline>false</disable_offline><field_name/><icon/><label>Enroll</label><location>footer</location><name>Enrollment Function</name><order/><parent>3987d8d393c70210b09bf2918bba10c5</parent><parent_table>sys_sg_list_screen</parent_table><sys_class_name>sys_sg_button_instance</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-11 15:03:29</sys_created_on><sys_id>af9c1b4e931bc210b09bf2918bba10a3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Enrollment Function</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_button_instance_af9c1b4e931bc210b09bf2918bba10a3</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-11 15:03:29</sys_updated_on><table/></sys_sg_button_instance><sys_translated_text action="delete_multiple" query="documentkey=af9c1b4e931bc210b09bf2918bba10a3"/></record_update>]]></payload>
+        <payload_hash>776560148</payload_hash>
+        <record_name>Enrollment Function</record_name>
+        <reverted_from/>
+        <source>b7589e029317c210b09bf2918bba10e0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 15:03:29</sys_created_on>
+        <sys_id>a79c1b4e931bc210b09bf2918bba10a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190a25220d20000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 15:03:29</sys_updated_on>
+        <type>Function instance</type>
+        <update_guid>eb9c1b4e7a1bc210eb95a873b9b6e3a5</update_guid>
+        <update_guid_history>eb9c1b4e7a1bc210eb95a873b9b6e3a5:776560148</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 15:08:05</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_button_instance">sys_sg_button_instance</sys_db_object>
+        <sys_id>c31369a025214b2cbe683e8e5a782e10</sys_id>
+        <sys_metadata>af9c1b4e931bc210b09bf2918bba10a3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Enrollment Function</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_button_instance_af9c1b4e931bc210b09bf2918bba10a3</sys_update_name>
+        <sys_update_version display_value="sys_sg_button_instance_af9c1b4e931bc210b09bf2918bba10a3">a79c1b4e931bc210b09bf2918bba10a6</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 15:08:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

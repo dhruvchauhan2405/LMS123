@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element_attribute">
+    <sys_sg_view_config_element_attribute action="DELETE">
+        <description>text_08_FieldValue</description>
+        <name display_value="FieldValue">c2eed5c2b7321010df65f6efce11a9cf</name>
+        <sys_class_name>sys_sg_view_config_element_attribute</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-03 09:03:17</sys_created_on>
+        <sys_id>097d7c2b93cb4210b09bf2918bba102a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_attribute_097d7c2b93cb4210b09bf2918bba102a</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 04:27:00</sys_updated_on>
+        <translated_value/>
+        <value>course_type</value>
+        <view_config_element display_value="text_08_element">857d7c2b93cb4210b09bf2918bba1028</view_config_element>
+    </sys_sg_view_config_element_attribute>
+    <sys_translated_text action="DELETE" query="documentkey=097d7c2b93cb4210b09bf2918bba102a"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_sg_view_config_element_attribute_097d7c2b93cb4210b09bf2918bba102a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element_attribute"><sys_sg_view_config_element_attribute action="INSERT_OR_UPDATE"><description>text_08_FieldValue</description><name display_value="FieldValue">c2eed5c2b7321010df65f6efce11a9cf</name><sys_class_name>sys_sg_view_config_element_attribute</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-03 09:03:17</sys_created_on><sys_id>097d7c2b93cb4210b09bf2918bba102a</sys_id><sys_mod_count>3</sys_mod_count><sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_sg_view_config_element_attribute_097d7c2b93cb4210b09bf2918bba102a</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-11 04:27:00</sys_updated_on><translated_value/><value>course_type</value><view_config_element display_value="text_08_element">857d7c2b93cb4210b09bf2918bba1028</view_config_element></sys_sg_view_config_element_attribute><sys_translated_text action="delete_multiple" query="documentkey=097d7c2b93cb4210b09bf2918bba102a"/></record_update>]]></payload>
+        <payload_hash>-796546708</payload_hash>
+        <record_name>c2eed5c2b7321010df65f6efce11a9cf</record_name>
+        <reverted_from/>
+        <source>a01623dd93d30210b09bf2918bba10a2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 04:27:00</sys_created_on>
+        <sys_id>88fa8586939f8210b09bf2918bba107d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190a00b67f20000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 04:27:00</sys_updated_on>
+        <type>Card element attribute</type>
+        <update_guid>40fa8586ce9f82102db33a8e2a69847d</update_guid>
+        <update_guid_history>40fa8586ce9f82102db33a8e2a69847d:-796546708,707a8d06e19f82103ebe63de68c54a7d:-1921540883,c86d5ec48a53021024ce83ba225c1693:-796546708,8d7d7c2b73cb4210d3bf6e0fd86a052b:1298638404</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-11 14:36:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_config_element_attribute">sys_sg_view_config_element_attribute</sys_db_object>
+        <sys_id>1400502988d541309251c93e07fa1290</sys_id>
+        <sys_metadata>097d7c2b93cb4210b09bf2918bba102a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_sg_view_config_element_attribute_097d7c2b93cb4210b09bf2918bba102a</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_config_element_attribute_097d7c2b93cb4210b09bf2918bba102a">88fa8586939f8210b09bf2918bba107d</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-11 14:36:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

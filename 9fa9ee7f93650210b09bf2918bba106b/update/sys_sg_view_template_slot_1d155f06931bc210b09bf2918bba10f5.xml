@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot">
+    <sys_sg_view_template_slot action="INSERT_OR_UPDATE">
+        <name>image_01</name>
+        <sys_class_name>sys_sg_view_template_slot</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-11 14:30:33</sys_created_on>
+        <sys_id>1d155f06931bc210b09bf2918bba10f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>image_01</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_1d155f06931bc210b09bf2918bba10f5</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-11 14:30:33</sys_updated_on>
+        <type>image</type>
+        <view_template display_value="completed course card template">25d353c2931bc210b09bf2918bba1027</view_template>
+    </sys_sg_view_template_slot>
+</record_update>
