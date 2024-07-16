@@ -9,13 +9,15 @@
     c.totalPages = 0;
     c.allCourses = [];
     c.filteredCourses = [];
+    c.selectedDomain = '';
+    c.selectedSortOrder = 'name_asc';
+    c.domains = c.data.domains; // Assuming domains are provided in c.data.domains
 
-    // Function to initialize courses with pagination
     c.initializeCourses = function() {
-        c.allCourses = c.data.courses; // Assuming courses are provided in c.data.courses
+        c.allCourses = c.data.courses;
         c.totalCount = c.allCourses.length;
         c.totalPages = Math.ceil(c.totalCount / c.pageSize);
-        c.updateFilteredCourses();
+        c.filterAndSortCourses();
     };
 
     c.updateFilteredCourses = function() {
@@ -24,22 +26,30 @@
         c.filteredCourses = c.allCourses.slice(start, end);
     };
 
-    c.filterCoursesByDomain = function(domainSysId) {
-        if (domainSysId) {
-            c.allCourses = c.data.courses.filter(function(course) {
-                return course.DomainSysIds.includes(domainSysId);
+    c.filterAndSortCourses = function() {
+        var filtered = c.data.courses;
+
+        // Filter by domain
+        if (c.selectedDomain) {
+            filtered = filtered.filter(function(course) {
+                return course.DomainSysIds.includes(c.selectedDomain);
             });
-            c.totalCount = c.allCourses.length;
-            c.totalPages = Math.ceil(c.totalCount / c.pageSize);
-            c.pageNumber = 1; // Reset to first page
-            c.updateFilteredCourses();
-        } else {
-            c.allCourses = c.data.courses; // Reset to all courses if no domain filter is applied
-            c.totalCount = c.allCourses.length;
-            c.totalPages = Math.ceil(c.totalCount / c.pageSize);
-            c.pageNumber = 1; // Reset to first page
-            c.updateFilteredCourses();
         }
+
+        // Sort courses
+        if (c.selectedSortOrder === 'name_asc') {
+            filtered.sort((a, b) => a.Name.localeCompare(b.Name));
+        } else if (c.selectedSortOrder === 'name_desc') {
+            filtered.sort((a, b) => b.Name.localeCompare(a.Name));
+        } else if (c.selectedSortOrder === 'access') {
+            filtered.sort((a, b) => a.Access.localeCompare(b.Access));
+        }
+
+        c.allCourses = filtered;
+        c.totalCount = c.allCourses.length;
+        c.totalPages = Math.ceil(c.totalCount / c.pageSize);
+        c.pageNumber = 1;
+        c.updateFilteredCourses();
     };
 
     c.redirectToCourseDetail = function(sys_id) {
@@ -53,15 +63,15 @@
         return $location.search();
     }, function(params) {
         var domainSysId = params.domain_sys_id;
-        c.filterCoursesByDomain(domainSysId);
+        c.selectedDomain = domainSysId || '';
+        c.filterAndSortCourses();
     });
 
-    // Pagination controls
     c.nextPage = function() {
         if (c.pageNumber < c.totalPages) {
             c.pageNumber++;
             c.updateFilteredCourses();
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -69,16 +79,19 @@
         if (c.pageNumber > 1) {
             c.pageNumber--;
             c.updateFilteredCourses();
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
-    // Initialize with the first set of courses
     c.initializeCourses();
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.container {
+        <css>body{
+	font-family: 'Poppins', sans-serif;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -215,7 +228,20 @@
 
 .requestable {
   background-color: #166dde;
-}</css>
+}
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-controls select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -231,15 +257,15 @@
         <roles/>
         <script><![CDATA[(function() {
 	data.courses = [];
-	var domainSysId = $sp.getParameter('domain_sys_id'); // Get domain_sys_id from the query parameter
-	
-	
+	data.domains = [];
+
+	var domainSysId = $sp.getParameter('domain_sys_id'); 
+
 	var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
 	grCourse.addActiveQuery();
 	grCourse.query();
 
 	while (grCourse.next()) {
-		// Fetch all domain associations for each course
 		var domainCourse = new GlideRecordSecure('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm_m2m_domain_course');
 		domainCourse.addQuery('x_1383177_lms_app_course', grCourse.getUniqueValue());
 		domainCourse.query();
@@ -260,8 +286,15 @@
 		});
 	}
 
-	if (input) {
-		
+	// Fetch list of domains
+	var grDomain = new GlideRecordSecure('x_1383177_lms_app_course_domain');
+	grDomain.query();
+
+	while (grDomain.next()) {
+		data.domains.push({
+			Name: grDomain.getDisplayValue('name'),
+			sys_id: grDomain.getUniqueValue()
+		});
 	}
 })();
 ]]></script>
@@ -270,15 +303,26 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 05:11:35</sys_created_on>
         <sys_id>2b52cdac93e64210b09bf2918bba107d</sys_id>
-        <sys_mod_count>151</sys_mod_count>
+        <sys_mod_count>155</sys_mod_count>
         <sys_name>LMS Courses (Course Page)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2b52cdac93e64210b09bf2918bba107d</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-28 06:45:34</sys_updated_on>
+        <sys_updated_on>2024-07-15 10:33:58</sys_updated_on>
         <template><![CDATA[<div class="container">
+  <div class="filter-controls">
+    <select ng-model="c.selectedDomain" ng-change="c.filterAndSortCourses()">
+      <option value="">All Domains</option>
+      <option ng-repeat="domain in c.domains" ng-bind="domain.Name" ng-value="domain.sys_id"></option>
+    </select>
+    <select ng-model="c.selectedSortOrder" ng-change="c.filterAndSortCourses()">
+      <option value="name_asc">Name: A to Z</option>
+      <option value="name_desc">Name: Z to A</option>
+      <option value="access">Accessibility</option>
+    </select>
+  </div>
   <div class="course-container" id="cTest">   
     <div class="course-card"
          ng-click="c.redirectToCourseDetail(s.sys_id)"
@@ -294,13 +338,13 @@
       </div>
     </div>
   </div>
-<!-- Pagination Controls -->
+  <!-- Pagination Controls -->
   <div class="pagination-controls">
     <button ng-click="c.prevPage()" ng-disabled="c.pageNumber === 1">Previous</button>
     <span>${Page {{c.pageNumber}} of {{c.totalPages}}}</span>
-    <!--<a href="#cTest" ><button ng-click="c.nextPage()" ng-disabled="c.pageNumber >= c.totalPages">${Next}</button></a>-->
     <button ng-click="c.nextPage()" ng-disabled="c.pageNumber >= c.totalPages">${Next}</button>
   </div>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>

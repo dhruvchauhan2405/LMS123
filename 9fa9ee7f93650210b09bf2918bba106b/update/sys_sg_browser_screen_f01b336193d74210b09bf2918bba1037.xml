@@ -18,15 +18,15 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-07-10 03:59:35</sys_created_on>
         <sys_id>f01b336193d74210b09bf2918bba1037</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Content Page</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_sg_browser_screen_f01b336193d74210b09bf2918bba1037</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-11 07:32:19</sys_updated_on>
-        <url>https://dev211199.service-now.com/lms?id=lms_modules_content_mobile&amp;sys_id=7503fc6a9362c210b09bf2918bba10fb</url>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-12 04:29:55</sys_updated_on>
+        <url>https://dev211199.service-now.com/lms?id=lms_modules_content_mobile&amp;sys_id=dba262f693310210b09bf2918bba10c1</url>
     </sys_sg_browser_screen>
     <sys_translated_text action="delete_multiple" query="documentkey=f01b336193d74210b09bf2918bba1037"/>
 </record_update>

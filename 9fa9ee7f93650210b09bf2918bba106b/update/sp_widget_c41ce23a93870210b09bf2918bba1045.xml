@@ -1,112 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller = function($scope, $location) {
+    var c = this;
+
+    // Initialize courses from scope
+    c.courses = $scope.data.courses || [];
+    console.log("Courses bound to controller:", c.courses);
+
+    // Check if courses data is available
+    if (c.courses.length > 0) {
+        console.log("Courses data from server:", c.courses);
+        calculateAnalysis();
+    } else {
+        console.warn("No courses data received from server.");
+    }
+
+    // Function to redirect to the module page of the selected course
+    c.module_page = function(sys_id) {
+        console.log("Redirecting to module page for course with sys_id:", sys_id);
+        var portalURL = $location.absUrl().split('?')[0];
+        var pageID = 'lms_modules_content'; 
+        var url = portalURL + '?id=' + pageID + '&sys_id=' + sys_id + '&module=-1';
+        window.location.href = url;            
+    };
+
+    function calculateAnalysis() {
+        c.analysis = {
+            totalCourses: c.courses.length,
+            averageProgress: 0,
+            incompleteCourses: 0,
+            completedCourses: 0
+        };
+
+        var totalProgress = 0;
+
+        c.courses.forEach(function(course) {
+            totalProgress += course.progress;
+            if (course.completion_status === 'Incomplete') {
+                c.analysis.incompleteCourses++;
+            } else if (course.completion_status === 'Complete') {
+                c.analysis.completedCourses++;
+            }
+        });
+
+        c.analysis.averageProgress = (totalProgress / c.courses.length).toFixed(2);
+    }
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-  font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    font-family: 'Arial', sans-serif;
 }
 
-.profile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.profile-dashboard {
+    //width: 90%;
+    max-width: 1200px;
+    margin-bottom: 60px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
-.dashboard-container {
-  background: #2c2c2c;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 1000px;
-  width: 100%;
-  margin-top: 20px;
-  //transition: transform 0.3s, background 0.3s;
+.profile-dashboard h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.dashboard-container:hover {
-  //transform: scale(1.02);
-  background: #333;
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.dashboard-container h2 {
-  margin-bottom: 20px;
-  font-size: 1.8em;
-  text-align: center;
-  color: #f1f1f1;
+.course-item {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    //box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #4CAF50;
 }
 
-#progress-dashboard {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.course-item:hover {
+    transform: scale(1.0);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.course {
-  background: #3a3a3a;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  flex: 1 1 calc(33.333% - 40px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s, background 0.3s;
+.course-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-.course:hover {
-  transform: translateY(-10px);
-  background: #444;
+.course-image {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.course-image:hover {
+    transform: scale(1.05);
+}
+
+.course-details {
+    flex-grow: 1;
 }
 
 .course-name {
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #f1f1f1;
+    font-size: 1.5em;
+    color: #34495e;
+    margin: 0;
+    transition: color 0.3s;
 }
 
-.progress {
-  position: relative;
-  margin: 4px;
+
+
+.course-progress {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
 }
 
-.barOverflow {
-  position: relative;
-  overflow: hidden;
-  width: 100px;
-  height: 50px;
-  margin-bottom: -14px;
+.progress-bar {
+    height: 15px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    line-height: 15px;
+    transition: width 0.5s ease-in-out;
+    position: relative;
 }
 
-.bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  box-sizing: border-box;
-  border: 5px solid #555;
-  border-bottom-color: #0bf;
-  border-right-color: #0bf;
-  transform: rotate(calc(var(--progress) * 1.8deg));
-  transition: transform 0.5s ease, border-color 0.5s ease;
+.progress-bar span {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    animation: fadeIn 0.3s;
 }
 
-.progress-text {
-  display: block;
-  margin-top: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #f1f1f1;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.progress[data-progress="100"] .bar {
-  border-bottom-color: #0f0;
-  border-right-color: #0f0;
+@media (max-width: 768px) {
+    .profile-dashboard {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .course-image {
+        width: 90px;
+    }
+
+    .course-name {
+        font-size: 1.2em;
+    }
+
+    .course-progress {
+        height: 12px;
+    }
 }
+.analysis-section {
+    margin-top: 40px;
+      margin-bottom: 4rem;
+    padding: 20px;
+    background-color: #e8f0fe;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.analysis-section h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.completion-status {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-label {
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+.status-value {
+    font-size: 1.5em;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -121,91 +242,113 @@
         <option_schema/>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+    data.courses = [];
+    var userID = gs.getUserID();
+
+    // Query the enrollment table for the courses for the current user
+    var grEnrollment = new GlideRecordSecure('x_1383177_lms_app_enrollment');
+    grEnrollment.addQuery('learner_name', userID);
+    // Include both Incomplete and Completed courses
+    grEnrollment.addQuery('completion_status', 'IN', ['Incomplete', 'Complete']);
+    grEnrollment.orderBy('course_name');
+		grEnrollment.query();
+
+    while (grEnrollment.next()) {
+        var courseSysId = grEnrollment.getValue('course_name');
+
+        // Query the course table to get the details of the course
+        var grCourse = new GlideRecordSecure('x_1383177_lms_app_course');
+        if (grCourse.get(courseSysId)) {
+            var totalModules = 0;
+            var completedModules = 0;
+
+            // Query the total number of modules in the course
+            var grCourseModules = new GlideRecordSecure('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm');
+            grCourseModules.addQuery('x_1383177_lms_app_course', courseSysId);
+            grCourseModules.query();
+            while (grCourseModules.next()) {
+                totalModules++;
+            }
+
+            // Query the number of completed modules for the user
+            var grCompletedModules = new GlideRecordSecure('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+            grCompletedModules.addQuery('sys_user', userID);
+            grCompletedModules.addQuery('course', courseSysId);
+            grCompletedModules.addQuery('progress', 'complete');
+            grCompletedModules.query();
+            while (grCompletedModules.next()) {
+                completedModules++;
+            }
+
+            // Calculate progress percentage
+            var progress = totalModules > 0 ? (completedModules / totalModules) * 100 : 0;
+
+            // Add course details to the data array
+            data.courses.push({
+                name: grCourse.getDisplayValue('course_name'),
+                sys_id: grCourse.getValue('sys_id'),
+                thumbnail: grCourse.getDisplayValue('thumbnail'),
+                progress: Math.round(progress),
+                completion_status: grEnrollment.getDisplayValue('completion_status') // Add completion status
+            });
+        }
+    }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-07-01 09:11:06</sys_created_on>
         <sys_id>c41ce23a93870210b09bf2918bba1045</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>LMS Progress Dashboard</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_c41ce23a93870210b09bf2918bba1045</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-01 09:21:29</sys_updated_on>
-        <template><![CDATA[<div class="profile-section">
-  <!-- Profile Information -->
-  <div id="profile-info">
-    <!-- Add your profile information here -->
-  </div>
-
-  <!-- Progress Dashboard -->
-  <div class="dashboard-container">
-    <h2>My Learning Progress</h2>
-    <div id="progress-dashboard">
-      <div class="course">
-        <div class="course-name">Course 1</div>
-        <div class="progress">
-          <div class="barOverflow">
-            <div class="bar" data-progress="10"></div>
-          </div>
-          <span class="progress-text">10%</span>
+        <sys_updated_on>2024-07-15 10:11:47</sys_updated_on>
+        <template><![CDATA[<div class="profile-dashboard">
+    <h2>Your Dashboard</h2>
+  
+  <div class="analysis-section">
+        <h3>Learning Analysis</h3>
+        <p>Total Courses Enrolled: <b>{{ c.analysis.totalCourses }}</b></p>
+        <p>Average Progress: <b>{{ c.analysis.averageProgress }}%</b></p>
+        <div class="completion-status">
+            <div class="status-item">
+                <span class="status-label">Incomplete Courses:</span>
+                <span class="status-value">{{ c.analysis.incompleteCourses }}</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Completed Courses:</span>
+                <span class="status-value">{{ c.analysis.completedCourses }}</span>
+            </div>
         </div>
-      </div>
-
-      <div class="course">
-        <div class="course-name">Course 2</div>
-        <div class="progress">
-          <div class="barOverflow">
-            <div class="bar" data-progress="100"></div>
-          </div>
-          <span class="progress-text">100%</span>
-        </div>
-      </div>
-
-      <div class="course">
-        <div class="course-name">Course 3</div>
-        <div class="progress">
-          <div class="barOverflow">
-            <div class="bar" data-progress="34"></div>
-          </div>
-          <span class="progress-text">34%</span>
-        </div>
-      </div>
-
-      <div class="course">
-        <div class="course-name">Course 4</div>
-        <div class="progress">
-          <div class="barOverflow">
-            <div class="bar" data-progress="56.5"></div>
-          </div>
-          <span class="progress-text">56.5%</span>
-        </div>
-      </div>
-
-      <div class="course">
-        <div class="course-name">Course 5</div>
-        <div class="progress">
-          <div class="barOverflow">
-            <div class="bar" data-progress="75"></div>
-          </div>
-          <span class="progress-text">75%</span>
-        </div>
-      </div>
-
-      <div class="course">
-        <div class="course-name">Course 6</div>
-        <div class="progress">
-          <div class="barOverflow">
-            <div class="bar" data-progress="20"></div>
-          </div>
-          <span class="progress-text">20%</span>
-        </div>
-      </div>
     </div>
-  </div>
+  
+    <div class="course-list" ng-if="c.courses.length">
+        <div class="course-item" ng-repeat="course in c.courses" ng-click="c.module_page(course.sys_id)">
+            <div class="course-content">
+                <img class="course-image" ng-src="{{ course.thumbnail }}" alt="{{ course.name }}" />
+                <div class="course-details">
+                    <h3 class="course-name">{{course.name}}</h3>
+                    <div class="course-progress">
+                        <div class="progress-bar" style="width: {{ course.progress }}%;">
+                            <span>{{ course.progress }}%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!c.courses.length">
+        <p>No courses enrolled.</p>
+    </div>
+  
+  
+  
 </div>
 ]]></template>
     </sp_widget>

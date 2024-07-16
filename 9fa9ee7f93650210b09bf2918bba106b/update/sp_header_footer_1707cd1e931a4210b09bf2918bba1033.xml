@@ -2,231 +2,343 @@
     <sp_header_footer action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function(i18n) {
-   var c = this;
-	c.translations={
-		text1:i18n.getMessage('Domain'),
-		text2:i18n.getMessage('Courses'),
-		text3:i18n.getMessage('My Learning'),
-		text4:i18n.getMessage('Forum'),
-		text5:i18n.getMessage('My Profile')
-	}
-};	]]></client_script>
+  var c = this;
+
+  c.translations = {
+    text1: i18n.getMessage('Domain'),
+    text2: i18n.getMessage('Courses'),
+    text3: i18n.getMessage('My Learning'),
+    text4: i18n.getMessage('Forum'),
+    text5: i18n.getMessage('My Profile')
+  };
+
+  // Add event listeners and logic for handling search and notifications
+  c.$onInit = function() {
+    var notificationsButton = document.getElementById('notifications-button');
+    var notificationsModal = document.getElementById('notifications-modal');
+    var closeButton = document.querySelector('.close');
+    var notificationsList = document.getElementById('notifications-list');
+
+    notificationsButton.addEventListener('click', function() {
+      notificationsModal.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', function() {
+      notificationsModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === notificationsModal) {
+        notificationsModal.style.display = 'none';
+      }
+    });
+
+    // Populate notifications list from server data
+    if (c.data.notifications && c.data.notifications.length) {
+      c.data.notifications.forEach(function(notification) {
+        var listItem = document.createElement('li');
+        listItem.classList.add('notification-item');
+
+        var description = document.createElement('div');
+        description.classList.add('description');
+        description.textContent = notification.description;
+
+        var date = document.createElement('div');
+        date.classList.add('date');
+        date.textContent = new Date(notification.date).toLocaleString();
+
+        listItem.appendChild(description);
+        listItem.appendChild(date);
+        notificationsList.appendChild(listItem);
+      });
+    }
+  };
+};
+]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Header Styling */
-.header {
-  background-color: #343a40;
-  padding: 15px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #555;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s, border-bottom 0.3s;
-}
-
-.logo img {
-  height: 60px;
-  transition: height 0.3s;
-}
-
-/* Navigation Styling */
-.navigation {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.navigation a {
-  margin: 0 30px;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 600;
-  transition: color 0.3s, transform 0.3s;
-  outline: none;
-}
-
-.navigation a:hover {
-  color: #f39c12;
-  transform: translateY(-3px);
-}
-
-.navigation a:focus {
-  box-shadow: none;
-}
-
-/* Search and Account Styling */
-.search-account {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar {
-  margin-right: 30px;
-  position: relative;
-  transition: margin-right 0.3s;
-}
-
-.search-bar input {
-  padding: 10px 15px;
-  border: 1px solid #555;
-  border-radius: 4px;
-  font-size: 1.25rem;
-  width: 300px;
-  transition: width 0.3s, border-color 0.3s;
-}
-
-.search-bar input:focus {
-  border-color: #f39c12;
-}
-
-.search-bar button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: none;
-  background: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  color: #555;
-  transition: color 0.3s;
-}
-
-.search-bar button:hover {
-  color: #f39c12;
-}
-
-.account {
-  box-shadow: none;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.account:hover {
-  color: #f39c12;
-  transform: translateY(-3px);
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-.menu-toggle:focus {
-  outline: none;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
-  .navigation a {
-    margin: 0 20px;
-    font-size: 1.25rem;
-  }
-
-  .search-bar input {
-    width: 250px;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-    transition: padding 0.3s;
-  }
-
-  .logo img {
-    height: 40px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navigation {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    display: none;
-  }
-
-  .navigation.active {
-    display: flex;
-  }
-
-  .navigation a {
-    box-shadow: none;
-    margin: 5px 0;
-    font-size: 1.25rem;
-  }
-
-  .search-account {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-
-  .search-bar {
-    width: calc(100% - 150px);
-    margin-right: 0;
-  }
-
-  .search-bar input {
-    width: 100%;
-  }
-
-  .account {
-    margin-left: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 15px 10px;
-  }
-
-  .logo img {
-    height: 30px;
-  }
-
-  .navigation a {
-    font-size: 1rem;
-  }
-
-  .search-bar {
-    width: calc(100% - 100px);
-  }
-
-  .account {
-    font-size: 1.25rem;
-  }
-}
-
-/* Keyframes for Animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        <css>body {&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+}&#13;
+&#13;
+/* Header Styling */&#13;
+.header {&#13;
+  background-color: #343a40;&#13;
+  padding: 15px 50px;&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: center;&#13;
+  border-bottom: 1px solid #555;&#13;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);&#13;
+  transition: background-color 0.3s, border-bottom 0.3s;&#13;
+}&#13;
+&#13;
+.logo img {&#13;
+  height: 60px;&#13;
+  transition: height 0.3s;&#13;
+}&#13;
+&#13;
+/* Navigation Styling */&#13;
+.navigation {&#13;
+  display: flex;&#13;
+  justify-content: center;&#13;
+  flex-grow: 1;&#13;
+  animation: fadeIn 0.5s ease-in-out;&#13;
+}&#13;
+&#13;
+.navigation a {&#13;
+  margin: 0 30px;&#13;
+  text-decoration: none;&#13;
+  color: #ffffff;&#13;
+  font-size: 1.5rem;&#13;
+  font-weight: 600;&#13;
+  transition: color 0.3s, transform 0.3s;&#13;
+  outline: none;&#13;
+}&#13;
+&#13;
+.navigation a:hover {&#13;
+  color: #f39c12;&#13;
+  transform: translateY(-3px);&#13;
+}&#13;
+&#13;
+.navigation a:focus {&#13;
+  box-shadow: none;&#13;
+}&#13;
+&#13;
+/* Search and Account Styling */&#13;
+.search-account {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+}&#13;
+&#13;
+.search-bar {&#13;
+  margin-right: 30px;&#13;
+  position: relative;&#13;
+  transition: margin-right 0.3s;&#13;
+}&#13;
+&#13;
+.search-bar input {&#13;
+  padding: 10px 15px;&#13;
+  border: 1px solid #555;&#13;
+  border-radius: 4px;&#13;
+  font-size: 1.25rem;&#13;
+  width: 300px;&#13;
+  transition: width 0.3s, border-color 0.3s;&#13;
+}&#13;
+&#13;
+.search-bar input:focus {&#13;
+  border-color: #f39c12;&#13;
+}&#13;
+&#13;
+.search-bar button {&#13;
+  position: absolute;&#13;
+  right: 0;&#13;
+  top: 0;&#13;
+  border: none;&#13;
+  background: none;&#13;
+  padding: 10px 15px;&#13;
+  cursor: pointer;&#13;
+  color: #555;&#13;
+  transition: color 0.3s;&#13;
+}&#13;
+&#13;
+.search-bar button:hover {&#13;
+  color: #f39c12;&#13;
+}&#13;
+&#13;
+.account {&#13;
+  box-shadow: none;&#13;
+  font-size: 1.5rem;&#13;
+  font-weight: 600;&#13;
+  color: #ffffff;&#13;
+  text-decoration: none;&#13;
+  transition: color 0.3s, transform 0.3s;&#13;
+}&#13;
+&#13;
+.account:hover {&#13;
+  color: #f39c12;&#13;
+  transform: translateY(-3px);&#13;
+}&#13;
+&#13;
+.menu-toggle {&#13;
+  display: none;&#13;
+  background: none;&#13;
+  border: none;&#13;
+  color: #ffffff;&#13;
+  font-size: 1.5rem;&#13;
+  cursor: pointer;&#13;
+  margin-left: auto;&#13;
+}&#13;
+&#13;
+.menu-toggle:focus {&#13;
+  outline: none;&#13;
+}&#13;
+&#13;
+#notifications-button {&#13;
+  background: none;&#13;
+  border: none;&#13;
+  color: #ffffff;&#13;
+  font-size: 1.7rem;&#13;
+  cursor: pointer;&#13;
+  margin-left: 20px;&#13;
+}&#13;
+&#13;
+#notifications-button:hover {&#13;
+  color: #f39c12;&#13;
+}&#13;
+&#13;
+#notifications-modal {&#13;
+  display: none;&#13;
+  position: fixed;&#13;
+  z-index: 2;&#13;
+  right: 0;&#13;
+  left: 1370px;&#13;
+  top: 50px;&#13;
+  width: 300px;&#13;
+  max-height: 600px;&#13;
+  overflow-y: auto;&#13;
+  background-color: white;&#13;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);&#13;
+  padding: 20px;&#13;
+}&#13;
+&#13;
+.modal-content {&#13;
+  position: relative;&#13;
+  padding: 10px;&#13;
+}&#13;
+&#13;
+.modal-content h2 {&#13;
+  margin-top: 0;&#13;
+  font-size: 1.5rem;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+.close {&#13;
+  position: absolute;&#13;
+  right: 10px;&#13;
+  top: 10px;&#13;
+  font-size: 20px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.notification-item {&#13;
+  border-bottom: 1px solid #ddd;&#13;
+  padding: 10px 0;&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: center;&#13;
+}&#13;
+&#13;
+.notification-item:last-child {&#13;
+  border-bottom: none;&#13;
+}&#13;
+&#13;
+.notification-item .description {&#13;
+  font-size: 1rem;&#13;
+}&#13;
+&#13;
+.notification-item .date {&#13;
+  font-size: 0.875rem;&#13;
+  color: #888;&#13;
+}&#13;
+&#13;
+/* Media Queries for Responsiveness */&#13;
+@media (max-width: 1024px) {&#13;
+  .navigation a {&#13;
+    margin: 0 20px;&#13;
+    font-size: 1.25rem;&#13;
+  }&#13;
+&#13;
+  .search-bar input {&#13;
+    width: 250px;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media (max-width: 768px) {&#13;
+  .header {&#13;
+    flex-direction: column;&#13;
+    align-items: flex-start;&#13;
+    padding: 15px 20px;&#13;
+    transition: padding 0.3s;&#13;
+  }&#13;
+&#13;
+  .logo img {&#13;
+    height: 40px;&#13;
+  }&#13;
+&#13;
+  .menu-toggle {&#13;
+    display: block;&#13;
+  }&#13;
+&#13;
+  .navigation {&#13;
+    flex-direction: column;&#13;
+    align-items: flex-start;&#13;
+    width: 100%;&#13;
+    display: none;&#13;
+  }&#13;
+&#13;
+  .navigation.active {&#13;
+    display: flex;&#13;
+  }&#13;
+&#13;
+  .navigation a {&#13;
+    box-shadow: none;&#13;
+    margin: 5px 0;&#13;
+    font-size: 1.25rem;&#13;
+  }&#13;
+&#13;
+  .search-account {&#13;
+    width: 100%;&#13;
+    justify-content: space-between;&#13;
+    margin-top: 10px;&#13;
+  }&#13;
+&#13;
+  .search-bar {&#13;
+    width: calc(100% - 150px);&#13;
+    margin-right: 0;&#13;
+  }&#13;
+&#13;
+  .search-bar input {&#13;
+    width: 100%;&#13;
+  }&#13;
+&#13;
+  .account {&#13;
+    margin-left: 10px;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media (max-width: 480px) {&#13;
+  .header {&#13;
+    padding: 15px 10px;&#13;
+  }&#13;
+&#13;
+  .logo img {&#13;
+    height: 30px;&#13;
+  }&#13;
+&#13;
+  .navigation a {&#13;
+    font-size: 1rem;&#13;
+  }&#13;
+&#13;
+  .search-bar {&#13;
+    width: calc(100% - 100px);&#13;
+  }&#13;
+&#13;
+  .account {&#13;
+    font-size: 1.25rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+/* Keyframes for Animation */&#13;
+@keyframes fadeIn {&#13;
+  0% {&#13;
+    opacity: 0;&#13;
+    transform: translateY(-20px);&#13;
+  }&#13;
+  100% {&#13;
+    opacity: 1;&#13;
+    transform: translateY(0);&#13;
+  }&#13;
+}&#13;
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -244,22 +356,46 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  
-})();]]></script>
+  // Get the email of the current user
+  var userEmail = '';
+  var grUser = new GlideRecord('sys_user');
+  grUser.addQuery('user_name', gs.getUserName());
+  grUser.query();
+  if (grUser.next()) {
+    userEmail = grUser.getValue('email');
+  }
+
+  // Fetch notifications for the user's email
+  var grEmail = new GlideRecord('sys_email');
+  grEmail.addQuery('recipients', userEmail);
+  grEmail.orderByDesc('sys_created_on');
+  grEmail.query();
+
+  var notifications = [];
+  while (grEmail.next()) {
+    notifications.push({
+      description: grEmail.getValue('subject'),
+      date: grEmail.getValue('sys_created_on')
+    });
+  }
+
+  data.notifications = notifications;
+})();
+]]></script>
         <servicenow>false</servicenow>
         <static>false</static>
         <sys_class_name>sp_header_footer</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-23 05:47:49</sys_created_on>
         <sys_id>1707cd1e931a4210b09bf2918bba1033</sys_id>
-        <sys_mod_count>123</sys_mod_count>
+        <sys_mod_count>142</sys_mod_count>
         <sys_name>LMS Header</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_header_footer_1707cd1e931a4210b09bf2918bba1033</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-09 06:47:03</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-16 05:02:12</sys_updated_on>
         <template><![CDATA[<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <header class="header" id="header">
@@ -279,40 +415,16 @@
       <button type="submit" id="course-search-button"><i class="fa fa-search"></i></button>
     </div>
     <a href="lms?id=lms_my_profile" class="account">${My Profile}</a>
+    <button id="notifications-button"><i class="fa fa-bell"></i></button>
+    <div id="notifications-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Notifications</h2>
+        <ul id="notifications-list"></ul>
+      </div>
+    </div>
   </div>
 </header>
-
-<script>
-  document.getElementById('course-search-button').addEventListener('click', function() {
-    performSearch();
-  });
-
-  document.getElementById('course-search-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-      performSearch();
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var currentUrl = window.location.href;
-    var searchBar = document.getElementById('search-bar');
-    if (currentUrl.includes('lms?id=lms_index')) {
-      searchBar.style.display = 'none';
-    }
-  });
-
-  function performSearch() {
-    var query = document.getElementById('course-search-input').value;
-    if (query) {
-      window.location.href = 'lms?id=lms_search_result&search=' + encodeURIComponent(query);
-    }
-  }
-
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-    var navigation = document.getElementById('navigation');
-    navigation.classList.toggle('active');
-  });
-</script>
 ]]></template>
     </sp_header_footer>
 </record_update>

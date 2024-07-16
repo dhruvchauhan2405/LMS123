@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>lms_my_notifications</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-15 07:56:05</sys_created_on>
+        <sys_id>f521e61f93db0a10b09bf2918bba1034</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>lms_my_notifications</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_page_f521e61f93db0a10b09bf2918bba1034</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-15 07:56:05</sys_updated_on>
+        <title>LMS My Notifications</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=f521e61f93db0a10b09bf2918bba1034"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sp_page_f521e61f93db0a10b09bf2918bba1034</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>custom</category><css/><draft>false</draft><dynamic_title_structure/><human_readable_url_structure/><id>lms_my_notifications</id><internal>false</internal><omit_watcher>false</omit_watcher><public>false</public><roles/><seo_script/><short_description/><sys_class_name>sp_page</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-07-15 07:56:05</sys_created_on><sys_id>f521e61f93db0a10b09bf2918bba1034</sys_id><sys_mod_count>0</sys_mod_count><sys_name>lms_my_notifications</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sp_page_f521e61f93db0a10b09bf2918bba1034</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-07-15 07:56:05</sys_updated_on><title>LMS My Notifications</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=f521e61f93db0a10b09bf2918bba1034"/></record_update>]]></payload>
+        <payload_hash>1978442402</payload_hash>
+        <record_name>lms_my_notifications</record_name>
+        <reverted_from/>
+        <source>2efcc65693170610b09bf2918bba1067</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-15 07:56:05</sys_created_on>
+        <sys_id>f121e61f93db0a10b09bf2918bba1037</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190b56443d50000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-15 07:56:05</sys_updated_on>
+        <type>Page</type>
+        <update_guid>3921e61f8fdb0a1082feaeafc1fb1736</update_guid>
+        <update_guid_history>3921e61f8fdb0a1082feaeafc1fb1736:1978442402</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="lms_my_notifications">3b05c7a393930210b09bf2918bba10df</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-16 05:11:26</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>1246c22f68ea445886338fdacf480f59</sys_id>
+        <sys_metadata>f521e61f93db0a10b09bf2918bba1034</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>lms_my_notifications</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_page_f521e61f93db0a10b09bf2918bba1034</sys_update_name>
+        <sys_update_version display_value="sp_page_f521e61f93db0a10b09bf2918bba1034">f121e61f93db0a10b09bf2918bba1037</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-16 05:11:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
