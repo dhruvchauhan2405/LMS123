@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "contents": [&#13;
+    {&#13;
+      "parts": [&#13;
+        {&#13;
+          "text": "${message}"&#13;
+        }&#13;
+      ]&#13;
+    }&#13;
+  ]&#13;
+}</content>
+        <function_name>Gemini POST</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Gemini [ Gemini POST ]</qualified_name>
+        <rest_endpoint>https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAupVTgLWuWt1bhazAiEVOxO1X9_mQPVE8</rest_endpoint>
+        <rest_message display_value="Gemini">d120a950936b0210b09bf2918bba1098</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-18 05:53:02</sys_created_on>
+        <sys_id>3db0e5d0936b0210b09bf2918bba10c9</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Gemini POST</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_3db0e5d0936b0210b09bf2918bba10c9</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-18 07:26:04</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

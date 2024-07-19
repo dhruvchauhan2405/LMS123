@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope) {
+    var c = this;
+
+    // Fetch user details from the scope
+    c.user = $scope.data.user || {};
+
+    console.log("User bound to controller:", c.user);
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.user-profile-widget {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-profile-widget h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-details {
+    text-align: left;
+}
+
+.user-name {
+    font-size: 1.5em;
+    color: #34495e;
+    margin: 0;
+}
+
+.user-email, .user-role, .user-company, .user-gender, .user-timezone, .user-mobile {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lms_profile_information</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Profile Information</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var userID = gs.getUserID();
+
+    // Fetch user details
+    var grUser = new GlideRecord('sys_user');
+    if (grUser.get(userID)) {
+        data.user = {
+            name: grUser.getDisplayValue('name'),
+            email: grUser.getValue('email'),
+            company: grUser.getDisplayValue('company'),
+            gender: grUser.getDisplayValue('gender'),
+            timezone: grUser.getDisplayValue('time_zone'),
+            mobile: grUser.getValue('mobile_phone'),
+            profilePicture: grUser.getDisplayValue('photo') || 'default_profile_picture.png'
+        };
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-16 10:46:06</sys_created_on>
+        <sys_id>f9a118f3939b0210b09bf2918bba10cc</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Profile Information</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_f9a118f3939b0210b09bf2918bba10cc</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 06:45:29</sys_updated_on>
+        <template><![CDATA[<div class="user-profile-widget">
+    <h2>Profile Information</h2>
+    <div class="profile-info">
+        <img class="profile-image" ng-src="{{ c.user.profilePicture }}" alt="Profile Picture" />
+        <div class="user-details">
+            <h3 class="user-name">{{ c.user.name }}</h3>
+            <p class="user-email">{{ c.user.email }}</p>
+          	<p class="user-company">{{ c.user.company }}</p>
+            <p class="user-gender">{{ c.user.gender }}</p>
+            <p class="user-timezone">{{ c.user.timezone }}</p>
+            <p class="user-mobile">{{ c.user.mobile }}</p>
+        </div>
+    </div>
+</div>
+<button formsappId="66969fcbdab6ee0a72f93a52"><iframe id="" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://my.forms.app/form/66969fcbdab6ee0a72f93a52" frameborder="0" style="width: 400px; min-width:100%; height:400px; border:none;"></iframe></button>
+<script src="https://forms.app/static/embed.js" type="text/javascript" async defer onload="new formsapp('66969fcbdab6ee0a72f93a52', 'popup', {'overlay':'rgba(45,45,45,0.5)','button':{'color':'#ff9e24','text':'Click here!'},'width':'800px','height':'600px','openingAnimation':{'entrance':'animate__fadeIn','exit':'animate__fadeOut'}});"></script>]]></template>
+    </sp_widget>
+</record_update>

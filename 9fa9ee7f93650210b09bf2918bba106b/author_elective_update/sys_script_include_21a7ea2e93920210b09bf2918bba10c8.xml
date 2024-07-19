@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1383177_lms_app.KeywordExtractor</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Script for extracting keywords using Alien Text Analysis.</description>
+        <name>KeywordExtractor</name>
+        <script><![CDATA[var KeywordExtractor = Class.create();
+KeywordExtractor.prototype = {
+    initialize: function() {},
+
+    extractKeywords: function(text) {
+        // Create a new RESTMessageV2 object
+        var restMessage = new sn_ws.RESTMessageV2('Aylien Keyword Extraction', 'Extract Keywords');
+        
+        // Set the text parameter
+        restMessage.setStringParameter('text', text);
+
+        // Execute the REST message and get the response
+        var response;
+        try {
+            response = restMessage.execute();
+        } catch (ex) {
+            gs.error('Error executing REST message: ' + ex.getMessage());
+            return [];
+        }
+
+        // Parse the response body to JSON
+        var responseBody = response.getBody();
+        var responseJson = JSON.parse(responseBody);
+
+        // Extract keywords from the response
+        var keywords = [];
+        if (responseJson.entities && responseJson.entities.keyword) {
+            keywords = responseJson.entities.keyword;
+        }
+
+        return keywords;
+    },
+
+    type: 'KeywordExtractor'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-05-24 07:30:46</sys_created_on>
+        <sys_id>21a7ea2e93920210b09bf2918bba10c8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>KeywordExtractor</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_include_21a7ea2e93920210b09bf2918bba10c8</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-17 10:33:58</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_script_include_21a7ea2e93920210b09bf2918bba10c8</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1383177_lms_app.KeywordExtractor&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;Script for extracting keywords using Alien Text Analysis.&lt;/description&gt;&lt;name&gt;KeywordExtractor&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var KeywordExtractor = Class.create();
+KeywordExtractor.prototype = {
+    initialize: function() {},
+
+    extractKeywords: function(text) {
+        // Create a new RESTMessageV2 object
+        var restMessage = new sn_ws.RESTMessageV2('Aylien Keyword Extraction', 'Extract Keywords');
+        
+        // Set the text parameter
+        restMessage.setStringParameter('text', text);
+
+        // Execute the REST message and get the response
+        var response;
+        try {
+            response = restMessage.execute();
+        } catch (ex) {
+            gs.error('Error executing REST message: ' + ex.getMessage());
+            return [];
+        }
+
+        // Parse the response body to JSON
+        var responseBody = response.getBody();
+        var responseJson = JSON.parse(responseBody);
+
+        // Extract keywords from the response
+        var keywords = [];
+        if (responseJson.entities &amp;&amp; responseJson.entities.keyword) {
+            keywords = responseJson.entities.keyword;
+        }
+
+        return keywords;
+    },
+
+    type: 'KeywordExtractor'
+};
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-24 07:30:46&lt;/sys_created_on&gt;&lt;sys_id&gt;21a7ea2e93920210b09bf2918bba10c8&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;KeywordExtractor&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_21a7ea2e93920210b09bf2918bba10c8&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;abhishek.s&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-17 10:33:58&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1204835571</payload_hash>
+        <record_name>KeywordExtractor</record_name>
+        <reverted_from/>
+        <source>8fe6875093b20210b09bf2918bba108c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-06-17 10:33:58</sys_created_on>
+        <sys_id>e5c83ede937a8210b09bf2918bba10e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19025c2c0340000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-06-17 10:33:58</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>adc83edecb7a8210859b6275e4c059df</update_guid>
+        <update_guid_history>adc83edecb7a8210859b6275e4c059df:-1204835571,93a8ba9e0f7a8210131bedcaa5da9cdd:-1711185203,c0b86ae2d1920210dbb885bf04fc9a33:-1204835571</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 06:45:00</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>1a3fcab0669e4e3191d45b8c66c1d6d9</sys_id>
+        <sys_metadata>21a7ea2e93920210b09bf2918bba10c8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KeywordExtractor</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_script_include_21a7ea2e93920210b09bf2918bba10c8</sys_update_name>
+        <sys_update_version display_value="sys_script_include_21a7ea2e93920210b09bf2918bba10c8">e5c83ede937a8210b09bf2918bba10e0</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 06:45:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

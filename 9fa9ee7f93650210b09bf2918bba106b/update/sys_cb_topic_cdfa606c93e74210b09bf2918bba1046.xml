@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description/>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{
+  "graph_api_version": "1.0.61",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "8f16dec39bf94d05a5ef909da38f909e": {
+          "id": "8f16dec39bf94d05a5ef909da38f909e",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "9e3bba33e63644e1a25170f1a39bc2a4": {
+          "id": "9e3bba33e63644e1a25170f1a39bc2a4",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "ba6428809fc246119ed02c1ce6bb46c0": {
+          "id": "ba6428809fc246119ed02c1ce6bb46c0",
+          "stepType": "TextPrompt",
+          "name": "User Prompt",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Ask me anything..."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "f303fd6c5c3143c4a8e7e0c58240b1cb",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "5e7c3c27799a40bd85e26d687eb7ec73": {
+          "id": "5e7c3c27799a40bd85e26d687eb7ec73",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "07cca7d1bfc84392b9a5f711e753f9a1": {
+          "id": "07cca7d1bfc84392b9a5f711e753f9a1",
+          "name": "askGemini",
+          "invocationType": "action",
+          "stepType": "FlowAction",
+          "actionSpoke": "9fa9ee7f93650210b09bf2918bba106b",
+          "actionSpokeAction": "e54da860932b4210b09bf2918bba10d9",
+          "actionWaitType": "sync",
+          "actionRunAs": "session_user",
+          "permissionsNote": "By default, the Action executes based on the permissions of the user who initiated the conversation. For elevated privileges, you can set to System User.",
+          "actionSecureField": false,
+          "actionSelectSecureField": "",
+          "actionPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "actionConfirmPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "actionNonSecureChannelMessage": {
+            "mode": "simple",
+            "value": ""
+          },
+          "actionInputs": {
+            "input-prompt": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user_prompt}}",
+                        "displayValue": "Input Variables➛User Prompt"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "string"
+            }
+          },
+          "actionOutputs": {
+            "output-__action_status__": [
+              {
+                "id": "b88d4b6a00c340f0ac0d153cc19d4d5c",
+                "mapping": "Action Status",
+                "disabled": false,
+                "type": "object",
+                "value": "Action Status",
+                "is_list_data_entry": false,
+                "variable": "Action Status",
+                "variableName": "action_status"
+              }
+            ],
+            "output-answer": [
+              {
+                "id": "f6624ae5c7ec41738511944ddbc0e3b6",
+                "mapping": "answer",
+                "disabled": false,
+                "type": "string",
+                "value": "answer",
+                "is_list_data_entry": false,
+                "variable": "Answer",
+                "variableName": "answer"
+              }
+            ],
+            "output-__dont_treat_as_error__": [
+              {
+                "id": "d095be5c9e9b4bb480497e5b567305f1",
+                "mapping": "Don't Treat as Error",
+                "disabled": false,
+                "type": "boolean",
+                "value": "Don't Treat as Error",
+                "is_list_data_entry": false,
+                "variable": "Don't Treat As Error",
+                "variableName": "don_t_treat_as_error"
+              }
+            ]
+          },
+          "actionDefinition": {
+            "id": "e54da860932b4210b09bf2918bba10d9",
+            "latest_snapshot_id": "e54da860932b4210b09bf2918bba10d9",
+            "type": "action",
+            "name": "callgemini",
+            "label": "callGemini",
+            "scope_id": "9fa9ee7f93650210b09bf2918bba106b",
+            "description": "",
+            "category": "",
+            "parameters_have_loaded": true,
+            "input_parameters": [
+              {
+                "supported_input_modes": [
+                  "script",
+                  "data_pill",
+                  "data_entry"
+                ],
+                "name": "prompt",
+                "label": "prompt",
+                "type": "string",
+                "order": 1,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              }
+            ],
+            "output_parameters": [
+              {
+                "name": "__action_status__",
+                "label": "Action Status",
+                "type": "object",
+                "order": 1,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              },
+              {
+                "name": "answer",
+                "label": "answer",
+                "type": "string",
+                "order": 2,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              },
+              {
+                "name": "__dont_treat_as_error__",
+                "label": "Don't Treat as Error",
+                "type": "boolean",
+                "order": 3,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              }
+            ]
+          },
+          "subflowSecureField": false,
+          "subflowSelectSecureField": "",
+          "subflowPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "subflowConfirmPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "subflowNonSecureChannelMessage": {
+            "mode": "simple",
+            "value": "This action is not supported on this channel."
+          },
+          "variableIds": [
+            "b88d4b6a00c340f0ac0d153cc19d4d5c",
+            "f6624ae5c7ec41738511944ddbc0e3b6",
+            "d095be5c9e9b4bb480497e5b567305f1"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "d9a9f9e36b7d4a7aa63db32f340c2a77": {
+          "id": "d9a9f9e36b7d4a7aa63db32f340c2a77",
+          "stepType": "TextOutput",
+          "name": "askGemini_response",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.answer}}",
+                        "displayValue": "Input Variables➛Answer"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "a7d9b97edd38495db5a02e21d1a10682"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "5ba80548ff8b4184893c447ff76801f0",
+          "edgeType": "Edge",
+          "source": "8f16dec39bf94d05a5ef909da38f909e",
+          "target": "ba6428809fc246119ed02c1ce6bb46c0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2b2f428df2c340c481c69391364dffe9",
+          "edgeType": "Edge",
+          "source": "ba6428809fc246119ed02c1ce6bb46c0",
+          "target": "5e7c3c27799a40bd85e26d687eb7ec73",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a094ac8a1b1c440cbd6a2cccc48f6ad3",
+          "edgeType": "Branch",
+          "source": "5e7c3c27799a40bd85e26d687eb7ec73",
+          "target": "9e3bba33e63644e1a25170f1a39bc2a4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.user_promptCONTAINSexit^ORvaInputs.user_promptCONTAINSend^ORvaInputs.user_promptCONTAINSbye^ORvaInputs.user_promptCONTAINSgoodbye^ORvaInputs.user_promptCONTAINSend convo^ORvaInputs.user_promptCONTAINSend conversation",
+            "mode": "query"
+          },
+          "label": "End Chat"
+        },
+        {
+          "id": "0c4186fb12f34001b450c88eba844d9d",
+          "edgeType": "Branch",
+          "source": "5e7c3c27799a40bd85e26d687eb7ec73",
+          "target": "07cca7d1bfc84392b9a5f711e753f9a1",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.user_promptDOES NOT CONTAINexit^ORvaInputs.user_promptDOES NOT CONTAINend^ORvaInputs.user_promptDOES NOT CONTAINbye^ORvaInputs.user_promptDOES NOT CONTAINgoodbye^ORvaInputs.user_promptDOES NOT CONTAINend convo^ORvaInputs.user_promptDOES NOT CONTAINend conversation",
+            "mode": "query"
+          },
+          "label": "Valid Prompt"
+        },
+        {
+          "id": "3334a0d3955f427db36a0bee60d47734",
+          "edgeType": "Edge",
+          "source": "07cca7d1bfc84392b9a5f711e753f9a1",
+          "target": "d9a9f9e36b7d4a7aa63db32f340c2a77",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b37e6ed2070a40c3a4b7574762dc145d",
+          "edgeType": "Edge",
+          "source": "d9a9f9e36b7d4a7aa63db32f340c2a77",
+          "target": "ba6428809fc246119ed02c1ce6bb46c0",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "f303fd6c5c3143c4a8e7e0c58240b1cb": {
+      "id": "f303fd6c5c3143c4a8e7e0c58240b1cb",
+      "name": "user_prompt",
+      "label": "User Prompt",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTcyMTMzNDc2Nzk0MSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "ba6428809fc246119ed02c1ce6bb46c0",
+      "isHidden": false
+    },
+    "b88d4b6a00c340f0ac0d153cc19d4d5c": {
+      "id": "b88d4b6a00c340f0ac0d153cc19d4d5c",
+      "name": "action_status",
+      "label": "Action Status",
+      "defaultValue": "Action Status",
+      "varType": "object",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "output"
+      },
+      "is_list_data_entry": false,
+      "nodeId": "07cca7d1bfc84392b9a5f711e753f9a1",
+      "isHidden": false
+    },
+    "f6624ae5c7ec41738511944ddbc0e3b6": {
+      "id": "f6624ae5c7ec41738511944ddbc0e3b6",
+      "name": "answer",
+      "label": "Answer",
+      "defaultValue": "answer",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "output"
+      },
+      "is_list_data_entry": false,
+      "nodeId": "07cca7d1bfc84392b9a5f711e753f9a1",
+      "isHidden": false
+    },
+    "d095be5c9e9b4bb480497e5b567305f1": {
+      "id": "d095be5c9e9b4bb480497e5b567305f1",
+      "name": "don_t_treat_as_error",
+      "label": "Don't Treat As Error",
+      "defaultValue": "Don't Treat as Error",
+      "varType": "boolean",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "output"
+      },
+      "is_list_data_entry": false,
+      "nodeId": "07cca7d1bfc84392b9a5f711e753f9a1",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <key_phrases>askGemini</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>askGemini</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-18 20:32:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>cdfa606c93e74210b09bf2918bba1046</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>askGemini</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_cb_topic_cdfa606c93e74210b09bf2918bba1046</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-18 21:02:11</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=cdfa606c93e74210b09bf2918bba1046"/>
+</record_update>

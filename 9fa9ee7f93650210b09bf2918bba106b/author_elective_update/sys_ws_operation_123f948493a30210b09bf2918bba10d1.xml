@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="DELETE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>OAuth Redirect</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var code = request.queryParams.code;
+
+    if (code) {
+        var gr = new GlideRecord('oauth_credential');
+        gr.get('name', 'Google OAuth Credential');
+        gr.code = code;
+        gr.update();
+        
+        response.setBody('Authorization successful. You can close this window.');
+    } else {
+        response.setBody('Authorization code not found.');
+    }
+})(request, response);
+]]></operation_script>
+        <operation_uri>/api/x_1383177_lms_app/google_drive_oauth/callback</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/callback</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 06:26:03</sys_created_on>
+        <sys_id>123f948493a30210b09bf2918bba10d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>OAuth Redirect</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_ws_operation_123f948493a30210b09bf2918bba10d1</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 06:26:03</sys_updated_on>
+        <web_service_definition display_value="Google Drive OAuth">7d2e144493a30210b09bf2918bba1009</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_ws_operation_123f948493a30210b09bf2918bba10d1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ws_operation"&gt;&lt;sys_ws_operation action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;consumes&gt;application/json,application/xml,text/xml&lt;/consumes&gt;&lt;consumes_customized&gt;false&lt;/consumes_customized&gt;&lt;default_operation_uri/&gt;&lt;enforce_acl&gt;cf9d01d3e73003009d6247e603f6a990&lt;/enforce_acl&gt;&lt;http_method&gt;GET&lt;/http_method&gt;&lt;name&gt;OAuth Redirect&lt;/name&gt;&lt;operation_script&gt;&lt;![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var code = request.queryParams.code;
+
+    if (code) {
+        var gr = new GlideRecord('oauth_credential');
+        gr.get('name', 'Google OAuth Credential');
+        gr.code = code;
+        gr.update();
+        
+        response.setBody('Authorization successful. You can close this window.');
+    } else {
+        response.setBody('Authorization code not found.');
+    }
+})(request, response);
+]]&gt;&lt;/operation_script&gt;&lt;operation_uri&gt;/api/x_1383177_lms_app/google_drive_oauth/callback&lt;/operation_uri&gt;&lt;produces&gt;application/json,application/xml,text/xml&lt;/produces&gt;&lt;produces_customized&gt;false&lt;/produces_customized&gt;&lt;relative_path&gt;/callback&lt;/relative_path&gt;&lt;request_example/&gt;&lt;requires_acl_authorization&gt;true&lt;/requires_acl_authorization&gt;&lt;requires_authentication&gt;true&lt;/requires_authentication&gt;&lt;requires_snc_internal_role&gt;true&lt;/requires_snc_internal_role&gt;&lt;short_description/&gt;&lt;sys_class_name&gt;sys_ws_operation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;pranav.k&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-07-17 06:26:03&lt;/sys_created_on&gt;&lt;sys_id&gt;123f948493a30210b09bf2918bba10d1&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;OAuth Redirect&lt;/sys_name&gt;&lt;sys_package display_value="LMS Application" source="x_1383177_lms_app"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="LMS Application"&gt;9fa9ee7f93650210b09bf2918bba106b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ws_operation_123f948493a30210b09bf2918bba10d1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;pranav.k&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-07-17 06:26:03&lt;/sys_updated_on&gt;&lt;web_service_definition display_value="Google Drive OAuth"&gt;7d2e144493a30210b09bf2918bba1009&lt;/web_service_definition&gt;&lt;web_service_version/&gt;&lt;/sys_ws_operation&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1891634470</payload_hash>
+        <record_name>OAuth Redirect</record_name>
+        <reverted_from/>
+        <source>966c0c52931fc210b09bf2918bba1048</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 06:26:03</sys_created_on>
+        <sys_id>5ebfd04493a30210b09bf2918bba1058</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190bf5e8d160000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 06:26:03</sys_updated_on>
+        <type>Scripted REST Resource</type>
+        <update_guid>92bfd04447a302101c27a55653cb1958</update_guid>
+        <update_guid_history>92bfd04447a302101c27a55653cb1958:-1891634470</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 06:43:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_ws_operation">sys_ws_operation</sys_db_object>
+        <sys_id>5e8ac1a70f9e4f7fbcccee4793032ca9</sys_id>
+        <sys_metadata>123f948493a30210b09bf2918bba10d1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>OAuth Redirect</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_ws_operation_123f948493a30210b09bf2918bba10d1</sys_update_name>
+        <sys_update_version display_value="sys_ws_operation_123f948493a30210b09bf2918bba10d1">5ebfd04493a30210b09bf2918bba1058</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 06:43:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="2004d5c093a70210b09bf2918bba1033" label="Gemini" max_length="40" name="x_1383177_lms_app_gemini" type="collection">
+        <element label="Answer" max_length="100000" name="answer" type="string"/>
+        <element label="Prompt" max_length="1000" name="prompt" type="string"/>
+    </element>
+</database>

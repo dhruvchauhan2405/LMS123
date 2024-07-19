@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
+    <sys_rest_message action="DELETE">
+        <access>package_private</access>
+        <authentication_type>basic</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description/>
+        <name>Gdrive</name>
+        <oauth2_profile/>
+        <protocol_name/>
+        <rest_endpoint>https://www.googleapis.com/drive/v3/files</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 06:52:21</sys_created_on>
+        <sys_id>1074e44893a30210b09bf2918bba10fb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Gdrive</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_rest_message_1074e44893a30210b09bf2918bba10fb</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 06:54:50</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_rest_message_1074e44893a30210b09bf2918bba10fb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message"><sys_rest_message action="INSERT_OR_UPDATE"><access>package_private</access><authentication_type>basic</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><description/><name>Gdrive</name><oauth2_profile/><protocol_name/><rest_endpoint>https://www.googleapis.com/drive/v3/files</rest_endpoint><sys_class_name>sys_rest_message</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-17 06:52:21</sys_created_on><sys_id>1074e44893a30210b09bf2918bba10fb</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Gdrive</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_rest_message_1074e44893a30210b09bf2918bba10fb</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-17 06:54:50</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mutual_auth>false</use_mutual_auth></sys_rest_message></record_update>]]></payload>
+        <payload_hash>-614818760</payload_hash>
+        <record_name>Gdrive</record_name>
+        <reverted_from/>
+        <source>966c0c52931fc210b09bf2918bba1048</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 06:54:50</sys_created_on>
+        <sys_id>4056648c93a30210b09bf2918bba10a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190bf78e8760000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 06:54:50</sys_updated_on>
+        <type>REST Message</type>
+        <update_guid>0856648c2ca3021087093a66ac9dfaa3</update_guid>
+        <update_guid_history>0856648c2ca3021087093a66ac9dfaa3:-614818760,67b5e84c1da30210209c8d5503e7c17f:-4024512</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 07:13:50</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message">sys_rest_message</sys_db_object>
+        <sys_id>0e3e9788252b426c9e5ca7a681b63310</sys_id>
+        <sys_metadata>1074e44893a30210b09bf2918bba10fb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Gdrive</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_rest_message_1074e44893a30210b09bf2918bba10fb</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_1074e44893a30210b09bf2918bba10fb">4056648c93a30210b09bf2918bba10a4</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-17 07:13:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

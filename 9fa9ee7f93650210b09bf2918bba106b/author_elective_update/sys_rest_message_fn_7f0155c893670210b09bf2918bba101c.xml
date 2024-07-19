@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="DELETE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "contents": [&#13;
+    {&#13;
+      "role": "user",&#13;
+      "parts": [&#13;
+        {&#13;
+          "text": "${message}"&#13;
+        }&#13;
+      ]&#13;
+    }&#13;
+  ]&#13;
+}&#13;
+</content>
+        <function_name>Default POST</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Gemini [ Default POST ]</qualified_name>
+        <rest_endpoint>https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAupVTgLWuWt1bhazAiEVOxO1X9_mQPVE8</rest_endpoint>
+        <rest_message display_value="Gemini">8f7019cc93670210b09bf2918bba10ab</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-17 10:01:36</sys_created_on>
+        <sys_id>7f0155c893670210b09bf2918bba101c</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Default POST</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_7f0155c893670210b09bf2918bba101c</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-18 05:13:49</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_rest_message_fn_7f0155c893670210b09bf2918bba101c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn"><sys_rest_message_fn action="INSERT_OR_UPDATE"><authentication_type>inherit_from_parent</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><content>{&#13;
+  "contents": [&#13;
+    {&#13;
+      "role": "user",&#13;
+      "parts": [&#13;
+        {&#13;
+          "text": "${message}"&#13;
+        }&#13;
+      ]&#13;
+    }&#13;
+  ]&#13;
+}&#13;
+</content><function_name>Default POST</function_name><http_method>post</http_method><lock>false</lock><oauth2_profile/><protocol_name/><qualified_name>Gemini [ Default POST ]</qualified_name><rest_endpoint>https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAupVTgLWuWt1bhazAiEVOxO1X9_mQPVE8</rest_endpoint><rest_message display_value="Gemini">8f7019cc93670210b09bf2918bba10ab</rest_message><sys_class_name>sys_rest_message_fn</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-17 10:01:36</sys_created_on><sys_id>7f0155c893670210b09bf2918bba101c</sys_id><sys_mod_count>7</sys_mod_count><sys_name>Default POST</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_rest_message_fn_7f0155c893670210b09bf2918bba101c</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-18 05:13:49</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mid_server/><use_mutual_auth>false</use_mutual_auth></sys_rest_message_fn></record_update>]]></payload>
+        <payload_hash>448432820</payload_hash>
+        <record_name>Default POST</record_name>
+        <reverted_from/>
+        <source>966c0c52931fc210b09bf2918bba1048</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-18 05:13:49</sys_created_on>
+        <sys_id>0ec81dd8932b0210b09bf2918bba10ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190c442c8310000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-18 05:13:49</sys_updated_on>
+        <type>HTTP Method</type>
+        <update_guid>82c81dd8d92b02106e38a6ece72fbfec</update_guid>
+        <update_guid_history>82c81dd8d92b02106e38a6ece72fbfec:448432820,b75bc55ce6e702109db23d52cce42a8a:-1430837073,e9488dd412e7021049a7898ed826ed15:-2125402000,d761e7c84823021033e768e5602a4e12:-9975947,d22add4cfba70210b484971a46868c14:-2125402000,a2a6dd441ea702103e99570084fb2054:-1355556240,a2a159cc1d670210bb0901f1de6f818d:-69173524,770191005fa70210b291a3f9a2ff85e7:-876859030</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-18 05:45:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn">sys_rest_message_fn</sys_db_object>
+        <sys_id>3725d94d1be744569be8c214096f37e4</sys_id>
+        <sys_metadata>7f0155c893670210b09bf2918bba101c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Default POST</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_7f0155c893670210b09bf2918bba101c</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_7f0155c893670210b09bf2918bba101c">0ec81dd8932b0210b09bf2918bba10ec</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-18 05:45:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

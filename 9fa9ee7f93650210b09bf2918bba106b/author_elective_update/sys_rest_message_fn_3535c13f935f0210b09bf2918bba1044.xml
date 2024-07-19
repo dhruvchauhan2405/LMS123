@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="DELETE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{ &#13;
+"model": "gpt-3.5-turbo", &#13;
+"messages": [&#13;
+ { "role": "user",&#13;
+ "content": "${prompt}" }&#13;
+ ] &#13;
+}</content>
+        <function_name>Default POST</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Gpt Integration [ Default POST ]</qualified_name>
+        <rest_endpoint>https://api.openai.com/v1/chat/completions</rest_endpoint>
+        <rest_message display_value="Gpt Integration">de5405fb935f0210b09bf2918bba102f</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-16 14:31:22</sys_created_on>
+        <sys_id>3535c13f935f0210b09bf2918bba1044</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Default POST</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_3535c13f935f0210b09bf2918bba1044</sys_update_name>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-16 14:49:04</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>96a148cddbee3d1802d9172913961973</instance_id>
+        <instance_name>dev211199</instance_name>
+        <name>sys_rest_message_fn_3535c13f935f0210b09bf2918bba1044</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn"><sys_rest_message_fn action="INSERT_OR_UPDATE"><authentication_type>inherit_from_parent</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><content>{ &#13;
+"model": "gpt-3.5-turbo", &#13;
+"messages": [&#13;
+ { "role": "user",&#13;
+ "content": "${prompt}" }&#13;
+ ] &#13;
+}</content><function_name>Default POST</function_name><http_method>post</http_method><lock>false</lock><oauth2_profile/><protocol_name/><qualified_name>Gpt Integration [ Default POST ]</qualified_name><rest_endpoint>https://api.openai.com/v1/chat/completions</rest_endpoint><rest_message display_value="Gpt Integration">de5405fb935f0210b09bf2918bba102f</rest_message><sys_class_name>sys_rest_message_fn</sys_class_name><sys_created_by>pranav.k</sys_created_by><sys_created_on>2024-07-16 14:31:22</sys_created_on><sys_id>3535c13f935f0210b09bf2918bba1044</sys_id><sys_mod_count>3</sys_mod_count><sys_name>Default POST</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_rest_message_fn_3535c13f935f0210b09bf2918bba1044</sys_update_name><sys_updated_by>pranav.k</sys_updated_by><sys_updated_on>2024-07-16 14:49:04</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mid_server/><use_mutual_auth>false</use_mutual_auth></sys_rest_message_fn></record_update>]]></payload>
+        <payload_hash>-1840053943</payload_hash>
+        <record_name>Default POST</record_name>
+        <reverted_from/>
+        <source>966c0c52931fc210b09bf2918bba1048</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-16 14:49:04</sys_created_on>
+        <sys_id>fc49897f935f0210b09bf2918bba1092</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190bc04b7890000001</sys_recorded_at>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-16 14:49:04</sys_updated_on>
+        <type>HTTP Method</type>
+        <update_guid>b449897f335f0210cd51f86be4a88092</update_guid>
+        <update_guid_history>b449897f335f0210cd51f86be4a88092:-1840053943,3f190533689f02100f71666a915b546d:-2103046214,7e86897f965f021048f8dbcb7afa558a:-1840053943,7535c13f025f02108072a0bb27bbf846:-559056662</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pranav.k</sys_created_by>
+        <sys_created_on>2024-07-16 15:16:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn">sys_rest_message_fn</sys_db_object>
+        <sys_id>00af6cfdaa3f44a280009cdeeda54249</sys_id>
+        <sys_metadata>3535c13f935f0210b09bf2918bba1044</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Default POST</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_3535c13f935f0210b09bf2918bba1044</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_3535c13f935f0210b09bf2918bba1044">fc49897f935f0210b09bf2918bba1092</sys_update_version>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-16 15:16:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

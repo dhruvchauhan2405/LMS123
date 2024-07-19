@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity_profile">
+    <oauth_entity_profile action="INSERT_OR_UPDATE">
+        <default>true</default>
+        <grant_type>authorization_code</grant_type>
+        <jwt_provider/>
+        <name>Zoom API default_profile</name>
+        <oauth_entity display_value="Zoom API">92144cc493230210b09bf2918bba10ca</oauth_entity>
+        <saml2_assertion_producer/>
+        <sys_class_name>oauth_entity_profile</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-07-17 04:42:19</sys_created_on>
+        <sys_id>b2f7000c93230210b09bf2918bba10ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Zoom API default_profile</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>oauth_entity_profile_b2f7000c93230210b09bf2918bba10ff</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-17 04:42:19</sys_updated_on>
+    </oauth_entity_profile>
+</record_update>

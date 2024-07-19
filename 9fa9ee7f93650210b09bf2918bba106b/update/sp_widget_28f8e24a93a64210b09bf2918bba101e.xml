@@ -109,6 +109,61 @@
       sidebar.classList.remove('open');
     }
   });
+	
+
+  // Initialize variables
+  c.isLoading = false;
+  c.answer = '';
+
+  // Function to submit the answer
+  c.submitPrompt = function(isValid) {
+    console.log('Form submitted, isValid:', isValid);
+    if (isValid) {
+      
+			c.isLoading = true; // Show loading indicator
+      c.answer = ''; // Reset answer
+
+      // Show loading message
+      var loadingContainer = document.querySelector('.ai-loading');
+      var answerContainer = document.querySelector('.ai-answer');
+      loadingContainer.style.display = "flex";
+      answerContainer.style.display = "none";
+			
+			
+      var promptData = {
+        prompt: c.prompt
+      };
+      console.log(promptData);
+      c.server.get({
+        action: 'submitPrompt',
+        promptData: promptData
+      }).then(function(response) {
+        if (response.data.success) {
+          console.log('Prompt inserted successfully. Fetching answer after 5 seconds...');
+          setTimeout(function() {
+            c.server.get({
+              action: 'fetchAnswer',
+              sys_id: response.data.sys_id
+            }).then(function(fetchResponse) {
+              c.isLoading = false; // Hide loading indicator
+              if (fetchResponse.data.success) {
+                console.log('Answer fetched successfully!');
+                c.answer = fetchResponse.data.answer; // Set the answer to be displayed
+								askAI();
+              } else {
+                console.error('Error fetching answer');
+                c.answer = 'There was an error retrieving the answer. Please try again.';
+              }
+            });
+          }, 6000); // Delay fetching the answer by 5 seconds
+        } else {
+          c.isLoading = false; // Hide loading indicator
+          console.error('Error inserting prompt');
+          c.answer = 'There was an error submitting the prompt. Please try again.';
+        }
+      });
+    }
+  };
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -547,6 +602,171 @@ body {
   max-width: 100%; /* Ensure text expands */
 }
 }
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.ai-searchbot-container {
+  flex: 1;
+  max-width: 300px;
+  position: sticky;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: .8rem;
+}
+
+.ai-searchbot-header {
+  background: linear-gradient(45deg, #2b2d42, #3a3d8f);
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+  justify-content: center;
+}
+
+.ai-searchbot-header h2 {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.ai-searchbot-header:hover {
+  background: linear-gradient(45deg, #3a3d8f, #2b2d42);
+}
+
+.ai-searchbot-section {
+  //display: none;
+  flex-direction: column;
+  //margin-top: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 0 0 8px 8px;
+  background: #f0f4f8;
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+.ai-searchbot-section textarea {
+  width: 100%;
+  height: 100px;
+  //margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  color: #2b2d42;
+  transition: background 0.3s ease;
+  overflow: hidden;
+}
+
+.ai-searchbot-section textarea:focus {
+  background: linear-gradient(135deg, #c7d2fe, #e0e7ff);
+}
+
+.ai-searchbot-section button {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #2b2d42, #3a3d8f);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.ai-searchbot-section button:hover {
+  background: linear-gradient(45deg, #3a3d8f, #2b2d42);
+}
+
+.ai-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-message {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #2b2d42;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3a3d8f;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ai-answer {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #333;
+  max-height: 55vh; /* Maximum height as a percentage of viewport height */
+  overflow: auto;
+  box-sizing: border-box;
+  scrollbar-width: thin; /* "thin" creates a narrower scrollbar */
+  scrollbar-color: #bbb #f0f0f0; /* color of the scrollbar */
+}
+
+.ans {
+  font-size: 12px;
+  text-align: justify;
+  white-space: pre-wrap; /* Preserves whitespace and respects line breaks */
+  overflow-wrap: break-word; /* Handles long words */
+  animation: typing-animation 5s steps(40, end) forwards; /* Adjust duration and steps as needed */
+}
+
+@keyframes typing-animation {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 1000px; /* Adjust this value to be taller than your content */
+  }
+}
+
 
 </css>
         <data_table>sp_instance</data_table>
@@ -564,7 +784,35 @@ body {
         <roles/>
         <script><![CDATA[(function() {
 	var courseSysId = $sp.getParameter('sys_id');
-
+	
+	// Handle form submission to save the answer
+	if (input && input.action === 'submitPrompt' && input.promptData) {
+    var grPrompt = new GlideRecord('x_1383177_lms_app_gemini');
+    grPrompt.initialize();
+    grPrompt.setValue('prompt', input.promptData.prompt);
+    
+    // Insert the record and return the sys_id
+    var sysId = grPrompt.insert();
+    
+    if (sysId) {
+      data.success = true;
+      data.sys_id = sysId; // Return the sys_id for later fetching
+    } else {
+      data.success = false;
+      data.answer = 'Error inserting the prompt into the record.';
+    }
+  } else if (input && input.action === 'fetchAnswer' && input.sys_id) {
+    // Retrieve the inserted record to get the answer
+    var grRetrieved = new GlideRecord('x_1383177_lms_app_gemini');
+    if (grRetrieved.get(input.sys_id)) {
+      data.success = true;
+      data.answer = grRetrieved.getValue('answer'); // Get the answer from the record
+    } else {
+      data.success = false;
+      data.answer = 'Error retrieving the answer from the record.';
+    }
+	} else {
+		
 	if(!input){
 		data.course = {};
 		data.modules = [];
@@ -674,20 +922,22 @@ body {
 			}
 		}
 	}
+	}
+	
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>576</sys_mod_count>
+        <sys_mod_count>671</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-08 06:43:40</sys_updated_on>
+        <sys_updated_on>2024-07-18 18:53:21</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="sidebar">
     <div class="sidebar-content">
@@ -753,6 +1003,47 @@ body {
         </div>
       </div>
     </div>
+  
+    <!-- AI Search Bot Section -->
+<div class="ai-searchbot-container">
+  <div class="ai-searchbot-header" onclick="toggleAISearch()">
+    <i class="fas fa-robot"></i>
+    <h2>AI Search</h2>
+  </div>
+  <div class="ai-searchbot-section">
+    <form class="ai-form" ng-submit="c.submitPrompt(c.promptForm.$valid)" name="c.promptForm" novalidate>
+      <textarea ng-model="c.prompt" placeholder="Ask Gemini..."></textarea>
+      <button type="submit" class="submit-btn">Ask</button>
+      <div class="ai-loading" ng-show="c.isLoading">
+        <p class="loading-message">Generating your answer...</p>
+        <div class="loading-spinner"></div>
+      </div>
+      <div class="ai-answer" ng-show="c.answer">
+        <h5>Answer:</h5>
+        <p class="ans">{{c.answer}}</p>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+function askAI() {
+  var loadingContainer = document.querySelector('.ai-loading');
+  var answerContainer = document.querySelector('.ai-answer');
+
+  // Show loading animation and message
+  loadingContainer.style.display = "flex";
+  answerContainer.style.display = "none";
+
+  // Simulate a 5-second delay
+  setTimeout(function() {
+    // Hide loading animation and show answer
+    loadingContainer.style.display = "none";
+    answerContainer.style.display = "block";
+  }, 100); // 5-second delay
+}
+</script>
+
+    
   </div>
 </div>
 

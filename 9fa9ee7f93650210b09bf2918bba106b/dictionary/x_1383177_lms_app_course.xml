@@ -20,10 +20,11 @@
         </element>
         <element label="Description" max_length="5000" name="description" type="translated_html"/>
         <element label="Enrollment limit" max_length="40" name="enrollment_limit" type="integer"/>
-        <element choice="1" label="Delivery Type" mandatory="true" max_length="40" name="learning_medium" type="choice">
+        <element choice="1" default="online" label="Delivery Type" mandatory="true" max_length="40" name="learning_medium" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Online" sequence="0" value="online"/>
                 <element inactive_on_update="false" label="In-person" sequence="1" value="in-person"/>
+                <element inactive_on_update="false" label="Online (Instructor-led)" sequence="2" value="online_instructor_led"/>
             </choice>
         </element>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>

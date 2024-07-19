@@ -42,6 +42,20 @@
             <sys_updated_by>abhishek.s</sys_updated_by>
             <sys_updated_on>2024-05-07 13:10:29</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>abhishek.s</sys_created_by>
+            <sys_created_on>2024-07-17 05:02:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>389c844093630210b09bf2918bba1065</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1383177_lms_app_in_person_course" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">f47294d193028210b09bf2918bba10f2</sys_ui_form>
+            <sys_ui_section caption="Zoom" display_value="Zoom" name="x_1383177_lms_app_in_person_course" sys_domain="global" view="Default view">3c9c0ccc93230210b09bf2918bba1070</sys_ui_section>
+            <sys_updated_by>abhishek.s</sys_updated_by>
+            <sys_updated_on>2024-07-17 05:02:23</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1383177_lms_app_in_person_course</name>
             <roles/>
