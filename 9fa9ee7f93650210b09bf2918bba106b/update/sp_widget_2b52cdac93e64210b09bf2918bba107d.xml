@@ -10,6 +10,7 @@
     c.allCourses = [];
     c.filteredCourses = [];
     c.selectedDomain = '';
+    c.selectedLearningMedium = '';
     c.selectedSortOrder = 'name_asc';
     c.domains = c.data.domains; // Assuming domains are provided in c.data.domains
 
@@ -36,13 +37,18 @@
             });
         }
 
+        // Filter by learning medium
+        if (c.selectedLearningMedium) {
+            filtered = filtered.filter(function(course) {
+                return course.LearningMedium === c.selectedLearningMedium;
+            });
+        }
+
         // Sort courses
         if (c.selectedSortOrder === 'name_asc') {
             filtered.sort((a, b) => a.Name.localeCompare(b.Name));
         } else if (c.selectedSortOrder === 'name_desc') {
             filtered.sort((a, b) => b.Name.localeCompare(a.Name));
-        } else if (c.selectedSortOrder === 'access') {
-            filtered.sort((a, b) => a.Access.localeCompare(b.Access));
         }
 
         c.allCourses = filtered;
@@ -282,7 +288,8 @@
 			Thumbnail: grCourse.getDisplayValue('thumbnail'),
 			sys_id: grCourse.getUniqueValue(),
 			DomainSysIds: domainIds, 
-			Description: gs.getMessage(grCourse.getDisplayValue('short_description')) 
+			Description: gs.getMessage(grCourse.getDisplayValue('short_description')),
+			 LearningMedium: grCourse.getValue('learning_medium') // Add learning_medium field
 		});
 	}
 
@@ -303,24 +310,29 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-30 05:11:35</sys_created_on>
         <sys_id>2b52cdac93e64210b09bf2918bba107d</sys_id>
-        <sys_mod_count>155</sys_mod_count>
+        <sys_mod_count>169</sys_mod_count>
         <sys_name>LMS Courses (Course Page)</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_2b52cdac93e64210b09bf2918bba107d</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-15 10:33:58</sys_updated_on>
+        <sys_updated_on>2024-07-22 10:37:00</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="filter-controls">
     <select ng-model="c.selectedDomain" ng-change="c.filterAndSortCourses()">
       <option value="">All Domains</option>
       <option ng-repeat="domain in c.domains" ng-bind="domain.Name" ng-value="domain.sys_id"></option>
     </select>
+    <select ng-model="c.selectedLearningMedium" ng-change="c.filterAndSortCourses()">
+      <option value="">All Learning Mediums</option>
+      <option value="online">Online</option>
+      <option value="online_in_person">Online In-Person</option>
+      <option value="in_person">In-Person</option>
+    </select>
     <select ng-model="c.selectedSortOrder" ng-change="c.filterAndSortCourses()">
       <option value="name_asc">Name: A to Z</option>
       <option value="name_desc">Name: Z to A</option>
-      <option value="access">Accessibility</option>
     </select>
   </div>
   <div class="course-container" id="cTest">   

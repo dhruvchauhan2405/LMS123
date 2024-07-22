@@ -67,20 +67,18 @@
         var currentDate = new Date();
         var startDate = new Date(startingDate);
         var endDate = new Date(endingDate);
-
         // Find the course to get the meeting URL
         var course = c.data.courses.find(course => course.sys_id === sys_id);
-				console.log(course.MeetingURL);
-        //if (course && course.MeetingURL) {
-					//	console.log("entered if");
-            //if (currentDate >= startDate && currentDate <= endDate) {
-                window.open(course.MeetingURL, '_blank'); // Open the meeting URL in a new tab
-            //} else {
-              //  c.showModal(); 
-            //}
-        //} else {
-         //   console.log("Error fetching the link."); 
-        //}
+        if (course && course.MeetingURL) {
+					console.log(startDate);
+					console.log(endDate);
+          if (currentDate >= startDate && currentDate <= endDate) {
+               window.open(course.MeetingURL, '_blank'); // Open the meeting URL in a new tab
+          } else {
+            	if (currentDate <= startDate){c.showModal();}
+						else if(currentDate >= endDate){c.showModal2()}
+          }
+        } 
     };
 
 	c.showModal = function() {
@@ -92,7 +90,16 @@
 		var modal = document.getElementById("errorModal");
 		modal.style.display = "none";
 	};
+	
+	c.showModal2 = function() {
+		var modal = document.getElementById("error2Modal");
+		modal.style.display = "block";
+	};
 
+	c.closeModal2 = function() {
+		var modal = document.getElementById("error2Modal");
+		modal.style.display = "none";
+	};
 	// Default initialization
 	c.initTabs();
 };
@@ -408,24 +415,25 @@
         while (grCourse.next()) {
             var courseData = {
                 Name: gs.getMessage(grCourse.getDisplayValue('course_name')),
+								NameUNI: gs.getMessage(grCourse.getUniqueValue('course_name')),
                 Thumbnail: grCourse.getDisplayValue('thumbnail'),
                 sys_id: grCourse.getUniqueValue(),
                 Description: gs.getMessage(grCourse.getDisplayValue('short_description')),
                 LearningMedium: grCourse.getValue('learning_medium'),
-                StartingDate: grCourse.getValue('starting_date'),
-                EndingDate: grCourse.getValue('ending_date')
+                StartingDate: '',
+                EndingDate: ''
             };
 						
             // If course is in-person, get the meeting URL from the related table
             if (courseData.LearningMedium === 'online_instructor_led') {
-	gs.addErrorMessage("Hello");                
-gs.addErrorMessage(courseData.sys_id);
 								var grInPersonCourse = new GlideRecordSecure('x_1383177_lms_app_in_person_course');
-                if (grInPersonCourse.get(courseData.sys_id)) {
-                  gs.addErrorMessage("Hello IF");  
-									courseData.MeetingURL = grInPersonCourse.getValue('meeting_url');
-										gs.addErrorMessage(courseData.MeetingURL);
-                }
+                grInPersonCourse.addQuery('course_name', courseData.NameUNI);
+                grInPersonCourse.query();
+                if (grInPersonCourse.next()) {
+                    courseData.MeetingURL = grInPersonCourse.getValue('meeting_url');
+										 courseData.StartingDate = grInPersonCourse.getValue('starting_date'); // Fetch starting_date
+                courseData.EndingDate = grInPersonCourse.getValue('ending_date');     // Fetch ending_date
+                } 
             }
 
             data.courses.push(courseData);
@@ -477,14 +485,14 @@ gs.addErrorMessage(courseData.sys_id);
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-06-13 09:38:46</sys_created_on>
         <sys_id>06c5028d93b60210b09bf2918bba101f</sys_id>
-        <sys_mod_count>105</sys_mod_count>
+        <sys_mod_count>140</sys_mod_count>
         <sys_name>LMS My Learnings</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_06c5028d93b60210b09bf2918bba101f</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-22 06:54:24</sys_updated_on>
+        <sys_updated_on>2024-07-22 09:59:21</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="tabs">
     <button class="tab-link active" ng-click="c.handleTabClick($event, 'myCourses')">${My Courses ({{ c.data.courses.length }})}</button>
@@ -552,11 +560,19 @@ gs.addErrorMessage(courseData.sys_id);
       <p>${You have not completed any courses.}</p>
     </div>
   </div>
-  <!-- Modal for Error Message -->
+  <!-- Modal 1 -->
   <div id="errorModal" class="modal">
     <div class="modal-content">
       <span class="close" ng-click="c.closeModal()">&times;</span>
       <p>${You can join the link only when the meeting has started}</p>
+    </div>
+  </div>
+   <!-- Modal 2 -->
+  <div id="error2Modal" class="modal">
+    <div class="modal-content">
+      <span class="close" ng-click="c.closeModal2()">&times;</span>
+      <p>${The meeting link has expired because the 
+        last date has passed.}</p>
     </div>
   </div>
 
