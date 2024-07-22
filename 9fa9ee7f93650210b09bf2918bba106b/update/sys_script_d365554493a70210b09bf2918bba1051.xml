@@ -29,9 +29,9 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-
+ var fullMessage = current.prompt + " Give a brief reply in 80 words.";
  var r = new sn_ws.RESTMessageV2('x_1383177_lms_app.Gemini', 'Gemini POST');
- r.setStringParameterNoEscape('message',current.prompt);
+ r.setStringParameterNoEscape('message',fullMessage);
 
  var response = r.execute();
  var responseBody = response.getBody();
@@ -55,7 +55,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d365554493a70210b09bf2918bba1051</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>Gemini Init</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -63,7 +63,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_script_d365554493a70210b09bf2918bba1051</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-18 07:25:51</sys_updated_on>
+        <sys_updated_on>2024-07-22 05:50:04</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>

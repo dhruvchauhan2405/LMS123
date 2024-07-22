@@ -2,168 +2,168 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function(spUtil, $scope, i18n, $window, $timeout, $element) {
-    var c = this;
-    c.selectedModuleIndex = null;
-    c.isModuleView = false;
-    c.showCompletionModal = false;
-    c.completedCoursePage = false;
+	var c = this;
+	c.selectedModuleIndex = null;
+	c.isModuleView = false;
+	c.showCompletionModal = false;
+	c.completedCoursePage = false;
 
-    // Function to select a module by index
-    c.selectModuleByIndex = function(index) {
-        c.selectedModuleIndex = index;
-        c.selectedModule = c.data.modules[index].sys_id;
-        c.isModuleView = true; // Switch to module view
-    };
+	// Function to select a module by index
+	c.selectModuleByIndex = function(index) {
+		c.selectedModuleIndex = index;
+		c.selectedModule = c.data.modules[index].sys_id;
+		c.isModuleView = true; // Switch to module view
+	};
 
-    // Function to select a module by sys_id
-    c.selectModule = function(moduleSysId) {
-        c.completedCoursePage = false;
-        for (var i = 0; i < c.data.modules.length; i++) {
-            if (c.data.modules[i].sys_id === moduleSysId) {
-                c.selectModuleByIndex(i);
-                break;
-            }
-        }
-    };
+	// Function to select a module by sys_id
+	c.selectModule = function(moduleSysId) {
+		c.completedCoursePage = false;
+		for (var i = 0; i < c.data.modules.length; i++) {
+			if (c.data.modules[i].sys_id === moduleSysId) {
+				c.selectModuleByIndex(i);
+				break;
+			}
+		}
+	};
 
-    // Helper function to get the current module
-    c.getCurrentModule = function() {
-        if (c.selectedModuleIndex !== null) {
-            return c.data.modules[c.selectedModuleIndex];
-        }
-        return {};
-    };
+	// Helper function to get the current module
+	c.getCurrentModule = function() {
+		if (c.selectedModuleIndex !== null) {
+			return c.data.modules[c.selectedModuleIndex];
+		}
+		return {};
+	};
 
-    // Check if current module is the last module
-    c.isLastModule = function() {
-        return c.selectedModuleIndex !== null && c.selectedModuleIndex === c.data.modules.length - 1;
-    };
+	// Check if current module is the last module
+	c.isLastModule = function() {
+		return c.selectedModuleIndex !== null && c.selectedModuleIndex === c.data.modules.length - 1;
+	};
 
-    // Navigate to the next lesson
-    c.nextLesson = function() {
-        // If Module view is off
-        if (!c.isModuleView) {
-            // If on the initial page, switch to the first module
-            c.isModuleView = true;
-            if (c.data.modules.length > 0) {
-                c.selectModuleByIndex(0);
-            }
-        } else if (c.selectedModuleIndex !== null) {
-            c.data.selectedmodule = c.selectedModuleIndex;
-            c.data.modules[c.selectedModuleIndex].status = true;
-            c.server.update().then(function(response) {
-                c.data.percentage = response.percent;
-            });
-            if (c.selectedModuleIndex < c.data.modules.length - 1) {
-                c.selectModuleByIndex(c.selectedModuleIndex + 1);
-            } else {
-                c.isModuleView = false;
-                c.showCompletionModal = false;
-                c.completedCoursePage = true;
-            }
+	// Navigate to the next lesson
+	c.nextLesson = function() {
+		// If Module view is off
+		if (!c.isModuleView) {
+			// If on the initial page, switch to the first module
+			c.isModuleView = true;
+			if (c.data.modules.length > 0) {
+				c.selectModuleByIndex(0);
+			}
+		} else if (c.selectedModuleIndex !== null) {
+			c.data.selectedmodule = c.selectedModuleIndex;
+			c.data.modules[c.selectedModuleIndex].status = true;
+			c.server.update().then(function(response) {
+				c.data.percentage = response.percent;
+			});
+			if (c.selectedModuleIndex < c.data.modules.length - 1) {
+				c.selectModuleByIndex(c.selectedModuleIndex + 1);
+			} else {
+				c.isModuleView = false;
+				c.showCompletionModal = false;
+				c.completedCoursePage = true;
+			}
 
-            // Scroll to the bottom of the header
-            $timeout(function() {
-                var headerElement = document.querySelector('.module-header');
-                if (headerElement) {
-                    var headerHeight = headerElement.offsetHeight;
-                    window.scrollTo(0, headerHeight);
-                } else {
-                    window.scrollTo(0, 0);
-                }
-            }, 0);
-        }
-    };
+			// Scroll to the bottom of the header
+			$timeout(function() {
+				var headerElement = document.querySelector('.module-header');
+				if (headerElement) {
+					var headerHeight = headerElement.offsetHeight;
+					window.scrollTo(0, headerHeight);
+				} else {
+					window.scrollTo(0, 0);
+				}
+			}, 0);
+		}
+	};
 
-    // Complete the course
-    c.completeCourse = function() {
-        c.data.action = 'complete';
-        c.server.update().then(function() {
-            c.showCompletionModal = true;
-        });
-    };
+	// Complete the course
+	c.completeCourse = function() {
+		c.data.action = 'complete';
+		c.server.update().then(function() {
+			c.showCompletionModal = true;
+		});
+	};
 
-    // Navigate to the previous lesson
-    c.prevLesson = function() {
-        if (c.selectedModuleIndex !== null && c.selectedModuleIndex > 0) {
-            c.selectModuleByIndex(c.selectedModuleIndex - 1);
-        }
-    };
+	// Navigate to the previous lesson
+	c.prevLesson = function() {
+		if (c.selectedModuleIndex !== null && c.selectedModuleIndex > 0) {
+			c.selectModuleByIndex(c.selectedModuleIndex - 1);
+		}
+	};
 
-    // Function to navigate to My Learnings page
-    c.goToMyLearnings = function() {
-        // Assuming there is a function to navigate to My Learnings page
-        window.location.href = 'https://dev211199.service-now.com/lms?id=lms_my_learning'; // Adjust the URL as necessary
-    };
-	 $scope.toggleSidebar = function() {
-    var sidebar = $element[0].querySelector('.sidebar');
-    if (sidebar) {
-      sidebar.classList.toggle('open');
-    }
-  };
+	// Function to navigate to My Learnings page
+	c.goToMyLearnings = function() {
+		// Assuming there is a function to navigate to My Learnings page
+		window.location.href = 'https://dev211199.service-now.com/lms?id=lms_my_learning'; // Adjust the URL as necessary
+	};
+	$scope.toggleSidebar = function() {
+		var sidebar = $element[0].querySelector('.sidebar');
+		if (sidebar) {
+			sidebar.classList.toggle('open');
+		}
+	};
 
-  // Ensure the sidebar is initially in the correct state
-  $scope.$on('$viewContentLoaded', function() {
-    var sidebar = $element[0].querySelector('.sidebar');
-    if (sidebar && window.innerWidth <= 767) {
-      sidebar.classList.remove('open');
-    }
-  });
-	
+	// Ensure the sidebar is initially in the correct state
+	$scope.$on('$viewContentLoaded', function() {
+		var sidebar = $element[0].querySelector('.sidebar');
+		if (sidebar && window.innerWidth <= 767) {
+			sidebar.classList.remove('open');
+		}
+	});
 
-  // Initialize variables
-  c.isLoading = false;
-  c.answer = '';
 
-  // Function to submit the answer
-  c.submitPrompt = function(isValid) {
-    console.log('Form submitted, isValid:', isValid);
-    if (isValid) {
-      
+	// Initialize variables
+	c.isLoading = false;
+	c.answer = '';
+
+	// Function to submit the answer
+	c.submitPrompt = function(isValid) {
+		console.log('Form submitted, isValid:', isValid);
+		if (isValid) {
+
 			c.isLoading = true; // Show loading indicator
-      c.answer = ''; // Reset answer
+			c.answer = ''; // Reset answer
 
-      // Show loading message
-      var loadingContainer = document.querySelector('.ai-loading');
-      var answerContainer = document.querySelector('.ai-answer');
-      loadingContainer.style.display = "flex";
-      answerContainer.style.display = "none";
-			
-			
-      var promptData = {
-        prompt: c.prompt
-      };
-      console.log(promptData);
-      c.server.get({
-        action: 'submitPrompt',
-        promptData: promptData
-      }).then(function(response) {
-        if (response.data.success) {
-          console.log('Prompt inserted successfully. Fetching answer after 5 seconds...');
-          setTimeout(function() {
-            c.server.get({
-              action: 'fetchAnswer',
-              sys_id: response.data.sys_id
-            }).then(function(fetchResponse) {
-              c.isLoading = false; // Hide loading indicator
-              if (fetchResponse.data.success) {
-                console.log('Answer fetched successfully!');
-                c.answer = fetchResponse.data.answer; // Set the answer to be displayed
+			// Show loading message
+			var loadingContainer = document.querySelector('.ai-loading');
+			var answerContainer = document.querySelector('.ai-answer');
+			loadingContainer.style.display = "flex";
+			answerContainer.style.display = "none";
+
+
+			var promptData = {
+				prompt: c.prompt
+			};
+			console.log(promptData);
+			c.server.get({
+				action: 'submitPrompt',
+				promptData: promptData
+			}).then(function(response) {
+				if (response.data.success) {
+					console.log('Prompt inserted successfully. Fetching answer after 5 seconds...');
+					setTimeout(function() {
+						c.server.get({
+							action: 'fetchAnswer',
+							sys_id: response.data.sys_id
+						}).then(function(fetchResponse) {
+							c.isLoading = false; // Hide loading indicator
+							if (fetchResponse.data.success) {
+								console.log('Answer fetched successfully!');
+								c.answer = fetchResponse.data.answer; 
 								askAI();
-              } else {
-                console.error('Error fetching answer');
-                c.answer = 'There was an error retrieving the answer. Please try again.';
-              }
-            });
-          }, 6000); // Delay fetching the answer by 5 seconds
-        } else {
-          c.isLoading = false; // Hide loading indicator
-          console.error('Error inserting prompt');
-          c.answer = 'There was an error submitting the prompt. Please try again.';
-        }
-      });
-    }
-  };
+							} else {
+								console.error('Error fetching answer');
+								c.answer = 'There was an error retrieving the answer. Please try again.';
+							}
+						});
+					}, 4000); // Delay fetching the answer by 6 seconds
+				} else {
+					c.isLoading = false; // Hide loading indicator
+					console.error('Error inserting prompt');
+					c.answer = 'There was an error submitting the prompt. Please try again.';
+				}
+			});
+		}
+	};
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -595,12 +595,12 @@ body {
     display: block; /* Show toggle button on mobile screens */
   }
   .lessons .lesson p {
-  font-size: 1.2rem;
-  text-align: justify;
-  line-height: 1.4;
-  color: #636e72;
-  max-width: 100%; /* Ensure text expands */
-}
+    font-size: 1.2rem;
+    text-align: justify;
+    line-height: 1.4;
+    color: #636e72;
+    max-width: 100%; /* Ensure text expands */
+  }
 }
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
@@ -620,6 +620,7 @@ body {
   position: sticky;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: .8rem;
+      background: #f0f4f8;
 }
 
 .ai-searchbot-header {
@@ -644,14 +645,12 @@ body {
 }
 
 .ai-searchbot-section {
-  //display: none;
-  flex-direction: column;
-  //margin-top: 10px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 0 0 8px 8px;
-  background: #f0f4f8;
-  animation: slideDown 0.5s ease-out forwards;
+      flex-direction: column;
+    padding: 2rem;
+    /* border: .1rem solid #ddd; */
+    border-radius: 0 0 .8rem .8rem;
+    background: #f0f4f8;
+    animation: slideDown .5s ease-out forwards;
 }
 
 @keyframes slideDown {
@@ -743,7 +742,7 @@ body {
   border-radius: 8px;
   background: #ffffff;
   color: #333;
-  max-height: 55vh; /* Maximum height as a percentage of viewport height */
+  max-height: 55vh; 
   overflow: auto;
   box-sizing: border-box;
   scrollbar-width: thin; /* "thin" creates a narrower scrollbar */
@@ -755,7 +754,7 @@ body {
   text-align: justify;
   white-space: pre-wrap; /* Preserves whitespace and respects line breaks */
   overflow-wrap: break-word; /* Handles long words */
-  animation: typing-animation 5s steps(40, end) forwards; /* Adjust duration and steps as needed */
+  animation: typing-animation 5s steps(40, end) forwards; 
 }
 
 @keyframes typing-animation {
@@ -763,7 +762,7 @@ body {
     max-height: 0;
   }
   to {
-    max-height: 1000px; /* Adjust this value to be taller than your content */
+    max-height: 1000px;
   }
 }
 
@@ -784,160 +783,160 @@ body {
         <roles/>
         <script><![CDATA[(function() {
 	var courseSysId = $sp.getParameter('sys_id');
-	
+
 	// Handle form submission to save the answer
 	if (input && input.action === 'submitPrompt' && input.promptData) {
-    var grPrompt = new GlideRecord('x_1383177_lms_app_gemini');
-    grPrompt.initialize();
-    grPrompt.setValue('prompt', input.promptData.prompt);
-    
-    // Insert the record and return the sys_id
-    var sysId = grPrompt.insert();
-    
-    if (sysId) {
-      data.success = true;
-      data.sys_id = sysId; // Return the sys_id for later fetching
-    } else {
-      data.success = false;
-      data.answer = 'Error inserting the prompt into the record.';
-    }
-  } else if (input && input.action === 'fetchAnswer' && input.sys_id) {
-    // Retrieve the inserted record to get the answer
-    var grRetrieved = new GlideRecord('x_1383177_lms_app_gemini');
-    if (grRetrieved.get(input.sys_id)) {
-      data.success = true;
-      data.answer = grRetrieved.getValue('answer'); // Get the answer from the record
-    } else {
-      data.success = false;
-      data.answer = 'Error retrieving the answer from the record.';
-    }
+		var grPrompt = new GlideRecord('x_1383177_lms_app_gemini');
+		grPrompt.initialize();
+		grPrompt.setValue('prompt', input.promptData.prompt);
+
+		// Insert the record and return the sys_id
+		var sysId = grPrompt.insert();
+
+		if (sysId) {
+			data.success = true;
+			data.sys_id = sysId; // Return the sys_id for later fetching
+		} else {
+			data.success = false;
+			data.answer = 'Error inserting the prompt into the record.';
+		}
+	} else if (input && input.action === 'fetchAnswer' && input.sys_id) {
+		// Retrieve the inserted record to get the answer
+		var grRetrieved = new GlideRecord('x_1383177_lms_app_gemini');
+		if (grRetrieved.get(input.sys_id)) {
+			data.success = true;
+			data.answer = grRetrieved.getValue('answer'); // Get the answer from the record
+		} else {
+			data.success = false;
+			data.answer = 'Error retrieving the answer from the record.';
+		}
 	} else {
-		
-	if(!input){
-		data.course = {};
-		data.modules = [];
-		data.a=false;
-		// Fetch course details
-		var courseGr = new GlideRecord('x_1383177_lms_app_course');
-		if (courseGr.get(courseSysId)) {
-			data.course.sys_id = courseGr.getValue('sys_id');
-			data.course.course_name = courseGr.getValue('course_name');
-			data.course.short_description = courseGr.getValue('short_description');
-			data.course.thumbnail = courseGr.getDisplayValue('thumbnail');
-		}
 
-		var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
-		var moduleTable = 'x_1383177_lms_app_module';
-
-		var moduleGr = new GlideRecordSecure(courseModuleTable);
-		moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
-		moduleGr.orderBy('order');
-		moduleGr.query();
-
-		while (moduleGr.next()) {
-			var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
-			var m2mgr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-			m2mgr.addQuery('sys_user', gs.getUserID());
-			m2mgr.addQuery('course', courseSysId);
-			m2mgr.addQuery('x_1383177_lms_app_module',moduleSysId);
-			m2mgr.query();
-			if(m2mgr.next()){
-				data.a= true;
-			}
-			else{
-				data.a=false;
+		if(!input){
+			data.course = {};
+			data.modules = [];
+			data.a=false;
+			// Fetch course details
+			var courseGr = new GlideRecord('x_1383177_lms_app_course');
+			if (courseGr.get(courseSysId)) {
+				data.course.sys_id = courseGr.getValue('sys_id');
+				data.course.course_name = courseGr.getValue('course_name');
+				data.course.short_description = courseGr.getValue('short_description');
+				data.course.thumbnail = courseGr.getDisplayValue('thumbnail');
 			}
 
-			var moduleGrDetails = new GlideRecord(moduleTable);
-			if (moduleGrDetails.get(moduleSysId)) {
-				var moduleObj = {
-					sys_id: moduleSysId,
-					name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
-					content_body: moduleGrDetails.getValue('content_body'), // Adjust field names as per your module table
-					status: data.a,
-				};
-				data.modules.push(moduleObj);
+			var courseModuleTable = 'x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm';
+			var moduleTable = 'x_1383177_lms_app_module';
+
+			var moduleGr = new GlideRecordSecure(courseModuleTable);
+			moduleGr.addQuery('x_1383177_lms_app_course', courseSysId); // Adjust field names as per your many-to-many table
+			moduleGr.orderBy('order');
+			moduleGr.query();
+
+			while (moduleGr.next()) {
+				var moduleSysId = moduleGr.getValue('x_1383177_lms_app_module'); // Adjust field names as per your many-to-many table
+				var m2mgr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+				m2mgr.addQuery('sys_user', gs.getUserID());
+				m2mgr.addQuery('course', courseSysId);
+				m2mgr.addQuery('x_1383177_lms_app_module',moduleSysId);
+				m2mgr.query();
+				if(m2mgr.next()){
+					data.a= true;
+				}
+				else{
+					data.a=false;
+				}
+
+				var moduleGrDetails = new GlideRecord(moduleTable);
+				if (moduleGrDetails.get(moduleSysId)) {
+					var moduleObj = {
+						sys_id: moduleSysId,
+						name: moduleGrDetails.getValue('name'), // Adjust field names as per your module table
+						content_body: moduleGrDetails.getValue('content_body'), // Adjust field names as per your module table
+						status: data.a,
+					};
+					data.modules.push(moduleObj);
+				}
 			}
-		}
-		data.count=0;
-		var m2mgr2 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-		m2mgr2.addQuery('sys_user', gs.getUserID());
-		m2mgr2.addQuery('course', courseSysId);
-		m2mgr2.query();
-		while(m2mgr2.next()){
-			data.count++;
+			data.count=0;
+			var m2mgr2 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+			m2mgr2.addQuery('sys_user', gs.getUserID());
+			m2mgr2.addQuery('course', courseSysId);
+			m2mgr2.query();
+			while(m2mgr2.next()){
+				data.count++;
+			}
+
+			var totalModules = data.modules.length;
+			data.percentage= Math.round((data.count / totalModules) * 100);
 		}
 
-		var totalModules = data.modules.length;
-		data.percentage= Math.round((data.count / totalModules) * 100);
+
+		if (input) {
+			var userId = gs.getUserID();
+			var moduleSysId1 = input.modules[input.selectedmodule].sys_id;
+
+
+
+			// Create a new GlideRecord instance
+			var progressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+
+			// Add query conditions to check if the record already exists
+			progressGr.addQuery('sys_user', userId);
+			progressGr.addQuery('course', courseSysId);
+			progressGr.addQuery('x_1383177_lms_app_module', moduleSysId1);
+			progressGr.query();
+
+			// If no matching records are found, insert a new record
+			if (!progressGr.next()) {
+				var newProgressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+				newProgressGr.initialize();
+				newProgressGr.setValue('sys_user', userId);
+				newProgressGr.setValue('course', courseSysId);
+				newProgressGr.setValue('x_1383177_lms_app_module', moduleSysId1);
+				newProgressGr.setValue('progress', 'complete');
+				newProgressGr.insert();
+			}
+
+			data.count=0;
+			var m2mgr22 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
+			m2mgr22.addQuery('sys_user', gs.getUserID());
+			m2mgr22.addQuery('course', courseSysId);
+			m2mgr22.query();
+			while(m2mgr22.next()){
+				data.count++;
+			}
+			data.percent=0;
+			var totalModules2 = input.modules.length;
+			data.percent= Math.round((data.count / totalModules2) * 100);
+
+			if (input.action == 'complete'){
+				var courseCompleteGr = new GlideRecord('x_1383177_lms_app_enrollment');
+				courseCompleteGr.addQuery('course_name', courseSysId);
+				courseCompleteGr.addQuery('learner_name', gs.getUserID());
+				courseCompleteGr.query();
+				if (courseCompleteGr.next()){
+					courseCompleteGr.setValue('completion_status', 'complete');
+					courseCompleteGr.update();
+				}
+			}
+		}
 	}
 
-
-	if (input) {
-		var userId = gs.getUserID();
-		var moduleSysId1 = input.modules[input.selectedmodule].sys_id;
-
-
-
-		// Create a new GlideRecord instance
-		var progressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-
-		// Add query conditions to check if the record already exists
-		progressGr.addQuery('sys_user', userId);
-		progressGr.addQuery('course', courseSysId);
-		progressGr.addQuery('x_1383177_lms_app_module', moduleSysId1);
-		progressGr.query();
-
-		// If no matching records are found, insert a new record
-		if (!progressGr.next()) {
-			var newProgressGr = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-			newProgressGr.initialize();
-			newProgressGr.setValue('sys_user', userId);
-			newProgressGr.setValue('course', courseSysId);
-			newProgressGr.setValue('x_1383177_lms_app_module', moduleSysId1);
-			newProgressGr.setValue('progress', 'complete');
-			newProgressGr.insert();
-		}
-
-		data.count=0;
-		var m2mgr22 = new GlideRecord('x_1383177_lms_app_m2m_x_1383177_lm_sys_user');
-		m2mgr22.addQuery('sys_user', gs.getUserID());
-		m2mgr22.addQuery('course', courseSysId);
-		m2mgr22.query();
-		while(m2mgr22.next()){
-			data.count++;
-		}
-		data.percent=0;
-		var totalModules2 = input.modules.length;
-		data.percent= Math.round((data.count / totalModules2) * 100);
-
-		if (input.action == 'complete'){
-			var courseCompleteGr = new GlideRecord('x_1383177_lms_app_enrollment');
-			courseCompleteGr.addQuery('course_name', courseSysId);
-			courseCompleteGr.addQuery('learner_name', gs.getUserID());
-			courseCompleteGr.query();
-			if (courseCompleteGr.next()){
-				courseCompleteGr.setValue('completion_status', 'complete');
-				courseCompleteGr.update();
-			}
-		}
-	}
-	}
-	
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:30:39</sys_created_on>
         <sys_id>28f8e24a93a64210b09bf2918bba101e</sys_id>
-        <sys_mod_count>671</sys_mod_count>
+        <sys_mod_count>683</sys_mod_count>
         <sys_name>LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_28f8e24a93a64210b09bf2918bba101e</sys_update_name>
         <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-07-18 18:53:21</sys_updated_on>
+        <sys_updated_on>2024-07-22 05:48:31</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="sidebar">
     <div class="sidebar-content">
@@ -945,31 +944,31 @@ body {
       <h2>{{c.data.course.course_name}}</h2>
       <div>
         <div class="progress-container">
-        <p id="progress-text">${Progress}: {{c.data.percentage}}% <!-- Progress Status --></p>
-        <div class="progress-donut">                  
+          <p id="progress-text">${Progress}: {{c.data.percentage}}% <!-- Progress Status --></p>
+          <div class="progress-donut">                  
             <svg class="donut-ring" width="100%" height="100%" viewBox="0 0 42 42">
-                <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ecf0f1" stroke-width="3"></circle>
-                <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#0984e3" stroke-width="3" stroke-dasharray="{{c.data.percentage * 0.01 * 100}} 100"></circle>
+              <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ecf0f1" stroke-width="3"></circle>
+              <circle class="donut-segment" cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#0984e3" stroke-width="3" stroke-dasharray="{{c.data.percentage * 0.01 * 100}} 100"></circle>
             </svg>
+          </div>
         </div>
-    </div>
-          <ul>
+        <ul>
           <li ng-repeat="module in c.data.modules">
             <a href="javascript:void(0)" ng-click="c.selectModule(module.sys_id)" ng-class="{'active': c.selectedModule === module.sys_id, 'completed': module.completed}">
               {{module.name}}
               <span ng-if="module.status" class="tick-mark">✔</span>
             </a>
           </li>
-          </ul>
+        </ul>
       </div>      
       <div class="sidebar-footer">
         <a href="javascript:void(0)" ng-click="c.goToMyLearnings()">${My Learnings}</a>
       </div>
     </div>
   </div>
-    
+
   <div class="toggle-sidebar" ng-click="toggleSidebar()">${Modules}</div>
-  
+
   <div class="content">
     <div class="page">
       <!-- Initial Page Content -->
@@ -1003,47 +1002,47 @@ body {
         </div>
       </div>
     </div>
-  
+
     <!-- AI Search Bot Section -->
-<div class="ai-searchbot-container">
-  <div class="ai-searchbot-header" onclick="toggleAISearch()">
-    <i class="fas fa-robot"></i>
-    <h2>AI Search</h2>
-  </div>
-  <div class="ai-searchbot-section">
-    <form class="ai-form" ng-submit="c.submitPrompt(c.promptForm.$valid)" name="c.promptForm" novalidate>
-      <textarea ng-model="c.prompt" placeholder="Ask Gemini..."></textarea>
-      <button type="submit" class="submit-btn">Ask</button>
-      <div class="ai-loading" ng-show="c.isLoading">
-        <p class="loading-message">Generating your answer...</p>
-        <div class="loading-spinner"></div>
+    <div class="ai-searchbot-container">
+      <div class="ai-searchbot-header" onclick="toggleAISearch()">
+        <i class="fas fa-robot"></i>
+        <h3>AI Search</h3>
       </div>
-      <div class="ai-answer" ng-show="c.answer">
-        <h5>Answer:</h5>
-        <p class="ans">{{c.answer}}</p>
+      <div class="ai-searchbot-section">
+        <form class="ai-form" ng-submit="c.submitPrompt(c.promptForm.$valid)" name="c.promptForm" novalidate>
+          <textarea ng-model="c.prompt" placeholder="Ask Gemini..."></textarea>
+          <button type="submit" class="submit-btn">Ask</button>
+          <div class="ai-loading" ng-show="c.isLoading">
+            <p class="loading-message">Generating your answer...</p>
+            <div class="loading-spinner"></div>
+          </div>
+          <div class="ai-answer" ng-show="c.answer">
+            <h5>Answer:</h5>
+            <p class="ans">{{c.answer}}</p>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
-<script>
-function askAI() {
-  var loadingContainer = document.querySelector('.ai-loading');
-  var answerContainer = document.querySelector('.ai-answer');
+    </div>
+    <script>
+      function askAI() {
+        var loadingContainer = document.querySelector('.ai-loading');
+        var answerContainer = document.querySelector('.ai-answer');
 
-  // Show loading animation and message
-  loadingContainer.style.display = "flex";
-  answerContainer.style.display = "none";
+        // Show loading animation and message
+        loadingContainer.style.display = "flex";
+        answerContainer.style.display = "none";
 
-  // Simulate a 5-second delay
-  setTimeout(function() {
-    // Hide loading animation and show answer
-    loadingContainer.style.display = "none";
-    answerContainer.style.display = "block";
-  }, 100); // 5-second delay
-}
-</script>
+      
+        setTimeout(function() {
+          // Hide loading animation and show answer
+          loadingContainer.style.display = "none";
+          answerContainer.style.display = "block";
+        }, 100); 
+      }
+    </script>
 
-    
+
   </div>
 </div>
 

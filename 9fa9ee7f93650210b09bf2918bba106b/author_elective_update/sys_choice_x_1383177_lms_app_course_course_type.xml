@@ -58,7 +58,7 @@
             <element>course_type</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Advance</label>
+            <label>Advanced</label>
             <language>en</language>
             <name>x_1383177_lms_app_course</name>
             <sequence>2</sequence>
@@ -67,10 +67,10 @@
             <sys_created_on>2024-04-22 07:14:25</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>abhishek.s</sys_updated_by>
-            <sys_updated_on>2024-04-22 07:14:25</sys_updated_on>
-            <value>advance</value>
+            <sys_updated_on>2024-07-22 04:36:10</sys_updated_on>
+            <value>Advanced</value>
         </sys_choice>
     </sys_choice>
 </record_update>

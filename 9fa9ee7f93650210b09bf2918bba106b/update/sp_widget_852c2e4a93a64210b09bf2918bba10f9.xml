@@ -185,12 +185,15 @@
 
 
 #post-question-btn {
-  position: absolute;
+  /*position: absolute;*/
   top: 10px;
   right: 10px;
   background-color: #ffffff;
   color: #007bff;
-  border: 0px;
+  margin-right: 534px;
+  border: 1px solid #007bff;
+  border-radius: .5rem;
+  border-color: #007bff;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -397,22 +400,23 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:44:36</sys_created_on>
         <sys_id>852c2e4a93a64210b09bf2918bba10f9</sys_id>
-        <sys_mod_count>100</sys_mod_count>
+        <sys_mod_count>106</sys_mod_count>
         <sys_name>LMS Discussion Forum</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_852c2e4a93a64210b09bf2918bba10f9</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-28 06:56:13</sys_updated_on>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-07-22 05:38:33</sys_updated_on>
         <template><![CDATA[<div class="forum-page">
   <div class="forum-header">
     <h1>${Discussion Forum}</h1>
     <p>${Engage in conversations, ask questions, and share knowledge with your peers.}</p>
-    <button ng-click="c.handlePostQuestion()" id="post-question-btn">${Post your Question}</button>
+    
   </div>
 
   <div class="forum-search">
+         <button ng-click="c.handlePostQuestion()" id="post-question-btn">${Post your Question}</button>
     <input type="text" ng-keypress="c.handleKeyPress($event)" id="searchInput" placeholder="Search for discussions..." />
     <button ng-click="c.searchDiscussions()">${Search}</button>
   </div>
