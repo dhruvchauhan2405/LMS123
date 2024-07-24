@@ -265,7 +265,7 @@
     transform: scaleX(1);
   }
   50% {
-    transform: scaleX(1.1);
+    transform: scaleX(1.05);
   }
   100% {
     transform: scaleX(1);
@@ -400,14 +400,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-06-04 04:44:36</sys_created_on>
         <sys_id>852c2e4a93a64210b09bf2918bba10f9</sys_id>
-        <sys_mod_count>106</sys_mod_count>
+        <sys_mod_count>110</sys_mod_count>
         <sys_name>LMS Discussion Forum</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_852c2e4a93a64210b09bf2918bba10f9</sys_update_name>
-        <sys_updated_by>abhishek.s</sys_updated_by>
-        <sys_updated_on>2024-07-22 05:38:33</sys_updated_on>
+        <sys_updated_by>pranav.k</sys_updated_by>
+        <sys_updated_on>2024-07-24 19:18:18</sys_updated_on>
         <template><![CDATA[<div class="forum-page">
   <div class="forum-header">
     <h1>${Discussion Forum}</h1>
