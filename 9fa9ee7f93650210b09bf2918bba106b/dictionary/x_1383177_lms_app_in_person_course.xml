@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="222751e39331c210b09bf2918bba1027" label="In-Person Course" max_length="40" name="x_1383177_lms_app_in_person_course" type="collection">
-        <element label="Course name" mandatory="true" max_length="32" name="course_name" reference="x_1383177_lms_app_course" reference_qual="learning_medium=in-person^EQ" reference_qual_condition="learning_medium=in-person^EQ" type="reference"/>
+        <element label="Course name" mandatory="true" max_length="32" name="course_name" reference="x_1383177_lms_app_course" reference_qual="learning_medium=online_instructor_led^EQ" reference_qual_condition="learning_medium=online_instructor_led^EQ" type="reference"/>
         <element label="Duration (Hours)" max_length="40" name="duration" type="integer"/>
         <element label="End date" mandatory="true" max_length="40" name="ending_date" type="glide_date"/>
         <element label="End time" max_length="40" name="ending_time" type="glide_time"/>
