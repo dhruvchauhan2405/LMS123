@@ -9,14 +9,14 @@
         <sys_created_by>abhishek.s</sys_created_by>
         <sys_created_on>2024-05-29 13:53:43</sys_created_on>
         <sys_id>5e4075d8936a0210b09bf2918bba10fc</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Servicenow </sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>x_1383177_lms_app_course_domain_5e4075d8936a0210b09bf2918bba10fc</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-03 06:05:45</sys_updated_on>
-        <thumbnail>8025f53d93620210b09bf2918bba10ef</thumbnail>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-14 08:36:57</sys_updated_on>
+        <thumbnail>067cf26a83f11210e127f855eeaad320</thumbnail>
     </x_1383177_lms_app_course_domain>
 </record_update>
