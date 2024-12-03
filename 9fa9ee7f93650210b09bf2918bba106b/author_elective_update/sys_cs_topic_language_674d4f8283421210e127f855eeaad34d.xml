@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="DELETE">
+        <cs_topic_id display_value="_PRVW__6b4d8b82334212107181e77468b61d61">a74d4f8283421210e127f855eeaad345</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[]</nlu_entities>
+        <nlu_intent>OutOfOffice</nlu_intent>
+        <nlu_intent_label>OutOfOffice</nlu_intent_label>
+        <nlu_model>sn_itsm_nlu_ITSM_NLU_for_VA</nlu_model>
+        <nlu_model_label>ITSM NLU for Virtual Agent</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-11-25 06:49:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>674d4f8283421210e127f855eeaad34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_cs_topic_language_674d4f8283421210e127f855eeaad34d</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-11-25 06:49:16</sys_updated_on>
+    </sys_cs_topic_language>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>f32ed6e21bcd8ed4a43dcb7b234bcb8a</instance_id>
+        <instance_name>dev249293</instance_name>
+        <name>sys_cs_topic_language_674d4f8283421210e127f855eeaad34d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language"><sys_cs_topic_language action="INSERT_OR_UPDATE"><cs_topic_id display_value="_PRVW__6b4d8b82334212107181e77468b61d61">a74d4f8283421210e127f855eeaad345</cs_topic_id><language_code>en</language_code><nlu_entities>[]</nlu_entities><nlu_intent>OutOfOffice</nlu_intent><nlu_intent_label>OutOfOffice</nlu_intent_label><nlu_model>sn_itsm_nlu_ITSM_NLU_for_VA</nlu_model><nlu_model_label>ITSM NLU for Virtual Agent</nlu_model_label><nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider><sys_class_name>sys_cs_topic_language</sys_class_name><sys_created_by>abhishek.s</sys_created_by><sys_created_on>2024-11-25 06:49:16</sys_created_on><sys_domain>global</sys_domain><sys_id>674d4f8283421210e127f855eeaad34d</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sys_cs_topic_language_674d4f8283421210e127f855eeaad34d</sys_update_name><sys_updated_by>abhishek.s</sys_updated_by><sys_updated_on>2024-11-25 06:49:16</sys_updated_on></sys_cs_topic_language></record_update>]]></payload>
+        <payload_hash>-1976315109</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>380d541f35b0121087de2797535458ad</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-11-25 06:49:16</sys_created_on>
+        <sys_id>274d4f8283421210e127f855eeaad34f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1936214e3910000001</sys_recorded_at>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-11-25 06:49:16</sys_updated_on>
+        <type>CS Topic Language</type>
+        <update_guid>2b4d4f82624212106baefac2c9d4d64e</update_guid>
+        <update_guid_history>2b4d4f82624212106baefac2c9d4d64e:-1976315109</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-11-25 20:04:06</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_topic_language">sys_cs_topic_language</sys_db_object>
+        <sys_id>3e9aa9d195db49e0856fe2cf3c0dd100</sys_id>
+        <sys_metadata>674d4f8283421210e127f855eeaad34d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sys_cs_topic_language_674d4f8283421210e127f855eeaad34d</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_language_674d4f8283421210e127f855eeaad34d">274d4f8283421210e127f855eeaad34f</sys_update_version>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-11-25 20:04:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

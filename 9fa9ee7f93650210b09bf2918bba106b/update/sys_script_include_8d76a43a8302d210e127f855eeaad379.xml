@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1383177_lms_app.AIDailyMCQUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AIDailyMCQUtils</name>
+        <script><![CDATA[var AIDailyMCQUtils = Class.create();
+AIDailyMCQUtils.prototype = {
+    initialize: function() {},
+    triggerApiIntegration: function(current) {
+        var type = current.type;
+        var inputData;
+        var promptMessage;
+        if (type == 'Revision') {
+            inputData = this.getTopicFromEnrollment(current.getValue('enrollment'));
+            promptMessage = this.getPromptEnrollment(inputData);
+        } else if (type == 'dailymcq') {
+            inputData = this.getTopicFromCourse(current.getValue('courses'));
+            promptMessage = this.getPromptCourses(inputData);
+        } else {
+            inputData = this.getTopicFromLearner(current.getValue('learner'));
+            promptMessage = this.getPromptCourses(inputData);
+        }
+		//gs.info(promptMessage);
+		return this.getResponseFromAI(promptMessage);
+    },
+    getTopicFromLearner: function(learner) {
+        var courses = new global.GlideQuery('x_1383177_lms_app_enrollment')
+            .where('learner_name', learner)
+            .select('course_name')
+            .reduce(function(arr, enrollment) {
+                arr.push(enrollment.course_name);
+                return arr;
+            }, []);
+
+        return this.getTopicFromCourse(courses);
+    },
+    getTopicFromCourse: function(courses) {
+        var topic = [];
+        courses.forEach(function(course) {
+            var topicsDetails = new global.GlideQuery('x_1383177_lms_app_course')
+                .where('sys_id', course)
+                .select('course_name', 'short_description')
+                .forEach(function(course) {
+                    topic.push({
+                        'topic': course.course_name,
+                        'short_description': course.short_description
+                    });
+                });
+        });
+        return topic;
+    },
+    getTopicFromEnrollment: function(enrollment) {
+        var enrollmentGq = new global.GlideQuery('x_1383177_lms_app_enrollment')
+            .where('sys_id', enrollment)
+            .selectOne('course_name')
+            .get();
+        var course = enrollmentGq.course_name;
+        var topicsDetails = new global.GlideQuery('x_1383177_lms_app_course')
+            .where('sys_id', course)
+            .select('course_name', 'short_description')
+            .forEach(function(course) {
+                var subTopic = new global.GlideQuery('x_1383177_lms_app_m2m_x_1383177_lm_x_1383177_lm')
+                    .where('x_1383177_lms_app_course', course.sys_id)
+                    .select('x_1383177_lms_app_module.name', 'x_1383177_lms_app_module.short_description')
+                    .reduce(function(arr, courseRec) {
+                        arr.push({
+                            'sub_topic': courseRec.x_1383177_lms_app_module.name,
+                            'short_description': courseRec.x_1383177_lms_app_module.short_description
+                        });
+                        return arr;
+                    }, []);
+                topic = {
+                    'topic': course.course_name,
+                    'short_description': course.short_description,
+                    'sub_topic': subTopic
+                };
+            });
+        return topic;
+    },
+    getPromptEnrollment: function(item) {
+        var message = '';
+        var sample = {
+            'question': 'samplequestion',
+            'choices': ['choice 1', 'choice2'],
+            'correct_answer': ''
+        };
+        message += 'Create an MCQ questionaire of 5 questions from the below topics into a sample JSON and return only JSON object';
+        message += JSON.stringify(sample);
+        message += 'Topic: ' + item.topic + '\n';
+        message += 'Description: ' + item.short_description + '\n';
+        message += 'Sub-Topics:\n';
+        item.sub_topic.forEach(function(subItem, index) {
+            message += '  ' + (index + 1) + '. ' + subItem.sub_topic + ': ' + subItem.short_description + '\n';
+        });
+
+        return message;
+    },
+    getPromptCourses: function(inputData) {
+        var message = '';
+        var sample = {
+            'question': 'samplequestion',
+            'choices': ['choice 1', 'choice2'],
+            'correct_answer': ''
+        };
+        message += 'Create a random MCQ questionaire of 5 questions from the below topics into a sample JSON and return only JSON object';
+        message += JSON.stringify(sample);
+        inputData.forEach(function(item) {
+            message += 'Topic: ' + item['topic'] + '\n';
+            message += 'Description: ' + item['short_description'] + '\n\n';
+        });
+        return message;
+    },
+    getResponseFromAI: function(promptMessage) {
+        try {
+            var body = {
+                "contents": [{
+                    "parts": [{
+                        "text": promptMessage
+                    }]
+                }]
+            };
+            var r = new sn_ws.RESTMessageV2('x_1383177_lms_app.Gemini', 'Gemini POST');
+            r.setRequestBody(JSON.stringify(body));
+            var response = r.execute();
+            var responseBody = response.getBody();
+            var httpStatus = response.getStatusCode();
+            var parsedBody = JSON.parse(responseBody);
+            var aiResp = parsedBody.candidates[0].content.parts[0].text;
+            var cleanedMessage = aiResp.replaceAll(/`/g, '');
+            var cleanedString = cleanedMessage.replace(/^json\s*/i, '');
+            return cleanedString;
+        } catch (ex) {
+            var message = ex.message;
+            gs.error("AI Integration ended up in error " + message);
+        }
+    },
+    type: 'AIDailyMCQUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>lijin.s</sys_created_by>
+        <sys_created_on>2024-11-27 02:36:25</sys_created_on>
+        <sys_id>8d76a43a8302d210e127f855eeaad379</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>AIDailyMCQUtils</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_script_include_8d76a43a8302d210e127f855eeaad379</sys_update_name>
+        <sys_updated_by>lijin.s</sys_updated_by>
+        <sys_updated_on>2024-11-27 11:43:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

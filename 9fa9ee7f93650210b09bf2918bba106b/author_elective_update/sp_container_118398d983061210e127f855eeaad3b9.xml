@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>About the LMS - Container 4</name>
+        <order>4</order>
+        <semantic_tag/>
+        <sp_page display_value="lms_about">f03c3aff93520210b09bf2918bba1003</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-22 09:22:06</sys_created_on>
+        <sys_id>118398d983061210e127f855eeaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>About the LMS - Container 4</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_container_118398d983061210e127f855eeaad3b9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-22 09:22:06</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</application>
+        <file_path/>
+        <instance_id>f32ed6e21bcd8ed4a43dcb7b234bcb8a</instance_id>
+        <instance_name>dev249293</instance_name>
+        <name>sp_container_118398d983061210e127f855eeaad3b9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>About the LMS - Container 4</name><order>4</order><semantic_tag/><sp_page display_value="lms_about">f03c3aff93520210b09bf2918bba1003</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-11-22 09:22:06</sys_created_on><sys_id>118398d983061210e127f855eeaad3b9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>About the LMS - Container 4</sys_name><sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package><sys_policy/><sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope><sys_update_name>sp_container_118398d983061210e127f855eeaad3b9</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-11-22 09:22:06</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>949758805</payload_hash>
+        <record_name>About the LMS - Container 4</record_name>
+        <reverted_from/>
+        <source>1199500a83b15210e127f855eeaad3a4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-22 09:22:07</sys_created_on>
+        <sys_id>1d8398d983061210e127f855eeaad3bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>193532dbe8a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-22 09:22:07</sys_updated_on>
+        <type>Container</type>
+        <update_guid>118398d9180612100704a6dc2c5d82bb</update_guid>
+        <update_guid_history>118398d9180612100704a6dc2c5d82bb:949758805</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="About the LMS - Container 4">61d39cd983061210e127f855eeaad34c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-22 09:23:30</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>184e16611c0c45bca469e58cb8e41504</sys_id>
+        <sys_metadata>118398d983061210e127f855eeaad3b9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>About the LMS - Container 4</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_scope_delete display_value="">1cee37d185a6415a844cb79c3c6b7bb1</sys_scope_delete>
+        <sys_update_name>sp_container_118398d983061210e127f855eeaad3b9</sys_update_name>
+        <sys_update_version display_value="sp_container_118398d983061210e127f855eeaad3b9">1d8398d983061210e127f855eeaad3bb</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-22 09:23:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element_attribute">
+    <sys_sg_view_config_element_attribute action="INSERT_OR_UPDATE">
+        <description>image_03_ImageURL</description>
+        <name display_value="ImageURL">4f1f59c2b7321010df65f6efce11a9d0</name>
+        <sys_class_name>sys_sg_view_config_element_attribute</sys_class_name>
+        <sys_created_by>abhishek.s</sys_created_by>
+        <sys_created_on>2024-11-27 07:37:13</sys_created_on>
+        <sys_id>e17ba97e8346d210e127f855eeaad38c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>4f1f59c2b7321010df65f6efce11a9d0</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_attribute_e17ba97e8346d210e127f855eeaad38c</sys_update_name>
+        <sys_updated_by>abhishek.s</sys_updated_by>
+        <sys_updated_on>2024-11-27 07:37:13</sys_updated_on>
+        <translated_value/>
+        <value>017b257e8346d210e127f855eeaad3b9</value>
+        <view_config_element display_value="image_03_element">ad7ba97e8346d210e127f855eeaad388</view_config_element>
+    </sys_sg_view_config_element_attribute>
+    <sys_translated_text action="delete_multiple" query="documentkey=e17ba97e8346d210e127f855eeaad38c"/>
+</record_update>

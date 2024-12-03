@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="92590a6a83069210e127f855eeaad3e7" label="Daily MCQs" max_length="40" name="x_1383177_lms_app_daily_mcqs" type="collection">
+        <element label="Learner" max_length="32" name="learner" reference="sys_user" type="reference"/>
+        <element choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Draft" sequence="100" value="draft"/>
+                <element inactive_on_update="false" label="Ready" sequence="200" value="ready"/>
+                <element inactive_on_update="false" label="Complete" sequence="300" value="complete"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Enrollment" max_length="32" name="enrollment" reference="x_1383177_lms_app_enrollment" type="reference"/>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Revision on Enrolled course" sequence="200" value="Revision"/>
+                <element inactive_on_update="false" label="Question on all Course by learner" sequence="100" value="learner"/>
+                <element inactive_on_update="false" label="Create MCQ by course" sequence="300" value="dailymcq"/>
+            </choice>
+        </element>
+        <element label="Question Map" max_length="10000" name="question_map" type="string"/>
+        <element label="Learner Score" max_length="40" name="learner_score" type="string"/>
+        <element label="Trigger Date" max_length="40" name="date" type="glide_date"/>
+        <element label="Courses" max_length="4000" name="courses" type="glide_list"/>
+        <index name="index">
+            <element name="enrollment"/>
+        </index>
+        <index name="index2">
+            <element name="learner"/>
+        </index>
+    </element>
+</database>

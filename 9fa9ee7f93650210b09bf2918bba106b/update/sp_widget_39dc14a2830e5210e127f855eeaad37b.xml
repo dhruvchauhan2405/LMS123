@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+  /* widget controller */
+  var c = this;
+
+  // Toggle widget visibility
+  c.toggleChatbot = function() {
+    var chatbotWidget = document.getElementById('chatbot-widget');
+    var toggleButton = document.getElementById('chatbot-toggle');
+
+    // Open Chatbot
+    toggleButton.addEventListener('click', function() {
+      chatbotWidget.classList.add('open');
+      toggleButton.style.display = 'none';
+    });
+
+    // Close Chatbot
+    var closeButton = document.getElementById('chatbot-close');
+    closeButton.addEventListener('click', function() {
+      chatbotWidget.classList.remove('open');
+      toggleButton.style.display = 'flex';
+    });
+  };
+
+  // Initialize toggleChatbot
+  c.toggleChatbot();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Chatbot Container */
+.chatbot-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  background: #f4f4f4;
+  transition: all 0.3s ease-in-out;
+}
+
+.chatbot-widget.open {
+  display: block;
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, #0078d4, #005a9e);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbot-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chatbot-iframe {
+  width: 100%;
+  height: calc(100% - 40px);
+  border: none;
+}
+
+/* Toggle Button */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0078d4;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.chatbot-toggle:hover {
+  background: #005a9e;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>lms_va</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LMS VA</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-26 07:15:14</sys_created_on>
+        <sys_id>39dc14a2830e5210e127f855eeaad37b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>LMS VA</sys_name>
+        <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
+        <sys_update_name>sp_widget_39dc14a2830e5210e127f855eeaad37b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-03 06:26:09</sys_updated_on>
+        <template><![CDATA[<div>
+  <!-- Toggle Button -->
+  <button class="chatbot-toggle" id="chatbot-toggle">]]>💬<![CDATA[</button>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot-widget" id="chatbot-widget">
+    <div class="chatbot-header">
+      <button id="chatbot-close">&times;</button>
+    </div>
+    <iframe 
+      src="https://copilotstudio.microsoft.com/environments/Default-8e656664-5f36-4a5b-954c-c5405fd29206/bots/cr75d_lmsBuddy/webchat?__version__=2"
+      class="chatbot-iframe"
+      frameborder="0">
+    </iframe>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
