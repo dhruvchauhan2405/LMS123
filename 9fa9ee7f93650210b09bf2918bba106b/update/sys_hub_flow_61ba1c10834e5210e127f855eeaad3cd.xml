@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=7586000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1302856000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>25000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,7 +15,7 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>ms_teams</internal_name>
-        <label_cache>[{"name":"Created_1.current.learner_name.name","label":"Trigger - Record Created➛Enrollment Record➛Learner➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title"]}},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name","usedInstances":{}},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course➛Name","reference":"","reference_display":"Name","type":"translated_text","base_type":"translated_text","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title"]}}]</label_cache>
+        <label_cache>[{"name":"Created_1.current.learner_name.name","label":"Trigger - Record Created➛Enrollment Record➛Learner➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title","ah_message"]}},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name","usedInstances":{}},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course➛Name","reference":"","reference_display":"Name","type":"translated_text","base_type":"translated_text","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title","ah_message"]}}]</label_cache>
         <master_snapshot>b167345483ce5210e127f855eeaad397</master_snapshot>
         <name>MS Teams</name>
         <natlang/>
@@ -35,7 +35,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>61ba1c10834e5210e127f855eeaad3cd</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>MS Teams</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
@@ -43,7 +43,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sys_hub_flow_61ba1c10834e5210e127f855eeaad3cd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:05</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:54</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=61ba1c10834e5210e127f855eeaad3cd"/>
@@ -80,14 +80,14 @@
         <identifier>61ba1c10834e5210e127f855eeaad3cd</identifier>
         <runner>FDTriggerRunner</runner>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-11-19 09:26:04</sys_created_on>
-        <sys_id>06a7f85483ce5210e127f855eeaad3c0</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_created_on>2024-12-04 09:13:54</sys_created_on>
+        <sys_id>4eb4868d83921210e127f855eeaad328</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:04</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:54</sys_updated_on>
         <trigger display_value="">8ea7f85483ce5210e127f855eeaad3bf</trigger>
     </sys_trigger_runner_mapping>
-    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=61ba1c10834e5210e127f855eeaad3cd^sys_idNOT IN06a7f85483ce5210e127f855eeaad3c0"/>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=61ba1c10834e5210e127f855eeaad3cd^sys_idNOT IN4eb4868d83921210e127f855eeaad328"/>
     <sys_hub_trigger_instance action="delete_multiple" query="flow=61ba1c10834e5210e127f855eeaad3cd^sys_idNOT IN699cd0d0834e5210e127f855eeaad36e"/>
     <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
         <comment/>
@@ -98,10 +98,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 07:27:47</sys_created_on>
         <sys_id>699cd0d0834e5210e127f855eeaad36e</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:05</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:54</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -214,14 +214,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 07:27:47</sys_created_on>
         <sys_id>ad9c1050834e5210e127f855eeaad314</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:05</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:54</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -298,14 +298,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 07:27:47</sys_created_on>
         <sys_id>ed9c1050834e5210e127f855eeaad317</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:05</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:54</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -338,10 +338,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 07:27:48</sys_created_on>
         <sys_id>659cd0d0834e5210e127f855eeaad383</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:30:22</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:14:15</sys_updated_on>
         <ui_id>a10c382b-e6fe-451e-8866-ec81206256f9</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=659cd0d0834e5210e127f855eeaad383"/>
@@ -353,10 +353,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 07:27:48</sys_created_on>
         <sys_id>259cd0d0834e5210e127f855eeaad385</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 07:27:48</sys_updated_on>
-        <value>hoooooo</value>
+        <sys_updated_on>2024-12-04 09:11:49</sys_updated_on>
+        <value/>
         <variable display_value="Message">b09822431324030039a039ed9344b0c7</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -380,11 +380,26 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 07:27:48</sys_created_on>
         <sys_id>2d9cd0d0834e5210e127f855eeaad384</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 07:27:48</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:47</sys_updated_on>
         <table>var__m_sys_hub_action_input_549822431324030039a039ed9344b085</table>
-        <value/>
+        <value>✨ Great News! ✨
+🚀{{Created_1.current.learner_name.name}}  has just taken a step toward mastering new skills by enrolling in the {{Created_1.current.course_name.course_name}} ! 🌟
+
+
+Let’s cheer Abhishek on as they embark on this exciting learning journey! 💪📚
+
+
+Remember, continuous learning powers our growth and success! 🌱 💼
+
+Curious to explore new courses yourself? Head to our Learning Hub now!
+
+
+💡 Empowering knowledge, one course at a time!
+
+
+👉 Visit the Learning Hub</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>ah_title</field>
@@ -392,11 +407,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 07:27:48</sys_created_on>
         <sys_id>ed9cd0d0834e5210e127f855eeaad384</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:11:02</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:09</sys_updated_on>
         <table>var__m_sys_hub_action_input_549822431324030039a039ed9344b085</table>
-        <value>{{Created_1.current.learner_name.name}}has enrolled to the course {{Created_1.current.course_name.course_name}}</value>
+        <value>{{Created_1.current.learner_name.name}} has enrolled to the course {{Created_1.current.course_name.course_name}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>ah_webhook_url</field>
@@ -480,7 +495,7 @@
         <description/>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>ms_teams</internal_name>
-        <label_cache>[{"name":"Created_1.current.learner_name.name","label":"Trigger - Record Created➛Enrollment Record➛Learner➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title"]}},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name","usedInstances":{}},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course➛Name","reference":"","reference_display":"Name","type":"translated_text","base_type":"translated_text","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title"]}}]</label_cache>
+        <label_cache>[{"name":"Created_1.current.learner_name.name","label":"Trigger - Record Created➛Enrollment Record➛Learner➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title","ah_message"]}},{"name":"Created_1.current.learner_name","label":"Trigger - Record Created➛Enrollment Record➛Learner","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383177_lms_app_enrollment","column_name":"learner_name","usedInstances":{}},{"name":"Created_1.current.course_name.course_name","label":"Trigger - Record Created➛Enrollment Record➛Course➛Name","reference":"","reference_display":"Name","type":"translated_text","base_type":"translated_text","parent_table_name":"x_1383177_lms_app_course","column_name":"course_name","usedInstances":{"a10c382b-e6fe-451e-8866-ec81206256f9":["ah_title","ah_message"]}}]</label_cache>
         <master>true</master>
         <name>MS Teams</name>
         <natlang/>
@@ -497,7 +512,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b167345483ce5210e127f855eeaad397</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -505,7 +520,7 @@
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:04</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:53</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=b167345483ce5210e127f855eeaad397"/>
@@ -520,10 +535,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:58</sys_created_on>
         <sys_id>ca67345483ce5210e127f855eeaad3c8</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:05</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:54</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -636,14 +651,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:57</sys_created_on>
         <sys_id>3167345483ce5210e127f855eeaad399</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:03</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:53</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -720,14 +735,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:58</sys_created_on>
         <sys_id>3567345483ce5210e127f855eeaad3a6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:03</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:53</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -760,10 +775,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:58</sys_created_on>
         <sys_id>c267345483ce5210e127f855eeaad3c5</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:04</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:53</sys_updated_on>
         <ui_id>a10c382b-e6fe-451e-8866-ec81206256f9</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c267345483ce5210e127f855eeaad3c5"/>
@@ -789,10 +804,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:58</sys_created_on>
         <sys_id>8e67345483ce5210e127f855eeaad3c7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:24:58</sys_updated_on>
-        <value>hoooooo</value>
+        <sys_updated_on>2024-12-04 09:11:56</sys_updated_on>
+        <value/>
         <variable display_value="Message">b09822431324030039a039ed9344b0c7</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=c267345483ce5210e127f855eeaad3c5"/>
@@ -802,11 +817,26 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:58</sys_created_on>
         <sys_id>8267345483ce5210e127f855eeaad3c7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:24:58</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:53</sys_updated_on>
         <table>var__m_sys_hub_action_input_549822431324030039a039ed9344b085</table>
-        <value/>
+        <value>✨ Great News! ✨
+🚀{{Created_1.current.learner_name.name}}  has just taken a step toward mastering new skills by enrolling in the {{Created_1.current.course_name.course_name}} ! 🌟
+
+
+Let’s cheer Abhishek on as they embark on this exciting learning journey! 💪📚
+
+
+Remember, continuous learning powers our growth and success! 🌱 💼
+
+Curious to explore new courses yourself? Head to our Learning Hub now!
+
+
+💡 Empowering knowledge, one course at a time!
+
+
+👉 Visit the Learning Hub</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>ah_title</field>
@@ -814,11 +844,11 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:58</sys_created_on>
         <sys_id>4a67345483ce5210e127f855eeaad3c7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:24:58</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:15</sys_updated_on>
         <table>var__m_sys_hub_action_input_549822431324030039a039ed9344b085</table>
-        <value>{{Created_1.current.learner_name.name}}has enrolled to the course {{Created_1.current.course_name.course_name}}</value>
+        <value>{{Created_1.current.learner_name.name}} has enrolled to the course {{Created_1.current.course_name.course_name}}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>ah_webhook_url</field>
@@ -898,17 +928,17 @@
         <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"0e67345483ce5210e127f855eeaad3e8","name":"plan","plan_signature":null}}</plan>
         <plan_id>61ba1c10834e5210e127f855eeaad3cd</plan_id>
-        <snapshot>74a830d483ce5210e127f855eeaad3c4</snapshot>
+        <snapshot>13c44a8d83921210e127f855eeaad315</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-19 09:24:59</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0e67345483ce5210e127f855eeaad3e8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-19 09:26:05</sys_updated_on>
+        <sys_updated_on>2024-12-04 09:13:16</sys_updated_on>
         <trigger display_value="">8ea7f85483ce5210e127f855eeaad3bf</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=61ba1c10834e5210e127f855eeaad3cd"/>

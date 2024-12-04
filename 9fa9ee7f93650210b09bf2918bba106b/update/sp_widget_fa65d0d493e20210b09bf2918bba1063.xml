@@ -64,7 +64,7 @@
  
   // Define breadcrumb map
   var breadcrumbMap = {
-    'lms_course_domain': ['Domains'],
+    'lms_course_domain': ['Technology'],
     'lms_courses': ['Courses'],
     'lms_discussion_forum': ['Discussion Forum'],
     'lms_forum_answers': ['Discussion Forum', 'Forum Answers'],
@@ -101,7 +101,7 @@
     var domain = new GlideRecord('x_1383177_lms_app_course_domain');
     if (domain.get(domainId)) {
       //data.breadcrumbs.push({ label: 'Home', url: '?id=lms_index' });
-      data.breadcrumbs.push({ label: 'Domain', url: '?id=lms_course_domain' });
+      data.breadcrumbs.push({ label: 'Technology', url: '?id=lms_course_domain' });
       data.breadcrumbs.push({ label: 'Courses', url: '' }); // Current page
     }
   } else if (breadcrumbMap[currentPage]) {
@@ -118,14 +118,14 @@
         <sys_created_by>pranav.k</sys_created_by>
         <sys_created_on>2024-05-29 07:16:42</sys_created_on>
         <sys_id>fa65d0d493e20210b09bf2918bba1063</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>LMS Breadcrumbs</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_fa65d0d493e20210b09bf2918bba1063</sys_update_name>
-        <sys_updated_by>pranav.k</sys_updated_by>
-        <sys_updated_on>2024-06-26 04:57:41</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-04 07:08:53</sys_updated_on>
         <template><![CDATA[<nav aria-label="Page breadcrumbs" role="navigation" class="breadcrumbs">
   <ul class="nav nav-pills nav-sm">
     <li>

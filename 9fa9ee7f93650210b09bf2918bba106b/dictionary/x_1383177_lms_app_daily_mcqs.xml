@@ -20,7 +20,7 @@
         <element label="Question Map" max_length="10000" name="question_map" type="string"/>
         <element label="Learner Score" max_length="40" name="learner_score" type="string"/>
         <element label="Trigger Date" max_length="40" name="date" type="glide_date"/>
-        <element label="Courses" max_length="4000" name="courses" type="glide_list"/>
+        <element label="Courses" max_length="4000" name="courses" reference="x_1383177_lms_app_course" type="reference"/>
         <index name="index">
             <element name="enrollment"/>
         </index>

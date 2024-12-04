@@ -1015,14 +1015,14 @@ body {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-22 12:08:55</sys_created_on>
         <sys_id>74b930d983c61210e127f855eeaad3f8</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>Copy of LMS Module Content</sys_name>
         <sys_package display_value="LMS Application" source="x_1383177_lms_app">9fa9ee7f93650210b09bf2918bba106b</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS Application">9fa9ee7f93650210b09bf2918bba106b</sys_scope>
         <sys_update_name>sp_widget_74b930d983c61210e127f855eeaad3f8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-03 06:43:14</sys_updated_on>
+        <sys_updated_on>2024-12-04 18:27:37</sys_updated_on>
         <template><![CDATA[<div class="container">
   <div class="sidebar">
     <div class="sidebar-content">
@@ -1078,12 +1078,12 @@ body {
         </div>
       </div>
 
-      <!-- Knowledge Check Section -->
+      <!-- Knowledge Check Section 
       <div class="knowledge-check" ng-show="c.isModuleView && !c.completedCoursePage">
         <h4><b>${Knowledge Check}</b></h4>
         <p>${Please answer the following questions to proceed.}</p>
-        <div ng-repeat="question in c.data.questions" class="question">
-          <p>{{question.text}}</p>
+        <div  class="question">
+          <p>Hello{{question.text}}</p>
           <div class="options">
             <label ng-repeat="option in question.options">
               <input type="radio" ng-model="question.selectedAnswer" value="{{option}}" ng-click="c.checkAnswer(question)">
@@ -1092,7 +1092,7 @@ body {
           </div>
         </div>
         <button class="next-lesson" ng-click="c.submitKnowledgeCheck()">${Submit Answers}</button>
-      </div>
+      </div>-->
 
       <div class="completion-page" ng-show="c.completedCoursePage">
         <div class="completion-content">
